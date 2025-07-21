@@ -11,7 +11,7 @@ const Header = () => {
     { label: "Actualités", href: "#actualites", icon: Newspaper },
     { label: "Contact", href: "#contact", icon: Mail },
     { label: "Qui sommes-nous", href: "#about", icon: Users },
-    { label: "Pharmacie.ma", href: "#pharmacie", icon: Building2 },
+    { label: "Dwaia.ma", href: "#pharmacie", icon: Building2 },
   ];
 
   return (
@@ -21,10 +21,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">M</span>
+              <span className="text-primary-foreground font-bold text-xl">D</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-primary">Medicament.ma</h1>
+              <h1 className="text-xl font-bold text-primary">Dwaia.ma</h1>
               <p className="text-xs text-muted-foreground">Base de données pharmaceutique</p>
             </div>
           </div>

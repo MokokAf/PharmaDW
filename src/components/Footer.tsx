@@ -41,7 +41,7 @@ const Footer = () => {
       title: "Sites externes",
       icon: ExternalLink,
       links: [
-        { label: "Pharmacie.ma", href: "#", external: true },
+        { label: "Dwaia.ma", href: "#", external: true },
         { label: "Pharmanews", href: "#", external: true },
         { label: "Ministère de la santé", href: "#", external: true },
         { label: "ANAM", href: "#", external: true },
@@ -123,7 +123,7 @@ const Footer = () => {
           <div className="text-center md:text-right">
             <div className="flex items-center justify-center md:justify-end space-x-2 mb-2">
               <Building2 className="h-5 w-5 text-primary" />
-              <span className="font-medium">Medicament.ma</span>
+              <span className="font-medium">Dwaia.ma</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Votre référence pharmaceutique
@@ -137,10 +137,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">M</span>
+              <span className="text-primary-foreground font-bold text-sm">D</span>
             </div>
             <span className="text-sm text-muted-foreground">
-              medicament.ma © {currentYear} - Tous droits réservés
+              Dwaia.ma © {currentYear} - Tous droits réservés
             </span>
           </div>
           
