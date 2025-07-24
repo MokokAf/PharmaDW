@@ -14,10 +14,10 @@ const DwaIASection = () => {
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
       
-      <div className="relative container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">{/* Changed items-center to items-start */}
+      <div className="relative container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="text-white">
+          <div className="text-white text-center lg:text-left">
             <div className="mb-6">
               <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
                 <Pill className="w-4 h-4 mr-1" />
