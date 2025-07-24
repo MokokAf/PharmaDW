@@ -47,7 +47,7 @@ const DwaIASection = () => {
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 Dwa IA 2.0
-                <span className="block text-primary-glow">Assistant pharmaceutique intelligent</span>
+                <span className="block text-[s#F5F7FA] text-slate-500">Assistant pharmaceutique intelligent</span>
               </h2>
               <p className="text-xl text-white/90 leading-relaxed">
                 L'intelligence artificielle révolutionnaire conçue pour transformer votre exercice pharmaceutique. 
@@ -73,12 +73,7 @@ const DwaIASection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="ai" 
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90"
-                onClick={() => navigate('/espace-pharmaciens')}
-              >
+              <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => navigate('/espace-pharmaciens')}>
                 <Bot className="w-5 h-5 mr-2" />
                 Tester Dwa IA 2.0
               </Button>
