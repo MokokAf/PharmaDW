@@ -15,7 +15,7 @@ const DwaIASection = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
       
       <div className="relative container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Left Content */}
           <div className="text-white text-center lg:text-left">
             <div className="mb-6">
@@ -62,7 +62,7 @@ const DwaIASection = () => {
               </div>
             </div>
             
-            <div className="flex items-start space-x-4 mb-6">
+            <div className="flex items-start space-x-4">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Shield className="h-6 w-6 text-white" />
               </div>
@@ -75,25 +75,11 @@ const DwaIASection = () => {
                 </p>
               </div>
             </div>
-            
-            
-            
-            
-            
-            
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold" onClick={() => navigate('/espace-pharmaciens')}>
-                <Bot className="w-6 h-6 mr-2 stroke-2" />
-                Tester Dwa IA 2.0
-              </Button>
-              
-            </div>
           </div>
 
           {/* Right Content - AI Interface Preview */}
           <div className="relative flex justify-center lg:justify-start">
-            <Card className="w-full max-w-md h-[500px] lg:h-[600px] flex flex-col">{/* Made responsive height and added max-width */}
+            <Card className="w-full max-w-md h-[500px] lg:h-[600px] flex flex-col">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Bot className="h-5 w-5" />
@@ -146,11 +132,17 @@ const DwaIASection = () => {
                     </div>
                   </div>
                 </ScrollArea>
-                
-                
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Centered Button at Bottom */}
+        <div className="flex justify-center">
+          <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold" onClick={() => navigate('/espace-pharmaciens')}>
+            <Bot className="w-6 h-6 mr-2 stroke-2" />
+            Tester Dwa IA 2.0
+          </Button>
         </div>
       </div>
     </section>;
