@@ -13,7 +13,7 @@ const Header = () => {
     { label: "Actualités", href: "#actualites", icon: Newspaper },
     { label: "Contact", href: "#contact", icon: Mail },
     { label: "Qui sommes-nous", href: "#about", icon: Users },
-    { label: "Dwaia.ma", href: "#pharmacie", icon: Building2 },
+    { label: "Espace Pharmaciens", href: "/espace-pharmaciens", icon: Building2 },
   ];
 
   return (
