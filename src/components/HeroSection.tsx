@@ -46,32 +46,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Button variant="outline" size="lg" className="p-6 h-auto flex-col space-y-2">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                <span className="text-2xl">💊</span>
-              </div>
-              <span className="font-semibold">Liste des médicaments</span>
-              <span className="text-sm text-muted-foreground">5,447 références</span>
-            </Button>
-            
-            <Button variant="outline" size="lg" className="p-6 h-auto flex-col space-y-2">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-2">
-                <span className="text-2xl">🧪</span>
-              </div>
-              <span className="font-semibold">Laboratoires</span>
-              <span className="text-sm text-muted-foreground">Tous les fabricants</span>
-            </Button>
-            
-            <Button variant="outline" size="lg" className="p-6 h-auto flex-col space-y-2">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-2">
-                <Sparkles className="h-6 w-6" />
-              </div>
-              <span className="font-semibold">Nouveautés</span>
-              <span className="text-sm text-muted-foreground">Dernières commercialisations</span>
-            </Button>
-          </div>
         </div>
       </div>
     </section>
