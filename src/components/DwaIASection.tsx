@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
   const navigate = useNavigate();
-
   return <section className="py-20 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
@@ -77,47 +76,11 @@ const DwaIASection = () => {
               </div>
             </div>
             
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Clock className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-white mb-1">
-                  Veille pharmaceutique 24h/24
-                </h3>
-                <p className="text-white/80">
-                  Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM
-                </p>
-              </div>
-            </div>
             
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-white mb-1">
-                  Substitution générique intelligente
-                </h3>
-                <p className="text-white/80">
-                  Propositions automatiques de génériques disponibles avec équivalences thérapeutiques
-                </p>
-              </div>
-            </div>
             
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Bot className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-white mb-1">
-                  Formation continue intégrée
-                </h3>
-                <p className="text-white/80">
-                  Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS
-                </p>
-              </div>
-            </div>
+            
+            
+            
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => navigate('/espace-pharmaciens')}>
@@ -186,11 +149,7 @@ const DwaIASection = () => {
                 
                 <div className="border-t p-4">
                   <div className="flex gap-2">
-                    <Input
-                      placeholder="Posez votre question pharmaceutique..."
-                      className="flex-1"
-                      disabled
-                    />
+                    <Input placeholder="Posez votre question pharmaceutique..." className="flex-1" disabled />
                     <Button size="icon" disabled>
                       <Send className="h-4 w-4" />
                     </Button>
