@@ -40,7 +40,7 @@ const DwaIASection = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
       
       <div className="relative container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">{/* Changed items-center to items-start */}
           {/* Left Content */}
           <div className="text-white">
             <div className="mb-6">
@@ -85,8 +85,8 @@ const DwaIASection = () => {
           </div>
 
           {/* Right Content - AI Interface Preview */}
-          <div className="relative">
-            <Card className="h-[600px] flex flex-col">
+          <div className="relative flex justify-center lg:justify-start">
+            <Card className="w-full max-w-md h-[500px] lg:h-[600px] flex flex-col">{/* Made responsive height and added max-width */}
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Bot className="h-5 w-5" />
