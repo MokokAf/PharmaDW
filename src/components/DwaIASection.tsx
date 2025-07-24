@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap, Send, User, Crown } from "lucide-react";
+import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap, Send, User, Pill } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
@@ -45,7 +45,7 @@ const DwaIASection = () => {
           <div className="text-white">
             <div className="mb-6">
               <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-                <Crown className="w-4 h-4 mr-1" />
+                <Pill className="w-4 h-4 mr-1" />
                 Réservé aux Pharmaciens
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
