@@ -21,7 +21,7 @@ const buttonVariants = cva(
         medical: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
         health: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
         trust: "bg-trust text-trust-foreground hover:bg-trust/90 shadow-soft",
-        ai: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-soft",
+        ai: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
       },
       size: {
         default: "h-10 px-4 py-2",
