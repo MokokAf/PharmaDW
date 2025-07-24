@@ -1,24 +1,37 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ChatBot } from './ChatBot';
 import { useAuth } from '@/contexts/AuthContext';
-import { LogOut, User, Mail, Shield } from 'lucide-react';
+import { LogOut, User, Mail, Shield, ArrowLeft } from 'lucide-react';
 
 export const PharmacistDashboard: React.FC = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold">Tableau de Bord Pharmacien</h1>
-              <p className="text-muted-foreground">
-                Bienvenue, {user?.name}
-              </p>
+            <div className="flex items-center gap-4">
+              <Button
+                variant="ghost"
+                onClick={() => navigate('/')}
+                size="sm"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Accueil
+              </Button>
+              <div>
+                <h1 className="text-2xl font-bold">Tableau de Bord Pharmacien</h1>
+                <p className="text-muted-foreground">
+                  Bienvenue, {user?.name}
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="hidden sm:flex items-center gap-2">

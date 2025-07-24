@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -7,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Separator } from '@/components/ui/separator';
-import { Loader2, Mail } from 'lucide-react';
+import { Loader2, Mail, ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 const loginSchema = z.object({
@@ -30,6 +31,7 @@ type SignupFormData = z.infer<typeof signupSchema>;
 export const AuthForm: React.FC = () => {
   const [isSignup, setIsSignup] = useState(false);
   const { login, signup, loginWithGoogle, isLoading } = useAuth();
+  const navigate = useNavigate();
 
   const loginForm = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
@@ -74,18 +76,28 @@ export const AuthForm: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
-            {isSignup ? 'Créer un compte' : 'Connexion'}
-          </CardTitle>
-          <CardDescription className="text-center text-muted-foreground">
-            {isSignup 
-              ? 'Créez votre compte pharmacien pour accéder à votre espace professionnel'
-              : 'Connectez-vous à votre espace pharmacien'
-            }
-          </CardDescription>
-        </CardHeader>
+      <div className="w-full max-w-md space-y-4">
+        <Button
+          variant="ghost"
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Retour à l'accueil
+        </Button>
+        
+        <Card className="w-full">
+          <CardHeader className="space-y-1">
+            <CardTitle className="text-2xl font-bold text-center">
+              {isSignup ? 'Créer un compte' : 'Connexion'}
+            </CardTitle>
+            <CardDescription className="text-center text-muted-foreground">
+              {isSignup 
+                ? 'Créez votre compte pharmacien pour accéder à votre espace professionnel'
+                : 'Connectez-vous à votre espace pharmacien'
+              }
+            </CardDescription>
+          </CardHeader>
         <CardContent className="space-y-4">
           <Button
             variant="outline"
@@ -235,6 +247,7 @@ export const AuthForm: React.FC = () => {
           </div>
         </CardContent>
       </Card>
+      </div>
     </div>
   );
 };
