@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap, Send, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
@@ -83,60 +86,74 @@ const DwaIASection = () => {
 
           {/* Right Content - AI Interface Preview */}
           <div className="relative">
-            <Card className="bg-white/95 backdrop-blur-sm shadow-strong">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img src={dwaIcon} alt="Dwa IA" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-primary">Dwa IA 2.0</h3>
-                    <p className="text-sm text-muted-foreground">Assistant pharmaceutique certifié</p>
-                  </div>
-                  <div className="ml-auto">
-                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" />
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="bg-muted rounded-lg p-4">
-                    <p className="text-sm text-muted-foreground mb-2">Pharmacien</p>
-                    <p>Patient diabétique sous metformine 850mg, peut-il prendre de l'ibuprofène pour ses douleurs articulaires?</p>
-                  </div>
-                  
-                  <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-                    <p className="text-sm text-primary mb-2">Dwa IA 2.0</p>
-                    <p className="text-sm leading-relaxed">
-                      ⚠️ <strong>Attention</strong> : L'ibuprofène peut altérer la fonction rénale et potentialiser le risque d'acidose lactique avec la metformine. 
-                      <br /><br />
-                      <strong>Alternatives recommandées :</strong>
-                      <br />• Paracétamol 1g x3/jour (première intention)
-                      <br />• Application locale de diclofénac gel si douleurs localisées
-                      <br /><br />
-                      <strong>Si AINS nécessaire :</strong> Surveillance fonction rénale + glycémie renforcée
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Badge variant="outline" className="text-xs bg-red-50 text-red-700 border-red-200">
-                        Interaction modérée
-                      </Badge>
-                      <Badge variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">
-                        Diabète T2
-                      </Badge>
-                      <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
-                        Alternative suggérée
-                      </Badge>
+            <Card className="h-[600px] flex flex-col">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Bot className="h-5 w-5" />
+                  Assistant DwaIA 2.0
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-1 p-0">
+                <ScrollArea className="flex-1 px-4">
+                  <div className="space-y-4 pb-4">
+                    <div className="flex gap-3 justify-start">
+                      <Avatar className="h-8 w-8">
+                        <AvatarFallback>
+                          <Bot className="h-4 w-4" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="max-w-[80%] rounded-lg p-3 bg-muted">
+                        <p className="text-sm">Bonjour ! Je suis votre assistant IA spécialisé en pharmacie. Comment puis-je vous aider aujourd'hui ?</p>
+                        <p className="text-xs opacity-70 mt-1">14:32</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3 justify-end">
+                      <div className="max-w-[80%] rounded-lg p-3 bg-primary text-primary-foreground">
+                        <p className="text-sm">Patient diabétique sous metformine 850mg, peut-il prendre de l'ibuprofène pour ses douleurs articulaires?</p>
+                        <p className="text-xs opacity-70 mt-1">14:35</p>
+                      </div>
+                      <Avatar className="h-8 w-8">
+                        <AvatarFallback>
+                          <User className="h-4 w-4" />
+                        </AvatarFallback>
+                      </Avatar>
+                    </div>
+                    
+                    <div className="flex gap-3 justify-start">
+                      <Avatar className="h-8 w-8">
+                        <AvatarFallback>
+                          <Bot className="h-4 w-4" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="max-w-[80%] rounded-lg p-3 bg-muted">
+                        <p className="text-sm">
+                          ⚠️ <strong>Attention</strong> : L'ibuprofène peut altérer la fonction rénale et potentialiser le risque d'acidose lactique avec la metformine.<br /><br />
+                          <strong>Alternatives recommandées :</strong><br />
+                          • Paracétamol 1g x3/jour (première intention)<br />
+                          • Application locale de diclofénac gel si douleurs localisées<br /><br />
+                          <strong>Si AINS nécessaire :</strong> Surveillance fonction rénale + glycémie renforcée
+                        </p>
+                        <p className="text-xs opacity-70 mt-1">14:36</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-muted rounded-lg">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Système opérationnel - Base de données mise à jour</span>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-green-600 font-medium">Prêt pour consultation</span>
-                    </div>
+                </ScrollArea>
+                
+                <div className="border-t p-4">
+                  <div className="flex gap-2">
+                    <Input
+                      placeholder="Posez votre question pharmaceutique..."
+                      className="flex-1"
+                      disabled
+                    />
+                    <Button size="icon" disabled>
+                      <Send className="h-4 w-4" />
+                    </Button>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Historique limité aux 50 derniers messages
+                  </p>
                 </div>
               </CardContent>
             </Card>
