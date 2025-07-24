@@ -3,33 +3,43 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap } from "lucide-react";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
+
 const DwaIASection = () => {
-  const features = [{
-    icon: MessageCircle,
-    title: "Analyse des interactions médicamenteuses",
-    description: "Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
-  }, {
-    icon: Lightbulb,
-    title: "Conseils de dispensation personnalisés",
-    description: "Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
-  }, {
-    icon: Shield,
-    title: "Conformité réglementaire marocaine",
-    description: "Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
-  }, {
-    icon: Clock,
-    title: "Veille pharmaceutique 24h/24",
-    description: "Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
-  }, {
-    icon: Zap,
-    title: "Substitution générique intelligente",
-    description: "Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
-  }, {
-    icon: Bot,
-    title: "Formation continue intégrée",
-    description: "Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
-  }];
-  return <section className="py-20 bg-gradient-health relative overflow-hidden">
+  const features = [
+    {
+      icon: MessageCircle,
+      title: "Analyse des interactions médicamenteuses",
+      description: "Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
+    },
+    {
+      icon: Lightbulb,
+      title: "Conseils de dispensation personnalisés",
+      description: "Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
+    },
+    {
+      icon: Shield,
+      title: "Conformité réglementaire marocaine",
+      description: "Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
+    },
+    {
+      icon: Clock,
+      title: "Veille pharmaceutique 24h/24",
+      description: "Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
+    },
+    {
+      icon: Zap,
+      title: "Substitution générique intelligente",
+      description: "Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
+    },
+    {
+      icon: Bot,
+      title: "Formation continue intégrée",
+      description: "Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-health relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
@@ -55,7 +65,8 @@ const DwaIASection = () => {
             </div>
 
             <div className="space-y-6 mb-8">
-              {features.map((feature, index) => <div key={index} className="flex items-start space-x-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
@@ -67,7 +78,8 @@ const DwaIASection = () => {
                       {feature.description}
                     </p>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -75,7 +87,9 @@ const DwaIASection = () => {
                 <Bot className="w-5 h-5 mr-2" />
                 Tester Dwa IA 2.0
               </Button>
-              
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                Documentation complète
+              </Button>
             </div>
           </div>
 
@@ -106,11 +120,11 @@ const DwaIASection = () => {
                     <p className="text-sm text-primary mb-2">Dwa IA 2.0</p>
                     <p className="text-sm leading-relaxed">
                       ⚠️ <strong>Attention</strong> : L'ibuprofène peut altérer la fonction rénale et potentialiser le risque d'acidose lactique avec la metformine. 
-                      <br /><br />
+                      <br/><br/>
                       <strong>Alternatives recommandées :</strong>
-                      <br />• Paracétamol 1g x3/jour (première intention)
-                      <br />• Application locale de diclofénac gel si douleurs localisées
-                      <br /><br />
+                      <br/>• Paracétamol 1g x3/jour (première intention)
+                      <br/>• Application locale de diclofénac gel si douleurs localisées
+                      <br/><br/>
                       <strong>Si AINS nécessaire :</strong> Surveillance fonction rénale + glycémie renforcée
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -141,6 +155,8 @@ const DwaIASection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default DwaIASection;
