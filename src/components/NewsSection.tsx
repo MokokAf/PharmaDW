@@ -61,7 +61,7 @@ const NewsSection = () => {
             À la une
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Restez informé des dernières actualités pharmaceutiques et des avancées médicales
+            Restez informé des dernières actualités pharmaceutiques
           </p>
         </div>
 
