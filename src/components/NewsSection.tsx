@@ -6,50 +6,70 @@ import { Clock, User, ExternalLink, ArrowRight } from "lucide-react";
 const NewsSection = () => {
   const news = [
     {
-      title: "VIH : la FDA autorise la PrEP injectable",
-      author: "Abderrahim Derraji",
-      date: "23 juin 2025",
-      source: "ledauphine.com",
-      excerpt: "L'Agence américaine du médicament (FDA) a récemment approuvé un nouveau traitement préventif contre le VIH : Yeztugo®, une injection semestrielle destinée à réduire le risque d'infection chez les adultes et adolescents à risque.",
+      title: "Nouveau traitement révolutionnaire contre l'Alzheimer approuvé",
+      author: "Dr. Sarah El Mansouri",
+      date: "15 décembre 2025",
+      source: "pharmanews.ma",
+      excerpt: "L'ANMDM (Agence Nationale du Médicament et des Dispositifs Médicaux) vient d'approuver AlzProtect®, un traitement novateur qui ralentit significativement la progression de la maladie d'Alzheimer chez les patients en stade précoce.",
       category: "Innovation",
       isNew: true
     },
     {
-      title: "Effets cardiovasculaires des traitements du TDAH: une méta-analyse rassurante",
-      author: "Abderrahim Derraji", 
-      date: "17 avril 2025",
-      source: "",
-      excerpt: "Une revue systématique et méta-analyse en réseau récente a comparé les effets cardiovasculaires des médicaments utilisés dans la prise en charge du trouble du déficit de l'attention avec ou sans hyperactivité (TDAH).",
-      category: "Recherche",
+      title: "Pénurie mondiale d'amoxicilline : stratégies d'adaptation au Maroc",
+      author: "Pr. Ahmed Bennani", 
+      date: "28 novembre 2025",
+      source: "revuepharmaceutique.ma",
+      excerpt: "Face à la pénurie mondiale d'amoxicilline, le Ministère de la Santé marocain met en place des mesures d'urgence pour garantir l'approvisionnement en antibiotiques essentiels. Focus sur les alternatives thérapeutiques disponibles.",
+      category: "Approvisionnement",
+      isNew: true
+    },
+    {
+      title: "Intelligence artificielle en pharmacie : révolution de la dispensation",
+      author: "Dr. Fatima Zahra Alami",
+      date: "20 novembre 2025", 
+      source: "innovation-pharma.ma",
+      excerpt: "Une étude pilote menée dans 15 pharmacies de Casablanca démontre l'efficacité de l'IA dans la détection des interactions médicamenteuses et l'optimisation des conseils pharmaceutiques.",
+      category: "Technologie",
+      isNew: true
+    },
+    {
+      title: "Biosimilaires : nouvelles recommandations de substitution",
+      author: "Pr. Khalid Zerouali",
+      date: "10 novembre 2025",
+      source: "guidelines-pharma.ma",
+      excerpt: "L'ANMDM publie de nouvelles directives sur l'utilisation des médicaments biosimilaires, facilitant leur intégration dans la pratique pharmaceutique tout en garantissant la sécurité des patients.",
+      category: "Réglementation",
       isNew: false
     },
     {
-      title: "Méthotrexate : un risque de surdosage encore trop fréquent!",
-      author: "Abderrahim Derraji",
-      date: "18 mars 2025", 
-      source: "",
-      excerpt: "L'Agence nationale de sécurité du médicament et des produits de santé (ANSM-France) alerte sur les surdosages de méthotrexate, souvent liés à une prise quotidienne au lieu d'une prise hebdomadaire.",
+      title: "Pharmacovigilance renforcée : nouveau système de déclaration digitale",
+      author: "Dr. Youssef Tadlaoui",
+      date: "5 novembre 2025",
+      source: "securite-medicament.ma",
+      excerpt: "Lancement d'une plateforme digitale innovante permettant aux professionnels de santé de déclarer plus facilement les effets indésirables, renforçant ainsi la surveillance post-commercialisation.",
       category: "Sécurité",
       isNew: false
     },
     {
-      title: "Association CBD et médicaments : un risque sous-estimé",
-      author: "Abderrahim Derraji",
-      date: "18 mars 2025",
-      source: "",
-      excerpt: "L'Agence nationale de sécurité du médicament et des produits de santé (ANSM-France) alerte sur les interactions entre le cannabidiol (CBD) et certains médicaments.",
-      category: "Alerte",
+      title: "Phytothérapie moderne : validation scientifique des plantes médicinales marocaines",
+      author: "Dr. Aicha Benjelloun",
+      date: "25 octobre 2025",
+      source: "phyto-recherche.ma",
+      excerpt: "Des chercheurs marocains valident scientifiquement l'efficacité de plusieurs plantes médicinales traditionnelles, ouvrant la voie à de nouveaux médicaments à base de plantes standardisés.",
+      category: "Recherche",
       isNew: false
     }
   ];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "Innovation": return "bg-secondary text-secondary-foreground";
-      case "Recherche": return "bg-primary text-primary-foreground";
-      case "Sécurité": return "bg-destructive text-destructive-foreground";
-      case "Alerte": return "bg-accent text-accent-foreground";
-      default: return "bg-muted text-muted-foreground";
+      case "Innovation": return "bg-green-100 text-green-800 border-green-200";
+      case "Approvisionnement": return "bg-orange-100 text-orange-800 border-orange-200";
+      case "Technologie": return "bg-blue-100 text-blue-800 border-blue-200";
+      case "Réglementation": return "bg-purple-100 text-purple-800 border-purple-200";
+      case "Sécurité": return "bg-red-100 text-red-800 border-red-200";
+      case "Recherche": return "bg-indigo-100 text-indigo-800 border-indigo-200";
+      default: return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 

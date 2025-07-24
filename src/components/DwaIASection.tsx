@@ -8,23 +8,33 @@ const DwaIASection = () => {
   const features = [
     {
       icon: MessageCircle,
-      title: "Consultation instantanée",
-      description: "Posez vos questions pharmaceutiques et obtenez des réponses précises en temps réel"
+      title: "Analyse des interactions médicamenteuses",
+      description: "Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
     },
     {
       icon: Lightbulb,
-      title: "Recommandations expertes",
-      description: "Conseils personnalisés basés sur les dernières recherches médicales"
+      title: "Conseils de dispensation personnalisés",
+      description: "Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
     },
     {
       icon: Shield,
-      title: "Données vérifiées",
-      description: "Informations validées par des pharmaciens et organismes de santé marocains"
+      title: "Conformité réglementaire marocaine",
+      description: "Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
     },
     {
       icon: Clock,
-      title: "Disponible 24h/24",
-      description: "Assistance continue pour vos urgences pharmaceutiques"
+      title: "Veille pharmaceutique 24h/24",
+      description: "Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
+    },
+    {
+      icon: Zap,
+      title: "Substitution générique intelligente",
+      description: "Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
+    },
+    {
+      icon: Bot,
+      title: "Formation continue intégrée",
+      description: "Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
     }
   ];
 
@@ -44,13 +54,13 @@ const DwaIASection = () => {
                 Nouveau
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Dwa IA
-                <span className="block text-primary-glow">L'intelligence artificielle pour pharmaciens</span>
+                Dwa IA 2.0
+                <span className="block text-primary-glow">Assistant pharmaceutique intelligent</span>
               </h2>
               <p className="text-xl text-white/90 leading-relaxed">
-                Révolutionnez votre pratique pharmaceutique avec notre assistant IA intelligent. 
-                Conçu spécialement pour les pharmaciens marocains, Dwa IA vous accompagne dans 
-                vos décisions quotidiennes.
+                L'intelligence artificielle révolutionnaire conçue pour transformer votre exercice pharmaceutique. 
+                Bénéficiez d'un accompagnement expert pour la dispensation, les interactions médicamenteuses 
+                et la pharmacovigilance, directement intégré à votre pratique quotidienne.
               </p>
             </div>
 
@@ -75,10 +85,10 @@ const DwaIASection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90">
                 <Bot className="w-5 h-5 mr-2" />
-                Essayer Dwa IA
+                Tester Dwa IA 2.0
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                En savoir plus
+                Documentation complète
               </Button>
             </div>
           </div>
@@ -92,8 +102,8 @@ const DwaIASection = () => {
                     <img src={dwaIcon} alt="Dwa IA" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary">Dwa IA</h3>
-                    <p className="text-sm text-muted-foreground">Assistant pharmaceutique</p>
+                    <h3 className="font-semibold text-primary">Dwa IA 2.0</h3>
+                    <p className="text-sm text-muted-foreground">Assistant pharmaceutique certifié</p>
                   </div>
                   <div className="ml-auto">
                     <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" />
@@ -102,22 +112,30 @@ const DwaIASection = () => {
 
                 <div className="space-y-4">
                   <div className="bg-muted rounded-lg p-4">
-                    <p className="text-sm text-muted-foreground mb-2">Vous</p>
-                    <p>Quelles sont les interactions médicamenteuses entre l'aspirine et le warfarin?</p>
+                    <p className="text-sm text-muted-foreground mb-2">Pharmacien</p>
+                    <p>Patient diabétique sous metformine 850mg, peut-il prendre de l'ibuprofène pour ses douleurs articulaires?</p>
                   </div>
                   
                   <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-                    <p className="text-sm text-primary mb-2">Dwa IA</p>
+                    <p className="text-sm text-primary mb-2">Dwa IA 2.0</p>
                     <p className="text-sm leading-relaxed">
-                      L'association aspirine + warfarin présente un risque hémorragique majeur. 
-                      Je recommande une surveillance renforcée de l'INR et l'ajustement des posologies...
+                      ⚠️ <strong>Attention</strong> : L'ibuprofène peut altérer la fonction rénale et potentialiser le risque d'acidose lactique avec la metformine. 
+                      <br/><br/>
+                      <strong>Alternatives recommandées :</strong>
+                      <br/>• Paracétamol 1g x3/jour (première intention)
+                      <br/>• Application locale de diclofénac gel si douleurs localisées
+                      <br/><br/>
+                      <strong>Si AINS nécessaire :</strong> Surveillance fonction rénale + glycémie renforcée
                     </p>
-                    <div className="mt-3 flex space-x-2">
-                      <Badge variant="outline" className="text-xs">
-                        Interaction majeure
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Badge variant="outline" className="text-xs bg-red-50 text-red-700 border-red-200">
+                        Interaction modérée
                       </Badge>
-                      <Badge variant="outline" className="text-xs">
-                        Surveillance INR
+                      <Badge variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">
+                        Diabète T2
+                      </Badge>
+                      <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
+                        Alternative suggérée
                       </Badge>
                     </div>
                   </div>
@@ -125,10 +143,10 @@ const DwaIASection = () => {
 
                 <div className="mt-6 p-4 bg-gradient-subtle rounded-lg">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Prêt à répondre</span>
+                    <span className="text-muted-foreground">Système opérationnel - Base de données mise à jour</span>
                     <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
-                      <span className="text-secondary">En ligne</span>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-green-600 font-medium">Prêt pour consultation</span>
                     </div>
                   </div>
                 </div>
