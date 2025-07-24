@@ -1,7 +1,8 @@
 import React from 'react';
-import { User, Mail, Shield, BookOpen } from 'lucide-react';
+import { User, Mail, Shield, BookOpen, ArrowLeft, LogOut } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import {
   Sidebar,
   SidebarContent,
@@ -10,18 +11,67 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuItem,
+  SidebarHeader,
   useSidebar,
 } from '@/components/ui/sidebar';
 import { useAuth } from '@/contexts/AuthContext';
 
 export function PharmacistSidebar() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const { state } = useSidebar();
+  const navigate = useNavigate();
   const isCollapsed = state === "collapsed";
 
   return (
     <Sidebar collapsible="icon">
+      <SidebarHeader>
+        <div className="flex flex-col gap-2">
+          <h2 className={`font-bold ${isCollapsed ? 'text-sm' : 'text-lg'}`}>
+            {isCollapsed ? 'TB' : 'Tableau de Bord'}
+          </h2>
+          {!isCollapsed && (
+            <p className="text-sm text-muted-foreground">
+              Bienvenue, {user?.name}
+            </p>
+          )}
+        </div>
+      </SidebarHeader>
+      
       <SidebarContent>
+        {/* Navigation Actions */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="flex items-center gap-2">
+            <ArrowLeft className="h-4 w-4" />
+            {!isCollapsed && "Actions"}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Button 
+                  variant="ghost" 
+                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
+                  size={isCollapsed ? "icon" : "default"}
+                  onClick={() => navigate('/')}
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Retour à l'accueil</span>}
+                </Button>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Button 
+                  variant="ghost" 
+                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
+                  size={isCollapsed ? "icon" : "default"}
+                  onClick={logout}
+                >
+                  <LogOut className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Déconnexion</span>}
+                </Button>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         {/* User Information Section */}
         <SidebarGroup>
           <SidebarGroupLabel className="flex items-center gap-2">
