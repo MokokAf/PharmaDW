@@ -1,0 +1,67 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Drug",
+    "id": "paracetamol-500mg",
+    "name": "Paracétamol 500mg",
+    "description": "# Paracétamol 500mg\n\nLe paracétamol est un médicament analgésique et antipyrétique largement utilisé.\n\n## Indications\n- Douleurs légères à modérées\n- Fièvre\n- Maux de tête\n- Douleurs musculaires\n\n## Posologie\nAdulte : 1 à 2 comprimés jusqu'à 4 fois par jour.\n\n## Contre-indications\n- Allergie au paracétamol\n- Insuffisance hépatique sévère",
+    "activeIngredient": ["Paracétamol"],
+    "dosageForm": "Comprimé",
+    "strength": "500mg",
+    "presentation": "Boîte de 30 comprimés",
+    "therapeuticClass": ["Analgésique", "Antipyrétique"],
+    "atcCode": "N02BE01",
+    "status": "Commercialisé",
+    "productType": "Drug",
+    "manufacturer": "MAPHAR",
+    "price": {
+      "currency": "MAD",
+      "public": 15.50,
+      "hospital": 12.80
+    },
+    "table": "Tableau A",
+    "updatedAt": "2025-01-15T10:30:00Z"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Drug",
+    "id": "amoxicilline-1g",
+    "name": "Amoxicilline 1g",
+    "description": "# Amoxicilline 1g\n\nAntibiotique de la famille des pénicillines.\n\n## Indications\n- Infections bactériennes\n- Pneumonie\n- Otite\n- Sinusite\n\n## Posologie\nAdulte : 1g 2 à 3 fois par jour selon prescription médicale.\n\n## Contre-indications\n- Allergie aux pénicillines\n- Mononucléose infectieuse",
+    "activeIngredient": ["Amoxicilline"],
+    "dosageForm": "Gélule",
+    "strength": "1g",
+    "presentation": "Boîte de 12 gélules",
+    "therapeuticClass": ["Antibiotique", "Béta-lactamine"],
+    "atcCode": "J01CA04",
+    "status": "Commercialisé",
+    "productType": "Drug",
+    "manufacturer": "COOPER PHARMA",
+    "price": {
+      "currency": "MAD",
+      "public": 45.20,
+      "hospital": 38.50
+    },
+    "table": "Tableau B",
+    "updatedAt": "2025-01-10T14:22:00Z"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalDevice",
+    "id": "thermometre-digital",
+    "name": "Thermomètre Digital",
+    "description": "# Thermomètre Digital\n\nDispositif médical pour la mesure de la température corporelle.\n\n## Caractéristiques\n- Précision : ±0.1°C\n- Temps de mesure : 60 secondes\n- Écran LCD\n- Signal sonore\n\n## Utilisation\nPlacer sous la langue ou sous l'aisselle. Attendre le signal sonore.",
+    "activeIngredient": [],
+    "dosageForm": "Dispositif",
+    "presentation": "1 thermomètre + étui",
+    "therapeuticClass": ["Dispositif médical"],
+    "status": "Commercialisé",
+    "productType": "MedicalDevice",
+    "manufacturer": "MEDTECH",
+    "price": {
+      "currency": "MAD",
+      "public": 85.00
+    },
+    "updatedAt": "2025-01-05T09:15:00Z"
+  }
+]
