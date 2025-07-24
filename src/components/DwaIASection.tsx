@@ -83,8 +83,8 @@ const DwaIASection = () => {
             
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => navigate('/espace-pharmaciens')}>
-                <Bot className="w-5 h-5 mr-2" />
+              <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold" onClick={() => navigate('/espace-pharmaciens')}>
+                <Bot className="w-6 h-6 mr-2 stroke-2" />
                 Tester Dwa IA 2.0
               </Button>
               
