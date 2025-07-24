@@ -47,7 +47,7 @@ const DwaIASection = () => {
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 Dwa IA 2.0
-                <span className="block text-[s#F5F7FA] text-slate-500">Assistant pharmaceutique intelligent</span>
+                <span className="block font-extralight text-[s#F5F7FA] text-[#f5f7fa]">Assistant pharmaceutique intelligent</span>
               </h2>
               <p className="text-xl text-white/90 leading-relaxed">
                 L'intelligence artificielle révolutionnaire conçue pour transformer votre exercice pharmaceutique. 
