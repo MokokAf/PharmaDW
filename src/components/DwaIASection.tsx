@@ -10,21 +10,6 @@ import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
   const navigate = useNavigate();
 
-  const FeatureItem = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-    <div className="flex items-start space-x-4 mb-6">
-      <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-        <Icon className="h-6 w-6 text-white" />
-      </div>
-      <div>
-        <h3 className="font-semibold text-lg text-white mb-1">
-          {title}
-        </h3>
-        <p className="text-white/80">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
   return <section className="py-20 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
@@ -50,43 +35,89 @@ const DwaIASection = () => {
               </p>
             </div>
 
-            <FeatureItem 
-              icon={MessageCircle}
-              title="Analyse des interactions médicamenteuses"
-              description="Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
-            />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Analyse des interactions médicamenteuses
+                </h3>
+                <p className="text-white/80">
+                  Détection automatique des interactions entre médicaments avec évaluation du niveau de risque
+                </p>
+              </div>
+            </div>
             
-            <FeatureItem 
-              icon={Lightbulb}
-              title="Conseils de dispensation personnalisés"
-              description="Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
-            />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Lightbulb className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Conseils de dispensation personnalisés
+                </h3>
+                <p className="text-white/80">
+                  Recommandations adaptées selon l'âge, le poids et les pathologies du patient
+                </p>
+              </div>
+            </div>
             
-            <FeatureItem 
-              icon={Shield}
-              title="Conformité réglementaire marocaine"
-              description="Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
-            />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Conformité réglementaire marocaine
+                </h3>
+                <p className="text-white/80">
+                  Informations validées selon les directives de l'ANMDM et du Ministère de la Santé
+                </p>
+              </div>
+            </div>
             
-            <FeatureItem 
-              icon={Clock}
-              title="Veille pharmaceutique 24h/24"
-              description="Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
-            />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Clock className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Veille pharmaceutique 24h/24
+                </h3>
+                <p className="text-white/80">
+                  Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM
+                </p>
+              </div>
+            </div>
             
-            <FeatureItem 
-              icon={Zap}
-              title="Substitution générique intelligente"
-              description="Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
-            />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Substitution générique intelligente
+                </h3>
+                <p className="text-white/80">
+                  Propositions automatiques de génériques disponibles avec équivalences thérapeutiques
+                </p>
+              </div>
+            </div>
             
-            <FeatureItem 
-              icon={Bot}
-              title="Formation continue intégrée"
-              description="Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
-            />
-
-            <div className="mb-8" />
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Bot className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Formation continue intégrée
+                </h3>
+                <p className="text-white/80">
+                  Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS
+                </p>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => navigate('/espace-pharmaciens')}>
