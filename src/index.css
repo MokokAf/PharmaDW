@@ -8,47 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Clean medical background */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* Pure White backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 217 26% 24%;
 
     /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 217 26% 24%;
 
     /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 217 26% 24%;
 
-    /* Primary - Medical Blue */
-    --primary: 210 85% 45%;
+    /* Primary - Pharma Digital Green */
+    --primary: 162 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 85% 65%;
+    --primary-glow: 162 100% 65%;
 
-    /* Secondary - Health Green */
-    --secondary: 150 60% 45%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Light Neutral Gray */
+    --secondary: 214 32% 97%;
+    --secondary-foreground: 217 26% 24%;
 
     /* Muted tones */
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 214 32% 97%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Accent - Pharmaceutical Purple */
-    --accent: 260 60% 55%;
+    /* Accent - Muted Violet */
+    --accent: 270 55% 61%;
     --accent-foreground: 0 0% 100%;
 
-    /* Trust Blue variation */
-    --trust: 200 85% 50%;
+    /* Trust - Vibrant Blue */
+    --trust: 208 100% 50%;
     --trust-foreground: 0 0% 100%;
 
     /* Destructive */
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 210 25% 88%;
-    --input: 210 25% 92%;
-    --ring: 210 85% 45%;
+    /* Borders and inputs - Soft Gray */
+    --border: 215 28% 89%;
+    --input: 214 32% 97%;
+    --ring: 162 100% 45%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
