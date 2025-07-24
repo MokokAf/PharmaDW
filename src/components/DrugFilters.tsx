@@ -44,14 +44,14 @@ export function DrugFilters({
       {/* Filter dropdowns */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Select
-          value={filters.manufacturer}
-          onValueChange={(value) => onFiltersChange({ ...filters, manufacturer: value })}
+          value={filters.manufacturer || 'all'}
+          onValueChange={(value) => onFiltersChange({ ...filters, manufacturer: value === 'all' ? '' : value })}
         >
           <SelectTrigger>
             <SelectValue placeholder="Laboratoire" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">Tous les laboratoires</SelectItem>
+            <SelectItem value="all">Tous les laboratoires</SelectItem>
             {manufacturers.map((manufacturer) => (
               <SelectItem key={manufacturer} value={manufacturer}>
                 {manufacturer}
@@ -61,14 +61,14 @@ export function DrugFilters({
         </Select>
 
         <Select
-          value={filters.therapeuticClass}
-          onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value })}
+          value={filters.therapeuticClass || 'all'}
+          onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value === 'all' ? '' : value })}
         >
           <SelectTrigger>
             <SelectValue placeholder="Classe thérapeutique" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">Toutes les classes</SelectItem>
+            <SelectItem value="all">Toutes les classes</SelectItem>
             {therapeuticClasses.map((therapeuticClass) => (
               <SelectItem key={therapeuticClass} value={therapeuticClass}>
                 {therapeuticClass}
