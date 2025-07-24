@@ -9,31 +9,22 @@ import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
   const navigate = useNavigate();
-  const features = [{
-    icon: MessageCircle,
-    title: "Analyse des interactions médicamenteuses",
-    description: "Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
-  }, {
-    icon: Lightbulb,
-    title: "Conseils de dispensation personnalisés",
-    description: "Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
-  }, {
-    icon: Shield,
-    title: "Conformité réglementaire marocaine",
-    description: "Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
-  }, {
-    icon: Clock,
-    title: "Veille pharmaceutique 24h/24",
-    description: "Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
-  }, {
-    icon: Zap,
-    title: "Substitution générique intelligente",
-    description: "Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
-  }, {
-    icon: Bot,
-    title: "Formation continue intégrée",
-    description: "Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
-  }];
+
+  const FeatureItem = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
+    <div className="flex items-start space-x-4">
+      <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+        <Icon className="h-6 w-6 text-white" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-lg text-white mb-1">
+          {title}
+        </h3>
+        <p className="text-white/80">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
   return <section className="py-20 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
@@ -60,19 +51,41 @@ const DwaIASection = () => {
             </div>
 
             <div className="space-y-6 mb-8">
-              {features.map((feature, index) => <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-white mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white/80">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>)}
+              <FeatureItem 
+                icon={MessageCircle}
+                title="Analyse des interactions médicamenteuses"
+                description="Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
+              />
+              
+              <FeatureItem 
+                icon={Lightbulb}
+                title="Conseils de dispensation personnalisés"
+                description="Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
+              />
+              
+              <FeatureItem 
+                icon={Shield}
+                title="Conformité réglementaire marocaine"
+                description="Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
+              />
+              
+              <FeatureItem 
+                icon={Clock}
+                title="Veille pharmaceutique 24h/24"
+                description="Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
+              />
+              
+              <FeatureItem 
+                icon={Zap}
+                title="Substitution générique intelligente"
+                description="Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
+              />
+              
+              <FeatureItem 
+                icon={Bot}
+                title="Formation continue intégrée"
+                description="Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
+              />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
