@@ -31,7 +31,7 @@ const DwaIASection = () => {
     title: "Formation continue intégrée",
     description: "Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
   }];
-  return <section className="py-20 bg-gradient-health relative overflow-hidden">
+  return <section className="py-20 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
@@ -129,7 +129,7 @@ const DwaIASection = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-gradient-subtle rounded-lg">
+                <div className="mt-6 p-4 bg-muted rounded-lg">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">Système opérationnel - Base de données mise à jour</span>
                     <div className="flex items-center space-x-1">
