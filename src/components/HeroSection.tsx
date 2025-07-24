@@ -29,16 +29,16 @@ const HeroSection = () => {
           <div className="mb-12">
             <div className="relative max-w-2xl mx-auto">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-6 w-6" />
                 <Input
                   type="text"
                   placeholder="Rechercher un médicament, un laboratoire, une substance active..."
-                  className="pl-12 pr-4 py-4 text-lg rounded-full border-2 border-border focus:border-primary shadow-medium"
+                  className="pl-14 pr-40 py-6 text-lg rounded-full border-2 border-border focus:border-primary shadow-medium h-16"
                 />
                 <Button 
                   variant="medical" 
                   size="lg" 
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full px-8"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 rounded-full px-8 h-12"
                 >
                   Rechercher
                 </Button>
