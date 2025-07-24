@@ -51,7 +51,7 @@ export const PharmacistDashboard: React.FC = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-4">
           {/* User Info Card */}
           <Card className="lg:col-span-1">
             <CardHeader>
@@ -84,15 +84,8 @@ export const PharmacistDashboard: React.FC = () => {
             </CardContent>
           </Card>
 
-          {/* Chat Bot */}
-          <div className="lg:col-span-2">
-            <ChatBot />
-          </div>
-        </div>
-
-        {/* Additional Features */}
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <Card>
+          {/* Ressources Pharmaceutiques Card */}
+          <Card className="lg:col-span-1">
             <CardHeader>
               <CardTitle>Ressources Pharmaceutiques</CardTitle>
               <CardDescription>
@@ -106,33 +99,10 @@ export const PharmacistDashboard: React.FC = () => {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Formations Continues</CardTitle>
-              <CardDescription>
-                Modules de formation et certification
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="outline" className="w-full">
-                Voir les Formations
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Support Technique</CardTitle>
-              <CardDescription>
-                Assistance et documentation
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="outline" className="w-full">
-                Contacter le Support
-              </Button>
-            </CardContent>
-          </Card>
+          {/* Chat Bot */}
+          <div className="lg:col-span-2">
+            <ChatBot />
+          </div>
         </div>
       </main>
     </div>

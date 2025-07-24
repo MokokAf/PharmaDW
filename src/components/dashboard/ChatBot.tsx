@@ -122,7 +122,7 @@ export const ChatBot: React.FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Bot className="h-5 w-5" />
-          Assistant IA Pharmaceutique
+          Assistant DwaIA 2.0
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col flex-1 p-0">
