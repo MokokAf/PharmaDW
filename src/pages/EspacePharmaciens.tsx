@@ -1,22 +1,23 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React from 'react';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import { AuthForm } from '@/components/auth/AuthForm';
+import { PharmacistDashboard } from '@/components/dashboard/PharmacistDashboard';
 
-const EspacePharmaciens = () => {
+const EspacePharmacienContent: React.FC = () => {
+  const { user } = useAuth();
+
+  if (!user) {
+    return <AuthForm />;
+  }
+
+  return <PharmacistDashboard />;
+};
+
+const EspacePharmaciens: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Espace Pharmaciens</h1>
-          <div className="bg-card rounded-lg p-8 shadow-soft">
-            <p className="text-muted-foreground text-lg">
-              Bienvenue dans l'espace dédié aux pharmaciens. Cette section sera bientôt développée pour offrir des outils et ressources spécialisés.
-            </p>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <EspacePharmacienContent />
+    </AuthProvider>
   );
 };
 

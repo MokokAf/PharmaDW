@@ -1,8 +1,32 @@
-# Welcome to your Lovable project
+# Espace Pharmaciens - Application Web
+
+Une application web moderne pour pharmaciens avec authentification et assistant IA intégré.
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/ffa3f3f9-2764-4e44-8f21-440be3c736c9
+
+## Fonctionnalités
+
+### 🔐 Authentification
+- Connexion avec email/mot de passe
+- Inscription avec confirmation de mot de passe
+- Connexion via Google OAuth (simulée)
+- Interface entièrement en français
+- Gestion des erreurs et validation des formulaires
+
+### 🤖 Assistant IA
+- Chatbot spécialisé en pharmacie
+- Interface de chat avec historique scrollable
+- Limitation automatique à 50 messages maximum
+- Simulation d'appels API Perplexity
+- Réponses contextuelles basées sur les mots-clés
+
+### 📱 Interface Utilisateur
+- Design responsive (mobile, tablette, desktop)
+- Thème cohérent avec shadcn/ui
+- Navigation intuitive avec React Router
+- Toasts pour les notifications utilisateur
 
 ## How can I edit this code?
 
