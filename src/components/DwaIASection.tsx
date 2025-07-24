@@ -147,17 +147,7 @@ const DwaIASection = () => {
                   </div>
                 </ScrollArea>
                 
-                <div className="border-t p-4">
-                  <div className="flex gap-2">
-                    <Input placeholder="Posez votre question pharmaceutique..." className="flex-1" disabled />
-                    <Button size="icon" disabled>
-                      <Send className="h-4 w-4" />
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Historique limité aux 50 derniers messages
-                  </p>
-                </div>
+                
               </CardContent>
             </Card>
           </div>
