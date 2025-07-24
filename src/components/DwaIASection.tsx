@@ -93,7 +93,7 @@ const DwaIASection = () => {
 
           {/* Right Content - AI Interface Preview */}
           <div className="relative flex justify-center lg:justify-start">
-            <Card className="h-[600px] flex flex-col w-full max-w-md">
+            <Card className="w-full max-w-md h-[500px] lg:h-[600px] flex flex-col">{/* Made responsive height and added max-width */}
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Bot className="h-5 w-5" />
