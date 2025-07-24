@@ -32,7 +32,7 @@ const HeroSection = () => {
                 <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-6 w-6" />
                 <Input
                   type="text"
-                  placeholder="Rechercher un médicament, un laboratoire, une substance active..."
+                  placeholder="Médicament, Principe actif, Laboratoire..."
                   className="pl-14 pr-40 py-6 text-lg rounded-full border-2 border-border focus:border-primary shadow-medium h-16"
                 />
                 <Button 
