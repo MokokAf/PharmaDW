@@ -21,7 +21,7 @@ const buttonVariants = cva(
         medical: "bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300",
         health: "bg-gradient-health text-primary-foreground hover:shadow-medium transition-all duration-300",
         trust: "bg-trust text-trust-foreground hover:bg-trust/90 shadow-soft",
-        ai: "bg-gradient-trust text-accent-foreground hover:shadow-glow transition-all duration-500 animate-pulse",
+        ai: "bg-gradient-trust text-accent-foreground hover:shadow-glow transition-all duration-500",
       },
       size: {
         default: "h-10 px-4 py-2",

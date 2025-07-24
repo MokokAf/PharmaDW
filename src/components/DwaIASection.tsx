@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
+  const navigate = useNavigate();
   const features = [{
     icon: MessageCircle,
     title: "Analyse des interactions médicamenteuses",
@@ -71,7 +73,12 @@ const DwaIASection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90">
+              <Button 
+                variant="ai" 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90"
+                onClick={() => navigate('/espace-pharmaciens')}
+              >
                 <Bot className="w-5 h-5 mr-2" />
                 Tester Dwa IA 2.0
               </Button>
