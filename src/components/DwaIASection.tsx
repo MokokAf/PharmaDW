@@ -11,7 +11,7 @@ const DwaIASection = () => {
   const navigate = useNavigate();
 
   const FeatureItem = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-    <div className="flex items-start space-x-4">
+    <div className="flex items-start space-x-4 mb-6">
       <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
         <Icon className="h-6 w-6 text-white" />
       </div>
@@ -50,43 +50,43 @@ const DwaIASection = () => {
               </p>
             </div>
 
-            <div className="space-y-6 mb-8">
-              <FeatureItem 
-                icon={MessageCircle}
-                title="Analyse des interactions médicamenteuses"
-                description="Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
-              />
-              
-              <FeatureItem 
-                icon={Lightbulb}
-                title="Conseils de dispensation personnalisés"
-                description="Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
-              />
-              
-              <FeatureItem 
-                icon={Shield}
-                title="Conformité réglementaire marocaine"
-                description="Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
-              />
-              
-              <FeatureItem 
-                icon={Clock}
-                title="Veille pharmaceutique 24h/24"
-                description="Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
-              />
-              
-              <FeatureItem 
-                icon={Zap}
-                title="Substitution générique intelligente"
-                description="Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
-              />
-              
-              <FeatureItem 
-                icon={Bot}
-                title="Formation continue intégrée"
-                description="Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
-              />
-            </div>
+            <FeatureItem 
+              icon={MessageCircle}
+              title="Analyse des interactions médicamenteuses"
+              description="Détection automatique des interactions entre médicaments avec évaluation du niveau de risque"
+            />
+            
+            <FeatureItem 
+              icon={Lightbulb}
+              title="Conseils de dispensation personnalisés"
+              description="Recommandations adaptées selon l'âge, le poids et les pathologies du patient"
+            />
+            
+            <FeatureItem 
+              icon={Shield}
+              title="Conformité réglementaire marocaine"
+              description="Informations validées selon les directives de l'ANMDM et du Ministère de la Santé"
+            />
+            
+            <FeatureItem 
+              icon={Clock}
+              title="Veille pharmaceutique 24h/24"
+              description="Alertes en temps réel sur les retraits de lots, ruptures de stock et nouvelles AMM"
+            />
+            
+            <FeatureItem 
+              icon={Zap}
+              title="Substitution générique intelligente"
+              description="Propositions automatiques de génériques disponibles avec équivalences thérapeutiques"
+            />
+            
+            <FeatureItem 
+              icon={Bot}
+              title="Formation continue intégrée"
+              description="Mise à jour automatique des connaissances avec les dernières recommandations HAS/OMS"
+            />
+
+            <div className="mb-8" />
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => navigate('/espace-pharmaciens')}>
