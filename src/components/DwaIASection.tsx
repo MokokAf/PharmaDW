@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,11 +5,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap, Send, User, Pill } from "lucide-react";
-import { useRouter } from "next/navigation";
-import dwaIcon from "@/assets/dwa-ia-icon.jpg";
+import { useNavigate } from "react-router-dom";
 
 const DwaIASection = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   return <section className="py-24 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
@@ -146,7 +143,7 @@ const DwaIASection = () => {
 
         {/* Centered Button at Bottom */}
         <div className="flex justify-center">
-          <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold hover-scale" onClick={() => router.push('/espace-pharmaciens')}>
+          <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold hover-scale" onClick={() => navigate('/espace-pharmaciens')}>
             <Bot className="w-6 h-6 mr-2 stroke-2" />
             Tester Dwa IA 2.0
           </Button>
