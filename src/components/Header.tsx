@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Newspaper, Mail, Users, Building2, Pill } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [{
@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             
             <div>
               <h1 className="text-xl text-primary font-light">Dwaia.ma</h1>
@@ -44,7 +44,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => item.href.startsWith('/') ? <Link key={index} href={item.href} className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors">
+            {navItems.map((item, index) => item.href.startsWith('/') ? <Link key={index} to={item.href} className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors">
                   <item.icon className="h-4 w-4" />
                   <span>{item.label}</span>
                 </Link> : <a key={index} href={item.href} className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors">
@@ -68,7 +68,7 @@ const Header = () => {
                 </Button>
               </div>
               <nav className="space-y-4">
-                {navItems.map((item, index) => item.href.startsWith('/') ? <Link key={index} href={item.href} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors" onClick={() => setIsOpen(false)}>
+                {navItems.map((item, index) => item.href.startsWith('/') ? <Link key={index} to={item.href} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors" onClick={() => setIsOpen(false)}>
                       <item.icon className="h-5 w-5" />
                       <span>{item.label}</span>
                     </Link> : <a key={index} href={item.href} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors" onClick={() => setIsOpen(false)}>

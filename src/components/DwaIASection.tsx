@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Bot, MessageCircle, Lightbulb, Clock, Shield, Zap, Send, User, Pill } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
+import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
   const navigate = useNavigate();
   return <section className="py-24 bg-primary relative overflow-hidden">

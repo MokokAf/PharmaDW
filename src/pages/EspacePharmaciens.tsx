@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { AuthForm } from '@/components/auth/AuthForm';
@@ -15,10 +13,12 @@ const EspacePharmacienContent: React.FC = () => {
   return <PharmacistDashboard />;
 };
 
-export default function EspacePharmaciens() {
+const EspacePharmaciens: React.FC = () => {
   return (
     <AuthProvider>
       <EspacePharmacienContent />
     </AuthProvider>
   );
-}
+};
+
+export default EspacePharmaciens;

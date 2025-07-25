@@ -1,35 +1,28 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { useDrugs, useDrugFilters } from "@/hooks/useDrugs";
-import { AlphabetFilter } from "@/components/AlphabetFilter";
-import { DrugFilters } from "@/components/DrugFilters";
-import { VirtualizedDrugList } from "@/components/VirtualizedDrugList";
-import { Skeleton } from "@/components/ui/skeleton";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+import { useEffect, useState } from 'react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useDrugs, useDrugFilters } from '@/hooks/useDrugs';
+import { AlphabetFilter } from '@/components/AlphabetFilter';
+import { DrugFilters } from '@/components/DrugFilters';
+import { VirtualizedDrugList } from '@/components/VirtualizedDrugList';
+import { AlertCircle } from 'lucide-react';
 
 export default function Medicaments() {
   const { data: drugs = [], isLoading, error } = useDrugs();
   const { filters, setFilters, filteredDrugs, manufacturers, therapeuticClasses } = useDrugFilters(drugs);
   const [listHeight, setListHeight] = useState(600);
 
+  // Calculate optimal list height based on viewport
   useEffect(() => {
     const calculateHeight = () => {
       const viewportHeight = window.innerHeight;
-      const headerHeight = 100;
-      const filtersHeight = 200;
-      const footerHeight = 100;
-      const padding = 40;
+      const headerHeight = 120; // Approximate header + breadcrumb height
+      const filtersHeight = 200; // Approximate filters height
+      const footerMargin = 100; // Margin for footer
       
-      const availableHeight = viewportHeight - headerHeight - filtersHeight - footerHeight - padding;
-      setListHeight(Math.max(400, availableHeight));
+      const availableHeight = viewportHeight - headerHeight - filtersHeight - footerMargin;
+      setListHeight(Math.max(400, Math.min(800, availableHeight)));
     };
 
     calculateHeight();
@@ -39,17 +32,20 @@ export default function Medicaments() {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center text-red-500">
-          <h1 className="text-2xl font-bold mb-4">Erreur de chargement</h1>
-          <p>Impossible de charger les données des médicaments.</p>
-        </div>
+      <div className="container mx-auto py-8">
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            Erreur lors du chargement des médicaments. Veuillez réessayer plus tard.
+          </AlertDescription>
+        </Alert>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-6">
+    <div className="container mx-auto py-8 space-y-6">
+      {/* Breadcrumb */}
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -62,41 +58,58 @@ export default function Medicaments() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Base de données des médicaments</h1>
-          {!isLoading && (
-            <p className="text-muted-foreground mt-2">
-              {filteredDrugs.length} médicament{filteredDrugs.length !== 1 ? 's' : ''} disponible{filteredDrugs.length !== 1 ? 's' : ''}
-            </p>
+      {/* Page Header */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold text-foreground">
+          Base de données des médicaments
+        </h1>
+        <p className="text-muted-foreground">
+          {isLoading ? (
+            <Skeleton className="h-4 w-64" />
+          ) : (
+            `${filteredDrugs.length} médicament(s) sur ${drugs.length} au total`
           )}
-        </div>
+        </p>
       </div>
 
       {isLoading ? (
         <div className="space-y-6">
-          <Skeleton className="h-16 w-full" />
-          <div className="grid gap-4">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Skeleton key={i} className="h-24 w-full" />
-            ))}
-          </div>
+          <Skeleton className="h-24 w-full" />
+          <Skeleton className="h-32 w-full" />
+          <Skeleton className="h-96 w-full" />
         </div>
       ) : (
         <>
+          {/* Alphabet Filter */}
           <AlphabetFilter
             selectedLetter={filters.letter}
-            onLetterSelect={(letter) => setFilters(prev => ({ ...prev, letter }))}
+            onLetterSelect={(letter) => setFilters({ ...filters, letter })}
           />
-          
+
+          {/* Search and Filters */}
           <DrugFilters
             filters={filters}
             onFiltersChange={setFilters}
             manufacturers={manufacturers}
             therapeuticClasses={therapeuticClasses}
           />
-          
-          <VirtualizedDrugList drugs={filteredDrugs} height={listHeight} />
+
+          {/* Results */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-semibold">
+                Résultats
+              </h2>
+              <div className="text-sm text-muted-foreground">
+                {filteredDrugs.length} médicament(s) trouvé(s)
+              </div>
+            </div>
+
+            <VirtualizedDrugList 
+              drugs={filteredDrugs} 
+              height={listHeight}
+            />
+          </div>
         </>
       )}
     </div>
