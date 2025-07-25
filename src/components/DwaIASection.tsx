@@ -9,83 +9,79 @@ import { useNavigate } from "react-router-dom";
 import dwaIcon from "@/assets/dwa-ia-icon.jpg";
 const DwaIASection = () => {
   const navigate = useNavigate();
-  return <section className="py-24 bg-primary relative overflow-hidden">
+  return <section className="py-20 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
       
-      <div className="relative container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start mb-20">
+      <div className="relative container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Left Content */}
-          <div className="text-white text-center lg:text-left space-y-8">
-            <div className="space-y-6">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+          <div className="text-white text-center lg:text-left">
+            <div className="mb-6">
+              <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
                 <Pill className="w-4 h-4 mr-1" />
                 Réservé aux Pharmaciens
               </Badge>
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                  Dwa IA 2.0
-                  <span className="block font-extralight text-[#f5f7fa] mt-2">Assistant pharmaceutique intelligent</span>
-                </h2>
-                <p className="text-xl text-white/90 leading-relaxed max-w-lg">
-                  L'intelligence artificielle révolutionnaire conçue pour transformer votre exercice pharmaceutique. 
-                  Bénéficiez d'un accompagnement expert pour la dispensation, les interactions médicamenteuses 
-                  et la pharmacovigilance, directement intégré à votre pratique quotidienne.
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                Dwa IA 2.0
+                <span className="block font-extralight text-[s#F5F7FA] text-[#f5f7fa]">Assistant pharmaceutique intelligent</span>
+              </h2>
+              <p className="text-xl text-white/90 leading-relaxed">
+                L'intelligence artificielle révolutionnaire conçue pour transformer votre exercice pharmaceutique. 
+                Bénéficiez d'un accompagnement expert pour la dispensation, les interactions médicamenteuses 
+                et la pharmacovigilance, directement intégré à votre pratique quotidienne.
+              </p>
+            </div>
+
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Analyse des interactions médicamenteuses
+                </h3>
+                <p className="text-white/80">
+                  Détection automatique des interactions entre médicaments avec évaluation du niveau de risque
                 </p>
               </div>
             </div>
-
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Analyse des interactions médicamenteuses
-                  </h3>
-                  <p className="text-white/80 leading-relaxed">
-                    Détection automatique des interactions entre médicaments avec évaluation du niveau de risque
-                  </p>
-                </div>
+            
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Lightbulb className="h-6 w-6 text-white" />
               </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Lightbulb className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Conseils de dispensation personnalisés
-                  </h3>
-                  <p className="text-white/80 leading-relaxed">
-                    Recommandations adaptées selon l'âge, le poids et les pathologies du patient
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Conseils de dispensation personnalisés
+                </h3>
+                <p className="text-white/80">
+                  Recommandations adaptées selon l'âge, le poids et les pathologies du patient
+                </p>
               </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Shield className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Conformité réglementaire marocaine
-                  </h3>
-                  <p className="text-white/80 leading-relaxed">
-                    Informations validées selon les directives de l'ANMDM et du Ministère de la Santé
-                  </p>
-                </div>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white mb-1">
+                  Conformité réglementaire marocaine
+                </h3>
+                <p className="text-white/80">
+                  Informations validées selon les directives de l'ANMDM et du Ministère de la Santé
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right Content - AI Interface Preview */}
-          <div className="relative flex justify-center lg:justify-end">
-            <Card className="w-full max-w-md h-[550px] lg:h-[650px] flex flex-col shadow-2xl">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-2 text-lg">
+          <div className="relative flex justify-center lg:justify-start">
+            <Card className="w-full max-w-md h-[500px] lg:h-[600px] flex flex-col">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
                   <Bot className="h-5 w-5" />
                   Assistant DwaIA 2.0
                 </CardTitle>
@@ -143,7 +139,7 @@ const DwaIASection = () => {
 
         {/* Centered Button at Bottom */}
         <div className="flex justify-center">
-          <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold hover-scale" onClick={() => navigate('/espace-pharmaciens')}>
+          <Button variant="ai" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold" onClick={() => navigate('/espace-pharmaciens')}>
             <Bot className="w-6 h-6 mr-2 stroke-2" />
             Tester Dwa IA 2.0
           </Button>
