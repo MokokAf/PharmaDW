@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MedDrug } from '@/types/medication';
@@ -17,7 +17,7 @@ export const DrugListItem = memo(({ drug, style }: DrugListItemProps) => {
 
   return (
     <div style={style} className="px-2 py-1">
-      <Link to={`/medicaments/${drug.id}`}>
+      <Link href={`/medicaments/${drug.id}`}>
         <Card className="hover:bg-accent/50 transition-colors cursor-pointer">
           <CardContent className="p-4">
             <div className="flex items-start justify-between gap-4">
