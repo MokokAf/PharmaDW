@@ -60,21 +60,23 @@ export default function MedicamentsPage() {
   });
 
   return (
-    <main className="container mx-auto py-8 space-y-6">
-      <BackHomeButton />
-      <h1 className="text-2xl font-semibold">Médicaments</h1>
-      <AlphabetFilter
-        selectedLetter={filters.letter}
-        onLetterSelect={(letter) => setFilters({ ...filters, letter })}
-      />
-      <DrugFiltersComponent
-        filters={filters}
-        onFiltersChange={setFilters}
-        manufacturers={manufacturers}
-        therapeuticClasses={therapeuticClasses}
-      />
-      <Separator />
-      <VirtualizedDrugList drugs={filteredDrugs} height={600} />
-    </main>
+    <Suspense fallback={<div>Chargement...</div>}>
+      <main className="container mx-auto py-8 space-y-6">
+        <BackHomeButton />
+        <h1 className="text-2xl font-semibold">Médicaments</h1>
+        <AlphabetFilter
+          selectedLetter={filters.letter}
+          onLetterSelect={(letter) => setFilters({ ...filters, letter })}
+        />
+        <DrugFiltersComponent
+          filters={filters}
+          onFiltersChange={setFilters}
+          manufacturers={manufacturers}
+          therapeuticClasses={therapeuticClasses}
+        />
+        <Separator />
+        <VirtualizedDrugList drugs={filteredDrugs} height={600} />
+      </main>
+    </Suspense>
   );
 }
