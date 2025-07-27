@@ -1,3 +1,4 @@
+"use client";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { MedDrug, DrugFilters } from "@/types/medication";
