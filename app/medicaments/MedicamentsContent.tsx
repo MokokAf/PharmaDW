@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { VirtualizedDrugList } from "@/components/VirtualizedDrugList";
 import { AlphabetFilter } from "@/components/AlphabetFilter";
@@ -60,22 +60,24 @@ export default function MedicamentsContent() {
   });
 
   return (
-    <div className="container mx-auto max-w-3xl py-6 px-2">
-      <BackHomeButton />
-      <h1 className="text-2xl font-bold mb-2">Liste des médicaments</h1>
-      <DrugFiltersComponent
-        filters={filters}
-        onFiltersChange={setFilters}
-        manufacturers={manufacturers}
-        therapeuticClasses={therapeuticClasses}
-      />
-      <Separator className="my-4" />
-      <AlphabetFilter
-        selectedLetter={filters.letter}
-        onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
-      />
-      <Separator className="my-4" />
-      <VirtualizedDrugList drugs={filteredDrugs} height={600} />
-    </div>
+    <Suspense fallback={<div>Chargement...</div>}>
+      <div className="container mx-auto max-w-3xl py-6 px-2">
+        <BackHomeButton />
+        <h1 className="text-2xl font-bold mb-2">Liste des médicaments</h1>
+        <DrugFiltersComponent
+          filters={filters}
+          onFiltersChange={setFilters}
+          manufacturers={manufacturers}
+          therapeuticClasses={therapeuticClasses}
+        />
+        <Separator className="my-4" />
+        <AlphabetFilter
+          selectedLetter={filters.letter}
+          onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
+        />
+        <Separator className="my-4" />
+        <VirtualizedDrugList drugs={filteredDrugs} height={600} />
+      </div>
+    </Suspense>
   );
 }
