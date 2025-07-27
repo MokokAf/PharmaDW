@@ -1,10 +1,18 @@
-import { Suspense } from "react";
-import MedicamentsContent from "./MedicamentsContent";
+"use client";
 
-export default function MedicamentsPage() {
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { VirtualizedDrugList } from "@/components/VirtualizedDrugList";
+import { AlphabetFilter } from "@/components/AlphabetFilter";
+import { DrugFilters as DrugFiltersComponent } from "@/components/DrugFilters";
+import { MedDrug, DrugFilters } from "@/types/medication";
+import { Separator } from "@/components/ui/separator";
+import { BackHomeButton } from "@/components/BackHomeButton";
+
+export default function MedicamentsContent() {
   const searchParams = useSearchParams();
   const initialSearch = searchParams.get('search') ?? '';
-    const [drugs, setDrugs] = useState<MedDrug[]>([]);
+  const [drugs, setDrugs] = useState<MedDrug[]>([]);
   const [filters, setFilters] = useState<DrugFilters>({
     search: initialSearch,
     letter: '',
@@ -24,13 +32,13 @@ export default function MedicamentsPage() {
       const text = await res.text();
       if (!text) throw new Error('Réponse JSON vide');
       const data = JSON.parse(text) as MedDrug[];
-            setDrugs(data);
+      setDrugs(data);
       setManufacturers(Array.from(new Set(data.map(d => d.manufacturer).filter(Boolean))) as string[]);
       setTherapeuticClasses(Array.from(new Set(data.flatMap(d => d.therapeuticClass ?? []))));
     })();
   }, []);
 
-    // Apply filters
+  // Apply filters
   const filteredDrugs = drugs.filter((d) => {
     if (
       filters.search &&
@@ -52,21 +60,22 @@ export default function MedicamentsPage() {
   });
 
   return (
-    <main className="container mx-auto py-8 space-y-6">
+    <div className="container mx-auto max-w-3xl py-6 px-2">
       <BackHomeButton />
-      <h1 className="text-2xl font-semibold">Médicaments</h1>
-      <AlphabetFilter
-        selectedLetter={filters.letter}
-        onLetterSelect={(letter) => setFilters({ ...filters, letter })}
-      />
+      <h1 className="text-2xl font-bold mb-2">Liste des médicaments</h1>
       <DrugFiltersComponent
         filters={filters}
         onFiltersChange={setFilters}
         manufacturers={manufacturers}
         therapeuticClasses={therapeuticClasses}
       />
-      <Separator />
+      <Separator className="my-4" />
+      <AlphabetFilter
+        selectedLetter={filters.letter}
+        onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
+      />
+      <Separator className="my-4" />
       <VirtualizedDrugList drugs={filteredDrugs} height={600} />
-    </main>
+    </div>
   );
 }
