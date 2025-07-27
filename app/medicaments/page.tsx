@@ -1,4 +1,11 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { MedDrug, DrugFilters } from "@/types/medication";
+import { BackHomeButton } from "@/components/BackHomeButton";
+import { AlphabetFilter } from "@/components/AlphabetFilter";
+import { DrugFilters as DrugFiltersComponent } from "@/components/DrugFilters";
+import { Separator } from "@/components/ui/separator";
+import { VirtualizedDrugList } from "@/components/VirtualizedDrugList";
 import MedicamentsContent from "./MedicamentsContent";
 
 export default function MedicamentsPage() {
