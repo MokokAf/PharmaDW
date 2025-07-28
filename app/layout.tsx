@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'google9810814cd6ede66d.html',
+    google: 'AfKCpIjaAz-ge5pqNfG-yq0sgZ2KkDtHsxxRy31fDt0',
   },
 }
 
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="google9810814cd6ede66d.html" />
+        <meta name="google-site-verification" content="AfKCpIjaAz-ge5pqNfG-yq0sgZ2KkDtHsxxRy31fDt0" />
       </head>
       <body className={inter.className}>
         <SiteHeader />

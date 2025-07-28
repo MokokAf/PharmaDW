@@ -130,7 +130,7 @@ const Footer = () => {
               <span className="font-medium">Dernière mise à jour</span>
             </div>
             <Badge variant="outline" className="text-sm">
-              27 Juillet 2025
+              28 Juillet 2025
             </Badge>
           </div>
           
