@@ -72,7 +72,7 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden"
+                  className="md:hidden text-white hover:bg-white/10"
                   aria-label="Ouvrir le menu"
                 >
                   <Menu className="h-6 w-6" />
@@ -85,7 +85,7 @@ const Header = () => {
 
             <SheetContent
               side="right"
-              className="w-80 p-6 transition-transform duration-300 ease-in-out"
+              className="w-80 p-6 bg-primary/90 text-white transition-transform duration-300 ease-in-out"
             >
               {/* we removed the manual <SheetClose>; the built-in X stays */}
               <h2 className="text-lg font-semibold mb-8">Menu</h2>
