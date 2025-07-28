@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google9810814cd6ede66d.html',
   },
 }
 
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="google-site-verification" content="google9810814cd6ede66d.html" />
       </head>
       <body className={inter.className}>
         <SiteHeader />

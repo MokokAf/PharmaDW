@@ -30,7 +30,8 @@ const Header = () => {
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl md:text-3xl text-white font-medium">
+            <Pill className="h-6 w-6 text-white" />
+            <h1 className="text-2xl md:text-3xl text-white font-light">
               Dwaia.ma
             </h1>
           </Link>
