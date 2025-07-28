@@ -1,5 +1,4 @@
 {
-  "/medicaments/page": "app/medicaments/page.js",
-  "/medicaments/[slug]/page": "app/medicaments/[slug]/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/pharmacies-de-garde/page": "app/pharmacies-de-garde/page.js"
 }

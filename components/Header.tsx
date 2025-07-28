@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, Home, Newspaper, Mail, Users, Building2, Pill } from "lucide-react";
+import { Menu, Home, Newspaper, Mail, Users, Building2, Pill, MapPin } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -16,6 +16,7 @@ const Header = () => {
 
   const navItems = [
     { label: "Accueil", href: "/", icon: Home },
+    { label: "Pharmacies de Garde", href: "/pharmacies-de-garde", icon: MapPin },
     { label: "Médicaments", href: "/medicaments", icon: Pill },
     { label: "Actualités", href: "#actualites", icon: Newspaper },
     { label: "Contact", href: "#contact", icon: Mail },
