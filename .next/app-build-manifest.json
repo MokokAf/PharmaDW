@@ -1,25 +1,67 @@
 {
   "pages": {
-    "/medicaments/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/medicaments/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/chunks/app/_not-found/page-4152f7027f825d63.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/css/57b89152fefa7b68.css",
+      "static/chunks/851-a64e2105200415f8.js",
+      "static/chunks/762-1bd836b7f281e7ae.js",
+      "static/chunks/311-572687c101faf507.js",
+      "static/chunks/175-28c74a1a776a0c04.js",
+      "static/chunks/app/layout-acfac3d4364043c7.js"
     ],
     "/espace-pharmaciens/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/espace-pharmaciens/page.js"
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/chunks/851-a64e2105200415f8.js",
+      "static/chunks/691-6f26da23be926e2f.js",
+      "static/chunks/723-3ecee5b89e0cfbdd.js",
+      "static/chunks/app/espace-pharmaciens/page-91b83691aa730a2f.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/chunks/851-a64e2105200415f8.js",
+      "static/chunks/691-6f26da23be926e2f.js",
+      "static/chunks/762-1bd836b7f281e7ae.js",
+      "static/chunks/203-b10327dbeddb3803.js",
+      "static/chunks/893-cc42d749e258630b.js",
+      "static/chunks/app/page-635f2f389b55686e.js"
+    ],
+    "/medicaments/page": [
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/chunks/851-a64e2105200415f8.js",
+      "static/chunks/691-6f26da23be926e2f.js",
+      "static/chunks/762-1bd836b7f281e7ae.js",
+      "static/chunks/311-572687c101faf507.js",
+      "static/chunks/203-b10327dbeddb3803.js",
+      "static/chunks/569-3356e1a7990135ad.js",
+      "static/chunks/app/medicaments/page-f2328fb0ac2949ef.js"
+    ],
+    "/medicaments/[slug]/page": [
+      "static/chunks/webpack-3e31c5bd8963a599.js",
+      "static/chunks/fd9d1056-c34851db5dc046d2.js",
+      "static/chunks/117-fcf11f955f3b2d06.js",
+      "static/chunks/main-app-b6c0de228f7b711c.js",
+      "static/chunks/851-a64e2105200415f8.js",
+      "static/chunks/102-3e444a33cb5e0bb2.js",
+      "static/chunks/app/medicaments/[slug]/page-0259f22ea7219de1.js"
     ]
   }
 }
