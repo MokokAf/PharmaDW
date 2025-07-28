@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Hero Title */}
           <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-medium text-foreground mb-4 leading-tight drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl font-medium text-foreground mb-4 leading-tight">
               <span className="block text-left">Votre référence</span>
               <span className="block text-right text-primary">pharmaceutique au Maroc</span>
             </h1>

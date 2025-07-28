@@ -24,16 +24,17 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-card/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-soft">
+    <header className="bg-primary/90 backdrop-blur-sm sticky top-0 z-50 shadow-soft">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl md:text-3xl text-primary font-bold">
+            <h1 className="text-2xl md:text-3xl text-white font-medium">
               Dwaia.ma
             </h1>
           </Link>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -44,7 +45,7 @@ const Header = () => {
                   <Link
                     key={idx}
                     href={item.href}
-                    className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
+                    className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors"
                   >
                     <item.icon className="h-4 w-4" />
                     <span>{item.label}</span>
@@ -53,7 +54,7 @@ const Header = () => {
                   <a
                     key={idx}
                     href={item.href}
-                    className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
+                    className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors"
                   >
                     <item.icon className="h-4 w-4" />
                     <span>{item.label}</span>
@@ -97,7 +98,7 @@ const Header = () => {
                       <Link
                         key={idx}
                         href={item.href}
-                        className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                        className="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white/10 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         <item.icon className="h-5 w-5" />
@@ -107,7 +108,7 @@ const Header = () => {
                       <a
                         key={idx}
                         href={item.href}
-                        className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                        className="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white/10 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         <item.icon className="h-5 w-5" />

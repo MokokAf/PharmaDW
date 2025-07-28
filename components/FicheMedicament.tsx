@@ -4,6 +4,9 @@ import React from "react";
 import { MedDrug } from "@/types/medication";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { MousePointerClick } from "lucide-react";
+import { CreditCard } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -32,9 +35,21 @@ const FicheMedicament: React.FC<FicheMedicamentProps> = ({ drug }) => {
             <h3 className="font-semibold">Principes actifs</h3>
             <div className="flex flex-wrap gap-2 mt-2">
               {drug.activeIngredient.map((ai, idx) => (
-                <Badge key={idx} variant="secondary">
-                  {ai}
-                </Badge>
+                <Link
+                  key={idx}
+                  href={`/medicaments?search=${encodeURIComponent(ai)}`}
+                  prefetch={false}
+                >
+                  <div className="relative inline-block">
+                    <Badge
+                      variant="secondary"
+                      className="cursor-pointer px-3 py-1 text-sm"
+                    >
+                      {ai}
+                    </Badge>
+                    <MousePointerClick className="absolute -bottom-1 -right-2 h-5 w-5 text-primary" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -109,17 +124,20 @@ const FicheMedicament: React.FC<FicheMedicamentProps> = ({ drug }) => {
         {drug.price && (
           <div>
             <h3 className="font-semibold">Prix</h3>
-            <p>
+            <div className="space-y-1">
               {drug.price.public && (
-                <span>
-                  Public: {drug.price.public} {drug.price.currency}
-                  {drug.price.hospital && " | "}
-                </span>
+                <div className="flex items-center gap-1">
+                  <CreditCard className="h-4 w-4" />
+                  <span>Public: {drug.price.public} {drug.price.currency}</span>
+                </div>
               )}
               {drug.price.hospital && (
-                <span>Hôpital: {drug.price.hospital} {drug.price.currency}</span>
+                <div className="flex items-center gap-1">
+                  <CreditCard className="h-4 w-4" />
+                  <span>Hôpital: {drug.price.hospital} {drug.price.currency}</span>
+                </div>
               )}
-            </p>
+            </div>
           </div>
         )}
 

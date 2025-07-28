@@ -7,7 +7,7 @@ import { AlphabetFilter } from "@/components/AlphabetFilter";
 import { DrugFilters as DrugFiltersComponent } from "@/components/DrugFilters";
 import { MedDrug, DrugFilters } from "@/types/medication";
 import { Separator } from "@/components/ui/separator";
-import { BackHomeButton } from "@/components/BackHomeButton";
+
 
 export default function MedicamentsContent() {
   const searchParams = useSearchParams();
@@ -59,10 +59,12 @@ export default function MedicamentsContent() {
     return true;
   });
 
+  // Sort the filtered drugs alphabetically by name (A → Z)
+  const sortedDrugs = [...filteredDrugs].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <Suspense fallback={<div>Chargement...</div>}>
-      <div className="container mx-auto max-w-3xl py-6 px-2">
-        <BackHomeButton />
+      <div className="container mx-auto max-w-3xl py-6 px-2 relative">
         <h1 className="text-2xl font-bold mb-2">Liste des médicaments</h1>
         <DrugFiltersComponent
           filters={filters}
@@ -76,7 +78,7 @@ export default function MedicamentsContent() {
           onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
         />
         <Separator className="my-4" />
-        <VirtualizedDrugList drugs={filteredDrugs} height={600} />
+        <VirtualizedDrugList drugs={sortedDrugs} height={600} />
       </div>
     </Suspense>
   );
