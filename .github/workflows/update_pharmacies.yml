@@ -2,7 +2,8 @@ name: Update pharmacies data
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    # Runs every day at 06:00 UTC ≈ 07:00 in Morocco (Africa/Casablanca)
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -35,6 +36,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git pull --ff-only origin "${{ github.ref_name }}"
           if git diff --quiet --exit-code public/data/pharmacies.json; then
             echo "No changes to commit."
             exit 0
