@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import urllib.parse
+from collections import OrderedDict
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Dict, Callable, Tuple
@@ -28,24 +29,24 @@ class PharmacyRecord:
     date: str
 
     def to_dict(self) -> Dict[str, str]:
-        return {
-            "city": self.city,
-            "area": self.area or "",
-            "name": self.name,
-            "address": self.address or "",
-            "phone": self.phone or "",
-            "district": self.district or "",
-            "duty": self.duty or "",
-            "source": self.source,
-            "date": self.date,
-        }
+        return OrderedDict(
+            city=self.city,
+            area=self.area,
+            name=self.name,
+            address=self.address,
+            phone=self.phone,
+            district=self.district,
+            duty=self.duty,
+            source=self.source,
+            date=self.date,
+        )
 
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/115.0.0.0 Safari/537.36"
+        "Chrome/125.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "fr,ar;q=0.8,en;q=0.7",
 }
@@ -53,43 +54,72 @@ HEADERS = {
 Parser = Callable[[str], List[PharmacyRecord]]
 
 
+def _clean(text: str) -> str:
+    return re.sub(r"\s+", " ", text.strip())
+
+
+def _canonical_duty(raw: str) -> str:
+    txt = raw.lower()
+    if "24" in txt:
+        return "24h/24"
+    m = re.search(r"(\d{1,2}h?\d{0,2}).*?(\d{1,2}h?\d{0,2})", txt)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}".replace("h", "h")
+    return _clean(raw)
+
+
+def _normalize_phone(raw: str) -> str:
+    digits = re.sub(r"[^\d]", "", raw)
+    if digits.startswith("212") and len(digits) > 9:
+        return f"+{digits}"
+    if digits and not digits.startswith("0"):
+        digits = f"0{digits}"
+    return digits
+
+
+def _dedup_key(area: str, name: str, phone: str) -> Tuple[str, str, str]:
+    return (_clean(area).lower(), _clean(name).lower(), _normalize_phone(phone))
+
+
 def _parse_generic_table(url: str, city: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    table = soup.find("table", class_="eb-weekly-events-container")
-    if not table:
-        return records
-    seen = set()
-    for td in table.select("td.tableb"):
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+    for td in soup.select("td.tableb"):
         loc = td.find("p", class_="location-name")
         if not loc:
             continue
-        area_text = loc.get_text(" ", strip=True)
-        m = re.match(r"(.+?)\s*\((.+?)\)", area_text)
+        area_raw = _clean(loc.get_text(" ", strip=True))
+        m = re.match(r"(.+?)\s*\((.+?)\)", area_raw)
         if m:
             area_str, duty_str = m.groups()
         else:
-            parts = area_text.rsplit(" ", 1)
+            parts = area_raw.rsplit(" ", 1)
             if len(parts) == 2 and re.search(r"\d", parts[1]):
                 area_str, duty_str = parts
             else:
-                area_str, duty_str = area_text, "24h/24"
+                area_str, duty_str = area_raw, "24h/24"
+        duty_str = _canonical_duty(duty_str)
         a = td.select_one("h4 a")
         if not a:
             continue
-        raw = a.get_text(" ", strip=True)
-        name, phone = (raw.rsplit(" - ", 1) + [""])[:2]
-        key = (area_str, name, phone)
-        if key in seen:
+        raw = _clean(a.get_text(" ", strip=True))
+        if " - " in raw:
+            name, phone = raw.split(" - ", 1)
+        else:
+            name, phone = raw, ""
+        phone = _normalize_phone(phone)
+        if name.lower() == "pharmacie" and not phone:
             continue
-        seen.add(key)
-        records.append(
+        key = _dedup_key(area_str, name, phone)
+        if key in {k for k, *_ in recs}:
+            continue
+        recs.append(
             PharmacyRecord(
                 city=city,
                 area=area_str,
-                name=name,
+                name=name.title(),
                 address="",
                 phone=phone,
                 district=area_str,
@@ -98,7 +128,7 @@ def _parse_generic_table(url: str, city: str) -> List[PharmacyRecord]:
                 date=today_iso(),
             )
         )
-    return records
+    return recs
 
 
 def parse_kenitra_mehdia(url: str) -> List[PharmacyRecord]:
@@ -110,139 +140,50 @@ def parse_temara(url: str) -> List[PharmacyRecord]:
 
 
 def parse_rabat(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    table = soup.find("table", class_="eb-weekly-events-container")
-    if not table:
-        return records
-    seen = set()
-    for td in table.select("td.tableb"):
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    soup.select_one("nav.sp-megamenu-wrapper") and soup.select_one(
+        "nav.sp-megamenu-wrapper"
+    ).decompose()
+    for td in soup.select("td.tableb"):
         loc = td.find("p", class_="location-name")
         if not loc:
             continue
-        area_text = loc.get_text(" ", strip=True)
-        m = re.match(r"(.+?)\s*\((.+?)\)", area_text)
+        area_raw = _clean(loc.get_text(" ", strip=True))
+        m = re.match(r"(.+?)\s*\((.+?)\)", area_raw)
         if m:
-            area_str, duty_str = m.groups()
+            area_str, duty_raw = m.groups()
         else:
-            parts = area_text.rsplit(" ", 1)
-            if len(parts) == 2 and re.search(r"\d", parts[1]):
-                area_str, duty_str = parts
-            else:
-                area_str, duty_str = area_text, "24h/24"
+            parts = area_raw.rsplit(" ", 1)
+            area_str, duty_raw = (parts if len(parts) == 2 else (area_raw, "24h/24"))
+        duty = _canonical_duty(duty_raw)
         a = td.select_one("h4 a")
         if not a:
             continue
-        raw = a.get_text(" ", strip=True)
-        name, phone = (raw.rsplit(" - ", 1) + [""])[:2]
-        key = (area_str, name, phone)
-        if key in seen:
-            continue
-        seen.add(key)
-        addr = ""
+        raw = _clean(a.get_text(" ", strip=True))
+        name, phone = (raw.split(" - ", 1) + [""])[:2]
+        phone = _normalize_phone(phone)
+        detail_addr = ""
         try:
-            detail = requests.get(
-                urllib.parse.urljoin(url, a["href"]), headers=HEADERS, timeout=30
-            )
-            detail.raise_for_status()
-            soup2 = BeautifulSoup(detail.text, "html.parser")
-            for tag in soup2.select("p, div, li"):
-                text = tag.get_text(" ", strip=True)
-                if re.search(r"\d+\s+(Rue|Av|Bd|Avenue)", text):
-                    addr = text
-                    break
+            href = urllib.parse.urljoin(url, a["href"])
+            d = requests.get(href, headers=HEADERS, timeout=30)
+            if d.ok:
+                s2 = BeautifulSoup(d.text, "html.parser")
+                addr_tag = s2.find(string=re.compile(r"\d.+(Rue|Av|Avenue|Bd)"))
+                if addr_tag:
+                    detail_addr = _clean(addr_tag)
         except Exception:
             pass
-        records.append(
+        key = _dedup_key(area_str, name, phone)
+        if key in {k for k, *_ in recs}:
+            continue
+        recs.append(
             PharmacyRecord(
                 city="Rabat",
                 area=area_str,
-                name=name,
-                address=addr,
-                phone=phone,
-                district=area_str,
-                duty=duty_str,
-                source=url,
-                date=today_iso(),
-            )
-        )
-    return records
-
-
-def parse_sale(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    table = soup.find("table", class_="eb-weekly-events-container")
-    if not table:
-        return records
-    seen = set()
-    for td in table.select("td.tableb"):
-        loc = td.find("p", class_="location-name")
-        if not loc:
-            continue
-        text = loc.get_text(" ", strip=True)
-        parts = text.rsplit(" ", 1)
-        if len(parts) == 2 and re.match(r"^\d", parts[1]):
-            area_str, duty_str = parts
-        else:
-            area_str, duty_str = text, "24h/24"
-        a = td.select_one("h4 a")
-        if not a:
-            continue
-        raw = a.get_text(" ", strip=True)
-        name, phone = (raw.rsplit(" - ", 1) + [""])[:2]
-        key = (area_str, name, phone)
-        if key in seen:
-            continue
-        seen.add(key)
-        records.append(
-            PharmacyRecord(
-                city="Salé",
-                area=area_str,
-                name=name,
-                address="",
-                phone=phone,
-                district=area_str,
-                duty=duty_str,
-                source=url,
-                date=today_iso(),
-            )
-        )
-    return records
-
-
-def parse_tanger(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    hdr = soup.find("h1", class_="arabe_title")
-    times = hdr.select("span.time") if hdr else []
-    duty = (
-        f"{times[0].get_text(strip=True)}-{times[1].get_text(strip=True)}"
-        if len(times) >= 2
-        else "24h/24"
-    )
-    seen = set()
-    for item in soup.select("div.item-grid.arabe_pharm"):
-        name = item.select_one("div.flex_2 h3").get_text(strip=True)
-        phone = item.select_one("p.phone-item").get_text(strip=True)
-        title_addr = item.select_one("p.adress-item").get("title", "").strip()
-        area_str = title_addr.split()[0] if title_addr else ""
-        key = (area_str, name, phone)
-        if key in seen:
-            continue
-        seen.add(key)
-        records.append(
-            PharmacyRecord(
-                city="Tanger",
-                area=area_str,
-                name=name,
-                address=title_addr,
+                name=name.title(),
+                address=detail_addr,
                 phone=phone,
                 district=area_str,
                 duty=duty,
@@ -250,118 +191,68 @@ def parse_tanger(url: str) -> List[PharmacyRecord]:
                 date=today_iso(),
             )
         )
-    return records
+    return recs
+
+
+def parse_sale(url: str) -> List[PharmacyRecord]:
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    for td in soup.select("td.tableb"):
+        loc = td.find("p", class_="location-name")
+        if not loc:
+            continue
+        txt = _clean(loc.get_text(" ", strip=True))
+        m = re.match(r"(.+?)\s*\((\d{1,2}h.*?\d{1,2}h?\d{0,2})\)", txt)
+        if m:
+            area_str, duty_raw = m.groups()
+        else:
+            area_str, duty_raw = txt, "24h/24"
+        duty = _canonical_duty(duty_raw)
+        a = td.select_one("h4 a")
+        if not a:
+            continue
+        raw = _clean(a.get_text(" ", strip=True))
+        name, phone = (raw.split(" - ", 1) + [""])[:2]
+        phone = _normalize_phone(phone)
+        key = _dedup_key(area_str, name, phone)
+        if key in {k for k, *_ in recs}:
+            continue
+        recs.append(
+            PharmacyRecord(
+                city="Salé",
+                area=area_str,
+                name=name.title(),
+                address="",
+                phone=phone,
+                district=area_str,
+                duty=duty,
+                source=url,
+                date=today_iso(),
+            )
+        )
+    return recs
 
 
 def parse_casablanca(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    for a in soup.select("div.sectorlist article.sec a"):
-        district = a.select_one("h1").get_text(strip=True)
-        duty = a.select_one("strong").get_text(strip=True)
-        href = urllib.parse.urljoin(url, a["href"])
-        r2 = requests.get(href, headers=HEADERS, timeout=30)
-        r2.raise_for_status()
-        s2 = BeautifulSoup(r2.text, "html.parser")
-        seen = set()
-        for ph in s2.select("div.item-grid.arabe_pharm"):
-            name = ph.select_one("div.flex_2 h3").get_text(strip=True)
-            phone = ph.select_one("p.phone-item").get_text(strip=True)
-            title_addr = ph.select_one("p.adress-item").get("title", "").strip()
-            key = (district, name, phone)
-            if key in seen:
-                continue
-            seen.add(key)
-            records.append(
-                PharmacyRecord(
-                    city="Casablanca",
-                    area=district,
-                    name=name,
-                    address=title_addr,
-                    phone=phone,
-                    district=district,
-                    duty=duty,
-                    source=href,
-                    date=today_iso(),
-                )
-            )
-    return records
-
-
-def parse_marrakech(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    base = url.rstrip("/0")
-    seen = set()
-    for i in range(0, 10):
-        page = f"{base}/{i}"
-        r = requests.get(page, headers=HEADERS, timeout=30)
-        if r.status_code != 200:
-            break
-        s = BeautifulSoup(r.text, "html.parser")
-        items = s.select("div.card-doctor-block")
-        if not items:
-            break
-        for it in items:
-            name = it.select_one(".list__label--name").get_text(strip=True)
-            adr = it.select_one("div.list__label--adr").get_text(" ", strip=True)
-            duty_tag = it.select_one(
-                "div.list__label--adr:nth-of-type(2)"
-            ).get_text(strip=True)
-            duty = duty_tag.replace("Garde de", "").strip()
-            phone = (
-                it.select_one("a.calltel").get_text(strip=True).replace(".", "")
-            )
-            key = (name, phone)
-            if key in seen:
-                continue
-            seen.add(key)
-            records.append(
-                PharmacyRecord(
-                    city="Marrakech",
-                    area="Marrakech",
-                    name=name,
-                    address=adr,
-                    phone=phone,
-                    district="Marrakech",
-                    duty=duty,
-                    source=page,
-                    date=today_iso(),
-                )
-            )
-    return records
-
-
-def parse_fes(url: str) -> List[PharmacyRecord]:
-    records: List[PharmacyRecord] = []
-    res = requests.get(url, headers=HEADERS, timeout=30)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    items = soup.select("ul#agItemList li.ag_listing_item")
-    seen = set()
-    for it in items:
-        name_tag = it.select_one("h3[itemprop=name]")
-        if not name_tag:
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    for card in soup.select("div.item-grid.arabe_pharm"):
+        name = _clean(card.select_one("h3").get_text(strip=True))
+        phone = _normalize_phone(card.select_one("p.phone-item").get_text(strip=True))
+        addr_tag = card.select_one("p.adress-item")
+        address = _clean(addr_tag["title"]) if addr_tag else ""
+        district = address.split(",")[0] if "," in address else address.split()[0]
+        duty = _canonical_duty("20h00-09h00")
+        key = _dedup_key(district, name, phone)
+        if key in {k for k, *_ in recs}:
             continue
-        name = name_tag.get_text(strip=True)
-        adr_tag = it.select_one("p[itemprop=streetAddress]")
-        address = adr_tag.get_text(" ", strip=True) if adr_tag else ""
-        phone_tag = it.select_one("span[title='Appelle-nous']")
-        phone = phone_tag.get_text(strip=True) if phone_tag else ""
-        locs = it.select("span[itemprop=addressLocality]")
-        district = locs[0].get_text(strip=True) if locs else ""
-        duty_tag = it.select_one("span.garde-openingStatus")
-        duty = duty_tag.get_text(strip=True) if duty_tag else "24h/24"
-        key = (name, phone)
-        if key in seen:
-            continue
-        seen.add(key)
-        records.append(
+        recs.append(
             PharmacyRecord(
-                city="Fès",
+                city="Casablanca",
                 area=district,
-                name=name,
+                name=name.title(),
                 address=address,
                 phone=phone,
                 district=district,
@@ -370,19 +261,147 @@ def parse_fes(url: str) -> List[PharmacyRecord]:
                 date=today_iso(),
             )
         )
-    return records
+    return recs
+
+
+def parse_tanger(url: str) -> List[PharmacyRecord]:
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    duty = "20h00-09h00"
+    for card in soup.select("div.item-grid.arabe_pharm"):
+        name = _clean(card.select_one("h3").text)
+        phone = _normalize_phone(card.select_one("p.phone-item").get_text(strip=True))
+        addr_tag = card.select_one("p.adress-item")
+        address = _clean(addr_tag["title"]) if addr_tag else ""
+        area_str = address.split(",")[0]
+        key = _dedup_key(area_str, name, phone)
+        if key in {k for k, *_ in recs}:
+            continue
+        recs.append(
+            PharmacyRecord(
+                city="Tanger",
+                area=area_str,
+                name=name.title(),
+                address=address,
+                phone=phone,
+                district=area_str,
+                duty=duty,
+                source=url,
+                date=today_iso(),
+            )
+        )
+    return recs
+
+
+def parse_marrakech(url: str) -> List[PharmacyRecord]:
+    recs: List[PharmacyRecord] = []
+    base = url.rstrip("/0")
+    seen_keys = set()
+    for i in range(0, 5):
+        page = f"{base}/{i}"
+        r = requests.get(page, headers=HEADERS, timeout=30)
+        if r.status_code != 200:
+            break
+        soup = BeautifulSoup(r.text, "html.parser")
+        for block in soup.select("div.card-doctor-block"):
+            name_tag = block.select_one(".list__label–name")
+            if not name_tag:
+                continue
+            name = _clean(name_tag.text)
+            addr_full = _clean(block.select_one(".list__label–adr").text)
+            duty_raw = _clean(block.select(".list__label–adr")[-1].text)
+            duty = _canonical_duty(duty_raw.replace("Garde de", ""))
+            phone_tag = block.select_one("a.calltel")
+            phone = _normalize_phone(phone_tag.text) if phone_tag else ""
+            area_str = "Marrakech"
+            key = _dedup_key(area_str, name, phone)
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+            recs.append(
+                PharmacyRecord(
+                    city="Marrakech",
+                    area=area_str,
+                    name=name.title(),
+                    address=addr_full,
+                    phone=phone,
+                    district=area_str,
+                    duty=duty,
+                    source=page,
+                    date=today_iso(),
+                )
+            )
+    return recs
+
+
+def parse_fes(url: str) -> List[PharmacyRecord]:
+    recs: List[PharmacyRecord] = []
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    for li in soup.select("ul#agItemList li.ag_listing_item"):
+        name_tag = li.select_one("h3[itemprop=name]")
+        if not name_tag:
+            continue
+        name = _clean(name_tag.text)
+        addr_tag = li.select_one("p[itemprop=streetAddress]")
+        address = _clean(addr_tag.text) if addr_tag else ""
+        phone_tag = li.select_one("span[title='Appelle-nous']")
+        phone = _normalize_phone(phone_tag.text) if phone_tag else ""
+        district_tag = li.select_one("span[itemprop=addressLocality]")
+        district = _clean(district_tag.text) if district_tag else ""
+        duty_raw = li.select_one("span.garde-openingStatus")
+        duty = _canonical_duty(duty_raw.text if duty_raw else "24h/24")
+        key = _dedup_key(district, name, phone)
+        if key in {k for k, *_ in recs}:
+            continue
+        recs.append(
+            PharmacyRecord(
+                city="Fès",
+                area=district,
+                name=name.title(),
+                address=address,
+                phone=phone,
+                district=district,
+                duty=duty,
+                source=url,
+                date=today_iso(),
+            )
+        )
+    return recs
 
 
 def main() -> None:
     sources: Dict[str, Tuple[Parser, str]] = {
-        "Rabat": (parse_rabat, "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html"),
-        "Salé": (parse_sale, "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html"),
+        "Rabat": (
+            parse_rabat,
+            "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+        ),
+        "Salé": (
+            parse_sale,
+            "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
+        ),
         "Tanger": (parse_tanger, "https://infopoint.ma/pharmacies-de-garde"),
-        "Casablanca": (parse_casablanca, "https://infopoint.ma/pharmacies-de-garde/"),
-        "Marrakech": (parse_marrakech, "https://www.med.ma/pharmacie/garde-nuit/marrakech/0"),
-        "Kenitra - Mehdia": (parse_kenitra_mehdia, "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html"),
-        "Temara - Tamesna (Harhoura)": (parse_temara, "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html"),
-        "Fès": (parse_fes, "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html"),
+        "Casablanca": (
+            parse_casablanca,
+            "https://infopoint.ma/pharmacies-de-garde/",
+        ),
+        "Marrakech": (
+            parse_marrakech,
+            "https://www.med.ma/pharmacie/garde-nuit/marrakech/0",
+        ),
+        "Kenitra - Mehdia": (
+            parse_kenitra_mehdia,
+            "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
+        ),
+        "Temara - Tamesna (Harhoura)": (
+            parse_temara,
+            "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
+        ),
+        "Fès": (
+            parse_fes,
+            "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+        ),
     }
     all_records: List[PharmacyRecord] = []
     for city, (parser, url) in sources.items():
@@ -390,10 +409,10 @@ def main() -> None:
             all_records.extend(parser(url))
         except Exception as e:
             print(f"Error parsing {city}: {e}")
+    unique = {(_dedup_key(r.area, r.name, r.phone)): r for r in all_records}
     with open("pharmacies.json", "w", encoding="utf-8") as f:
-        json.dump([r.to_dict() for r in all_records], f, ensure_ascii=False, indent=2)
+        json.dump([r.to_dict() for r in unique.values()], f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
     main()
-
