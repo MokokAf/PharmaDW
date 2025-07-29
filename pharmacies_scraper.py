@@ -5,7 +5,7 @@ import re
 import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Tuple
 
 import requests
 from bs4 import BeautifulSoup
@@ -41,12 +41,11 @@ class PharmacyRecord:
         }
 
 
-# Global headers
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-        " AppleWebKit/537.36 (KHTML, like Gecko)"
-        " Chrome/115.0.0.0 Safari/537.36"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/115.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "fr,ar;q=0.8,en;q=0.7",
 }
@@ -55,7 +54,6 @@ Parser = Callable[[str], List[PharmacyRecord]]
 
 
 def _parse_generic_table(url: str, city: str) -> List[PharmacyRecord]:
-    """Helper for simple table-based calendars like Kenitra and Temara."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -87,22 +85,31 @@ def _parse_generic_table(url: str, city: str) -> List[PharmacyRecord]:
         if key in seen:
             continue
         seen.add(key)
-        records.append(PharmacyRecord(
-            city=city,
-            area=area_str,
-            name=name,
-            address="",
-            phone=phone,
-            district=area_str,
-            duty=duty_str,
-            source=url,
-            date=today_iso(),
-        ))
+        records.append(
+            PharmacyRecord(
+                city=city,
+                area=area_str,
+                name=name,
+                address="",
+                phone=phone,
+                district=area_str,
+                duty=duty_str,
+                source=url,
+                date=today_iso(),
+            )
+        )
     return records
 
 
+def parse_kenitra_mehdia(url: str) -> List[PharmacyRecord]:
+    return _parse_generic_table(url, "Kenitra - Mehdia")
+
+
+def parse_temara(url: str) -> List[PharmacyRecord]:
+    return _parse_generic_table(url, "Temara - Tamesna (Harhoura)")
+
+
 def parse_rabat(url: str) -> List[PharmacyRecord]:
-    """Parse Rabat weekly calendar."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -148,22 +155,23 @@ def parse_rabat(url: str) -> List[PharmacyRecord]:
                     break
         except Exception:
             pass
-        records.append(PharmacyRecord(
-            city="Rabat",
-            area=area_str,
-            name=name,
-            address=addr,
-            phone=phone,
-            district=area_str,
-            duty=duty_str,
-            source=url,
-            date=today_iso(),
-        ))
+        records.append(
+            PharmacyRecord(
+                city="Rabat",
+                area=area_str,
+                name=name,
+                address=addr,
+                phone=phone,
+                district=area_str,
+                duty=duty_str,
+                source=url,
+                date=today_iso(),
+            )
+        )
     return records
 
 
 def parse_sale(url: str) -> List[PharmacyRecord]:
-    """Parse Salé weekly calendar."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -191,22 +199,23 @@ def parse_sale(url: str) -> List[PharmacyRecord]:
         if key in seen:
             continue
         seen.add(key)
-        records.append(PharmacyRecord(
-            city="Salé",
-            area=area_str,
-            name=name,
-            address="",
-            phone=phone,
-            district=area_str,
-            duty=duty_str,
-            source=url,
-            date=today_iso(),
-        ))
+        records.append(
+            PharmacyRecord(
+                city="Salé",
+                area=area_str,
+                name=name,
+                address="",
+                phone=phone,
+                district=area_str,
+                duty=duty_str,
+                source=url,
+                date=today_iso(),
+            )
+        )
     return records
 
 
 def parse_tanger(url: str) -> List[PharmacyRecord]:
-    """Parse Tanger night-duty from infopoint.ma."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -215,7 +224,8 @@ def parse_tanger(url: str) -> List[PharmacyRecord]:
     times = hdr.select("span.time") if hdr else []
     duty = (
         f"{times[0].get_text(strip=True)}-{times[1].get_text(strip=True)}"
-        if len(times) >= 2 else "24h/24"
+        if len(times) >= 2
+        else "24h/24"
     )
     seen = set()
     for item in soup.select("div.item-grid.arabe_pharm"):
@@ -227,22 +237,23 @@ def parse_tanger(url: str) -> List[PharmacyRecord]:
         if key in seen:
             continue
         seen.add(key)
-        records.append(PharmacyRecord(
-            city="Tanger",
-            area=area_str,
-            name=name,
-            address=title_addr,
-            phone=phone,
-            district=area_str,
-            duty=duty,
-            source=url,
-            date=today_iso(),
-        ))
+        records.append(
+            PharmacyRecord(
+                city="Tanger",
+                area=area_str,
+                name=name,
+                address=title_addr,
+                phone=phone,
+                district=area_str,
+                duty=duty,
+                source=url,
+                date=today_iso(),
+            )
+        )
     return records
 
 
 def parse_casablanca(url: str) -> List[PharmacyRecord]:
-    """Parse Casablanca districts from infopoint.ma."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -250,7 +261,7 @@ def parse_casablanca(url: str) -> List[PharmacyRecord]:
     for a in soup.select("div.sectorlist article.sec a"):
         district = a.select_one("h1").get_text(strip=True)
         duty = a.select_one("strong").get_text(strip=True)
-        href = urllib.parse.urljoin(url, a["href"]) 
+        href = urllib.parse.urljoin(url, a["href"])
         r2 = requests.get(href, headers=HEADERS, timeout=30)
         r2.raise_for_status()
         s2 = BeautifulSoup(r2.text, "html.parser")
@@ -263,22 +274,23 @@ def parse_casablanca(url: str) -> List[PharmacyRecord]:
             if key in seen:
                 continue
             seen.add(key)
-            records.append(PharmacyRecord(
-                city="Casablanca",
-                area=district,
-                name=name,
-                address=title_addr,
-                phone=phone,
-                district=district,
-                duty=duty,
-                source=href,
-                date=today_iso(),
-            ))
+            records.append(
+                PharmacyRecord(
+                    city="Casablanca",
+                    area=district,
+                    name=name,
+                    address=title_addr,
+                    phone=phone,
+                    district=district,
+                    duty=duty,
+                    source=href,
+                    date=today_iso(),
+                )
+            )
     return records
 
 
 def parse_marrakech(url: str) -> List[PharmacyRecord]:
-    """Parse Marrakech night-duty pharmacies with pagination."""
     records: List[PharmacyRecord] = []
     base = url.rstrip("/0")
     seen = set()
@@ -294,29 +306,34 @@ def parse_marrakech(url: str) -> List[PharmacyRecord]:
         for it in items:
             name = it.select_one(".list__label--name").get_text(strip=True)
             adr = it.select_one("div.list__label--adr").get_text(" ", strip=True)
-            duty_tag = it.select_one("div.list__label--adr:nth-of-type(2)").get_text(strip=True)
+            duty_tag = it.select_one(
+                "div.list__label--adr:nth-of-type(2)"
+            ).get_text(strip=True)
             duty = duty_tag.replace("Garde de", "").strip()
-            phone = it.select_one("a.calltel").get_text(strip=True).replace(".", "")
+            phone = (
+                it.select_one("a.calltel").get_text(strip=True).replace(".", "")
+            )
             key = (name, phone)
             if key in seen:
                 continue
             seen.add(key)
-            records.append(PharmacyRecord(
-                city="Marrakech",
-                area="Marrakech",
-                name=name,
-                address=adr,
-                phone=phone,
-                district="Marrakech",
-                duty=duty,
-                source=page,
-                date=today_iso(),
-            ))
+            records.append(
+                PharmacyRecord(
+                    city="Marrakech",
+                    area="Marrakech",
+                    name=name,
+                    address=adr,
+                    phone=phone,
+                    district="Marrakech",
+                    duty=duty,
+                    source=page,
+                    date=today_iso(),
+                )
+            )
     return records
 
 
 def parse_fes(url: str) -> List[PharmacyRecord]:
-    """Parse Fès pharmacies from annuaire-gratuit.ma."""
     records: List[PharmacyRecord] = []
     res = requests.get(url, headers=HEADERS, timeout=30)
     res.raise_for_status()
@@ -340,22 +357,24 @@ def parse_fes(url: str) -> List[PharmacyRecord]:
         if key in seen:
             continue
         seen.add(key)
-        records.append(PharmacyRecord(
-            city="Fès",
-            area=district,
-            name=name,
-            address=address,
-            phone=phone,
-            district=district,
-            duty=duty,
-            source=url,
-            date=today_iso(),
-        ))
+        records.append(
+            PharmacyRecord(
+                city="Fès",
+                area=district,
+                name=name,
+                address=address,
+                phone=phone,
+                district=district,
+                duty=duty,
+                source=url,
+                date=today_iso(),
+            )
+        )
     return records
 
 
-def main():
-    sources: Dict[str, (Parser, str)] = {
+def main() -> None:
+    sources: Dict[str, Tuple[Parser, str]] = {
         "Rabat": (parse_rabat, "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html"),
         "Salé": (parse_sale, "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html"),
         "Tanger": (parse_tanger, "https://infopoint.ma/pharmacies-de-garde"),
@@ -368,13 +387,11 @@ def main():
     all_records: List[PharmacyRecord] = []
     for city, (parser, url) in sources.items():
         try:
-            recs = parser(url)
-            all_records.extend(recs)
+            all_records.extend(parser(url))
         except Exception as e:
             print(f"Error parsing {city}: {e}")
-    data = [r.to_dict() for r in all_records]
     with open("pharmacies.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump([r.to_dict() for r in all_records], f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
