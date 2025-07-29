@@ -75,9 +75,9 @@ export default function PharmaciesDeGardePage() {
     return list;
   }, [pharmacies, city, filter]);
 
-  // derive metadata (date, source)
-  const lastUpdate = pharmacies[0]?.date ?? "";
-  const source = pharmacies[0]?.source ?? "";
+  // derive metadata (date, source) from the selected city
+  const lastUpdate = filtered[0]?.date ?? "";
+  const source = filtered[0]?.source ?? "";
 
   return (
     <main className="container mx-auto px-4 py-10 max-w-4xl">
@@ -146,7 +146,8 @@ export default function PharmaciesDeGardePage() {
               <div>
                 <h2 className="text-lg font-semibold mb-1">{p.name}</h2>
                 <p className="text-sm text-muted-foreground mb-2 flex items-start gap-1">
-                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" /> {p.address}
+                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                  {p.address || "Adresse non disponible"}
                 </p>
                 <p className="text-sm mb-1">
                   <span className="font-medium">Quartier&nbsp;:</span> {p.district}
@@ -156,7 +157,7 @@ export default function PharmaciesDeGardePage() {
                 </p>
               </div>
               <a
-                href={`tel:${p.phone}`}
+                href={`tel:${p.phone.replace(/[^+\d]/g, "")}`}
                 className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-2 rounded-md text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
               >
                 <PhoneCall className="h-4 w-4" /> Appeler
