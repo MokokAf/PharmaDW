@@ -1,48 +1,29 @@
-name: Update pharmacies data
+name: Update Pharmacies JSON
 
 on:
-  schedule:
-    # Runs every day at 06:00 UTC ≈ 07:00 in Morocco (Africa/Casablanca)
-    - cron: '0 6 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # 04:00 Casablanca time, every day
 
 jobs:
-  update-pharmacies:
+  scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+        run: python -m pip install -r requirements.txt
 
       - name: Run scraper
-        run: |
-          python3 pharmacies_scraper.py
+        run: python scripts/pharmacies_scraper.py
 
-      - name: Move output into public/data
-        run: |
-          mkdir -p public/data
-          mv pharmacies.json public/data/pharmacies.json
-
-      - name: Commit and push changes
-        run: |
-          git pull --ff-only origin "${{ github.ref_name }}"
-          if git diff --quiet --exit-code public/data/pharmacies.json; then
-            echo "No changes to commit."
-            exit 0
-          fi
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add public/data/pharmacies.json
-          git commit -m "chore: update pharmacies data"
-          git push
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): update duty pharmacies JSON'
+          branch: main

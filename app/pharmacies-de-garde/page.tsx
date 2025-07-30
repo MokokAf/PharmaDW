@@ -9,7 +9,23 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Loader2, MapPin, PhoneCall, AlertTriangle } from "lucide-react";
+import { Loader2, MapPin, PhoneCall, AlertTriangle, Navigation } from "lucide-react";
+
+const POP_RANK: Record<string, number> = {
+  Casablanca: 1,
+  Rabat: 2,
+  Fès: 3,
+  Marrakech: 4,
+  Tanger: 5,
+  Agadir: 6,
+  Meknès: 7,
+  Oujda: 8,
+  Tetouan: 9,
+  Safi: 10,
+  "El Jadida": 11,
+  Mohammedia: 12,
+  Khouribga: 13,
+};
 
 interface Pharmacy {
   city: string;
@@ -23,26 +39,24 @@ interface Pharmacy {
   date: string;
 }
 
-const CITIES = [
-  "Rabat",
-  "Salé",
-  "Témara",
-  "Kénitra",
-  "Casablanca",
-  "Fès",
-  "Tanger",
-  "Marrakech",
-] as const;
 
-type City = (typeof CITIES)[number];
 
 export default function PharmaciesDeGardePage() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [city, setCity] = useState<City | "">("");
+  const [city, setCity] = useState<string>("");
   const [filter, setFilter] = useState("");
+  const cities = useMemo(() => {
+    const unique = Array.from(new Set(pharmacies.map((p) => p.city)));
+    return unique.sort((a, b) => {
+      const ra = POP_RANK[a] ?? 1e6;
+      const rb = POP_RANK[b] ?? 1e6;
+      if (ra !== rb) return ra - rb;
+      return a.localeCompare(b);
+    });
+  }, [pharmacies]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,8 +75,8 @@ export default function PharmaciesDeGardePage() {
   }, []);
 
   const filtered = useMemo(() => {
-    let list = pharmacies;
-    if (city) list = list.filter((p) => p.city === city);
+    if (!city) return [];
+    let list = pharmacies.filter((p) => p.city === city);
     if (filter) {
       const f = filter.toLowerCase();
       list = list.filter(
@@ -91,12 +105,12 @@ export default function PharmaciesDeGardePage() {
           <label className="block text-sm font-medium mb-1" htmlFor="city">
             Ville
           </label>
-          <Select onValueChange={(v: City) => setCity(v)} value={city as string}>
+          <Select onValueChange={(v) => setCity(v as string)} value={city}>
             <SelectTrigger id="city">
               <SelectValue placeholder="Choisissez une ville" />
             </SelectTrigger>
             <SelectContent>
-              {CITIES.map((c) => (
+              {cities.map((c) => (
                 <SelectItem key={c} value={c}>
                   {c}
                 </SelectItem>
@@ -130,6 +144,12 @@ export default function PharmaciesDeGardePage() {
         </div>
       )}
 
+      {/* before selection */}
+      {!loading && !error && !city && (
+        <p className="text-center text-muted-foreground">Sélectionnez une ville.</p>
+      )}
+
+      {/* no results */}
       {!loading && !error && city && filtered.length === 0 && (
         <p className="text-center text-muted-foreground">
           Aucune pharmacie de garde trouvée pour {city} aujourd&#39;hui.
@@ -156,12 +176,22 @@ export default function PharmaciesDeGardePage() {
                   <span className="font-medium">Garde&nbsp;:</span> {p.duty}
                 </p>
               </div>
-              <a
-                href={`tel:${p.phone.replace(/[^+\d]/g, "")}`}
-                className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-2 rounded-md text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
-              >
-                <PhoneCall className="h-4 w-4" /> Appeler
-              </a>
+              <div className="mt-auto flex flex-col sm:flex-row gap-2">
+                <a
+                  href={`tel:${p.phone}`}
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-2 rounded-md text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
+                >
+                  <PhoneCall className="h-4 w-4" /> Appeler
+                </a>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.city}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-3 py-2 rounded-md text-sm hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
+                >
+                  <Navigation className="h-4 w-4" /> Localisation
+                </a>
+              </div>
             </div>
           ))}
         </div>
