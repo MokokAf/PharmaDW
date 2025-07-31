@@ -3,7 +3,7 @@ name: Update Pharmacies JSON
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'  # 04:00 Casablanca time, every day
+    - cron: '5 8 * * *'  # 09:05 Casablanca time, every day
 
 permissions:
   contents: write
