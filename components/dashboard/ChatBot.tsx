@@ -24,6 +24,14 @@ export const ChatBot: React.FC = () => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
+  // État pour le vérificateur d'interactions
+  const [drug1, setDrug1] = useState('');
+  const [drug2, setDrug2] = useState('');
+  const [checkLoading, setCheckLoading] = useState(false);
+  const [checkError, setCheckError] = useState<string | null>(null);
+  const [checkAnswer, setCheckAnswer] = useState<string | null>(null);
+  const [checkSources, setCheckSources] = useState<string[] | null>(null);
+
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
       const scrollElement = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
@@ -36,6 +44,40 @@ export const ChatBot: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleInteractionSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!drug1.trim() || !drug2.trim()) {
+      setCheckError("Veuillez saisir deux médicaments.");
+      return;
+    }
+    setCheckLoading(true);
+    setCheckError(null);
+    setCheckAnswer(null);
+    setCheckSources(null);
+    try {
+      const res = await fetch('/api/check-interaction', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ drug1, drug2 }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || 'Erreur inconnue');
+      setCheckAnswer(typeof data?.answer === 'string' ? data.answer : null);
+      setCheckSources(Array.isArray(data?.sources) ? data.sources : null);
+    } catch (err: any) {
+      setCheckError(err?.message || "Une erreur est survenue.");
+    } finally {
+      setCheckLoading(false);
+    }
+  };
+
+  const handleInteractionKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleInteractionSubmit();
+    }
+  };
 
   const simulatePerplexityAPI = async (userMessage: string): Promise<string> => {
     // Simulate API delay
@@ -56,7 +98,7 @@ export const ChatBot: React.FC = () => {
       return 'Les interactions médicamenteuses sont effectivement cruciales à vérifier. Je peux vous aider à identifier les interactions potentielles. Quels médicaments souhaitez-vous analyser ?';
     }
     
-    return `Je comprends votre question concernant \"${userMessage}\". En tant qu'assistant pharmaceutique, je peux vous fournir des informations générales, mais n'oubliez pas de toujours consulter les références officielles et votre expertise professionnelle pour les décisions cliniques.`;
+    return `Je comprends votre question concernant "${userMessage}". En tant qu'assistant pharmaceutique, je peux vous fournir des informations générales, mais n'oubliez pas de toujours consulter les références officielles et votre expertise professionnelle pour les décisions cliniques.`;
   };
 
   const handleSendMessage = async () => {
@@ -117,6 +159,13 @@ export const ChatBot: React.FC = () => {
     });
   };
 
+  const interactionLines =
+    (checkAnswer || '')
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .map((l) => l.replace(/^[-]\s*/, ''));
+
   return (
     <Card className="w-full h-[600px] flex flex-col">
       <CardHeader>
@@ -126,6 +175,57 @@ export const ChatBot: React.FC = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col flex-1 p-0">
+        {/* Vérificateur d'associations de médicaments */}
+        <div className="p-4 border-b space-y-3">
+          <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Médicament 1</label>
+              <Input
+                value={drug1}
+                onChange={(e) => setDrug1(e.target.value)}
+                onKeyDown={handleInteractionKeyDown}
+                placeholder="Nom de la DCI"
+                required
+              />
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Médicament 2</label>
+              <Input
+                value={drug2}
+                onChange={(e) => setDrug2(e.target.value)}
+                onKeyDown={handleInteractionKeyDown}
+                placeholder="Nom de la DCI"
+                required
+              />
+            </div>
+            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0">
+              {checkLoading ? 'Recherche en cours sur drugs.com…' : 'Vérifier l’association'}
+            </Button>
+          </form>
+          {checkError && (
+            <p role="alert" className="text-sm text-destructive">{checkError}</p>
+          )}
+          {checkAnswer && (
+            <div className="text-sm">
+              <ul className="list-disc pl-6 space-y-1">
+                {interactionLines.map((line, idx) => (
+                  <li key={idx}>{line}</li>
+                ))}
+              </ul>
+              {checkSources && checkSources.length > 0 && (
+                <p className="text-xs text-muted-foreground mt-2">
+                  Source :{' '}
+                  {checkSources.map((s, i) => (
+                    <span key={i}>
+                      <a href={s} target="_blank" rel="noreferrer" className="underline">drugs.com</a>
+                      {i < checkSources.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
         <ScrollArea className="flex-1 bg-card" ref={scrollAreaRef}>
           <div className="space-y-4 pb-4">
             {messages.map((message) => (
@@ -207,3 +307,4 @@ export const ChatBot: React.FC = () => {
     </Card>
   );
 };
+
