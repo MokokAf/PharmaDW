@@ -206,7 +206,6 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 required
               />
-              <p className="text-xs text-muted-foreground">Saisissez la DCI, pas le nom commercial.</p>
             </div>
             <div className="grid gap-1">
               <label className="text-sm font-medium">Médicament 2 (DCI)</label>
@@ -219,9 +218,12 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
                 required
               />
             </div>
-            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0 justify-self-end" title="Appuyez sur Entrée ↵ pour soumettre">
+            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0 w-full sm:w-auto justify-self-stretch sm:justify-self-end" title="Appuyez sur Entrée ↵ pour soumettre">
               {checkLoading ? 'Recherche en cours…' : 'Vérifier l’interaction'}
             </Button>
+            <div className="sm:col-span-2 -mt-1">
+              <p className="text-xs text-muted-foreground">Saisissez la DCI, pas le nom commercial.</p>
+            </div>
           </form>
           {checkError && (
             <p role="alert" aria-live="polite" className="text-sm text-destructive">{checkError}</p>

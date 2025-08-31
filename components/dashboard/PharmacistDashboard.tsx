@@ -27,7 +27,7 @@ export const PharmacistDashboard: React.FC = () => {
           onLogout={logout}
         />
         
-        <main className="px-3 pt-2 pb-4 md:p-4 transition-[margin-left] duration-200 ease-linear" style={{ marginLeft: 'var(--sidebar-width)' }}>
+        <main className="px-3 pt-2 pb-4 md:p-4 transition-[margin-left] duration-200 ease-linear ml-0 md:ml-[var(--sidebar-width)]">
           {/* Mobile top bar with sidebar trigger */}
           <div className="sticky top-0 z-10 mb-2 flex items-center gap-2 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-2 md:hidden">
             <SidebarTrigger />
