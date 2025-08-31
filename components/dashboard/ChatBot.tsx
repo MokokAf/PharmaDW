@@ -183,7 +183,7 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
       .map((l) => l.replace(/^[-]\s*/, ''));
 
   return (
-    <Card className="w-full h-[600px] flex flex-col">
+    <Card className="w-full h-[70vh] sm:h-[600px] flex flex-col">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Bot className="h-5 w-5" />
