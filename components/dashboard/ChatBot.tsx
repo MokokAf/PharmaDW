@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bot } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
 export type ChatBotHandle = {
   focusInteractions: () => void;
@@ -169,79 +170,67 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col p-0">
-        {/* Informations sur les bases de données (texte discret) */}
-        <div className="px-4 pb-3 text-xs sm:text-sm text-muted-foreground space-y-2">
-          <p className="font-medium">Bases de données médicales de l’IA</p>
-          <p>
-            Notre intelligence artificielle s’appuie exclusivement sur des bases de données médicales validées et reconnues par la communauté pharmaceutique et médicale mondiale, mises à jour régulièrement :
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <span className="font-medium">Micromedex® (IBM Watson Health)</span> – Base de données clinique utilisée dans les hôpitaux du monde entier, offrant des informations validées sur les médicaments, leurs effets et leurs interactions.
-            </li>
-            <li>
-              <span className="font-medium">Cerner Multum™ (Cerner Corporation)</span> – Fournisseur de contenus médicamenteux intégré aux dossiers médicaux électroniques, reconnu pour la clarté de ses guides destinés aux professionnels comme aux patients.
-            </li>
-            <li>
-              <span className="font-medium">ASHP (American Society of Health-System Pharmacists)</span> – Éditeur de l’AHFS Drug Information®, compendium officiel et indépendant, largement cité par les autorités de santé américaines (FDA, Congrès).
-            </li>
-          </ul>
-        </div>
         {/* Vérificateur d'associations de médicaments */}
         <div className="p-4 border-t space-y-3">
-          {/* Contexte patient (optionnel) */}
-          <div className="grid gap-3 sm:grid-cols-3">
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">Âge</label>
-              <Input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex. 72" />
-            </div>
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">Grossesse</label>
-              <select className="border rounded-md h-9 px-3 text-sm" value={pregnancy} onChange={(e) => setPregnancy(e.target.value as any)}>
-                <option value="inconnu">Inconnu</option>
-                <option value="enceinte">Enceinte</option>
-                <option value="non_enceinte">Non enceinte</option>
-              </select>
-            </div>
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">Allaitement</label>
-              <select className="border rounded-md h-9 px-3 text-sm" value={breastfeeding} onChange={(e) => setBreastfeeding(e.target.value as any)}>
-                <option value="inconnu">Inconnu</option>
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-              </select>
-            </div>
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">eGFR (mL/min/1.73m²)</label>
-              <Input inputMode="numeric" value={egfr} onChange={(e) => setEgfr(e.target.value)} placeholder="ex. 38" />
-            </div>
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">CKD (stade)</label>
-              <Input value={ckdStage} onChange={(e) => setCkdStage(e.target.value)} placeholder="ex. 3b" />
-            </div>
-            <div className="grid gap-1">
-              <label className="text-sm font-medium">Poids (kg)</label>
-              <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="ex. 63" />
-            </div>
-            <div className="grid gap-1 sm:col-span-3">
-              <label className="text-sm font-medium">Allergies (tags séparés par des virgules)</label>
-              <Input value={allergiesStr} onChange={(e) => setAllergiesStr(e.target.value)} placeholder="ex. pénicillines, AINS, sulfamides" />
-            </div>
-            <div className="grid gap-1 sm:col-span-3">
-              <label className="text-sm font-medium">Comorbidités (tags séparés par des virgules)</label>
-              <Input value={conditionsStr} onChange={(e) => setConditionsStr(e.target.value)} placeholder="ex. HTA, FA, épilepsie, glaucome, HBP" />
-            </div>
-            <div className="flex items-center gap-6 sm:col-span-3">
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" className="accent-primary" checked={riskQT} onChange={(e) => setRiskQT(e.target.checked)} />
-                Risque QT
-              </label>
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" className="accent-primary" checked={riskFall} onChange={(e) => setRiskFall(e.target.checked)} />
-                Somnolence/Chute
-              </label>
-            </div>
-          </div>
+          <Accordion type="single" collapsible className="px-4">
+            <AccordionItem value="patient-context">
+              <AccordionTrigger>Contexte patient (optionnel)</AccordionTrigger>
+              <AccordionContent>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">Âge</label>
+                    <Input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex. 72" />
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">Grossesse</label>
+                    <select className="border rounded-md h-9 px-3 text-sm" value={pregnancy} onChange={(e) => setPregnancy(e.target.value as any)}>
+                      <option value="inconnu">Inconnu</option>
+                      <option value="enceinte">Enceinte</option>
+                      <option value="non_enceinte">Non enceinte</option>
+                    </select>
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">Allaitement</label>
+                    <select className="border rounded-md h-9 px-3 text-sm" value={breastfeeding} onChange={(e) => setBreastfeeding(e.target.value as any)}>
+                      <option value="inconnu">Inconnu</option>
+                      <option value="oui">Oui</option>
+                      <option value="non">Non</option>
+                    </select>
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">eGFR (mL/min/1.73m²)</label>
+                    <Input inputMode="numeric" value={egfr} onChange={(e) => setEgfr(e.target.value)} placeholder="ex. 38" />
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">CKD (stade)</label>
+                    <Input value={ckdStage} onChange={(e) => setCkdStage(e.target.value)} placeholder="ex. 3b" />
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-sm font-medium">Poids (kg)</label>
+                    <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="ex. 63" />
+                  </div>
+                  <div className="grid gap-1 sm:col-span-3">
+                    <label className="text-sm font-medium">Allergies (tags séparés par des virgules)</label>
+                    <Input value={allergiesStr} onChange={(e) => setAllergiesStr(e.target.value)} placeholder="ex. pénicillines, AINS, sulfamides" />
+                  </div>
+                  <div className="grid gap-1 sm:col-span-3">
+                    <label className="text-sm font-medium">Comorbidités (tags séparés par des virgules)</label>
+                    <Input value={conditionsStr} onChange={(e) => setConditionsStr(e.target.value)} placeholder="ex. HTA, FA, épilepsie, glaucome, HBP" />
+                  </div>
+                  <div className="flex items-center gap-6 sm:col-span-3">
+                    <label className="flex items-center gap-2 text-sm">
+                      <input type="checkbox" className="accent-primary" checked={riskQT} onChange={(e) => setRiskQT(e.target.checked)} />
+                      Risque QT
+                    </label>
+                    <label className="flex items-center gap-2 text-sm">
+                      <input type="checkbox" className="accent-primary" checked={riskFall} onChange={(e) => setRiskFall(e.target.checked)} />
+                      Somnolence/Chute
+                    </label>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
           <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
             <div className="grid gap-1">
@@ -307,17 +296,7 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
                   </ul>
                 </div>
               )}
-              {normResult.citations?.length > 0 && (
-                <p className="text-xs text-muted-foreground mt-2 break-words">
-                  Source :{' '}
-                  {normResult.citations.map((s, i) => (
-                    <span key={i}>
-                      <a href={s} target="_blank" rel="noreferrer" className="underline">drugs.com</a>
-                      {i < normResult.citations!.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              )}
+              {/* Citations masquées selon demande */}
             </div>
           )}
           {!normResult && checkAnswer && (
@@ -327,19 +306,27 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
                   <li key={idx} className="break-words leading-relaxed">{line}</li>
                 ))}
               </ul>
-              {checkSources && checkSources.length > 0 && (
-                <p className="text-xs text-muted-foreground mt-2 break-words">
-                  Source :{' '}
-                  {checkSources.map((s, i) => (
-                    <span key={i}>
-                      <a href={s} target="_blank" rel="noreferrer" className="underline">drugs.com</a>
-                      {i < checkSources.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              )}
+              {/* Sources masquées selon demande */}
             </div>
           )}
+          {/* Informations sur les bases de données (texte discret) — déplacé en bas */}
+          <div className="px-4 pt-3 pb-4 border-t text-xs sm:text-sm text-muted-foreground space-y-2">
+            <p className="font-medium">Bases de données médicales de l’IA</p>
+            <p>
+              Notre intelligence artificielle s’appuie exclusivement sur des bases de données médicales validées et reconnues par la communauté pharmaceutique et médicale mondiale, mises à jour régulièrement :
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                <span className="font-medium">Micromedex® (IBM Watson Health)</span> – Base de données clinique utilisée dans les hôpitaux du monde entier, offrant des informations validées sur les médicaments, leurs effets et leurs interactions.
+              </li>
+              <li>
+                <span className="font-medium">Cerner Multum™ (Cerner Corporation)</span> – Fournisseur de contenus médicamenteux intégré aux dossiers médicaux électroniques, reconnu pour la clarté de ses guides destinés aux professionnels comme aux patients.
+              </li>
+              <li>
+                <span className="font-medium">ASHP (American Society of Health-System Pharmacists)</span> – Éditeur de l’AHFS Drug Information®, compendium officiel et indépendant, largement cité par les autorités de santé américaines (FDA, Congrès).
+              </li>
+            </ul>
+          </div>
         </div>
         {/* Chat section removed for this UI: message history and input omitted intentionally */}
       </CardContent>
