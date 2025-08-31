@@ -1,8 +1,9 @@
-import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bot } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export type ChatBotHandle = {
   focusInteractions: () => void;
@@ -19,6 +20,65 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
   const [checkError, setCheckError] = useState<string | null>(null);
   const [checkAnswer, setCheckAnswer] = useState<string | null>(null);
   const [checkSources, setCheckSources] = useState<string[] | null>(null);
+  const [normResult, setNormResult] = useState<null | {
+    summary_fr: string;
+    bullets_fr: string[];
+    action: 'OK' | 'Surveiller' | 'Ajuster dose' | 'Éviter/Contre-indiqué';
+    severity: 'aucune' | 'mineure' | 'modérée' | 'majeure' | 'contre-indiquée';
+    mechanism?: string;
+    patient_specific_notes?: string[];
+    citations?: string[];
+    triage: 'vert' | 'ambre' | 'rouge';
+  }>(null);
+
+  // Contexte patient (optionnel) — mémorisé en session
+  const [age, setAge] = useState<string>('');
+  const [pregnancy, setPregnancy] = useState<'enceinte' | 'non_enceinte' | 'inconnu'>('inconnu');
+  const [breastfeeding, setBreastfeeding] = useState<'oui' | 'non' | 'inconnu'>('inconnu');
+  const [egfr, setEgfr] = useState<string>('');
+  const [ckdStage, setCkdStage] = useState<string>('');
+  const [allergiesStr, setAllergiesStr] = useState<string>('');
+  const [conditionsStr, setConditionsStr] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
+  const [riskQT, setRiskQT] = useState<boolean>(false);
+  const [riskFall, setRiskFall] = useState<boolean>(false);
+  const sessionKey = 'patientContextV1';
+
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(sessionKey);
+      if (!raw) return;
+      const obj = JSON.parse(raw);
+      if (obj) {
+        setAge(obj.age ?? '');
+        setPregnancy(obj.pregnancy ?? 'inconnu');
+        setBreastfeeding(obj.breastfeeding ?? 'inconnu');
+        setEgfr(obj.egfr ?? '');
+        setCkdStage(obj.ckdStage ?? '');
+        setAllergiesStr(obj.allergiesStr ?? '');
+        setConditionsStr(obj.conditionsStr ?? '');
+        setWeight(obj.weight ?? '');
+        setRiskQT(!!obj.riskQT);
+        setRiskFall(!!obj.riskFall);
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    const obj = {
+      age,
+      pregnancy,
+      breastfeeding,
+      egfr,
+      ckdStage,
+      allergiesStr,
+      conditionsStr,
+      weight,
+      riskQT,
+      riskFall,
+    };
+    try { sessionStorage.setItem(sessionKey, JSON.stringify(obj)); } catch {}
+  }, [age, pregnancy, breastfeeding, egfr, ckdStage, allergiesStr, conditionsStr, weight, riskQT, riskFall]);
   const drug1Ref = useRef<HTMLInputElement>(null);
 
   useImperativeHandle(ref, () => ({
@@ -38,16 +98,45 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
     setCheckError(null);
     setCheckAnswer(null);
     setCheckSources(null);
+    setNormResult(null);
     try {
+      const patient: any = {
+        age: age ? Number(age) : undefined,
+        weight_kg: weight ? Number(weight) : undefined,
+        pregnancy_status: pregnancy,
+        breastfeeding,
+        renal_function: {
+          eGFR: egfr ? Number(egfr) : undefined,
+          CKD_stage: ckdStage || undefined,
+        },
+        allergies: allergiesStr
+          ? allergiesStr.split(',').map((s) => s.trim()).filter(Boolean)
+          : undefined,
+        conditions: conditionsStr
+          ? conditionsStr.split(',').map((s) => s.trim()).filter(Boolean)
+          : undefined,
+        risk_flags: [riskQT ? 'QT_prolongation' : null, riskFall ? 'chute' : null].filter(Boolean),
+      };
+
       const res = await fetch('/api/check-interaction', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ drug1, drug2 }),
+        body: JSON.stringify({
+          drug1: { name: drug1 },
+          drug2: { name: drug2 },
+          patient,
+          locale: 'fr-FR',
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || 'Erreur inconnue');
-      setCheckAnswer(typeof data?.answer === 'string' ? data.answer : null);
-      setCheckSources(Array.isArray(data?.sources) ? data.sources : null);
+      // Support both old and new formats during migration
+      if (data?.summary_fr) {
+        setNormResult(data);
+      } else {
+        setCheckAnswer(typeof data?.answer === 'string' ? data.answer : null);
+        setCheckSources(Array.isArray(data?.sources) ? data.sources : null);
+      }
     } catch (err: any) {
       setCheckError(err?.message || "Une erreur est survenue.");
     } finally {
@@ -100,6 +189,60 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
         </div>
         {/* Vérificateur d'associations de médicaments */}
         <div className="p-4 border-t space-y-3">
+          {/* Contexte patient (optionnel) */}
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Âge</label>
+              <Input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex. 72" />
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Grossesse</label>
+              <select className="border rounded-md h-9 px-3 text-sm" value={pregnancy} onChange={(e) => setPregnancy(e.target.value as any)}>
+                <option value="inconnu">Inconnu</option>
+                <option value="enceinte">Enceinte</option>
+                <option value="non_enceinte">Non enceinte</option>
+              </select>
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Allaitement</label>
+              <select className="border rounded-md h-9 px-3 text-sm" value={breastfeeding} onChange={(e) => setBreastfeeding(e.target.value as any)}>
+                <option value="inconnu">Inconnu</option>
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+              </select>
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">eGFR (mL/min/1.73m²)</label>
+              <Input inputMode="numeric" value={egfr} onChange={(e) => setEgfr(e.target.value)} placeholder="ex. 38" />
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">CKD (stade)</label>
+              <Input value={ckdStage} onChange={(e) => setCkdStage(e.target.value)} placeholder="ex. 3b" />
+            </div>
+            <div className="grid gap-1">
+              <label className="text-sm font-medium">Poids (kg)</label>
+              <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="ex. 63" />
+            </div>
+            <div className="grid gap-1 sm:col-span-3">
+              <label className="text-sm font-medium">Allergies (tags séparés par des virgules)</label>
+              <Input value={allergiesStr} onChange={(e) => setAllergiesStr(e.target.value)} placeholder="ex. pénicillines, AINS, sulfamides" />
+            </div>
+            <div className="grid gap-1 sm:col-span-3">
+              <label className="text-sm font-medium">Comorbidités (tags séparés par des virgules)</label>
+              <Input value={conditionsStr} onChange={(e) => setConditionsStr(e.target.value)} placeholder="ex. HTA, FA, épilepsie, glaucome, HBP" />
+            </div>
+            <div className="flex items-center gap-6 sm:col-span-3">
+              <label className="flex items-center gap-2 text-sm">
+                <input type="checkbox" className="accent-primary" checked={riskQT} onChange={(e) => setRiskQT(e.target.checked)} />
+                Risque QT
+              </label>
+              <label className="flex items-center gap-2 text-sm">
+                <input type="checkbox" className="accent-primary" checked={riskFall} onChange={(e) => setRiskFall(e.target.checked)} />
+                Somnolence/Chute
+              </label>
+            </div>
+          </div>
+
           <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
             <div className="grid gap-1">
               <label className="text-sm font-medium">Médicament 1 (DCI)</label>
@@ -135,7 +278,49 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
           {checkError && (
             <p role="alert" aria-live="polite" className="text-sm text-destructive">{checkError}</p>
           )}
-          {checkAnswer && (
+          {normResult && (
+            <div className="text-sm break-words whitespace-pre-wrap hyphens-auto space-y-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge className={
+                  normResult.triage === 'vert' ? 'bg-emerald-600 text-white' :
+                  normResult.triage === 'ambre' ? 'bg-amber-500 text-white' :
+                  'bg-red-600 text-white'
+                }>{normResult.triage.toUpperCase()}</Badge>
+                <Badge variant="secondary">Action: {normResult.action}</Badge>
+                <Badge variant="outline">Gravité: {normResult.severity}</Badge>
+              </div>
+              <p className="font-medium">{normResult.summary_fr}</p>
+              {normResult.bullets_fr?.length > 0 && (
+                <ul className="list-disc pl-6 space-y-2">
+                  {normResult.bullets_fr.map((b: string, i: number) => (
+                    <li key={i} className="leading-relaxed">{b}</li>
+                  ))}
+                </ul>
+              )}
+              {normResult.patient_specific_notes?.length > 0 && (
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">Notes patient</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    {normResult.patient_specific_notes.map((n: string, i: number) => (
+                      <li key={i} className="text-sm">{n}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {normResult.citations?.length > 0 && (
+                <p className="text-xs text-muted-foreground mt-2 break-words">
+                  Source :{' '}
+                  {normResult.citations.map((s, i) => (
+                    <span key={i}>
+                      <a href={s} target="_blank" rel="noreferrer" className="underline">drugs.com</a>
+                      {i < normResult.citations!.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </p>
+              )}
+            </div>
+          )}
+          {!normResult && checkAnswer && (
             <div className="text-sm break-words whitespace-pre-wrap hyphens-auto">
               <ul className="list-disc pl-6 space-y-2 break-words">
                 {interactionLines.map((line, idx) => (
