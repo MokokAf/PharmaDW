@@ -1,10 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Shield, BookOpen, ArrowLeft, LogOut } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { LayoutGrid, Pill, History, BookOpen, ClipboardCheck, User, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/contexts/AuthContext';
 
 import {
   Sidebar,
@@ -18,9 +16,15 @@ import {
   SidebarFooter,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { useRouter } from 'next/navigation';
+type Props = {
+  onGoDashboard?: () => void;
+  onGoInteractions?: () => void;
+  onGoHistory?: () => void;
+  onOpenAccount?: () => void;
+  onLogout?: () => void;
+};
 
-export function PharmacistSidebar() {
+export function PharmacistSidebar({ onGoDashboard, onGoInteractions, onGoHistory, onOpenAccount, onLogout }: Props) {
   const MIN_WIDTH = 240;
   const MAX_WIDTH = 500;
   const DEFAULT_WIDTH = 320;
@@ -53,41 +57,121 @@ export function PharmacistSidebar() {
       window.removeEventListener('mouseup', stopDrag);
     };
   }, [dragging]);
-  const { user, logout } = useAuth();
   const { state } = useSidebar();
-  const router = useRouter();
   const isCollapsed = state === "collapsed";
+  const [active, setActive] = useState<'dashboard'|'interactions'|'historique'|'references'|'protocoles'|'compte'>('dashboard');
 
   return (
     <Sidebar collapsible="icon" style={{'--sidebar-width': `${width}px`} as React.CSSProperties} className="fixed inset-y-0 left-0 z-40 h-svh w-[--sidebar-width] overflow-visible bg-white shadow">
       <SidebarHeader>
-        <div className="flex flex-col gap-2">
-          <h2 className={`font-bold ${isCollapsed ? 'text-sm' : 'text-lg'}`}>
-            {isCollapsed ? 'TB' : 'Tableau de Bord'}
-          </h2>
-          {!isCollapsed && (
-            <p className="text-sm text-muted-foreground">
-              Bienvenue, {user?.name}
-            </p>
-          )}
+        <div className="flex flex-col">
+          <h2 className={`font-semibold ${isCollapsed ? 'text-sm' : 'text-base'}`}>Tableau de bord</h2>
         </div>
       </SidebarHeader>
       
       <SidebarContent className="flex flex-col h-full">
-        {/* Navigation Actions */}
+        {/* Navigation */}
         <SidebarGroup>
-          <SidebarGroupLabel className="flex items-center gap-2">
-            <LogOut className="h-4 w-4" />
-            {!isCollapsed && "Actions"}
+          <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground tracking-wide">
+            {!isCollapsed && 'Navigation'}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <Button
                   variant="ghost"
-                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='dashboard' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='dashboard' ? 'border-primary' : 'border-transparent'}`}
                   size={isCollapsed ? 'icon' : 'default'}
-                  onClick={logout}
+                  onClick={() => { setActive('dashboard'); onGoDashboard?.(); }}
+                  aria-current={active==='dashboard' ? 'page' : undefined}
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Tableau de bord</span>}
+                </Button>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Button
+                  variant="ghost"
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='interactions' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='interactions' ? 'border-primary' : 'border-transparent'}`}
+                  size={isCollapsed ? 'icon' : 'default'}
+                  onClick={() => { setActive('interactions'); onGoInteractions?.(); }}
+                >
+                  <Pill className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Interactions</span>}
+                </Button>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Button
+                  variant="ghost"
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='historique' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='historique' ? 'border-primary' : 'border-transparent'}`}
+                  size={isCollapsed ? 'icon' : 'default'}
+                  onClick={() => { setActive('historique'); onGoHistory?.(); }}
+                >
+                  <History className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Historique</span>}
+                </Button>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Ressources */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground tracking-wide">
+            {!isCollapsed && 'Ressources'}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Button 
+                  variant="ghost" 
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='references' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='references' ? 'border-primary' : 'border-transparent'}`}
+                  size={isCollapsed ? "icon" : "default"}
+                  onClick={() => setActive('references')}
+                >
+                  <BookOpen className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Références professionnelles</span>}
+                </Button>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Button 
+                  variant="ghost" 
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='protocoles' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='protocoles' ? 'border-primary' : 'border-transparent'}`}
+                  size={isCollapsed ? "icon" : "default"}
+                  onClick={() => setActive('protocoles')}
+                >
+                  <ClipboardCheck className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Protocoles pharmaceutiques</span>}
+                </Button>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Compte */}
+        <SidebarGroup className="mt-auto">
+          <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground tracking-wide">
+            {!isCollapsed && 'Compte'}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Button
+                  variant="ghost"
+                  className={`relative w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${active==='compte' ? 'font-semibold' : ''} ${!isCollapsed ? 'py-2' : ''} border-l-2 ${active==='compte' ? 'border-primary' : 'border-transparent'}`}
+                  size={isCollapsed ? 'icon' : 'default'}
+                  onClick={() => { setActive('compte'); onOpenAccount?.(); }}
+                >
+                  <User className="h-4 w-4" />
+                  {!isCollapsed && <span className="ml-2">Mon compte</span>}
+                </Button>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Button
+                  variant="ghost"
+                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'} ${!isCollapsed ? 'py-2' : ''}`}
+                  size={isCollapsed ? 'icon' : 'default'}
+                  onClick={() => onLogout?.()}
                 >
                   <LogOut className="h-4 w-4" />
                   {!isCollapsed && <span className="ml-2">Déconnexion</span>}
@@ -96,80 +180,7 @@ export function PharmacistSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        {/* User Information Section */}
-        <SidebarGroup>
-          <SidebarGroupLabel className="flex items-center gap-2">
-            <Shield className="h-4 w-4" />
-            {!isCollapsed && "Informations du Compte"}
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            {!isCollapsed && (
-              <div className="space-y-4 p-4">
-                <div className="flex items-center gap-2 text-sm">
-                  <User className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium">Nom:</span>
-                  <span>{user?.name}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Mail className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium">Email:</span>
-                  <span className="truncate">{user?.email}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Shield className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium">Méthode:</span>
-                  <Badge variant={user?.provider === 'google' ? 'default' : 'secondary'} className="text-xs">
-                    {user?.provider === 'google' ? 'Google' : 'Email'}
-                  </Badge>
-                </div>
-              </div>
-            )}
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        {/* Resources Section */}
-        <SidebarGroup>
-          <SidebarGroupLabel className="flex items-center gap-2">
-            <BookOpen className="h-4 w-4" />
-            {!isCollapsed && "Ressources"}
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <Button 
-                  variant="ghost" 
-                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
-                  size={isCollapsed ? "icon" : "default"}
-                >
-                  <BookOpen className="h-4 w-4" />
-                  {!isCollapsed && <span className="ml-2">Références Professionnelles</span>}
-                </Button>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <Button 
-                  variant="ghost" 
-                  className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
-                  size={isCollapsed ? "icon" : "default"}
-                >
-                  <Shield className="h-4 w-4" />
-                  {!isCollapsed && <span className="ml-2">Protocoles Pharmaceutiques</span>}
-                </Button>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarFooter className="p-2 border-t mt-auto">
-          <Button
-            variant="ghost"
-            className={`w-full justify-start ${isCollapsed ? 'px-2' : 'px-4'}`}
-            size={isCollapsed ? 'icon' : 'default'}
-            onClick={() => router.push('/')}
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {!isCollapsed && <span className="ml-2">Retour à l'accueil</span>}
-          </Button>
-        </SidebarFooter>
-</SidebarContent>
+      </SidebarContent>
     {/* drag handle */}
       <div
         onMouseDown={(e) => { console.log('drag start'); e.preventDefault(); setDragging(true); }}

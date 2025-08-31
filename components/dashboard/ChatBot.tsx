@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,11 +10,16 @@ import { useToast } from '@/hooks/use-toast';
 
 const MAX_MESSAGES = 50;
 
-export const ChatBot: React.FC = () => {
+export type ChatBotHandle = {
+  focusInteractions: () => void;
+  showHistory: () => void;
+};
+
+export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',
-      content: 'Bonjour ! Je suis votre assistant IA spécialisé en pharmacie. Comment puis-je vous aider aujourd\'hui ?',
+      content: 'Bonjour ! Je suis votre assistant IA en pharmacie. Que puis-je vérifier pour vous ?',
       role: 'assistant',
       timestamp: new Date(),
     },
@@ -31,6 +36,7 @@ export const ChatBot: React.FC = () => {
   const [checkError, setCheckError] = useState<string | null>(null);
   const [checkAnswer, setCheckAnswer] = useState<string | null>(null);
   const [checkSources, setCheckSources] = useState<string[] | null>(null);
+  const drug1Ref = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -44,6 +50,16 @@ export const ChatBot: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  useImperativeHandle(ref, () => ({
+    focusInteractions: () => {
+      drug1Ref.current?.focus();
+    },
+    showHistory: () => {
+      // Scroll to the bottom of the message list (history)
+      scrollToBottom();
+    },
+  }));
 
   const handleInteractionSubmit = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -171,7 +187,7 @@ export const ChatBot: React.FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Bot className="h-5 w-5" />
-          Assistant DwaIA 2.0
+          Assistant DwaIA 2.0 — Interactions médicamenteuses
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col flex-1 p-0">
@@ -179,31 +195,36 @@ export const ChatBot: React.FC = () => {
         <div className="p-4 border-b space-y-3">
           <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
             <div className="grid gap-1">
-              <label className="text-sm font-medium">Médicament 1</label>
+              <label className="text-sm font-medium">Médicament 1 (DCI)</label>
               <Input
+                ref={drug1Ref}
+                autoFocus
                 value={drug1}
                 onChange={(e) => setDrug1(e.target.value)}
                 onKeyDown={handleInteractionKeyDown}
-                placeholder="Nom de la DCI"
+                placeholder="Ex. ibuprofène (DCI)"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 required
               />
+              <p className="text-xs text-muted-foreground">Saisissez la DCI, pas le nom commercial.</p>
             </div>
             <div className="grid gap-1">
-              <label className="text-sm font-medium">Médicament 2</label>
+              <label className="text-sm font-medium">Médicament 2 (DCI)</label>
               <Input
                 value={drug2}
                 onChange={(e) => setDrug2(e.target.value)}
                 onKeyDown={handleInteractionKeyDown}
-                placeholder="Nom de la DCI"
+                placeholder="Ex. warfarine (DCI)"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 required
               />
             </div>
-            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0">
-              {checkLoading ? 'Recherche en cours sur drugs.com…' : 'Vérifier l’association'}
+            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0 justify-self-end" title="Appuyez sur Entrée ↵ pour soumettre">
+              {checkLoading ? 'Recherche en cours…' : 'Vérifier l’interaction'}
             </Button>
           </form>
           {checkError && (
-            <p role="alert" className="text-sm text-destructive">{checkError}</p>
+            <p role="alert" aria-live="polite" className="text-sm text-destructive">{checkError}</p>
           )}
           {checkAnswer && (
             <div className="text-sm">
@@ -289,12 +310,13 @@ export const ChatBot: React.FC = () => {
               onKeyPress={handleKeyPress}
               placeholder="Posez votre question pharmaceutique..."
               disabled={isLoading}
-              className="flex-1 placeholder:text-transparent sm:placeholder:text-gray-500 dark:sm:placeholder:text-gray-400"
+              className="flex-1 placeholder:text-transparent sm:placeholder:text-gray-500 dark:sm:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             />
             <Button
               onClick={handleSendMessage}
               disabled={!input.trim() || isLoading}
               size="icon"
+              title="Appuyez sur Entrée ↵ pour envoyer"
             >
               <Send className="h-4 w-4" />
             </Button>
@@ -306,5 +328,4 @@ export const ChatBot: React.FC = () => {
       </CardContent>
     </Card>
   );
-};
-
+});
