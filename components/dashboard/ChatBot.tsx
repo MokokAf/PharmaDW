@@ -80,8 +80,26 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col p-0">
+        {/* Informations sur les bases de données (texte discret) */}
+        <div className="px-4 pb-3 text-xs sm:text-sm text-muted-foreground space-y-2">
+          <p className="font-medium">Bases de données médicales de l’IA</p>
+          <p>
+            Notre intelligence artificielle s’appuie exclusivement sur des bases de données médicales validées et reconnues par la communauté pharmaceutique et médicale mondiale, mises à jour régulièrement :
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              <span className="font-medium">Micromedex® (IBM Watson Health)</span> – Base de données clinique utilisée dans les hôpitaux du monde entier, offrant des informations validées sur les médicaments, leurs effets et leurs interactions.
+            </li>
+            <li>
+              <span className="font-medium">Cerner Multum™ (Cerner Corporation)</span> – Fournisseur de contenus médicamenteux intégré aux dossiers médicaux électroniques, reconnu pour la clarté de ses guides destinés aux professionnels comme aux patients.
+            </li>
+            <li>
+              <span className="font-medium">ASHP (American Society of Health-System Pharmacists)</span> – Éditeur de l’AHFS Drug Information®, compendium officiel et indépendant, largement cité par les autorités de santé américaines (FDA, Congrès).
+            </li>
+          </ul>
+        </div>
         {/* Vérificateur d'associations de médicaments */}
-        <div className="p-4 border-b space-y-3">
+        <div className="p-4 border-t space-y-3">
           <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
             <div className="grid gap-1">
               <label className="text-sm font-medium">Médicament 1 (DCI)</label>
