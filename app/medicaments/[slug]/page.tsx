@@ -7,14 +7,13 @@ import { MedDrug } from "@/types/medication";
 
 const dataPath = path.join(process.cwd(), "public/data/medicament_ma_optimized.json");
 
+// Enable ISR: pages are generated on first request, then cached for 24h
+export const revalidate = 60 * 60 * 24;
+export const dynamicParams = true;
+
 async function getAllDrugs(): Promise<MedDrug[]> {
   const raw = await fs.readFile(dataPath, "utf8");
   return JSON.parse(raw) as MedDrug[];
-}
-
-export async function generateStaticParams() {
-  const drugs = await getAllDrugs();
-  return drugs.map((d) => ({ slug: d.id.toString() }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
