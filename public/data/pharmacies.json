@@ -2,13 +2,24 @@
   {
     "city": "Casablanca",
     "area": "Ain Chock",
+    "name": "Pharmacie Lebbar Hicham",
+    "address": "298  boulevard Panoramique   Casablanca",
+    "phone": "0522210668",
+    "district": "Ain Chock",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-lebbar-hicham-s246659.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Ain Chock",
     "name": "Pharmacie Cité Addaman",
     "address": "avenue de Dakhla -ex H (Inara)   résid. addaman GH 9B n° 4  Casablanca",
     "phone": "0522213499",
     "district": "Ain Chock",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-cite-addaman-s234609.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -19,29 +30,7 @@
     "district": "Ain Chock",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-akhawayn-s242079.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Ain Chock",
-    "name": "Pharmacie Lebbar Hicham",
-    "address": "298  boulevard Panoramique   Casablanca",
-    "phone": "0522210668",
-    "district": "Ain Chock",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-lebbar-hicham-s246659.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Ain Sebaa",
-    "name": "Pharmacie Rizk",
-    "address": "5  place Haj Ahmed Mekouar-ex Soucarre  El Gantour Casablanca",
-    "phone": "0522358520",
-    "district": "Ain Sebaa",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-rizk-s234798.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -52,7 +41,18 @@
     "district": "Ain Sebaa",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-bayt-alfath-s234786.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Ain Sebaa",
+    "name": "Pharmacie Rizk",
+    "address": "5  place Haj Ahmed Mekouar-ex Soucarre  El Gantour Casablanca",
+    "phone": "0522358520",
+    "district": "Ain Sebaa",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-rizk-s234798.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -63,7 +63,7 @@
     "district": "Al Azhar Panorama",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-elbadie-s235156.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -74,18 +74,7 @@
     "district": "Anassi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-moueden-s240950.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Belvédère Et Roches Noires",
-    "name": "Pharmacie Rocroy",
-    "address": "10, rue Soukaina Bent El Houcine ex Rocroi, mag.n°1 Casablanca",
-    "phone": "0522248650",
-    "district": "Belvédère Et Roches Noires",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-rocroy-s234659.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -96,7 +85,18 @@
     "district": "Belvédère Et Roches Noires",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-farida-s238634.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Belvédère Et Roches Noires",
+    "name": "Pharmacie Rocroy",
+    "address": "10, rue Soukaina Bent El Houcine ex Rocroi, mag.n°1 Casablanca",
+    "phone": "0522248650",
+    "district": "Belvédère Et Roches Noires",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-rocroy-s234659.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -107,18 +107,7 @@
     "district": "Dar Bouazza",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-anis-s252795.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "El Fida Et Mers Sultan",
-    "name": "Pharmacie Beyrouth",
-    "address": "99 X rue de Beyrouth   hay Laâyoune  Casablanca",
-    "phone": "0522855948",
-    "district": "El Fida Et Mers Sultan",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-beyrouth-s235196.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -129,7 +118,18 @@
     "district": "El Fida Et Mers Sultan",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ezohours-s235189.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "El Fida Et Mers Sultan",
+    "name": "Pharmacie Beyrouth",
+    "address": "99 X rue de Beyrouth   hay Laâyoune  Casablanca",
+    "phone": "0522855948",
+    "district": "El Fida Et Mers Sultan",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-beyrouth-s235196.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -140,7 +140,7 @@
     "district": "El Fida Mers Sultan",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-carriere-ben-m-039-sik-s254083.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -151,18 +151,7 @@
     "district": "Hay Hassani Et El Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-attaoune-s235229.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Hay Hassani Et El Oulfa",
-    "name": "Pharmacie Assafa",
-    "address": "lotiss. Assafa   rue 15 n°148 rte My Thami Farah 1 Casablanca",
-    "phone": "0522901605",
-    "district": "Hay Hassani Et El Oulfa",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-assafa-s235226.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -173,7 +162,7 @@
     "district": "Hay Hassani Et El Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-dawdia-s241817.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -184,7 +173,7 @@
     "district": "Hay Hassani Et El Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-zaidoune-s247771.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -195,7 +184,18 @@
     "district": "Hay Hassani Et El Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-route-errahma-s244498.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Hay Hassani Et El Oulfa",
+    "name": "Pharmacie Assafa",
+    "address": "lotiss. Assafa   rue 15 n°148 rte My Thami Farah 1 Casablanca",
+    "phone": "0522901605",
+    "district": "Hay Hassani Et El Oulfa",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-assafa-s235226.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -206,7 +206,7 @@
     "district": "Hay Hassani Et Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-granada-s241694.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -217,7 +217,7 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-carnot-s235008.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -228,7 +228,7 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-derb-takadoum-s237556.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -239,18 +239,7 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-du-paradis-s234978.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Hay Mohammadi",
-    "name": "Pharmacie AlAqsa",
-    "address": "6  rue du Soldat Emile Brunet   résid. AlAmane  Casablanca",
-    "phone": "0522630063",
-    "district": "Hay Mohammadi",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-alaqsa-s237780.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -261,7 +250,7 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-carrieres-centrales-s235002.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -272,7 +261,18 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-erreda-s234973.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Hay Mohammadi",
+    "name": "Pharmacie AlAqsa",
+    "address": "6  rue du Soldat Emile Brunet   résid. AlAmane  Casablanca",
+    "phone": "0522630063",
+    "district": "Hay Mohammadi",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-alaqsa-s237780.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -283,7 +283,7 @@
     "district": "Lissasfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-almiza-s238144.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -294,7 +294,7 @@
     "district": "Lissasfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-mia-s241814.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -305,18 +305,7 @@
     "district": "Oulfa",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-masjid-abou-bakr-s241990.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Sbata",
-    "name": "Pharmacie Salmia",
-    "address": "86  avenue Joulan - ex D   Salmia II  Casablanca",
-    "phone": "0522382170",
-    "district": "Sbata",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-salmia-s237566.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -327,18 +316,18 @@
     "district": "Sbata",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-tayeb-s237567.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
-    "area": "Sidi Bernoussi",
-    "name": "Pharmacie Gharbi",
-    "address": "hay Amal IV (Sidi Bernoussi)   rue 28 n°71et73  Casablanca",
-    "phone": "0522737157",
-    "district": "Sidi Bernoussi",
+    "area": "Sbata",
+    "name": "Pharmacie Salmia",
+    "address": "86  avenue Joulan - ex D   Salmia II  Casablanca",
+    "phone": "0522382170",
+    "district": "Sbata",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-gharbi-s237315.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-salmia-s237566.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -349,18 +338,18 @@
     "district": "Sidi Bernoussi",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-menzeh-al-qods-s242720.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
-    "area": "Sidi Maârouf",
-    "name": "Pharmacie Zahra",
-    "address": "Route 1029  Bloc de la commune   Ouled Haddou  Casablanca",
-    "phone": "0522321274",
-    "district": "Sidi Maârouf",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-zahra-s234738.html",
-    "date": "2026-01-26"
+    "area": "Sidi Bernoussi",
+    "name": "Pharmacie Gharbi",
+    "address": "hay Amal IV (Sidi Bernoussi)   rue 28 n°71et73  Casablanca",
+    "phone": "0522737157",
+    "district": "Sidi Bernoussi",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-gharbi-s237315.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -371,18 +360,18 @@
     "district": "Sidi Maarouf",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-du-coin-s254135.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
-    "area": "Sidi Moumen",
-    "name": "Pharmacie Chama",
-    "address": "92  rue El Adarissa (Sidi Moumen)   Casablanca",
-    "phone": "0522703659",
-    "district": "Sidi Moumen",
+    "area": "Sidi Maârouf",
+    "name": "Pharmacie Zahra",
+    "address": "Route 1029  Bloc de la commune   Ouled Haddou  Casablanca",
+    "phone": "0522321274",
+    "district": "Sidi Maârouf",
     "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-chama-s237571.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-zahra-s234738.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -393,18 +382,18 @@
     "district": "Sidi Moumen",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-zaraba-s237572.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
-    "area": "Ville Bourgogne Maarif",
-    "name": "Pharmacie Val d'Anfa",
-    "address": "194  bd d' Anfa   Casablanca",
-    "phone": "0522364348",
-    "district": "Ville Bourgogne Maarif",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-val-d-039-anfa-s253791.html",
-    "date": "2026-01-26"
+    "area": "Sidi Moumen",
+    "name": "Pharmacie Chama",
+    "address": "92  rue El Adarissa (Sidi Moumen)   Casablanca",
+    "phone": "0522703659",
+    "district": "Sidi Moumen",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-chama-s237571.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -415,29 +404,18 @@
     "district": "Ville Bourgogne Maarif",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-route-d-039-eljadida-s253792.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
-    "area": "Ville Et Bourgogne Et Maarif",
-    "name": "Pharmacie Marhaba",
-    "address": "61, av des Forces Armées Royales  Casablanca",
-    "phone": "0522311640",
-    "district": "Ville Et Bourgogne Et Maarif",
+    "area": "Ville Bourgogne Maarif",
+    "name": "Pharmacie Val d'Anfa",
+    "address": "194  bd d' Anfa   Casablanca",
+    "phone": "0522364348",
+    "district": "Ville Bourgogne Maarif",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-marhaba-s234733.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Ville Et Bourgogne Et Maarif",
-    "name": "Pharmacie ElManar",
-    "address": "48  avenue Mehdi Ben Berka -ex Cimetière   Tassahoule Hassan Casablanca",
-    "phone": "0522261372",
-    "district": "Ville Et Bourgogne Et Maarif",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmanar-s234680.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-val-d-039-anfa-s253791.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -448,7 +426,7 @@
     "district": "Ville Et Bourgogne Et Maarif",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-tofail-s235203.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Casablanca",
@@ -459,29 +437,29 @@
     "district": "Ville Et Bourgogne Et Maarif",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-la-rotonde-s234644.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Marrakech",
-    "area": "Daoudiat",
-    "name": "Pharmacie  Chatebi",
-    "address": "535, Bel Bekkar 2 Hay Mohammadi à côte du Collège Chatebi Marrakech",
-    "phone": "0524304396",
-    "district": "Daoudiat",
+    "city": "Casablanca",
+    "area": "Ville Et Bourgogne Et Maarif",
+    "name": "Pharmacie Marhaba",
+    "address": "61, av des Forces Armées Royales  Casablanca",
+    "phone": "0522311640",
+    "district": "Ville Et Bourgogne Et Maarif",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-chatebi-s236536.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-marhaba-s234733.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Marrakech",
-    "area": "Daoudiat",
-    "name": "Pharmacie  Cadi Ayyad",
-    "address": "253, Sidi Abbad en face de la Pâtisserie Ayman Marrakech",
-    "phone": "0524306719",
-    "district": "Daoudiat",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-cadi-ayyad-s236547.html",
-    "date": "2026-01-26"
+    "city": "Casablanca",
+    "area": "Ville Et Bourgogne Et Maarif",
+    "name": "Pharmacie ElManar",
+    "address": "48  avenue Mehdi Ben Berka -ex Cimetière   Tassahoule Hassan Casablanca",
+    "phone": "0522261372",
+    "district": "Ville Et Bourgogne Et Maarif",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmanar-s234680.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -492,7 +470,29 @@
     "district": "Daoudiat",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-khalid-ben-elwalid-s164202.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie  Chatebi",
+    "address": "535, Bel Bekkar 2 Hay Mohammadi à côte du Collège Chatebi Marrakech",
+    "phone": "0524304396",
+    "district": "Daoudiat",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-chatebi-s236536.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie  Cadi Ayyad",
+    "address": "253, Sidi Abbad en face de la Pâtisserie Ayman Marrakech",
+    "phone": "0524306719",
+    "district": "Daoudiat",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-cadi-ayyad-s236547.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -503,7 +503,7 @@
     "district": "Daoudiat",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-alwifak-s98519.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -514,7 +514,7 @@
     "district": "Daoudiat",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-mogador-s26372.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -525,18 +525,7 @@
     "district": "Daoudiat",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-wilayat-al-amne-s247692.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Grand Gueliz",
-    "name": "Pharmacie Guéliz",
-    "address": "52  bd Moulay Rachid   Guéliz  Marrakech",
-    "phone": "0524448800",
-    "district": "Grand Gueliz",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-gueliz-s251608.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -547,7 +536,7 @@
     "district": "Grand Gueliz",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-volubilis-s55557.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -558,18 +547,18 @@
     "district": "Grand Gueliz",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-el-wed-s251375.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
     "area": "Grand Gueliz",
-    "name": "Pharmacie  El Filali",
-    "address": "Résid. Bakouri, Av. khalid B.Walid entre les Pompiers et Dispensaire les Sœurs derrière Cimetière Ba Marrakech",
-    "phone": "0524432700",
+    "name": "Pharmacie Guéliz",
+    "address": "52  bd Moulay Rachid   Guéliz  Marrakech",
+    "phone": "0524448800",
     "district": "Grand Gueliz",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-el-filali-s236740.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-gueliz-s251608.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -580,7 +569,7 @@
     "district": "Grand Gueliz",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-kaadoud-s162650.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -591,7 +580,18 @@
     "district": "Grand Gueliz",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-palacio-s236724.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Grand Gueliz",
+    "name": "Pharmacie  El Filali",
+    "address": "Résid. Bakouri, Av. khalid B.Walid entre les Pompiers et Dispensaire les Sœurs derrière Cimetière Ba Marrakech",
+    "phone": "0524432700",
+    "district": "Grand Gueliz",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-el-filali-s236740.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -602,7 +602,7 @@
     "district": "Hay Al Fadl",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-bab-marrakech-s97040.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -613,29 +613,7 @@
     "district": "Hay Dar  Esaada",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-nouara-de-marjane-s236812.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Pharmacie ElManzah",
-    "address": "hay El Hassani   bloc 18  n°500  MARRAKECH",
-    "phone": "0524496591",
-    "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmanzah-s15025.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Pharmacie Doha Principale",
-    "address": "3  cité Atlas 2 - Autre ville   les portes de Marrakech bloc 1",
-    "phone": "0689216399",
-    "district": "Hay Hassani",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-doha-principale-s251168.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -646,7 +624,29 @@
     "district": "Hay Hassani",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-al-aouam-s247990.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie ElManzah",
+    "address": "hay El Hassani   bloc 18  n°500  MARRAKECH",
+    "phone": "0524496591",
+    "district": "Hay Hassani",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmanzah-s15025.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Doha Principale",
+    "address": "3  cité Atlas 2 - Autre ville   les portes de Marrakech bloc 1",
+    "phone": "0689216399",
+    "district": "Hay Hassani",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-doha-principale-s251168.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -657,7 +657,7 @@
     "district": "Hay Hassani",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-oumaima-s238237.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -668,7 +668,7 @@
     "district": "Hay Hassani",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-kenza-s236787.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -679,18 +679,7 @@
     "district": "Hay Hassani",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-laayoune-s236783.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Lamhamid",
-    "name": "Pharmacie ElMazani",
-    "address": "Hay M'hamid 9   grp. Adoha  MARRAKECH",
-    "phone": "0524371144",
-    "district": "Lamhamid",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmazani-s96352.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -701,7 +690,7 @@
     "district": "Lamhamid",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-hadaiq-hay-chrifia-s251609.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -712,18 +701,18 @@
     "district": "Lamhamid",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-assafae-s236659.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
     "area": "Lamhamid",
-    "name": "Pharmacie  El Housna",
-    "address": "767, Lot. El Housna II, en face Lot. Ouirgane et à côté Arrondissement Askadjour Marrakech",
-    "phone": "0524360830",
+    "name": "Pharmacie ElMazani",
+    "address": "Hay M'hamid 9   grp. Adoha  MARRAKECH",
+    "phone": "0524371144",
     "district": "Lamhamid",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-el-housna-s238412.html",
-    "date": "2026-01-26"
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmazani-s96352.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -734,29 +723,18 @@
     "district": "Lamhamid",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-chaab-s251540.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
-    "area": "Medina",
-    "name": "Pharmacie Riad Zitoun",
-    "address": "323  rue Riad Zitoun Jdid   Touala  MARRAKECH",
-    "phone": "0524389143",
-    "district": "Medina",
+    "area": "Lamhamid",
+    "name": "Pharmacie  El Housna",
+    "address": "767, Lot. El Housna II, en face Lot. Ouirgane et à côté Arrondissement Askadjour Marrakech",
+    "phone": "0524360830",
+    "district": "Lamhamid",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-riad-zitoun-s55597.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "Pharmacie Mouassine",
-    "address": "52  rue Sidi El Yamani   Mouassine  MARRAKECH",
-    "phone": "0524441725",
-    "district": "Medina",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-mouassine-s4182.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-el-housna-s238412.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -767,7 +745,29 @@
     "district": "Medina",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-riad-laarouss-s236677.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie Mouassine",
+    "address": "52  rue Sidi El Yamani   Mouassine  MARRAKECH",
+    "phone": "0524441725",
+    "district": "Medina",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-mouassine-s4182.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie Riad Zitoun",
+    "address": "323  rue Riad Zitoun Jdid   Touala  MARRAKECH",
+    "phone": "0524389143",
+    "district": "Medina",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-riad-zitoun-s55597.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -778,7 +778,7 @@
     "district": "Nakhil Sud",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-lakhili-s243728.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -789,18 +789,7 @@
     "district": "Nakhil Sud",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-tallaght-s243657.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Sidi Ghanem Azzouzia",
-    "name": "Pharmacie  Jennan Essaada",
-    "address": "Résidence Saada 2, route Azzouzia à côté de la ferraille   Q. I. Sidi Ghanem Marrakech",
-    "phone": "0524336163",
-    "district": "Sidi Ghanem Azzouzia",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-jennan-essaada-s236593.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -811,18 +800,18 @@
     "district": "Sidi Ghanem Azzouzia",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-sidi-ghanem-s242443.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
-    "area": "Sidi Youssef",
-    "name": "Pharmacie Derb Elgabs",
-    "address": "349 X Derb El Gabs   Syba  MARRAKECH",
-    "phone": "0524401125",
-    "district": "Sidi Youssef",
+    "area": "Sidi Ghanem Azzouzia",
+    "name": "Pharmacie  Jennan Essaada",
+    "address": "Résidence Saada 2, route Azzouzia à côté de la ferraille   Q. I. Sidi Ghanem Marrakech",
+    "phone": "0524336163",
+    "district": "Sidi Ghanem Azzouzia",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-derb-elgabs-s55461.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-jennan-essaada-s236593.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -833,18 +822,18 @@
     "district": "Sidi Youssef",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-riad-s237489.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
-    "area": "Targa",
-    "name": "Pharmacie Sidi Dou",
-    "address": "124  Douar Sidi Daou   Masmoudi  MARRAKECH",
-    "phone": "0524341877",
-    "district": "Targa",
+    "area": "Sidi Youssef",
+    "name": "Pharmacie Derb Elgabs",
+    "address": "349 X Derb El Gabs   Syba  MARRAKECH",
+    "phone": "0524401125",
+    "district": "Sidi Youssef",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-sidi-dou-s55573.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-derb-elgabs-s55461.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Marrakech",
@@ -855,128 +844,18 @@
     "district": "Targa",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-hassania-targa-s253487.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Isly",
-    "address": "Pharmacie Isly, hay Koulouch , rue 4 n°3",
-    "phone": "053652...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Fadl Al Walidayne",
-    "address": "Pharmacie Fadl Al Walidayne,   lotiss. Al Boustane - Autre ville",
-    "phone": "053671...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Route Bouchtat",
-    "address": "Pharmacie Route Bouchtat, route Bouchtat",
-    "phone": "053674...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Al Maghreb Al Arabi",
-    "address": "Pharmacie Al Maghreb Al Arabi, Bd Sidi Yahya ang. bd. Sidi Maâfa",
-    "phone": "053650...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Belle Vue",
-    "address": "Pharmacie Belle Vue, 36, Avenue Ibn Elkhattab",
-    "phone": "053671...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Hay Samara",
-    "address": "Pharmacie Hay Samara, bd Ain Beni Mathar , hay Samara",
-    "phone": "053651...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Centre Culturel",
-    "address": "Pharmacie Centre Culturel, 7, bd Touat",
-    "phone": "053669...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Al Irfane",
-    "address": "Pharmacie Al Irfane, 47, rue la Colombe , Hay Essaada",
-    "phone": "053650...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Benkhirane",
-    "address": "Pharmacie Benkhirane, lotiss. Benkhirane , C5/48",
-    "phone": "053651...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Cherif",
-    "address": "Pharmacie Cherif, 13  bd Abderahim Bouabid   lot Anakhil",
-    "phone": "053674...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Pharmacie Ajdaini",
-    "address": "Pharmacie Ajdaini, 18  rte Aouinia   rue Bour Said",
-    "phone": "053674...",
-    "district": "Oujda",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-    "date": "2026-01-26"
+    "city": "Marrakech",
+    "area": "Targa",
+    "name": "Pharmacie Sidi Dou",
+    "address": "124  Douar Sidi Daou   Masmoudi  MARRAKECH",
+    "phone": "0524341877",
+    "district": "Targa",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-sidi-dou-s55573.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -987,7 +866,7 @@
     "district": "Adrar Tilila",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-paris-s246771.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -998,7 +877,7 @@
     "district": "Agadir",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-europa-s24977.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1009,7 +888,29 @@
     "district": "Al Massira Extension Dakhla",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-bachouch-s4282.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Agadir",
+    "area": "Anza",
+    "name": "Pharmacie Nabd",
+    "address": "nph2333 taddart abza, en face de la mosquée lahrouchi Agadir",
+    "phone": "0528206181",
+    "district": "Anza",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-nabd-s253031.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Agadir",
+    "area": "Anza",
+    "name": "Pharmacie Assoul",
+    "address": "n°128 bloc a. lotissement el hassania anza. a coté de mosquée hassania Agadir",
+    "phone": "0528214671",
+    "district": "Anza",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-assoul-s251818.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1020,7 +921,7 @@
     "district": "Ben Sergao",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ayour-s7730.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1031,7 +932,7 @@
     "district": "Bensergao",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-aicha-s81430.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1042,7 +943,7 @@
     "district": "Bouargane",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-agharass-s7721.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1053,7 +954,7 @@
     "district": "Centre Ville",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-moussa-ibn-noussair-s54479.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1064,7 +965,7 @@
     "district": "Hay Mohammadi",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-kettane-s249342.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1075,7 +976,7 @@
     "district": "Les Amicales Ihchech",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-imam-alkastalani-s7827.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Agadir",
@@ -1086,29 +987,139 @@
     "district": "Salam",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-leghzaoui-s246646.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Sefrou",
-    "area": "Sefrou",
-    "name": "Pharmacie Hay Elouz",
-    "address": "Pharmacie Hay Elouz, q. Elouz , Ben Seffar n°44",
-    "phone": "053566...",
-    "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Sefrou",
-    "area": "Sefrou",
-    "name": "Pharmacie Charifi",
-    "address": "Pharmacie Charifi, av ElIdrissi , rue 227 n°97 Habouna",
-    "phone": "053566...",
-    "district": "Sefrou",
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Jnane Al Matar",
+    "address": "Pharmacie Jnane Al Matar, 14  bd Khalil Jabrane - Autre ville   lotiss. Jinane El MATAR",
+    "phone": "052101...",
+    "district": "El Jadida",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Moderne",
+    "address": "Pharmacie Moderne, 102, bd Moulay Ismail",
+    "phone": "052335...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Commerciale",
+    "address": "Pharmacie Commerciale, lotiss. Ennajd I, imm. E n°4, bd de la Gare",
+    "phone": "052337...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Sidi Daoui",
+    "address": "Pharmacie Sidi Daoui, 14, bd Moulay Abdelhafid",
+    "phone": "052335...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Sakr",
+    "address": "Pharmacie Sakr, lotiss. Saâda 3, résid. Ennour, imm. C 1",
+    "phone": "052339...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie la Victoire",
+    "address": "Pharmacie la Victoire, 1, lotiss. Annasr, mouilha",
+    "phone": "052339...",
+    "district": "El Jadida",
+    "duty": "Garde Nuit (Ouvert de 21h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie les Fleurs",
+    "address": "Pharmacie les Fleurs, 7, rue Zohour, Alwifaq",
+    "phone": "052337...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Assaad",
+    "address": "Pharmacie Assaad, 1  hay Al Matar - Autre ville   résid. Assad",
+    "phone": "052103...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie principale",
+    "address": "Pharmacie principale, 3, bd Mohammed V",
+    "phone": "052337...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Al Wahat",
+    "address": "Pharmacie Al Wahat, lotiss. Al Irfane, n°3",
+    "phone": "052337...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie la Faculté",
+    "address": "Pharmacie la Faculté, 101, bd Khalil Jabrane, lotiss. Jawhara",
+    "phone": "052335...",
+    "district": "El Jadida",
+    "duty": "Garde Nuit (Ouvert de 21h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Jadida",
+    "area": "El Jadida",
+    "name": "Pharmacie Tissir",
+    "address": "Pharmacie Tissir, 70, bd Bir Anzarane",
+    "phone": "052335...",
+    "district": "El Jadida",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Sefrou",
@@ -1119,7 +1130,7 @@
     "district": "Sefrou",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Sefrou",
@@ -1130,51 +1141,29 @@
     "district": "Sefrou",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Sefrou",
     "area": "Sefrou",
-    "name": "Pharmacie Khalil",
-    "address": "Pharmacie Khalil, 1218  Zalagh Ben Sefar",
+    "name": "Pharmacie Charifi",
+    "address": "Pharmacie Charifi, av ElIdrissi , rue 227 n°97 Habouna",
     "phone": "053566...",
-    "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Sefrou",
-    "area": "Sefrou",
-    "name": "Pharmacie Boudarham 2",
-    "address": "Pharmacie Boudarham 2,   Rte Al Manzel   n°558  hay Boudarham",
-    "phone": "053568...",
     "district": "Sefrou",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Sefrou",
     "area": "Sefrou",
-    "name": "Pharmacie Chabbak",
-    "address": "Pharmacie Chabbak, Q. Chabbak 1   n°117 bis",
-    "phone": "053596...",
-    "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Sefrou",
-    "area": "Sefrou",
-    "name": "Pharmacie Sidi Ahmed Tadli",
-    "address": "Pharmacie Sidi Ahmed Tadli, 318  bd Abdelkrim Khattabi",
+    "name": "Pharmacie Hay Elouz",
+    "address": "Pharmacie Hay Elouz, q. Elouz , Ben Seffar n°44",
     "phone": "053566...",
     "district": "Sefrou",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Sefrou",
@@ -1185,205 +1174,227 @@
     "district": "Sefrou",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Sefrou",
+    "area": "Sefrou",
+    "name": "Pharmacie Chabbak",
+    "address": "Pharmacie Chabbak, Q. Chabbak 1   n°117 bis",
+    "phone": "053596...",
+    "district": "Sefrou",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Sefrou",
+    "area": "Sefrou",
+    "name": "Pharmacie Sidi Ahmed Tadli",
+    "address": "Pharmacie Sidi Ahmed Tadli, 318  bd Abdelkrim Khattabi",
+    "phone": "053566...",
+    "district": "Sefrou",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Sefrou",
+    "area": "Sefrou",
+    "name": "Pharmacie Boudarham 2",
+    "address": "Pharmacie Boudarham 2,   Rte Al Manzel   n°558  hay Boudarham",
+    "phone": "053568...",
+    "district": "Sefrou",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Sefrou",
+    "area": "Sefrou",
+    "name": "Pharmacie Khalil",
+    "address": "Pharmacie Khalil, 1218  Zalagh Ben Sefar",
+    "phone": "053566...",
+    "district": "Sefrou",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Agdal",
+    "name": "Pharmacie Rhaouti",
+    "address": "avenue allal el fassi  (a côté de l’hôpital cheikh zaïd) Rabat",
+    "phone": "0537772324",
+    "district": "Agdal",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-rhaouti-s241436.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Centre Ville",
+    "name": "Pharmacie Centre Chèques Postaux",
+    "address": "45, av moulay ismail hassan  Rabat",
+    "phone": "0537726216",
+    "district": "Centre Ville",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-centre-cheques-postaux-s236276.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Hay Riad",
+    "name": "Pharmacie Arrayhane",
+    "address": "secteur 6d1, rue arrayhane  Rabat",
+    "phone": "0537714676",
+    "district": "Hay Riad",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-arrayhane-s238093.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Ocean Orangers",
+    "name": "Pharmacie Aya",
+    "address": "dr. nawfal lahlou rue el hachmi el mestari (douwar al askar), n°4, lot aya Rabat",
+    "phone": "0537693388",
+    "district": "Ocean Orangers",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-aya-s21467.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Takadoum Et Souissi",
+    "name": "Pharmacie les Lilas",
+    "address": "61d, rue bani abeid nahda 2 RABAT",
+    "phone": "0537756273",
+    "district": "Takadoum Et Souissi",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-les-lilas-s147534.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Yacoub El Mansour",
+    "name": "Pharmacie Nadia",
+    "address": "av sidi med benabdellah rue 7 hay ahbassc.y.m - Rabat",
+    "phone": "0537692923",
+    "district": "Yacoub El Mansour",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-nadia-s236904.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Yacoub El Mansour",
+    "name": "Pharmacie Gharnata",
+    "address": "812 amal 1 idafi - c.y.m - Rabat",
+    "phone": "0537281207",
+    "district": "Yacoub El Mansour",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-gharnata-s236905.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Rabat",
+    "area": "Yacoub El Mansour",
+    "name": "Pharmacie Al Azhar",
+    "address": "89, av al mouhit al hadi el menzeh(en face résidence garde royale) Rabat",
+    "phone": "0537799107",
+    "district": "Yacoub El Mansour",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-al-azhar-s241336.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Bd Moulay Rachid",
-    "address": "Pharmacie Bd Moulay Rachid, 13, avenue moulay rachid, val fleuri 90000 tanger - maroc",
-    "phone": "053931...",
+    "name": "Pharmacie Al Aziziya",
+    "address": "Pharmacie Al Aziziya, rondpoint mcdonald's route de rabat (entrée de la résidence shakira, près de l'établissement soliman el hakim) 90000 tanger - maroc",
+    "phone": "053105...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Al Ihssane",
-    "address": "Pharmacie Al Ihssane, mesnana début route rahrah 90000 tanger - maroc",
-    "phone": "053931...",
+    "name": "Pharmacie Anfas",
+    "address": "Pharmacie Anfas, route de malabata, près hotel ibis 90000 tanger - maroc",
+    "phone": "053930...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Bd Mohamed Vi",
-    "address": "Pharmacie Bd Mohamed Vi, avenue mohamed vi, baie de tanger 90000 tanger - maroc",
-    "phone": "053994...",
-    "district": "Tanger",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Tanger",
-    "area": "Tanger",
-    "name": "Pharmacie Imam Ali",
-    "address": "Pharmacie Imam Ali, haoumat soussi, dhar al kanfoud, al aouama 90000 tanger - maroc",
+    "name": "Pharmacie Anoual",
+    "address": "Pharmacie Anoual, 26, avenue al qodss, aouama 90000 tanger - maroc",
     "phone": "053995...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Al Irfane",
-    "address": "Pharmacie Al Irfane, lot. irfane, doha, boukhalef 90000 tanger - maroc",
-    "phone": "053939...",
+    "name": "Pharmacie M 039 Sallah",
+    "address": "Pharmacie M 039 Sallah, 45, avenue mohamed ben abdellah 90000 tanger - maroc",
+    "phone": "053993...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Moulay Ismail",
-    "address": "Pharmacie Moulay Ismail, avenue moulay ismail et avenue des far 90000 tanger - maroc",
-    "phone": "053936...",
+    "name": "Pharmacie Andalucia",
+    "address": "Pharmacie Andalucia, houamat soussi,lot. andalous, béni makada 90000 tanger - maroc",
+    "phone": "053935...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Lotis Ibn Khaldoun",
-    "address": "Pharmacie Lotis Ibn Khaldoun, 60, rue e, lot. ibn khaldoun 90000 tanger - maroc",
+    "name": "Pharmacie Ain Jdida",
+    "address": "Pharmacie Ain Jdida, route de tétouan, mghogha kbira  90000 tanger - maroc",
+    "phone": "053995...",
+    "district": "Tanger",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Tanger",
+    "area": "Tanger",
+    "name": "Pharmacie Branes Ii",
+    "address": "Pharmacie Branes Ii, avenue, ibn abi zare, branes ii 90000 tanger - maroc",
     "phone": "053931...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tanger",
     "area": "Tanger",
-    "name": "Pharmacie Oudaya",
-    "address": "Pharmacie Oudaya, aouama charkia,  souk khandaq lward  90000 tanger - maroc",
-    "phone": "053103...",
+    "name": "Pharmacie Ben Yaich",
+    "address": "Pharmacie Ben Yaich, branes kdima, ziaten 90000 tanger - maroc",
+    "phone": "053930...",
     "district": "Tanger",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Al Mohit Abouab Sala",
-    "name": "Pharmacie Sakani",
-    "address": "Pharmacie Sakani, quartier bouchouk résidence sakani 2à côté de l’école de police route de kenitra",
-    "phone": "053784...",
-    "district": "Al Mohit Abouab Sala",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Bettana",
-    "name": "Pharmacie El Menzeh",
-    "address": "Pharmacie El Menzeh, 51, rue massira el khadra",
-    "phone": "053780...",
-    "district": "Bettana",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Elinbiate",
-    "name": "Pharmacie Salah Eddine",
-    "address": "Pharmacie Salah Eddine, 468, bd my abdelkader. hay inbiat -",
-    "phone": "053781...",
-    "district": "Hay Elinbiate",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Essalam",
-    "name": "Pharmacie Al Amana",
-    "address": "Pharmacie Al Amana, 349 secteur 11 bloc 16 -",
-    "phone": "053780...",
-    "district": "Hay Essalam",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Sala el jadida",
-    "name": "Pharmacie centrale",
-    "address": "Pharmacie centrale, angle de l'avenue med ben al hassan et de\r\nl'avenue hassan ii imm 44a.c4",
-    "phone": "053753...",
-    "district": "Sala el jadida",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Sala El Jadida",
-    "name": "Pharmacie Al Maarid",
-    "address": "Pharmacie Al Maarid,  av my abdellah centre commercial al maÂrid étage1",
-    "phone": "053753...",
-    "district": "Sala El Jadida",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Salé",
-    "area": "Tabriquet",
-    "name": "Pharmacie Aryad",
-    "address": "Pharmacie Aryad, bd mohammed v, résid. el banafsej n°4 tabriquet, salé",
-    "phone": "053786...",
-    "district": "Tabriquet",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Safi",
-    "area": "Safi",
-    "name": "Pharmacie Aabid",
-    "address": "Pharmacie Aabid, Quartier de l'Aviation",
-    "phone": "052465...",
-    "district": "Safi",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Safi",
-    "area": "Safi",
-    "name": "Pharmacie Sandali",
-    "address": "Pharmacie Sandali, 159, rue Al Qods , hay Saâda, Azib Derai",
-    "phone": "052462...",
-    "district": "Safi",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Safi",
-    "area": "Safi",
-    "name": "Pharmacie Al Hamd",
-    "address": "Pharmacie Al Hamd, 159, lotiss. Lamia , rte Dar Si Aïsa",
-    "phone": "052461...",
-    "district": "Safi",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Safi",
@@ -1394,29 +1405,40 @@
     "district": "Safi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Safi",
     "area": "Safi",
-    "name": "Pharmacie Sidi Abdelkerim",
-    "address": "Pharmacie Sidi Abdelkerim, 112, rue du Souk , q. Sidi Abdelkerim",
-    "phone": "052466...",
+    "name": "Pharmacie Aabid",
+    "address": "Pharmacie Aabid, Quartier de l'Aviation",
+    "phone": "052465...",
     "district": "Safi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Safi",
     "area": "Safi",
-    "name": "Pharmacie Mouatassim",
-    "address": "Pharmacie Mouatassim, Rte diour Si Abbas , douar deriouchat",
-    "phone": "060033...",
+    "name": "Pharmacie Sandali",
+    "address": "Pharmacie Sandali, 159, rue Al Qods , hay Saâda, Azib Derai",
+    "phone": "052462...",
     "district": "Safi",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Safi",
+    "area": "Safi",
+    "name": "Pharmacie Al Hamd",
+    "address": "Pharmacie Al Hamd, 159, lotiss. Lamia , rte Dar Si Aïsa",
+    "phone": "052461...",
+    "district": "Safi",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Safi",
@@ -1427,260 +1449,29 @@
     "district": "Safi",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Rabat",
-    "area": "Agdal",
-    "name": "Pharmacie Ibn Khatab",
-    "address": "angle av omar bin khattab et av abtal (en face arribat centerentrée bershka) - Rabat",
-    "phone": "0537775781",
-    "district": "Agdal",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-khatab-s241505.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Rabat",
-    "area": "Centre Ville",
-    "name": "Pharmacie Avenue D Rsquo Alger Hassan",
-    "address": "19 avenue d'alger hassan Rabat",
-    "phone": "0537726323",
-    "district": "Centre Ville",
+    "city": "Safi",
+    "area": "Safi",
+    "name": "Pharmacie Sidi Abdelkerim",
+    "address": "Pharmacie Sidi Abdelkerim, 112, rue du Souk , q. Sidi Abdelkerim",
+    "phone": "052466...",
+    "district": "Safi",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-avenue-d-rsquo-alger-hassan-s254050.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Rabat",
-    "area": "Oceon Orangers",
-    "name": "Pharmacie Belmahi",
-    "address": "1, rue tonkin (av madagascar)\r\nprés l'école andre malraux et marché diour jamaa Rabat",
-    "phone": "0537722650",
-    "district": "Oceon Orangers",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-belmahi-s237666.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Rabat",
-    "area": "Yacoub El Mansour",
-    "name": "Pharmacie Rabat Corniche",
-    "address": "rue 13, n°2, hay al ahbass route côtière - c y m - Rabat",
-    "phone": "0537698488",
-    "district": "Yacoub El Mansour",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-rabat-corniche-s246680.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Rabat",
-    "area": "Yacoub El Mansour",
-    "name": "Pharmacie Al Amane",
-    "address": "443 bis amal 5 massira - hay el fath\r\nlotissement grini c.y.m Rabat",
-    "phone": "0537293647",
-    "district": "Yacoub El Mansour",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-al-amane-s254143.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Rabat",
-    "area": "Yacoub El Mansour",
-    "name": "Pharmacie Al Majd",
-    "address": "bloc d5. n°9. avenue al ijtihad. kouas - c.y.m Rabat",
-    "phone": "0537799696",
-    "district": "Yacoub El Mansour",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-al-majd-s252311.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Nador",
-    "name": "Pharmacie AlMahatta",
-    "address": "Pharmacie AlMahatta, 254  av Hassan II",
-    "phone": "053660...",
-    "district": "Nador",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Ihddaden",
-    "name": "Pharmacie Bouyzarzar",
-    "address": "Pharmacie Bouyzarzar, commune Ihaddaden",
-    "phone": "053660...",
-    "district": "Ihddaden",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Jaadar",
-    "name": "Pharmacie Taha Houssein",
-    "address": "Pharmacie Taha Houssein, av Prince Héritier Sidi Mohamed",
-    "phone": "053635...",
-    "district": "Jaadar",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Nador",
-    "name": "Pharmacie Ajouaou",
-    "address": "Pharmacie Ajouaou, Quartier Ouled Lahcen",
-    "phone": "053633...",
-    "district": "Nador",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Nador",
-    "name": "Pharmacie Blanco",
-    "address": "Pharmacie Blanco, Hay Ould Boutayeb , rue 3 n°176",
-    "phone": "053633...",
-    "district": "Nador",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Nador",
-    "area": "Selouane",
-    "name": "Pharmacie Kachadiya",
-    "address": "Pharmacie Kachadiya, Douar Kachadia",
-    "phone": "053660...",
-    "district": "Selouane",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Agdal",
-    "name": "Pharmacie Blanco",
-    "address": "Pharmacie Blanco, 35  rte ain chkef al yassmine  riad",
-    "phone": "053596...",
-    "district": "Agdal",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Ain Chkef",
-    "name": "Pharmacie Espace Vert",
-    "address": "Pharmacie Espace Vert, lotissement jnane c3. ain chkef",
-    "phone": "060290...",
-    "district": "Ain Chkef",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Les Merinides",
-    "name": "Pharmacie Soundous",
-    "address": "Pharmacie Soundous, n°11. rue 23. lotissement oued fès. a cote de la mosquée saoudi. avant terminus du bus 22 et 30",
-    "phone": "053575...",
-    "district": "Les Merinides",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Medina Jnanat",
-    "name": "Pharmacie Jnane El Kadri",
-    "address": "Pharmacie Jnane El Kadri, bab al khoukha  jnane kadiri rue 45 n°25",
-    "phone": "053576...",
-    "district": "Medina Jnanat",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Saiss",
-    "name": "Pharmacie Al Wassila",
-    "address": "Pharmacie Al Wassila, lotissement al wafaa 4. route séfrou",
-    "phone": "053561...",
-    "district": "Saiss",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Fès",
-    "area": "Zouagha",
-    "name": "Pharmacie Al Youmne",
-    "address": "Pharmacie Al Youmne, lotissement dalila. résidence dalia. près de addoha",
-    "phone": "053572...",
-    "district": "Zouagha",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khouribga",
-    "area": "Khouribga",
-    "name": "Pharmacie Du Phosphate",
-    "address": "Pharmacie Du Phosphate, 71, bd ElMokawama , rue 24",
-    "phone": "052356...",
-    "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khouribga",
-    "area": "Khouribga",
-    "name": "Pharmacie AlMassira",
-    "address": "Pharmacie AlMassira, 294, av Ahmed ElHiba , bloc C",
-    "phone": "052349...",
-    "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khouribga",
-    "area": "Khouribga",
-    "name": "Pharmacie AlBouchra",
-    "address": "Pharmacie AlBouchra, 388, av. 16 Novembre , hay Nahda",
-    "phone": "052349...",
-    "district": "Khouribga",
+    "city": "Safi",
+    "area": "Safi",
+    "name": "Pharmacie Mouatassim",
+    "address": "Pharmacie Mouatassim, Rte diour Si Abbas , douar deriouchat",
+    "phone": "060033...",
+    "district": "Safi",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khouribga",
-    "area": "Khouribga",
-    "name": "Pharmacie hay Mabchour",
-    "address": "Pharmacie hay Mabchour, rue Oued Bouchadou , Beni Moussa",
-    "phone": "052356...",
-    "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khouribga",
-    "area": "Khouribga",
-    "name": "Pharmacie Ibn Sina",
-    "address": "Pharmacie Ibn Sina, 318  bd Palestine   hay ElQods I",
-    "phone": "052356...",
-    "district": "Khouribga",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Khouribga",
@@ -1691,7 +1482,194 @@
     "district": "Khouribga",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khouribga",
+    "area": "Khouribga",
+    "name": "Pharmacie hay Mabchour",
+    "address": "Pharmacie hay Mabchour, rue Oued Bouchadou , Beni Moussa",
+    "phone": "052356...",
+    "district": "Khouribga",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khouribga",
+    "area": "Khouribga",
+    "name": "Pharmacie Ibn Sina",
+    "address": "Pharmacie Ibn Sina, 318  bd Palestine   hay ElQods I",
+    "phone": "052356...",
+    "district": "Khouribga",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khouribga",
+    "area": "Khouribga",
+    "name": "Pharmacie AlBouchra",
+    "address": "Pharmacie AlBouchra, 388, av. 16 Novembre , hay Nahda",
+    "phone": "052349...",
+    "district": "Khouribga",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khouribga",
+    "area": "Khouribga",
+    "name": "Pharmacie Du Phosphate",
+    "address": "Pharmacie Du Phosphate, 71, bd ElMokawama , rue 24",
+    "phone": "052356...",
+    "district": "Khouribga",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khouribga",
+    "area": "Khouribga",
+    "name": "Pharmacie AlMassira",
+    "address": "Pharmacie AlMassira, 294, av Ahmed ElHiba , bloc C",
+    "phone": "052349...",
+    "district": "Khouribga",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Agdal",
+    "name": "Pharmacie Al Ikhwa",
+    "address": "Pharmacie Al Ikhwa, 1  lotiss. marbella   rte ain chkef",
+    "phone": "053596...",
+    "district": "Agdal",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Ain Chkef",
+    "name": "Pharmacie Bouchra",
+    "address": "Pharmacie Bouchra, lotissement jnane 1. ain chkef",
+    "phone": "053596...",
+    "district": "Ain Chkef",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Les Merinides",
+    "name": "Pharmacie Anoual",
+    "address": "Pharmacie Anoual, bloc f n°1 hay ain qadouss, près du mosquée hay m'cella. face du préfecture ain qadous",
+    "phone": "053570...",
+    "district": "Les Merinides",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Medina Jnanat",
+    "name": "Pharmacie Zarrouk",
+    "address": "Pharmacie Zarrouk, hay sidi boujida   jnane el ouad n°76",
+    "phone": "053576...",
+    "district": "Medina Jnanat",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Saiss",
+    "name": "Pharmacie Khayra",
+    "address": "Pharmacie Khayra, lotissement el menzeh. n°8. arrondissement saiss. route sidi hrazem",
+    "phone": "053576...",
+    "district": "Saiss",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Fès",
+    "area": "Zouagha",
+    "name": "Pharmacie El Hijazi",
+    "address": "Pharmacie El Hijazi, n°17, lotissement. hatim, bensouda, face complexe tajmouati",
+    "phone": "053572...",
+    "district": "Zouagha",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Fadl Al Walidayne",
+    "address": "Pharmacie Fadl Al Walidayne,   lotiss. Al Boustane - Autre ville",
+    "phone": "053671...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Al Irfane",
+    "address": "Pharmacie Al Irfane, 47, rue la Colombe , Hay Essaada",
+    "phone": "053650...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Benkhirane",
+    "address": "Pharmacie Benkhirane, lotiss. Benkhirane , C5/48",
+    "phone": "053651...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Isly",
+    "address": "Pharmacie Isly, hay Koulouch , rue 4 n°3",
+    "phone": "053652...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Route Bouchtat",
+    "address": "Pharmacie Route Bouchtat, route Bouchtat",
+    "phone": "053674...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Oujda",
+    "area": "Oujda",
+    "name": "Pharmacie Belle Vue",
+    "address": "Pharmacie Belle Vue, 36, Avenue Ibn Elkhattab",
+    "phone": "053671...",
+    "district": "Oujda",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Errachidia",
@@ -1702,7 +1680,7 @@
     "district": "Errachidia",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Errachidia",
@@ -1713,7 +1691,7 @@
     "district": "Errachidia",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Errachidia",
@@ -1724,7 +1702,7 @@
     "district": "Errachidia",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Errachidia",
@@ -1735,7 +1713,7 @@
     "district": "Errachidia",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Errachidia",
@@ -1746,238 +1724,117 @@
     "district": "Errachidia",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Inezgane",
-    "area": "Inezgane",
-    "name": "Pharmacie la Province",
-    "address": "Pharmacie la Province, 2, av des f.a.r. ang. mohammed v",
-    "phone": "052883...",
-    "district": "Inezgane",
+    "city": "Nador",
+    "area": "Nador",
+    "name": "Pharmacie AlMahatta",
+    "address": "Pharmacie AlMahatta, 254  av Hassan II",
+    "phone": "053660...",
+    "district": "Nador",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Nador",
+    "area": "Ihddaden",
+    "name": "Pharmacie Alikhlass",
+    "address": "Pharmacie Alikhlass, route Zghanghan Ihddaden",
+    "phone": "053633...",
+    "district": "Ihddaden",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Nador",
+    "area": "Jaadar",
+    "name": "Pharmacie Al Hikma",
+    "address": "Pharmacie Al Hikma, 294  bd. Mohammed V   Jaadar",
+    "phone": "053635...",
+    "district": "Jaadar",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Nador",
+    "area": "Nador",
+    "name": "Pharmacie Ghazza",
+    "address": "Pharmacie Ghazza, 14, Berraka El Oulya",
+    "phone": "053660...",
+    "district": "Nador",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Nador",
+    "area": "Nador",
+    "name": "Pharmacie Sekkat",
+    "address": "Pharmacie Sekkat, 4, Quartier Al Matar , imm. Salama",
+    "phone": "053638...",
+    "district": "Nador",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Salé",
+    "area": "Bettana",
+    "name": "Pharmacie Abdedine",
+    "address": "Pharmacie Abdedine, 101, bd massira el khadra, bettana",
+    "phone": "053784...",
+    "district": "Bettana",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Inezgane",
-    "area": "Inezgane",
-    "name": "Pharmacie Essaâda",
-    "address": "Pharmacie Essaâda, 109, bd hassan i",
-    "phone": "052883...",
-    "district": "Inezgane",
+    "city": "Salé",
+    "area": "Hay Arrahma",
+    "name": "Pharmacie Ibn Yassine",
+    "address": "Pharmacie Ibn Yassine, hay rahma (sect a) n°468",
+    "phone": "053787...",
+    "district": "Hay Arrahma",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Inezgane",
-    "area": "Taghzoute",
-    "name": "Pharmacie Taghzoute",
-    "address": "Pharmacie Taghzoute, avenue mohamed v ang. av 3 mars, cité hassani",
-    "phone": "052833...",
-    "district": "Taghzoute",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Inezgane",
-    "area": "Tarrast",
-    "name": "Pharmacie AlWafa",
-    "address": "Pharmacie AlWafa, rte. principale, tarrast",
-    "phone": "052883...",
-    "district": "Tarrast",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Témara",
-    "area": "Centre",
+    "city": "Salé",
+    "area": "Hay Chmaou",
     "name": "Pharmacie Chifaa",
-    "address": "Pharmacie Chifaa, n°4, av. hassan ii , sigal sigalon",
-    "phone": "053774...",
-    "district": "Centre",
+    "address": "Pharmacie Chifaa, 18,lot zohour route mehdia (prés école yakada ii)",
+    "phone": "053784...",
+    "district": "Hay Chmaou",
     "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Témara",
-    "area": "El Guic",
-    "name": "Pharmacie Rim",
-    "address": "Pharmacie Rim, 496 guich oudayas (en face bim et à 150mde la mosquée belbachir et attijariwafa bank)",
-    "phone": "053756...",
-    "district": "El Guic",
+    "city": "Salé",
+    "area": "Hay Essalam",
+    "name": "Pharmacie Al Hayat",
+    "address": "Pharmacie Al Hayat, boulevard atlas lekbir. immeuble des enseignants",
+    "phone": "053780...",
+    "district": "Hay Essalam",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Salé",
+    "area": "Sala El Jadida",
+    "name": "Pharmacie Mail Central",
+    "address": "Pharmacie Mail Central, av al wahda imb a1 commerce n°1",
+    "phone": "053753...",
+    "district": "Sala El Jadida",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Témara",
-    "area": "Harhoura",
-    "name": "Pharmacie Atlantique",
-    "address": "Pharmacie Atlantique,   24h/24257, rue casablanca (en face restaurant miramar)",
-    "phone": "053774...",
-    "district": "Harhoura",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Témara",
-    "area": "Oulad Mtaa",
-    "name": "Pharmacie Jardins des Oudayas",
-    "address": "Pharmacie Jardins des Oudayas, lotiss. Ouled Mtaa , sect. 2, n°141",
-    "phone": "053761...",
-    "district": "Oulad Mtaa",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guelmim",
-    "area": "Guelmim",
-    "name": "Pharmacie Ichraq",
-    "address": "Pharmacie Ichraq, hay Essaadiyine , rue 20 n°20",
-    "phone": "052877...",
-    "district": "Guelmim",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guelmim",
-    "area": "Guelmim",
-    "name": "Pharmacie Alouaha",
-    "address": "Pharmacie Alouaha,   lotissement Al Ouaha",
-    "phone": "052877...",
-    "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guelmim",
-    "area": "Guelmim",
-    "name": "Pharmacie El Hoda",
-    "address": "Pharmacie El Hoda,   bd Amane Ouchen",
-    "phone": "052877...",
-    "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guelmim",
-    "area": "Guelmim",
-    "name": "Pharmacie Al Masjid",
-    "address": "Pharmacie Al Masjid,   hay Nassim - Autre ville   Tayer Sofla",
-    "phone": "080862...",
-    "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berkane",
-    "area": "Berkane",
-    "name": "Pharmacie Aous",
-    "address": "Pharmacie Aous, 524  Sidi Ali Ben Yekhlef",
-    "phone": "061445...",
-    "district": "Berkane",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berkane",
-    "area": "Berkane",
-    "name": "Pharmacie Hay Lahbil",
-    "address": "Pharmacie Hay Lahbil, 2, rue El Bristane , hay Lahbil Sidi Slimane",
-    "phone": "053625...",
-    "district": "Berkane",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berkane",
-    "area": "Berkane",
-    "name": "Pharmacie Ibnou Saih",
-    "address": "Pharmacie Ibnou Saih, 13  q. Al Amal",
-    "phone": "069809...",
-    "district": "Berkane",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berkane",
-    "area": "Berkane",
-    "name": "Pharmacie Riad",
-    "address": "Pharmacie Riad, 17, bd Al Ahram , hay Massira",
-    "phone": "053661...",
-    "district": "Berkane",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Settat",
-    "area": "Settat",
-    "name": "Pharmacie El Hilal",
-    "address": "Pharmacie El Hilal, 83, bd zenata , hay sidi abdelkrim",
-    "phone": "052340...",
-    "district": "Settat",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Settat",
-    "area": "Settat",
-    "name": "Pharmacie Al Massira",
-    "address": "Pharmacie Al Massira, 49, bd hassan2, près de sidi lghlimi",
-    "phone": "052340...",
-    "district": "Settat",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Settat",
-    "area": "Settat",
-    "name": "Pharmacie Hay Alouane",
-    "address": "Pharmacie Hay Alouane, lot atlas numéro 116 hay alouane, près de l'école bimillah et école chaouia",
-    "phone": "052340...",
-    "district": "Settat",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Settat",
-    "area": "Miftah El Kheir",
-    "name": "Pharmacie Hossam Al Kheir",
-    "address": "Pharmacie Hossam Al Kheir, miftah el kheir, tranche 1, pres du cafe badr",
-    "phone": "066024...",
-    "district": "Miftah El Kheir",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Mellal",
-    "area": "Beni Mellal",
-    "name": "Pharmacie Goumri",
-    "address": "Pharmacie Goumri, 1  lotiss. Badr -    Riad Salam Bloc 1",
-    "phone": "052348...",
-    "district": "Beni Mellal",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Mellal",
@@ -1988,18 +1845,18 @@
     "district": "Beni Mellal",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Mellal",
     "area": "Beni Mellal",
-    "name": "Pharmacie Moussaid",
-    "address": "Pharmacie Moussaid, 2  lot Manzah Atlas",
-    "phone": "070818...",
+    "name": "Pharmacie Goumri",
+    "address": "Pharmacie Goumri, 1  lotiss. Badr -    Riad Salam Bloc 1",
+    "phone": "052348...",
     "district": "Beni Mellal",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Mellal",
@@ -2010,7 +1867,370 @@
     "district": "Beni Mellal",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Mellal",
+    "area": "Beni Mellal",
+    "name": "Pharmacie Moussaid",
+    "address": "Pharmacie Moussaid, 2  lot Manzah Atlas",
+    "phone": "070818...",
+    "district": "Beni Mellal",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Témara",
+    "area": "Centre",
+    "name": "Pharmacie Atlal",
+    "address": "Pharmacie Atlal, lotissement skikina n°194 -",
+    "phone": "053761...",
+    "district": "Centre",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Témara",
+    "area": "El Guic",
+    "name": "Pharmacie Rim",
+    "address": "Pharmacie Rim, 496 guich oudayas (en face bim et à 150mde la mosquée belbachir et attijariwafa bank)",
+    "phone": "053756...",
+    "district": "El Guic",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Témara",
+    "area": "El Massira",
+    "name": "Pharmacie Bouarous",
+    "address": "Pharmacie Bouarous, 187, rue laayoun",
+    "phone": "053760...",
+    "district": "El Massira",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Témara",
+    "area": "Oulad Mtaa",
+    "name": "Pharmacie Jardins des Oudayas",
+    "address": "Pharmacie Jardins des Oudayas, lotiss. Ouled Mtaa , sect. 2, n°141",
+    "phone": "053761...",
+    "district": "Oulad Mtaa",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Mohammedia",
+    "area": "Mohammedia",
+    "name": "Pharmacie De La Plage",
+    "address": "Pharmacie De La Plage, bd fes, imm. du parc",
+    "phone": "052332...",
+    "district": "Mohammedia",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Mohammedia",
+    "area": "El Alia",
+    "name": "Pharmacie Elwahda",
+    "address": "Pharmacie Elwahda, 427, lotiss. al wahda, el alia",
+    "phone": "052328...",
+    "district": "El Alia",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Mohammedia",
+    "area": "Hassania Et Saada",
+    "name": "Pharmacie Chifa",
+    "address": "Pharmacie Chifa, hay hassania ii, bloc b, n°213",
+    "phone": "052328...",
+    "district": "Hassania Et Saada",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Mohammedia",
+    "area": "Hassania Et Saada",
+    "name": "Pharmacie Al Fath",
+    "address": "Pharmacie Al Fath, hay hassania i, rue g n°586",
+    "phone": "052328...",
+    "district": "Hassania Et Saada",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guelmim",
+    "area": "Guelmim",
+    "name": "Pharmacie Alouaha",
+    "address": "Pharmacie Alouaha,   lotissement Al Ouaha",
+    "phone": "052877...",
+    "district": "Guelmim",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guelmim",
+    "area": "Guelmim",
+    "name": "Pharmacie Ichraq",
+    "address": "Pharmacie Ichraq, hay Essaadiyine , rue 20 n°20",
+    "phone": "052877...",
+    "district": "Guelmim",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guelmim",
+    "area": "Guelmim",
+    "name": "Pharmacie El Hoda",
+    "address": "Pharmacie El Hoda,   bd Amane Ouchen",
+    "phone": "052877...",
+    "district": "Guelmim",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guelmim",
+    "area": "Guelmim",
+    "name": "Pharmacie Al Masjid",
+    "address": "Pharmacie Al Masjid,   hay Nassim - Autre ville   Tayer Sofla",
+    "phone": "080862...",
+    "district": "Guelmim",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Settat",
+    "area": "Settat",
+    "name": "Pharmacie Hay Alouane",
+    "address": "Pharmacie Hay Alouane, lot atlas numéro 116 hay alouane, près de l'école bimillah et école chaouia",
+    "phone": "052340...",
+    "district": "Settat",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Settat",
+    "area": "Settat",
+    "name": "Pharmacie El Hilal",
+    "address": "Pharmacie El Hilal, 83, bd zenata , hay sidi abdelkrim",
+    "phone": "052340...",
+    "district": "Settat",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Settat",
+    "area": "Settat",
+    "name": "Pharmacie Al Massira",
+    "address": "Pharmacie Al Massira, 49, bd hassan2, près de sidi lghlimi",
+    "phone": "052340...",
+    "district": "Settat",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Settat",
+    "area": "Miftah El Kheir",
+    "name": "Pharmacie Hossam Al Kheir",
+    "address": "Pharmacie Hossam Al Kheir, miftah el kheir, tranche 1, pres du cafe badr",
+    "phone": "066024...",
+    "district": "Miftah El Kheir",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Inezgane",
+    "area": "Inezgane",
+    "name": "Pharmacie Essaâda",
+    "address": "Pharmacie Essaâda, 109, bd hassan i",
+    "phone": "052883...",
+    "district": "Inezgane",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Inezgane",
+    "area": "Inezgane",
+    "name": "Pharmacie la Province",
+    "address": "Pharmacie la Province, 2, av des f.a.r. ang. mohammed v",
+    "phone": "052883...",
+    "district": "Inezgane",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Inezgane",
+    "area": "Taghzoute",
+    "name": "Pharmacie Taghzoute",
+    "address": "Pharmacie Taghzoute, avenue mohamed v ang. av 3 mars, cité hassani",
+    "phone": "052833...",
+    "district": "Taghzoute",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Inezgane",
+    "area": "Tarrast",
+    "name": "Pharmacie AlWafa",
+    "address": "Pharmacie AlWafa, rte. principale, tarrast",
+    "phone": "052883...",
+    "district": "Tarrast",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berkane",
+    "area": "Berkane",
+    "name": "Pharmacie Aous",
+    "address": "Pharmacie Aous, 524  Sidi Ali Ben Yekhlef",
+    "phone": "061445...",
+    "district": "Berkane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berkane",
+    "area": "Berkane",
+    "name": "Pharmacie Hay Lahbil",
+    "address": "Pharmacie Hay Lahbil, 2, rue El Bristane , hay Lahbil Sidi Slimane",
+    "phone": "053625...",
+    "district": "Berkane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berkane",
+    "area": "Berkane",
+    "name": "Pharmacie Ibnou Saih",
+    "address": "Pharmacie Ibnou Saih, 13  q. Al Amal",
+    "phone": "069809...",
+    "district": "Berkane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berkane",
+    "area": "Berkane",
+    "name": "Pharmacie Riad",
+    "address": "Pharmacie Riad, 17, bd Al Ahram , hay Massira",
+    "phone": "053661...",
+    "district": "Berkane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-berkane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Laayoune",
+    "area": "Laayoune",
+    "name": "Pharmacie Alfath",
+    "address": "Pharmacie Alfath, av alforsane   lot n°707   hay qods",
+    "phone": "052899...",
+    "district": "Laayoune",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-laayoune.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Laayoune",
+    "area": "Laayoune",
+    "name": "Pharmacie El Amrani",
+    "address": "Pharmacie El Amrani, près de l'hotel vladimiro ariano, catalonia",
+    "phone": "052898...",
+    "district": "Laayoune",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-laayoune.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Laayoune",
+    "area": "Laayoune",
+    "name": "Pharmacie El Aouda",
+    "address": "Pharmacie El Aouda, 433  rue ibn abida   q. al aouda",
+    "phone": "052889...",
+    "district": "Laayoune",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-laayoune.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Laayoune",
+    "area": "Laayoune",
+    "name": "Pharmacie Principale",
+    "address": "Pharmacie Principale, bd boukrâa, en face de la banque populaire",
+    "phone": "052889...",
+    "district": "Laayoune",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-laayoune.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Kénitra",
+    "area": "Kenitra",
+    "name": "Pharmacie Ouirkane",
+    "address": "Pharmacie Ouirkane, 153 secteur d. lfawarat haj mansour",
+    "phone": "077401...",
+    "district": "Kenitra",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Kénitra",
+    "area": "Medina",
+    "name": "Pharmacie Ouikrane",
+    "address": "Pharmacie Ouikrane, 18  hay Bir Rami Est -",
+    "phone": "053760...",
+    "district": "Medina",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Kénitra",
+    "area": "Ouled oujih",
+    "name": "Pharmacie Al Hamd",
+    "address": "Pharmacie Al Hamd, hay Al Maghrib Al Arabi, bloc D n°659",
+    "phone": "053735...",
+    "district": "Ouled oujih",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Kénitra",
+    "area": "Ouled Oujih",
+    "name": "Pharmacie Al Hamd",
+    "address": "Pharmacie Al Hamd, hay al maghrib al arabi, bloc d n°659",
+    "phone": "053735...",
+    "district": "Ouled Oujih",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Ouarzazate",
@@ -2021,7 +2241,7 @@
     "district": "Ouarzazate",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Ouarzazate",
@@ -2032,7 +2252,7 @@
     "district": "Ouarzazate",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Ouarzazate",
@@ -2043,106 +2263,7 @@
     "district": "Ouarzazate",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berrechid",
-    "area": "Castos",
-    "name": "Pharmacie Docteur El Mais",
-    "address": "129, bd omar abou richa Berrechid",
-    "phone": "0690264921",
-    "district": "Castos",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-docteur-el-mais-s253399.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berrechid",
-    "area": "Hay Hassani",
-    "name": "Pharmacie Marocaine",
-    "address": "lotiss ben massaoud 2 , hay raha. prés du mosquée arraha BERRECHID",
-    "phone": "0522326363",
-    "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-marocaine-s51064.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Berrechid",
-    "area": "Nouvelle Medina",
-    "name": "Pharmacie Saïdi",
-    "address": "hay essaâda , lot. abou rahal n°13 BERRECHID",
-    "phone": "0522337171",
-    "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-saidi-s34782.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guerir",
-    "area": "Ben Guerir",
-    "name": "Pharmacie Ennasr",
-    "address": "Pharmacie Ennasr, 240  lotiss. annasr entre ofppt et universite mohamed 6",
-    "phone": "052431...",
-    "district": "Ben Guerir",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guerir",
-    "area": "Ben Guerir",
-    "name": "Pharmacie Al Yassamin",
-    "address": "Pharmacie Al Yassamin, hay chaibat , argaz - près du terrain de proximité en direction de lotissement riyad 4",
-    "phone": "066482...",
-    "district": "Ben Guerir",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guerir",
-    "area": "Ben Guerir",
-    "name": "Pharmacie Hida",
-    "address": "Pharmacie Hida, hay el farah   n°179, derrière hammam ennour",
-    "phone": "052431...",
-    "district": "Ben Guerir",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Melloul",
-    "area": "Ait Melloul",
-    "name": "Pharmacie Agdal",
-    "address": "Pharmacie Agdal, 335  hay agdal 1   rte tiznit, en face de la mosquée agdal",
-    "phone": "052824...",
-    "district": "Ait Melloul",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Melloul",
-    "area": "Ait Melloul",
-    "name": "Pharmacie Lmima",
-    "address": "Pharmacie Lmima, lot 59, al moussaoui",
-    "phone": "052824...",
-    "district": "Ait Melloul",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Melloul",
-    "area": "Ait Melloul",
-    "name": "Pharmacie Hassania",
-    "address": "Pharmacie Hassania, hay m'barek omar , bloc 3 n°301",
-    "phone": "052824...",
-    "district": "Ait Melloul",
-    "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tiznit",
@@ -2153,7 +2274,7 @@
     "district": "Tiznit",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tiznit",
@@ -2164,7 +2285,7 @@
     "district": "Tiznit",
     "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tiznit",
@@ -2175,161 +2296,161 @@
     "district": "Tiznit",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
-    "city": "Zagora",
-    "area": "Zagora",
-    "name": "Pharmacie Zagora",
-    "address": "Pharmacie Zagora,   bd Mohammed V",
-    "phone": "052484...",
-    "district": "Zagora",
+    "city": "Essaouira",
+    "area": "Essaouira",
+    "name": "Pharmacie Al Haddadah",
+    "address": "Pharmacie Al Haddadah, 63  bd AlIstiqlal",
+    "phone": "052447...",
+    "district": "Essaouira",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-zagora.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Zagora",
-    "area": "Zagora",
-    "name": "Pharmacie Yassine",
-    "address": "Pharmacie Yassine, 278  bd Mohammed V",
-    "phone": "052484...",
-    "district": "Zagora",
+    "city": "Essaouira",
+    "area": "Essaouira",
+    "name": "Pharmacie Koutoubia",
+    "address": "Pharmacie Koutoubia, 365 bd koutoubia, lot. 5",
+    "phone": "070157...",
+    "district": "Essaouira",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-zagora.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Khenifra",
-    "area": "Khénifra",
-    "name": "Pharmacie Fleurs",
-    "address": "Pharmacie Fleurs, hay essalam   bloc h n°361",
-    "phone": "053538...",
-    "district": "Khénifra",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khenifra.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Khenifra",
-    "area": "Khenifra",
-    "name": "Pharmacie Achbaro",
-    "address": "Pharmacie Achbaro,   hay Ennassim   bloc 1 n°13",
-    "phone": "053558...",
-    "district": "Khenifra",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khenifra.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Taza",
-    "area": "Taza",
-    "name": "Pharmacie Al Irfane",
-    "address": "Pharmacie Al Irfane, 35  Rte d Oujda   resid. Al Irfane",
-    "phone": "053521...",
-    "district": "Taza",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-taza.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Taza",
-    "area": "Taza",
-    "name": "Pharmacie Mohamed Yacine",
-    "address": "Pharmacie Mohamed Yacine, 8  rte de Fès -    lot Chaimaa Azahra  Bohayra",
-    "phone": "068080...",
-    "district": "Taza",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-taza.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guercif",
-    "area": "Guercif",
-    "name": "Pharmacie Nougd Hamria Aljadida",
-    "address": "Pharmacie Nougd Hamria Aljadida, 36  bd. Abdelkrim El Khattabi   hay Nougd",
-    "phone": "053520...",
-    "district": "Guercif",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guercif.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Guercif",
-    "area": "Guercif",
-    "name": "Pharmacie AlBaladia",
-    "address": "Pharmacie AlBaladia, bd Allal Ben Abdellah",
-    "phone": "",
-    "district": "Guercif",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guercif.html",
-    "date": "2026-01-26"
-  },
-  {
-    "city": "Chefchaouen",
-    "area": "Chefchaouen",
-    "name": "Pharmacie La Province",
-    "address": "Pharmacie La Province, av La Marche Verte   Quartier Administratif",
-    "phone": "053988...",
-    "district": "Chefchaouen",
+    "city": "Essaouira",
+    "area": "Essaouira",
+    "name": "Pharmacie AlYamama",
+    "address": "Pharmacie AlYamama, 341  lotiss. Tafoukte I",
+    "phone": "052447...",
+    "district": "Essaouira",
     "duty": "Ouvert en ce moment",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-chefchaouen.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Chefchaouen",
-    "area": "Chefchaouen",
-    "name": "Pharmacie Ras El Ma",
-    "address": "Pharmacie Ras El Ma, 22  av Melilia   q. Sidi Boujemaa",
-    "phone": "053988...",
-    "district": "Chefchaouen",
+    "city": "Berrechid",
+    "area": "Castos",
+    "name": "Pharmacie Docteur El Mais",
+    "address": "129, bd omar abou richa Berrechid",
+    "phone": "0690264921",
+    "district": "Castos",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-docteur-el-mais-s253399.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berrechid",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Marocaine",
+    "address": "lotiss ben massaoud 2 , hay raha. prés du mosquée arraha BERRECHID",
+    "phone": "0522326363",
+    "district": "Hay Hassani",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-marocaine-s51064.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Berrechid",
+    "area": "Nouvelle Medina",
+    "name": "Pharmacie Saïdi",
+    "address": "hay essaâda , lot. abou rahal n°13 BERRECHID",
+    "phone": "0522337171",
+    "district": "Nouvelle Medina",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-saidi-s34782.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guerir",
+    "area": "Ben Guerir",
+    "name": "Pharmacie Al Yassamin",
+    "address": "Pharmacie Al Yassamin, hay chaibat , argaz - près du terrain de proximité en direction de lotissement riyad 4",
+    "phone": "066482...",
+    "district": "Ben Guerir",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guerir",
+    "area": "Ben Guerir",
+    "name": "Pharmacie Ennasr",
+    "address": "Pharmacie Ennasr, 240  lotiss. annasr entre ofppt et universite mohamed 6",
+    "phone": "052431...",
+    "district": "Ben Guerir",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guerir",
+    "area": "Ben Guerir",
+    "name": "Pharmacie Hay El Farah",
+    "address": "Pharmacie Hay El Farah, 345  bd zerktouni   hay el farah",
+    "phone": "052431...",
+    "district": "Ben Guerir",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-chefchaouen.html",
-    "date": "2026-01-26"
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Biougra",
-    "area": "Biougra",
-    "name": "Pharmacie Al Falah",
-    "address": "Pharmacie Al Falah, 49  bd Sid Haj Lahbib   lotiss. Al Falah",
-    "phone": "052881...",
-    "district": "Biougra",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-biougra.html",
-    "date": "2026-01-26"
+    "city": "Melloul",
+    "area": "Ait Melloul",
+    "name": "Pharmacie Lmima",
+    "address": "Pharmacie Lmima, lot 59, al moussaoui",
+    "phone": "052824...",
+    "district": "Ait Melloul",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
+    "date": "2026-01-27"
   },
   {
-    "city": "Biougra",
-    "area": "Biougra",
-    "name": "Pharmacie Tahri",
-    "address": "Pharmacie Tahri, 133  rue Andalous - Autre ville   hay Touama",
-    "phone": "052881...",
-    "district": "Biougra",
-    "duty": "Ouvert toute la journée (24 heures)",
-    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-biougra.html",
-    "date": "2026-01-26"
+    "city": "Melloul",
+    "area": "Ait Melloul",
+    "name": "Pharmacie Agdal",
+    "address": "Pharmacie Agdal, 335  hay agdal 1   rte tiznit, en face de la mosquée agdal",
+    "phone": "052824...",
+    "district": "Ait Melloul",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Melloul",
+    "area": "Ait Melloul",
+    "name": "Pharmacie Hassania",
+    "address": "Pharmacie Hassania, hay m'barek omar , bloc 3 n°301",
+    "phone": "052824...",
+    "district": "Ait Melloul",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
+    "date": "2026-01-27"
   },
   {
     "city": "Tetouan",
     "area": "Tetouan",
-    "name": "Pharmacie Lukach",
-    "address": "Pharmacie Lukach, bd Abdellah El Fakhar , km 3 rte Azla hay Kouilma, oued Law",
-    "phone": "053999...",
+    "name": "Pharmacie Bab El Okla",
+    "address": "Pharmacie Bab El Okla, av. M'fadel Afailal ang. av. Med Ameziane, Bab Okla",
+    "phone": "053997...",
     "district": "Tetouan",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Tetouan",
     "area": "Tetouan",
-    "name": "Pharmacie Avenue Des F A R",
-    "address": "Pharmacie Avenue Des F A R,   bd des F.a.r.   rue J n°29  imm Rzini",
-    "phone": "053999...",
+    "name": "Pharmacie Tamouda",
+    "address": "Pharmacie Tamouda, rte Chefchaouen , 26 B hay Tamouda",
+    "phone": "053996...",
     "district": "Tetouan",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Khemisset",
@@ -2340,7 +2461,7 @@
     "district": "Kasba Tadla",
     "duty": "Garde Nuit (Ouvert de 20h à 9h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
   },
   {
     "city": "Khemisset",
@@ -2351,6 +2472,160 @@
     "district": "Khemisset",
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
-    "date": "2026-01-26"
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Biougra",
+    "area": "Biougra",
+    "name": "Pharmacie Al Falah",
+    "address": "Pharmacie Al Falah, 49  bd Sid Haj Lahbib   lotiss. Al Falah",
+    "phone": "052881...",
+    "district": "Biougra",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-biougra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Biougra",
+    "area": "Biougra",
+    "name": "Pharmacie Tahri",
+    "address": "Pharmacie Tahri, 133  rue Andalous - Autre ville   hay Touama",
+    "phone": "052881...",
+    "district": "Biougra",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-biougra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Selouane",
+    "area": "Selouane",
+    "name": "Pharmacie Manco",
+    "address": "Pharmacie Manco, bd Mohammed V",
+    "phone": "061116...",
+    "district": "Selouane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Selouane",
+    "area": "Selouane",
+    "name": "Pharmacie Meriem et Abdelkarim",
+    "address": "Pharmacie Meriem et Abdelkarim, hay Al Omrane   lot. n°25-98",
+    "phone": "053635...",
+    "district": "Selouane",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Zagora",
+    "area": "Zagora",
+    "name": "Pharmacie Zagora",
+    "address": "Pharmacie Zagora,   bd Mohammed V",
+    "phone": "052484...",
+    "district": "Zagora",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-zagora.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Zagora",
+    "area": "Zagora",
+    "name": "Pharmacie Yassine",
+    "address": "Pharmacie Yassine, 278  bd Mohammed V",
+    "phone": "052484...",
+    "district": "Zagora",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-zagora.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Taza",
+    "area": "Taza",
+    "name": "Pharmacie Al Mouaskar",
+    "address": "Pharmacie Al Mouaskar, 111  hay Chouhada -",
+    "phone": "053528...",
+    "district": "Taza",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-taza.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Taza",
+    "area": "Taza",
+    "name": "Pharmacie ElAmal",
+    "address": "Pharmacie ElAmal, quartier Aviation   bloc 3 n°75",
+    "phone": "053567...",
+    "district": "Taza",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-taza.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khenifra",
+    "area": "Khénifra",
+    "name": "Pharmacie Fleurs",
+    "address": "Pharmacie Fleurs, hay essalam   bloc h n°361",
+    "phone": "053538...",
+    "district": "Khénifra",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khenifra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Khenifra",
+    "area": "Khenifra",
+    "name": "Pharmacie Achbaro",
+    "address": "Pharmacie Achbaro,   hay Ennassim   bloc 1 n°13",
+    "phone": "053558...",
+    "district": "Khenifra",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khenifra.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guercif",
+    "area": "Guercif",
+    "name": "Pharmacie Al Farabi",
+    "address": "Pharmacie Al Farabi,   rte de Taza - Autre ville",
+    "phone": "053567...",
+    "district": "Guercif",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guercif.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Guercif",
+    "area": "Guercif",
+    "name": "Pharmacie Labiad",
+    "address": "Pharmacie Labiad, 85  bd Abdelkrim Khattabi - Autre ville   hay Annajd",
+    "phone": "053861...",
+    "district": "Guercif",
+    "duty": "Ouvert toute la journée (24 heures)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guercif.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Chefchaouen",
+    "area": "Chefchaouen",
+    "name": "Pharmacie La Province",
+    "address": "Pharmacie La Province, av La Marche Verte   Quartier Administratif",
+    "phone": "053988...",
+    "district": "Chefchaouen",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-chefchaouen.html",
+    "date": "2026-01-27"
+  },
+  {
+    "city": "Chefchaouen",
+    "area": "Chefchaouen",
+    "name": "Pharmacie Ras El Ma",
+    "address": "Pharmacie Ras El Ma, 22  av Melilia   q. Sidi Boujemaa",
+    "phone": "053988...",
+    "district": "Chefchaouen",
+    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-chefchaouen.html",
+    "date": "2026-01-27"
   }
 ]
