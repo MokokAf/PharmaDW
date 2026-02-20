@@ -48,6 +48,7 @@ const DrugInputSchema = z.union([
     dose_mg: z.number().positive().optional(),
     route: z.enum(['po', 'iv', 'im', 'sc', 'inhal', 'top']).optional(),
     freq: z.string().min(1).max(50).optional(),
+    active_ingredient_hint: z.array(z.string().min(1).max(80)).max(8).optional(),
   }),
 ])
 
@@ -94,6 +95,7 @@ type CanonicalDrug = {
   dose_mg?: number
   route?: 'po' | 'iv' | 'im' | 'sc' | 'inhal' | 'top'
   freq?: string
+  activeIngredientHint?: string[]
 }
 
 const FEW_SHOT_EXAMPLES = `Exemple 1:
@@ -135,6 +137,7 @@ function canonicalizeDrug(input: z.infer<typeof DrugInputSchema>): CanonicalDrug
     dose_mg: input.dose_mg,
     route: input.route ?? 'po',
     freq: input.freq,
+    activeIngredientHint: input.active_ingredient_hint?.map((item) => normalizeText(item)).filter(Boolean),
   }
 }
 
@@ -359,7 +362,9 @@ function applyDeterministicRules(
     }
   }
 
-  const pooledDrugNames = normalizeText(`${d1.name} ${d2.name}`)
+  const pooledDrugNames = normalizeText(
+    `${d1.name} ${d2.name} ${(d1.activeIngredientHint ?? []).join(' ')} ${(d2.activeIngredientHint ?? []).join(' ')}`
+  )
 
   const allergyTerms = (patient?.allergies ?? []).map((item) => normalizeText(item))
   const hasAllergy = {
@@ -524,15 +529,26 @@ function checkRateLimit(ip: string): boolean {
 }
 
 function interactionCacheKey(d1: CanonicalDrug, d2: CanonicalDrug): string {
-  return [normalizeText(d1.name), normalizeText(d2.name)].sort().join('|')
+  const toKeyPart = (drug: CanonicalDrug) => {
+    const hint = (drug.activeIngredientHint ?? []).map((item) => normalizeText(item)).sort().join('+')
+    return `${normalizeText(drug.name)}#${hint}`
+  }
+
+  return [toKeyPart(d1), toKeyPart(d2)].sort().join('|')
 }
 
 function buildUserPrompt(d1: CanonicalDrug, d2: CanonicalDrug, patient?: PatientInput, strictRetry = false): string {
   const patientBlock = compactPatientBlock(patient)
+  const d1Hint = d1.activeIngredientHint && d1.activeIngredientHint.length > 0 ? d1.activeIngredientHint.join(', ') : ''
+  const d2Hint = d2.activeIngredientHint && d2.activeIngredientHint.length > 0 ? d2.activeIngredientHint.join(', ') : ''
   const requirements = [
     'Analyse l interaction entre les deux traitements ci-dessous.',
-    `Molecule 1: ${d1.name}${d1.dose_mg ? ` (${d1.dose_mg} mg)` : ''}${d1.route ? ` voie ${d1.route}` : ''}`,
-    `Molecule 2: ${d2.name}${d2.dose_mg ? ` (${d2.dose_mg} mg)` : ''}${d2.route ? ` voie ${d2.route}` : ''}`,
+    `Molecule 1: ${d1.name}${d1.dose_mg ? ` (${d1.dose_mg} mg)` : ''}${d1.route ? ` voie ${d1.route}` : ''}${
+      d1Hint ? ` [DCI: ${d1Hint}]` : ''
+    }`,
+    `Molecule 2: ${d2.name}${d2.dose_mg ? ` (${d2.dose_mg} mg)` : ''}${d2.route ? ` voie ${d2.route}` : ''}${
+      d2Hint ? ` [DCI: ${d2Hint}]` : ''
+    }`,
     patientBlock ? `Contexte patient: ${patientBlock}` : 'Contexte patient: non renseigne',
     '',
     'Format JSON OBLIGATOIRE:',
