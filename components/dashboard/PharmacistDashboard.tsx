@@ -91,7 +91,7 @@ export const PharmacistDashboard: React.FC = () => {
             <div className="flex items-center bg-muted rounded-lg p-0.5">
               <button
                 onClick={() => setView('home')}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                className={`px-4 min-h-11 text-xs font-medium rounded-md transition-colors ${
                   view === 'home'
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground'
@@ -101,7 +101,7 @@ export const PharmacistDashboard: React.FC = () => {
               </button>
               <button
                 onClick={() => setView('assistant')}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                className={`px-4 min-h-11 text-xs font-medium rounded-md transition-colors ${
                   view === 'assistant'
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground'
@@ -150,7 +150,7 @@ export const PharmacistDashboard: React.FC = () => {
                     <button
                       key={qa.label}
                       onClick={() => handleQuickAction(qa.action)}
-                      className="group text-left p-5 rounded-2xl border border-border bg-background hover:shadow-lg hover:border-primary/20 transition-all duration-200"
+                      className="group text-left p-5 rounded-2xl border border-border bg-background hover:shadow-lg hover:border-primary/20 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       <div
                         className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3 ${qa.color}`}

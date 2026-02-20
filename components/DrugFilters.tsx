@@ -82,7 +82,7 @@ export function DrugFilters({
         <Button
           variant="outline"
           onClick={clearFilters}
-          className="w-full flex items-center gap-2"
+          className="w-full h-11 flex items-center gap-2"
         >
           <X className="h-4 w-4" />
           Effacer les filtres
@@ -96,8 +96,12 @@ export function DrugFilters({
       {/* Search — always visible */}
       <div className="flex gap-2">
         <div className="relative flex-1">
+          <label htmlFor="drug-search" className="sr-only">
+            Rechercher un medicament
+          </label>
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
+            id="drug-search"
             placeholder="Rechercher un médicament..."
             value={filters.search}
             onChange={(e) => onFiltersChange({ ...filters, search: e.target.value })}
@@ -108,7 +112,12 @@ export function DrugFilters({
         {/* Mobile: drawer trigger */}
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>
-            <Button variant="outline" size="icon" className="h-11 w-11 shrink-0 md:hidden relative">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-11 w-11 shrink-0 md:hidden relative"
+              aria-label="Ouvrir les filtres avances"
+            >
               <SlidersHorizontal className="h-4 w-4" />
               {activeCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-[10px] rounded-full flex items-center justify-center">
@@ -171,7 +180,7 @@ export function DrugFilters({
             variant="ghost"
             size="sm"
             onClick={clearFilters}
-            className="text-xs text-muted-foreground"
+            className="text-xs h-11 text-muted-foreground"
           >
             <X className="h-3 w-3 mr-1" />
             Effacer les filtres

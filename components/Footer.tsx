@@ -15,11 +15,11 @@ const Footer = () => {
               Dwaia.ma © {currentYear}
             </span>
           </div>
-          <div className="flex items-center gap-6 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <a href="#" className="inline-flex items-center min-h-11 px-3 rounded-md hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
               Conditions d&apos;utilisation
             </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a href="#" className="inline-flex items-center min-h-11 px-3 rounded-md hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
               Politique de confidentialité
             </a>
           </div>
