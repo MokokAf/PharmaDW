@@ -1,44 +1,35 @@
-"use client";
+import type { Metadata } from 'next'
+import PharmacistDashboardClient from './PharmacistDashboardClient'
+import { absoluteUrl, pageAlternates } from '@/lib/seo'
 
-import { AuthProvider, useAuth } from "@/contexts/AuthContext";
-import { PharmacistDashboard } from "@/components/dashboard/PharmacistDashboard";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { Loader2 } from "lucide-react";
+const title = 'Tableau de bord pharmacien - DwaIA'
+const description =
+  'Tableau de bord pharmacien avec assistant d interactions medicamenteuses, contexte patient, triage vert/ambre/rouge et historique de verification.'
 
-function DashboardGuard() {
-  const { user, isInitialized } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isInitialized && !user) {
-      router.replace("/espace-pharmaciens");
-    }
-  }, [isInitialized, user, router]);
-
-  if (!isInitialized) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return null;
-  }
-
-  return (
-    <div className="min-h-screen">
-      <PharmacistDashboard />
-    </div>
-  );
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: pageAlternates('/espace-pharmaciens/dashboard'),
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title,
+    description,
+    type: 'website',
+    locale: 'fr_MA',
+    url: absoluteUrl('/espace-pharmaciens/dashboard'),
+    images: [absoluteUrl('/opengraph-image')],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [absoluteUrl('/opengraph-image')],
+  },
 }
 
 export default function PharmacistDashboardPage() {
-  return (
-    <AuthProvider>
-      <DashboardGuard />
-    </AuthProvider>
-  );
+  return <PharmacistDashboardClient />
 }
