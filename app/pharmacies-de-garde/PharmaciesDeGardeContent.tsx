@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Input } from '@/components/ui/input'
-import { Loader2, MapPin, PhoneCall, AlertTriangle, Navigation, Search } from 'lucide-react'
+import { MapPin, PhoneCall, AlertTriangle, Navigation, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const POP_RANK: Record<string, number> = {
@@ -113,7 +113,7 @@ export default function PharmaciesDeGardeContent() {
                 key={cityName}
                 onClick={() => setCity(cityName)}
                 className={cn(
-                  'shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors',
+                  'shrink-0 rounded-full px-4 min-h-11 text-sm font-medium transition-colors',
                   city === cityName
                     ? 'bg-primary text-primary-foreground shadow-sm'
                     : 'bg-muted text-muted-foreground hover:bg-muted/80'
@@ -139,8 +139,15 @@ export default function PharmaciesDeGardeContent() {
       )}
 
       {loading && (
-        <div className="flex justify-center py-20" aria-live="polite" aria-busy="true">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <div className="space-y-3 py-2" aria-live="polite" aria-busy="true">
+          <div className="h-5 w-44 rounded bg-muted animate-pulse" />
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="rounded-xl border border-border p-5 space-y-3">
+              <div className="h-5 w-1/2 bg-muted rounded animate-pulse" />
+              <div className="h-4 w-4/5 bg-muted rounded animate-pulse" />
+              <div className="h-12 w-full bg-muted rounded-lg animate-pulse" />
+            </div>
+          ))}
         </div>
       )}
 
@@ -156,7 +163,13 @@ export default function PharmaciesDeGardeContent() {
       )}
 
       {!loading && !error && city && filtered.length === 0 && (
-        <p className="text-center text-muted-foreground py-12">Aucune pharmacie de garde trouvee pour {city}.</p>
+        <div className="rounded-xl border border-border bg-card p-6 text-center space-y-3 animate-fade-in">
+          <div className="mx-auto w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+            <MapPin className="h-5 w-5 text-muted-foreground" />
+          </div>
+          <h2 className="text-base font-semibold text-foreground">Aucune pharmacie disponible</h2>
+          <p className="text-sm text-muted-foreground">Aucune pharmacie de garde n'a ete trouvee pour {city}. Essayez un autre quartier ou une autre ville.</p>
+        </div>
       )}
 
       {!loading && filtered.length > 0 && (
@@ -188,7 +201,7 @@ export default function PharmaciesDeGardeContent() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name} ${pharmacy.city}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center justify-center gap-1.5 min-h-11 text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Navigation className="h-3.5 w-3.5" />
                 Voir sur la carte

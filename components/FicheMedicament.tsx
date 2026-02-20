@@ -46,7 +46,7 @@ const FicheMedicament: React.FC<FicheMedicamentProps> = ({ drug }) => {
               >
                 <Badge
                   variant="secondary"
-                  className="cursor-pointer bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-3 py-1 text-sm"
+                  className="cursor-pointer inline-flex items-center min-h-11 bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-3 text-sm"
                 >
                   {ai}
                 </Badge>

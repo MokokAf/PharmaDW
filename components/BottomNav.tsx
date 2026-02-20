@@ -30,13 +30,13 @@ export default function BottomNav() {
               key={tab.href}
               href={tab.href}
               className={cn(
-                "flex flex-col items-center justify-center gap-0.5 flex-1 py-2 transition-colors",
+                "flex flex-col items-center justify-center gap-0.5 flex-1 min-h-11 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
                 isActive ? "text-primary" : "text-muted-foreground"
               )}
             >
               <tab.icon className={cn("h-5 w-5", isActive && "stroke-[2.5]")} />
               <span className={cn(
-                "text-[10px] leading-tight",
+                "text-[11px] leading-tight",
                 isActive ? "font-semibold" : "font-medium"
               )}>
                 {tab.label}

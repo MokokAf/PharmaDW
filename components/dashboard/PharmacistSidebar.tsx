@@ -119,12 +119,11 @@ export function PharmacistSidebar({
                     <button
                       className={cn(
                         'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
-                        isCollapsed
-                          ? 'justify-center p-2.5'
-                          : 'px-3 py-2.5',
+                        isCollapsed ? 'justify-center min-h-11 px-2.5' : 'px-3 min-h-11',
                         active === item.id
                           ? 'bg-sidebar-primary/10 text-sidebar-primary font-medium shadow-sm'
-                          : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent'
+                          : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent',
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring'
                       )}
                       onClick={() => handleClick(item.id as NavId)}
                       aria-current={active === item.id ? 'page' : undefined}
@@ -156,10 +155,11 @@ export function PharmacistSidebar({
             <button
               className={cn(
                 'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
-                isCollapsed ? 'justify-center p-2.5' : 'px-3 py-2.5',
+                isCollapsed ? 'justify-center min-h-11 px-2.5' : 'px-3 min-h-11',
                 active === 'compte'
                   ? 'bg-sidebar-primary/10 text-sidebar-primary font-medium'
-                  : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent'
+                  : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring'
               )}
               onClick={() => handleClick('compte')}
             >
@@ -173,8 +173,8 @@ export function PharmacistSidebar({
             <button
               className={cn(
                 'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
-                isCollapsed ? 'justify-center p-2.5' : 'px-3 py-2.5',
-                'text-sidebar-foreground/60 hover:text-destructive hover:bg-destructive/10'
+                isCollapsed ? 'justify-center min-h-11 px-2.5' : 'px-3 min-h-11',
+                'text-sidebar-foreground/60 hover:text-destructive hover:bg-destructive/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring'
               )}
               onClick={() => onLogout?.()}
             >

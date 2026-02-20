@@ -14,7 +14,7 @@ export const DrugListItem = memo(({ drug, style }: DrugListItemProps) => {
     <div style={style} className="px-0">
       <Link
         href={`/medicaments/${drug.id}`}
-        className="flex items-center gap-3 px-4 py-3 border-b border-border hover:bg-accent/30 transition-colors"
+        className="flex items-center gap-3 px-4 py-3 min-h-16 border-b border-border hover:bg-accent/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
       >
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">

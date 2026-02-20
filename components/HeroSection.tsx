@@ -48,7 +48,7 @@ const HeroSection = () => {
             />
             <Button
               onClick={handleSearch}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-6 h-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-6 h-11"
             >
               Rechercher
             </Button>
@@ -58,7 +58,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-2 gap-3 pt-4 max-w-lg mx-auto">
             <Link
               href="/pharmacies-de-garde"
-              className="flex items-center gap-3 p-4 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group"
+              className="flex items-center gap-3 p-4 min-h-14 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                 <MapPin className="h-5 w-5 text-primary" />
@@ -71,7 +71,7 @@ const HeroSection = () => {
 
             <Link
               href="/medicaments"
-              className="flex items-center gap-3 p-4 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group"
+              className="flex items-center gap-3 p-4 min-h-14 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                 <Pill className="h-5 w-5 text-primary" />

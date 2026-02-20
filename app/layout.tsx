@@ -110,8 +110,15 @@ export default function RootLayout({
         <link rel="alternate" hrefLang={SITE_LANGUAGE} href={absoluteUrl('/')} />
       </head>
       <body className={`${inter.className} pb-safe md:pb-0`}>
+        <a href="#main-content" className="skip-link">
+          Aller au contenu principal
+        </a>
         <SiteHeader />
-        <Providers>{children}</Providers>
+        <Providers>
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
+        </Providers>
         <BottomNav />
       </body>
     </html>
