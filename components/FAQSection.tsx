@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import Script from "next/script"
 import {
   Accordion,
   AccordionItem,
@@ -57,12 +56,13 @@ const faqItems: FaqItem[] = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  inLanguage: "fr-MA",
   mainEntity: faqItems.map((item) => ({
     "@type": "Question",
     name: item.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: item.answerHtml.replace(/<[^>]+>/g, ""), // strip HTML tags for plain text
+      text: item.answerHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(), // plain text for JSON-LD
     },
   })),
 }
@@ -92,10 +92,7 @@ const FAQSection: React.FC = () => {
         ))}
       </Accordion>
 
-      {/* JSON-LD for SEO */}
-      <Script id="faq-jsonld" type="application/ld+json" strategy="afterInteractive">
-        {JSON.stringify(faqSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </section>
   )
 }
