@@ -1,11 +1,7 @@
-"use client";
-
 import React from "react";
 import { MedDrug } from "@/types/medication";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 interface FicheMedicamentProps {
   drug: MedDrug;
@@ -65,20 +61,10 @@ const FicheMedicament: React.FC<FicheMedicamentProps> = ({ drug }) => {
       )}
 
       {/* Therapeutic class */}
-      {drug.therapeuticClass?.length > 0 && (
+      {Array.isArray(drug.therapeuticClass) && drug.therapeuticClass.length > 0 && (
         <div>
           <SectionLabel>Classe thérapeutique</SectionLabel>
           <p className="text-sm">{drug.therapeuticClass.join(", ")}</p>
-        </div>
-      )}
-
-      {/* Description - HIDDEN */}
-      {drug.description && (
-        <div className="hidden">
-          <SectionLabel>Description</SectionLabel>
-          <div className="prose dark:prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{drug.description}</ReactMarkdown>
-          </div>
         </div>
       )}
 

@@ -2,18 +2,29 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { AlertTriangle, PackageSearch } from 'lucide-react'
-import { VirtualizedDrugList } from '@/components/VirtualizedDrugList'
-import { AlphabetFilter } from '@/components/AlphabetFilter'
-import { DrugFilters as DrugFiltersComponent } from '@/components/DrugFilters'
 import { Button } from '@/components/ui/button'
-import type { MedDrug, DrugFilters } from '@/types/medication'
+import type { MedDrugListItem, DrugFilters } from '@/types/medication'
+
+const VirtualizedDrugList = dynamic(
+  () => import('@/components/VirtualizedDrugList').then((module) => module.VirtualizedDrugList),
+  { ssr: false }
+)
+const AlphabetFilter = dynamic(
+  () => import('@/components/AlphabetFilter').then((module) => module.AlphabetFilter),
+  { ssr: false }
+)
+const DrugFiltersComponent = dynamic(
+  () => import('@/components/DrugFilters').then((module) => module.DrugFilters),
+  { ssr: false }
+)
 
 export default function MedicamentsContent() {
   const searchParams = useSearchParams()
   const initialSearch = searchParams.get('search') ?? ''
 
-  const [drugs, setDrugs] = useState<MedDrug[]>([])
+  const [drugs, setDrugs] = useState<MedDrugListItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isRefreshing, setIsRefreshing] = useState(false)
@@ -38,7 +49,7 @@ export default function MedicamentsContent() {
     }
 
     try {
-      const res = await fetch('/data/medicament_ma_optimized.json?nocache', {
+      const res = await fetch('/data/medicament_list_index.json?nocache', {
         cache: 'no-store',
       })
 
@@ -51,7 +62,7 @@ export default function MedicamentsContent() {
         throw new Error('Reponse JSON vide')
       }
 
-      const data = JSON.parse(text) as MedDrug[]
+      const data = JSON.parse(text) as MedDrugListItem[]
       setDrugs(data)
 
       const nextManufacturers = Array.from(new Set(data.map((item) => item.manufacturer).filter(Boolean))) as string[]
