@@ -7,18 +7,18 @@
         "./*"
       ]
     },
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedParameters": false,
     "skipLibCheck": true,
     "allowJs": true,
     "noUnusedLocals": false,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "strict": false,
+    "strict": true,
     "noEmit": true,
     "incremental": true,
     "module": "esnext",
