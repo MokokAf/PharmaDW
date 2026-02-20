@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { ALPHABET } from '@/lib/drugService';
 import { cn } from '@/lib/utils';
 
@@ -9,28 +8,31 @@ interface AlphabetFilterProps {
 
 export function AlphabetFilter({ selectedLetter, onLetterSelect }: AlphabetFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2 p-4 bg-card rounded-lg border">
-      <Button
-        variant={selectedLetter === '' ? 'default' : 'outline'}
-        size="sm"
+    <div className="scroll-strip gap-1.5 py-2">
+      <button
         onClick={() => onLetterSelect('')}
-        className="text-xs font-medium"
+        className={cn(
+          "shrink-0 min-w-[28px] h-7 px-2 rounded-full text-xs font-medium transition-colors",
+          selectedLetter === ''
+            ? "bg-primary text-primary-foreground"
+            : "bg-muted text-muted-foreground hover:bg-muted/80"
+        )}
       >
         Tous
-      </Button>
+      </button>
       {ALPHABET.map((letter) => (
-        <Button
+        <button
           key={letter}
-          variant={selectedLetter === letter ? 'default' : 'outline'}
-          size="sm"
           onClick={() => onLetterSelect(letter)}
           className={cn(
-            "text-xs font-medium min-w-[32px]",
-            selectedLetter === letter && "bg-primary text-primary-foreground"
+            "shrink-0 min-w-[28px] h-7 rounded-full text-xs font-medium transition-colors",
+            selectedLetter === letter
+              ? "bg-primary text-primary-foreground"
+              : "bg-muted text-muted-foreground hover:bg-muted/80"
           )}
         >
           {letter}
-        </Button>
+        </button>
       ))}
     </div>
   );

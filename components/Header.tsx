@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Menu, Home, Newspaper, Mail, Users, Building2, Pill, MapPin } from "lucide-react";
+import { Menu, Home, MapPin, Pill, Stethoscope } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -10,118 +11,94 @@ import {
   SheetOverlay,
 } from "@/components/ui/sheet";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Accueil", href: "/", icon: Home },
+  { label: "Pharmacies de Garde", href: "/pharmacies-de-garde", icon: MapPin },
+  { label: "Médicaments", href: "/medicaments", icon: Pill },
+  { label: "Espace Pharmaciens", href: "/espace-pharmaciens", icon: Stethoscope },
+];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { label: "Accueil", href: "/", icon: Home },
-    { label: "Pharmacies de Garde", href: "/pharmacies-de-garde", icon: MapPin },
-    { label: "Médicaments", href: "/medicaments", icon: Pill },
-    { label: "Actualités", href: "#actualites", icon: Newspaper },
-    { label: "Contact", href: "#contact", icon: Mail },
-    { label: "Qui sommes-nous", href: "#about", icon: Users },
-    { label: "Espace Pharmaciens", href: "/espace-pharmaciens", icon: Building2 },
-  ];
+  const pathname = usePathname();
 
   return (
-    <header className="bg-primary/90 backdrop-blur-sm sticky top-0 z-50 shadow-soft">
+    <header className="bg-background/80 backdrop-blur-lg border-b border-border/50 sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Pill className="h-6 w-6 text-white" />
-            <h1 className="text-2xl md:text-3xl text-white font-light">
-              Dwaia.ma
-            </h1>
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg pharma-gradient flex items-center justify-center">
+              <Pill className="h-4 w-4 text-white" />
+            </div>
+            <span className="text-xl font-semibold text-foreground">
+              Dwaia<span className="text-primary">.ma</span>
+            </span>
           </Link>
 
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems
-              .filter(item => !item.href.startsWith("#"))
-              .map((item, idx) =>
-                item.href.startsWith("/") ? (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors"
-                  >
-                    <item.icon className="h-4 w-4" />
-                    <span>{item.label}</span>
-                  </Link>
-                ) : (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors"
-                  >
-                    <item.icon className="h-4 w-4" />
-                    <span>{item.label}</span>
-                  </a>
-                )
-              )}
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                    isActive
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  )}
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-
-            {/* only show hamburger when closed */}
             {!isOpen && (
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden text-white hover:bg-white/10"
+                  className="md:hidden"
                   aria-label="Ouvrir le menu"
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
             )}
-
-            {/* dimmed backdrop */}
-            <SheetOverlay className="bg-black/30 backdrop-blur-sm transition-opacity duration-200 ease-in-out" />
-
-            <SheetContent
-              side="right"
-              className="w-80 p-6 bg-primary/90 text-white transition-transform duration-300 ease-in-out"
-            >
-              {/* we removed the manual <SheetClose>; the built-in X stays */}
-              <h2 className="text-lg font-semibold mb-8">Menu</h2>
-
-              <nav className="space-y-4">
-                {navItems
-                  .filter(item => !item.href.startsWith("#"))
-                  .map((item, idx) =>
-                    item.href.startsWith("/") ? (
-                      <Link
-                        key={idx}
-                        href={item.href}
-                        className="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white/10 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <item.icon className="h-5 w-5" />
-                        <span>{item.label}</span>
-                      </Link>
-                    ) : (
-                      <a
-                        key={idx}
-                        href={item.href}
-                        className="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white/10 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <item.icon className="h-5 w-5" />
-                        <span>{item.label}</span>
-                      </a>
-                    )
-                  )}
+            <SheetOverlay className="bg-black/20 backdrop-blur-sm" />
+            <SheetContent side="right" className="w-72 p-6 bg-background">
+              <h2 className="text-lg font-semibold mb-6">Menu</h2>
+              <nav className="space-y-1">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href ||
+                    (item.href !== "/" && pathname.startsWith(item.href));
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium transition-colors",
+                        isActive
+                          ? "bg-primary/10 text-primary"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <item.icon className="h-5 w-5" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
               </nav>
             </SheetContent>
           </Sheet>
-
         </div>
       </div>
     </header>

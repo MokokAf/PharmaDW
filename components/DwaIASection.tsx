@@ -1,172 +1,53 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Input } from "@/components/ui/input";
-import { Bot, MessageCircle, Lightbulb, Shield, User, Pill } from "lucide-react";
+import { Bot, MessageCircle, Lightbulb, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
+
+const features = [
+  { icon: MessageCircle, text: "Détection des interactions médicamenteuses" },
+  { icon: Lightbulb, text: "Conseils de dispensation personnalisés" },
+  { icon: Shield, text: "Conformité réglementaire" },
+];
 
 const DwaIASection = () => {
   const router = useRouter();
+
   return (
-    <section className="py-24 bg-primary relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl -translate-x-32 -translate-y-32" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-48 translate-y-48" />
-
-      <div className="relative container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start mb-20">
-          {/* Left Content */}
-          <div className="text-white text-center lg:text-left space-y-8">
-            <div className="space-y-6">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                <Pill className="w-4 h-4 mr-1" />
-                Réservé aux Pharmaciens
-              </Badge>
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                  Dwa IA 2.0
-                  <span className="block font-extralight text-[#f5f7fa] mt-2">
-                    Assistant pharmaceutique intelligent
-                  </span>
-                </h2>
-                <p className="text-xl text-white/90 font-medium leading-relaxed max-w-lg">
-                  La 1ère IA pour pharmaciens au Maroc
-                </p>
+    <section className="py-12 md:py-16">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 space-y-5">
+            {/* Header */}
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Bot className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-foreground">Dwa IA 2.0</h2>
+                <p className="text-sm text-muted-foreground">Assistant IA pour pharmaciens</p>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Interactions médicamenteuses
-                  </h3>
-                  <p className="text-white/80 font-medium leading-relaxed">
-                    Détection automatique des interactions entre médicaments avec évaluation du niveau de risque
-                  </p>
-                </div>
-              </div>
+            {/* Features */}
+            <ul className="space-y-3">
+              {features.map((f, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <f.icon className="h-4 w-4 text-primary shrink-0" />
+                  <span>{f.text}</span>
+                </li>
+              ))}
+            </ul>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Lightbulb className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Conseils de dispensation personnalisés
-                  </h3>
-                  <p className="text-white/80 font-medium leading-relaxed">
-                    Recommandations adaptées selon l'âge, le poids et les pathologies du patient
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Shield className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-white">
-                    Conformité réglementaire
-                  </h3>
-                  <p className="text-white/80 font-medium leading-relaxed">
-                    Accompagnement réglementaire et juridique
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* CTA */}
+            <Button
+              onClick={() => router.push('/espace-pharmaciens')}
+              className="w-full md:w-auto rounded-lg h-11"
+            >
+              <Bot className="h-4 w-4 mr-2" />
+              Accéder à l&apos;assistant
+            </Button>
           </div>
-
-          {/* Right Content - AI Interface Preview */}
-          <div className="relative flex justify-center lg:justify-end">
-            <Card className="w-full max-w-md flex flex-col shadow-2xl lg:h-[650px]">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <Bot className="h-5 w-5" />
-                  Assistant DwaIA 2.0
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-1 p-0 min-h-0">
-                <ScrollArea className="flex-1 px-4">
-                  <div className="space-y-4 pb-4">
-                    {/* Bot welcome */}
-                    <div className="flex gap-3 justify-start">
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback>
-                          <Bot className="h-4 w-4" />
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="max-w-[80%] break-words rounded-lg p-3 bg-muted">
-                        <p className="text-sm">
-                          Bonjour ! Je suis votre assistant IA spécialisé en pharmacie. Comment puis-je vous aider aujourd'hui ?
-                        </p>
-                        <p className="text-xs opacity-70 mt-1">14:32</p>
-                      </div>
-                    </div>
-
-                    {/* User question */}
-                    <div className="flex gap-3 justify-end">
-                      <div className="max-w-[80%] break-words rounded-lg p-3 bg-primary text-primary-foreground">
-                        <p className="text-sm">
-                          Patient diabétique sous metformine 850 mg, peut‑il prendre de l'ibuprofène pour ses douleurs articulaires ?
-                        </p>
-                        <p className="text-xs opacity-70 mt-1">14:35</p>
-                      </div>
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback>
-                          <User className="h-4 w-4" />
-                        </AvatarFallback>
-                      </Avatar>
-                    </div>
-
-                    {/* Long bot reply (truncated with …) */}
-                    <div className="flex gap-3 justify-start">
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback>
-                          <Bot className="h-4 w-4" />
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="max-w-[80%] break-words rounded-lg p-3 bg-muted">
-                        <p
-                          className="
-                            text-sm 
-                            whitespace-pre-wrap 
-                            overflow-hidden 
-                            [display:-webkit-box] 
-                            [-webkit-box-orient:vertical] 
-                            [-webkit-line-clamp:4]
-                          "
-                        >
-                          ⚠️ <strong>Attention</strong> : L'ibuprofène peut altérer la fonction rénale et potentialiser le risque d'acidose lactique avec la metformine. Alternatives recommandées : Paracétamol 1 g x 3/jour (première intention), Application locale de diclofénac gel si douleurs localisées...
-                        </p>
-                        <p className="text-xs opacity-70 mt-1">14:36</p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Centered Button at Bottom */}
-        <div className="flex justify-center">
-          <Button
-            variant="ai"
-            size="lg"
-            className="bg-white text-primary hover:bg-white/90 px-8 py-4 font-bold hover-scale"
-            onClick={() => router.push('/espace-pharmaciens')}
-          >
-            <Bot className="w-6 h-6 mr-2 stroke-2" />
-            Tester Dwa IA 2.0
-          </Button>
         </div>
       </div>
     </section>

@@ -1,20 +1,23 @@
 import React, { useState, useRef, forwardRef, useImperativeHandle, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot } from 'lucide-react';
+import { Bot, AlertTriangle, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { cn } from '@/lib/utils';
 
 export type ChatBotHandle = {
   focusInteractions: () => void;
   showHistory: () => void;
 };
 
-export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
-  // No chat state; component focuses on interaction checker only.
+const triageConfig = {
+  vert: { border: 'border-l-emerald-500', bg: 'bg-emerald-50 dark:bg-emerald-950/30', icon: CheckCircle2, iconColor: 'text-emerald-600' },
+  ambre: { border: 'border-l-amber-500', bg: 'bg-amber-50 dark:bg-amber-950/30', icon: AlertTriangle, iconColor: 'text-amber-600' },
+  rouge: { border: 'border-l-red-500', bg: 'bg-red-50 dark:bg-red-950/30', icon: AlertCircle, iconColor: 'text-red-600' },
+};
 
-  // État pour le vérificateur d'interactions
+export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
   const [drug1, setDrug1] = useState('');
   const [drug2, setDrug2] = useState('');
   const [checkLoading, setCheckLoading] = useState(false);
@@ -32,7 +35,6 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
     triage: 'vert' | 'ambre' | 'rouge';
   }>(null);
 
-  // Contexte patient (optionnel) — mémorisé en session
   const [age, setAge] = useState<string>('');
   const [pregnancy, setPregnancy] = useState<'enceinte' | 'non_enceinte' | 'inconnu'>('inconnu');
   const [breastfeeding, setBreastfeeding] = useState<'oui' | 'non' | 'inconnu'>('inconnu');
@@ -67,25 +69,16 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
 
   useEffect(() => {
     const obj = {
-      age,
-      pregnancy,
-      breastfeeding,
-      egfr,
-      ckdStage,
-      allergiesStr,
-      conditionsStr,
-      weight,
-      riskQT,
-      riskFall,
+      age, pregnancy, breastfeeding, egfr, ckdStage,
+      allergiesStr, conditionsStr, weight, riskQT, riskFall,
     };
     try { sessionStorage.setItem(sessionKey, JSON.stringify(obj)); } catch {}
   }, [age, pregnancy, breastfeeding, egfr, ckdStage, allergiesStr, conditionsStr, weight, riskQT, riskFall]);
+
   const drug1Ref = useRef<HTMLInputElement>(null);
 
   useImperativeHandle(ref, () => ({
-    focusInteractions: () => {
-      drug1Ref.current?.focus();
-    },
+    focusInteractions: () => { drug1Ref.current?.focus(); },
     showHistory: () => {},
   }));
 
@@ -131,7 +124,6 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || 'Erreur inconnue');
-      // Support both old and new formats during migration
       if (data?.summary_fr) {
         setNormResult(data);
       } else {
@@ -152,8 +144,6 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
     }
   };
 
-  // Chat-related code removed
-
   const interactionLines =
     (checkAnswer || '')
       .split('\n')
@@ -162,174 +152,186 @@ export const ChatBot = forwardRef<ChatBotHandle, {}>((props, ref) => {
       .map((l) => l.replace(/^[-]\s*/, ''));
 
   return (
-    <Card className="w-full flex flex-col">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Bot className="h-5 w-5" />
-          Assistant DwaIA 2.0 — Interactions médicamenteuses
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col p-0">
-        {/* Vérificateur d'associations de médicaments */}
-        <div className="p-4 border-t space-y-3">
-          <Accordion type="single" collapsible className="px-4">
-            <AccordionItem value="patient-context">
-              <AccordionTrigger>Contexte patient (optionnel)</AccordionTrigger>
-              <AccordionContent>
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">Âge</label>
-                    <Input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex. 72" />
-                  </div>
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">Grossesse</label>
-                    <select className="border rounded-md h-9 px-3 text-sm" value={pregnancy} onChange={(e) => setPregnancy(e.target.value as any)}>
-                      <option value="inconnu">Inconnu</option>
-                      <option value="enceinte">Enceinte</option>
-                      <option value="non_enceinte">Non enceinte</option>
-                    </select>
-                  </div>
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">Allaitement</label>
-                    <select className="border rounded-md h-9 px-3 text-sm" value={breastfeeding} onChange={(e) => setBreastfeeding(e.target.value as any)}>
-                      <option value="inconnu">Inconnu</option>
-                      <option value="oui">Oui</option>
-                      <option value="non">Non</option>
-                    </select>
-                  </div>
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">eGFR (mL/min/1.73m²)</label>
-                    <Input inputMode="numeric" value={egfr} onChange={(e) => setEgfr(e.target.value)} placeholder="ex. 38" />
-                  </div>
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">CKD (stade)</label>
-                    <Input value={ckdStage} onChange={(e) => setCkdStage(e.target.value)} placeholder="ex. 3b" />
-                  </div>
-                  <div className="grid gap-1">
-                    <label className="text-sm font-medium">Poids (kg)</label>
-                    <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="ex. 63" />
-                  </div>
-                  <div className="grid gap-1 sm:col-span-3">
-                    <label className="text-sm font-medium">Allergies (tags séparés par des virgules)</label>
-                    <Input value={allergiesStr} onChange={(e) => setAllergiesStr(e.target.value)} placeholder="ex. pénicillines, AINS, sulfamides" />
-                  </div>
-                  <div className="grid gap-1 sm:col-span-3">
-                    <label className="text-sm font-medium">Comorbidités (tags séparés par des virgules)</label>
-                    <Input value={conditionsStr} onChange={(e) => setConditionsStr(e.target.value)} placeholder="ex. HTA, FA, épilepsie, glaucome, HBP" />
-                  </div>
-                  <div className="flex items-center gap-6 sm:col-span-3">
-                    <label className="flex items-center gap-2 text-sm">
-                      <input type="checkbox" className="accent-primary" checked={riskQT} onChange={(e) => setRiskQT(e.target.checked)} />
-                      Risque QT
-                    </label>
-                    <label className="flex items-center gap-2 text-sm">
-                      <input type="checkbox" className="accent-primary" checked={riskFall} onChange={(e) => setRiskFall(e.target.checked)} />
-                      Somnolence/Chute
-                    </label>
-                  </div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+    <div className="w-full flex flex-col">
+      {/* Header */}
+      <div className="px-4 py-3 md:px-6 md:py-4 border-b border-border">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Bot className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-base font-semibold">Interactions médicamenteuses</h2>
+            <p className="text-xs text-muted-foreground">Assistant DwaIA 2.0</p>
+          </div>
+        </div>
+      </div>
 
-          <form onSubmit={handleInteractionSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+      {/* Content */}
+      <div className="px-4 py-4 md:px-6 space-y-4">
+        {/* Patient context accordion */}
+        <Accordion type="single" collapsible>
+          <AccordionItem value="patient-context" className="border rounded-lg">
+            <AccordionTrigger className="px-4 py-3 text-sm hover:no-underline">
+              Contexte patient (optionnel)
+            </AccordionTrigger>
+            <AccordionContent className="px-4 pb-4">
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">Âge</label>
+                  <Input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex. 72" className="h-9" />
+                </div>
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">Grossesse</label>
+                  <select className="border rounded-lg h-9 px-3 text-sm bg-background" value={pregnancy} onChange={(e) => setPregnancy(e.target.value as any)}>
+                    <option value="inconnu">Inconnu</option>
+                    <option value="enceinte">Enceinte</option>
+                    <option value="non_enceinte">Non enceinte</option>
+                  </select>
+                </div>
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">Allaitement</label>
+                  <select className="border rounded-lg h-9 px-3 text-sm bg-background" value={breastfeeding} onChange={(e) => setBreastfeeding(e.target.value as any)}>
+                    <option value="inconnu">Inconnu</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                  </select>
+                </div>
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">eGFR (mL/min)</label>
+                  <Input inputMode="numeric" value={egfr} onChange={(e) => setEgfr(e.target.value)} placeholder="ex. 38" className="h-9" />
+                </div>
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">CKD (stade)</label>
+                  <Input value={ckdStage} onChange={(e) => setCkdStage(e.target.value)} placeholder="ex. 3b" className="h-9" />
+                </div>
+                <div className="grid gap-1">
+                  <label className="text-xs font-medium text-muted-foreground">Poids (kg)</label>
+                  <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="ex. 63" className="h-9" />
+                </div>
+                <div className="grid gap-1 sm:col-span-3">
+                  <label className="text-xs font-medium text-muted-foreground">Allergies</label>
+                  <Input value={allergiesStr} onChange={(e) => setAllergiesStr(e.target.value)} placeholder="pénicillines, AINS, sulfamides" className="h-9" />
+                </div>
+                <div className="grid gap-1 sm:col-span-3">
+                  <label className="text-xs font-medium text-muted-foreground">Comorbidités</label>
+                  <Input value={conditionsStr} onChange={(e) => setConditionsStr(e.target.value)} placeholder="HTA, FA, épilepsie" className="h-9" />
+                </div>
+                <div className="flex items-center gap-6 sm:col-span-3">
+                  <label className="flex items-center gap-2 text-xs">
+                    <input type="checkbox" className="accent-primary" checked={riskQT} onChange={(e) => setRiskQT(e.target.checked)} />
+                    Risque QT
+                  </label>
+                  <label className="flex items-center gap-2 text-xs">
+                    <input type="checkbox" className="accent-primary" checked={riskFall} onChange={(e) => setRiskFall(e.target.checked)} />
+                    Somnolence/Chute
+                  </label>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+        {/* Drug inputs */}
+        <form onSubmit={handleInteractionSubmit} className="space-y-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             <div className="grid gap-1">
-              <label className="text-sm font-medium">Médicament 1 (DCI)</label>
+              <label className="text-xs font-medium text-muted-foreground">Médicament 1 (DCI)</label>
               <Input
                 ref={drug1Ref}
                 autoFocus
                 value={drug1}
                 onChange={(e) => setDrug1(e.target.value)}
                 onKeyDown={handleInteractionKeyDown}
-                placeholder="Ex. ibuprofène (DCI)"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                placeholder="Ex. ibuprofène"
+                className="h-11"
                 required
               />
             </div>
             <div className="grid gap-1">
-              <label className="text-sm font-medium">Médicament 2 (DCI)</label>
+              <label className="text-xs font-medium text-muted-foreground">Médicament 2 (DCI)</label>
               <Input
                 value={drug2}
                 onChange={(e) => setDrug2(e.target.value)}
                 onKeyDown={handleInteractionKeyDown}
-                placeholder="Ex. warfarine (DCI)"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                placeholder="Ex. warfarine"
+                className="h-11"
                 required
               />
             </div>
-            <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="mt-2 sm:mt-0 w-full sm:w-auto justify-self-stretch sm:justify-self-end" title="Appuyez sur Entrée ↵ pour soumettre">
-              {checkLoading ? 'Recherche en cours…' : 'Vérifier l’interaction'}
-            </Button>
-            <div className="sm:col-span-2 -mt-1">
-              <p className="text-xs text-muted-foreground">Saisissez la DCI, pas le nom commercial.</p>
-            </div>
-          </form>
-          {checkError && (
-            <p role="alert" aria-live="polite" className="text-sm text-destructive">{checkError}</p>
-          )}
-          {normResult && (
-            <div className="text-sm break-words whitespace-pre-wrap hyphens-auto space-y-3">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge className={
-                  normResult.triage === 'vert' ? 'bg-emerald-600 text-white' :
-                  normResult.triage === 'ambre' ? 'bg-amber-500 text-white' :
-                  'bg-red-600 text-white'
-                }>{normResult.triage.toUpperCase()}</Badge>
-                <Badge variant="secondary">Action: {normResult.action}</Badge>
-                <Badge variant="outline">Gravité: {normResult.severity}</Badge>
+          </div>
+          <Button type="submit" disabled={checkLoading} aria-busy={checkLoading} className="w-full h-11 rounded-lg">
+            {checkLoading ? 'Recherche en cours...' : 'Vérifier l\u2019interaction'}
+          </Button>
+          <p className="text-[11px] text-muted-foreground text-center">Saisissez la DCI, pas le nom commercial.</p>
+        </form>
+
+        {/* Error */}
+        {checkError && (
+          <p role="alert" aria-live="polite" className="text-sm text-destructive">{checkError}</p>
+        )}
+
+        {/* Triage result card */}
+        {normResult && (() => {
+          const tc = triageConfig[normResult.triage] || triageConfig.ambre;
+          const TriageIcon = tc.icon;
+          return (
+            <div className={cn("rounded-lg border-l-4 p-4 space-y-3", tc.border, tc.bg)}>
+              <div className="flex items-start gap-3">
+                <TriageIcon className={cn("h-5 w-5 mt-0.5 shrink-0", tc.iconColor)} />
+                <div className="flex-1 space-y-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge className={
+                      normResult.triage === 'vert' ? 'bg-emerald-600 text-white' :
+                      normResult.triage === 'ambre' ? 'bg-amber-500 text-white' :
+                      'bg-red-600 text-white'
+                    }>{normResult.triage.toUpperCase()}</Badge>
+                    <Badge variant="secondary" className="text-xs">Action : {normResult.action}</Badge>
+                    <Badge variant="outline" className="text-xs">Gravité : {normResult.severity}</Badge>
+                  </div>
+                  <p className="text-sm font-medium">{normResult.summary_fr}</p>
+                </div>
               </div>
-              <p className="font-medium">{normResult.summary_fr}</p>
+
               {normResult.bullets_fr?.length > 0 && (
-                <ul className="list-disc pl-6 space-y-2">
+                <ul className="list-disc pl-9 space-y-1.5 text-sm">
                   {normResult.bullets_fr.map((b: string, i: number) => (
                     <li key={i} className="leading-relaxed">{b}</li>
                   ))}
                 </ul>
               )}
-              {normResult.patient_specific_notes?.length > 0 && (
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">Notes patient</p>
-                  <ul className="list-disc pl-6 space-y-1">
+              {normResult.patient_specific_notes && normResult.patient_specific_notes.length > 0 && (
+                <div className="pl-9 space-y-1 border-t border-border/30 pt-3">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Notes patient</p>
+                  <ul className="list-disc pl-5 space-y-1">
                     {normResult.patient_specific_notes.map((n: string, i: number) => (
                       <li key={i} className="text-sm">{n}</li>
                     ))}
                   </ul>
                 </div>
               )}
-              {/* Citations masquées selon demande */}
             </div>
-          )}
-          {!normResult && checkAnswer && (
-            <div className="text-sm break-words whitespace-pre-wrap hyphens-auto">
-              <ul className="list-disc pl-6 space-y-2 break-words">
-                {interactionLines.map((line, idx) => (
-                  <li key={idx} className="break-words leading-relaxed">{line}</li>
-                ))}
-              </ul>
-              {/* Sources masquées selon demande */}
-            </div>
-          )}
-          {/* Informations sur les bases de données (texte discret) — déplacé en bas */}
-          <div className="px-4 pt-3 pb-4 border-t text-xs sm:text-sm text-muted-foreground space-y-2">
-            <p className="font-medium">Bases de données médicales de l’IA</p>
-            <p>
-              Notre intelligence artificielle s’appuie exclusivement sur des bases de données médicales validées et reconnues par la communauté pharmaceutique et médicale mondiale, mises à jour régulièrement :
-            </p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <span className="font-medium">Micromedex® (IBM Watson Health)</span> – Base de données clinique utilisée dans les hôpitaux du monde entier, offrant des informations validées sur les médicaments, leurs effets et leurs interactions.
-              </li>
-              <li>
-                <span className="font-medium">Cerner Multum™ (Cerner Corporation)</span> – Fournisseur de contenus médicamenteux intégré aux dossiers médicaux électroniques, reconnu pour la clarté de ses guides destinés aux professionnels comme aux patients.
-              </li>
-              <li>
-                <span className="font-medium">ASHP (American Society of Health-System Pharmacists)</span> – Éditeur de l’AHFS Drug Information®, compendium officiel et indépendant, largement cité par les autorités de santé américaines (FDA, Congrès).
-              </li>
+          );
+        })()}
+
+        {/* Fallback answer (old format) */}
+        {!normResult && checkAnswer && (
+          <div className="rounded-lg border-l-4 border-l-primary/50 bg-primary/5 p-4 text-sm">
+            <ul className="list-disc pl-5 space-y-2">
+              {interactionLines.map((line, idx) => (
+                <li key={idx} className="leading-relaxed">{line}</li>
+              ))}
             </ul>
           </div>
+        )}
+
+        {/* DB info — compact */}
+        <div className="pt-4 border-t text-xs text-muted-foreground space-y-1.5">
+          <p className="font-medium">Sources : Micromedex, Cerner Multum, ASHP</p>
+          <p>
+            IA basée sur des bases de données médicales validées, mises à jour régulièrement.
+          </p>
         </div>
-        {/* Chat section removed for this UI: message history and input omitted intentionally */}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 });

@@ -1,7 +1,6 @@
 import Footer from '@/components/Footer'
 import HeroSection from '@/components/HeroSection'
 import DwaIASection from '@/components/DwaIASection'
-import NewsSection from '@/components/NewsSection'
 import FAQSection from '@/components/FAQSection'
 
 export default function HomePage() {
@@ -10,7 +9,6 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <DwaIASection />
-        <NewsSection />
         <FAQSection />
       </main>
       <Footer />

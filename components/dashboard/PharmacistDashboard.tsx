@@ -2,13 +2,10 @@
 
 import React, { useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { ChatBot, ChatBotHandle } from './ChatBot';
 import { PharmacistSidebar } from './PharmacistSidebar';
 import { useAuth } from '@/contexts/AuthContext';
-import { LogOut, User, Mail, Shield, ArrowLeft, Menu, AlertTriangle } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 
 export const PharmacistDashboard: React.FC = () => {
@@ -19,26 +16,34 @@ export const PharmacistDashboard: React.FC = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen bg-background w-full">
-        <PharmacistSidebar
-          onGoDashboard={() => router.push('/espace-pharmaciens/dashboard')}
-          onGoInteractions={() => chatRef.current?.focusInteractions()}
-          onGoHistory={() => chatRef.current?.showHistory()}
-          onOpenAccount={() => router.push('/espace-pharmaciens/dashboard#compte')}
-          onLogout={logout}
-        />
-        
-        <main className="px-3 pt-2 pb-4 md:p-4 transition-[margin-left] duration-200 ease-linear ml-0 md:ml-[var(--sidebar-width)]">
-          {/* Demo mode banner */}
-          <div className="mb-2 flex items-center gap-2 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200">
-            <AlertTriangle className="h-4 w-4 shrink-0" />
-            <span>Mode demo — Authentification simulée, données non persistantes.</span>
+        {/* Sidebar — hidden on mobile, ChatBot takes full screen */}
+        <div className="hidden md:block">
+          <PharmacistSidebar
+            onGoDashboard={() => router.push('/espace-pharmaciens/dashboard')}
+            onGoInteractions={() => chatRef.current?.focusInteractions()}
+            onGoHistory={() => chatRef.current?.showHistory()}
+            onOpenAccount={() => router.push('/espace-pharmaciens/dashboard#compte')}
+            onLogout={logout}
+          />
+        </div>
+
+        <main className="px-0 pt-0 pb-0 md:px-4 md:pt-2 md:pb-4 transition-[margin-left] duration-200 ease-linear ml-0 md:ml-[var(--sidebar-width)]">
+          {/* Demo banner — discreet */}
+          <div className="mx-3 mt-2 md:mx-0 mb-2 flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-1.5 text-xs text-amber-700 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-300">
+            <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+            <span>Mode demo — données non persistantes</span>
           </div>
-          {/* Mobile top bar with sidebar trigger */}
-          <div className="sticky top-0 z-10 mb-2 flex items-center gap-2 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-2 md:hidden">
+
+          {/* Mobile top bar */}
+          <div className="sticky top-0 z-10 flex items-center gap-2 bg-background/95 backdrop-blur-sm border-b border-border/50 px-3 py-2 md:hidden">
             <SidebarTrigger />
-            <span className="text-sm text-muted-foreground">Menu</span>
+            <span className="text-sm font-medium">DwaIA 2.0</span>
           </div>
-          <ChatBot ref={chatRef} />
+
+          {/* ChatBot — fullscreen on mobile */}
+          <div className="md:pt-2">
+            <ChatBot ref={chatRef} />
+          </div>
         </main>
       </div>
     </SidebarProvider>

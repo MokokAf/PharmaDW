@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Loader2, MapPin, PhoneCall, AlertTriangle, Navigation } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Loader2, MapPin, PhoneCall, AlertTriangle, Navigation, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const POP_RANK: Record<string, number> = {
   Casablanca: 1,
@@ -38,8 +33,6 @@ interface Pharmacy {
   source: string;
   date: string;
 }
-
-
 
 export default function PharmaciesDeGardePage() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
@@ -89,122 +82,132 @@ export default function PharmaciesDeGardePage() {
     return list;
   }, [pharmacies, city, filter]);
 
-  // derive metadata (date, source) from the selected city
   const lastUpdate = filtered[0]?.date ?? "";
   const source = filtered[0]?.source ?? "";
 
   return (
-    <main className="container mx-auto px-4 py-10 max-w-4xl">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-6 text-center">
+    <main className="max-w-2xl mx-auto px-4 py-6 md:py-10">
+      <h1 className="text-2xl md:text-3xl font-semibold mb-6 text-center">
         Pharmacies de Garde
       </h1>
 
-      {/* Controls */}
-      <div className="flex flex-col md:flex-row gap-4 mb-8 items-stretch md:items-end">
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1" htmlFor="city">
-            Ville
-          </label>
-          <Select onValueChange={(v) => setCity(v as string)} value={city}>
-            <SelectTrigger id="city">
-              <SelectValue placeholder="Choisissez une ville" />
-            </SelectTrigger>
-            <SelectContent>
-              {cities.map((c) => (
-                <SelectItem key={c} value={c}>
-                  {c}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      {/* City pills — horizontal scroll */}
+      {!loading && cities.length > 0 && (
+        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-sm -mx-4 px-4 py-3 border-b border-border/50">
+          <div className="scroll-strip gap-2">
+            {cities.map((c) => (
+              <button
+                key={c}
+                onClick={() => setCity(c)}
+                className={cn(
+                  "shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  city === c
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                )}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1" htmlFor="filter">
-            Filtrer par quartier ou nom
-          </label>
+      )}
+
+      {/* Search filter */}
+      {city && (
+        <div className="relative mt-4 mb-4">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            id="filter"
-            placeholder="Tapez un quartier ou une pharmacie..."
+            placeholder="Filtrer par quartier ou nom..."
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
+            className="pl-10 h-11 rounded-lg"
           />
         </div>
-      </div>
+      )}
 
       {loading && (
         <div className="flex justify-center py-20">
-          <Loader2 className="h-8 w-8 animate-spin" />
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
       )}
 
       {error && (
-        <div className="flex items-center gap-2 text-red-600">
+        <div className="flex items-center gap-2 text-destructive mt-4">
           <AlertTriangle className="h-5 w-5" />
           <p>{error}</p>
         </div>
       )}
 
-      {/* before selection */}
       {!loading && !error && !city && (
-        <p className="text-center text-muted-foreground">Sélectionnez une ville.</p>
-      )}
-
-      {/* no results */}
-      {!loading && !error && city && filtered.length === 0 && (
-        <p className="text-center text-muted-foreground">
-          Aucune pharmacie de garde trouvée pour {city} aujourd&#39;hui.
+        <p className="text-center text-muted-foreground py-12">
+          Sélectionnez une ville ci-dessus.
         </p>
       )}
 
+      {!loading && !error && city && filtered.length === 0 && (
+        <p className="text-center text-muted-foreground py-12">
+          Aucune pharmacie de garde trouvée pour {city}.
+        </p>
+      )}
+
+      {/* Pharmacy cards — single column */}
       {!loading && filtered.length > 0 && (
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="space-y-4 mt-2">
+          <p className="text-sm text-muted-foreground">
+            {filtered.length} pharmacie{filtered.length > 1 ? "s" : ""} de garde à {city}
+          </p>
+
           {filtered.map((p, idx) => (
             <div
               key={idx}
-              className="border rounded-lg p-4 shadow-sm bg-card flex flex-col justify-between"
+              className="rounded-xl border border-border bg-background p-5 space-y-3"
             >
               <div>
-                <h2 className="text-lg font-semibold mb-1">{p.name}</h2>
-                <p className="text-sm text-muted-foreground mb-2 flex items-start gap-1">
-                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                <h2 className="text-base font-semibold text-foreground">{p.name}</h2>
+                <p className="text-sm text-muted-foreground mt-1 flex items-start gap-1.5">
+                  <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
                   {p.address || "Adresse non disponible"}
                 </p>
-                <p className="text-sm mb-1">
-                  <span className="font-medium">Quartier&nbsp;:</span> {p.district}
-                </p>
-                <p className="text-sm mb-4">
-                  <span className="font-medium">Garde&nbsp;:</span> {p.duty}
-                </p>
+                {p.district && (
+                  <p className="text-xs text-muted-foreground mt-1 ml-5.5">
+                    {p.district}
+                  </p>
+                )}
               </div>
-              <div className="mt-auto flex flex-col sm:flex-row gap-2">
-                <a
-                  href={`tel:${p.phone}`}
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-2 rounded-md text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
-                >
-                  <PhoneCall className="h-4 w-4" /> Appeler
-                </a>
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.city}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-3 py-2 rounded-md text-sm hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 transition"
-                >
-                  <Navigation className="h-4 w-4" /> Localisation
-                </a>
-              </div>
+
+              {/* Call button — full width on mobile */}
+              <a
+                href={`tel:${p.phone}`}
+                className="flex items-center justify-center gap-2 w-full h-12 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
+              >
+                <PhoneCall className="h-4 w-4" />
+                Appeler
+              </a>
+
+              {/* Maps link — discreet */}
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Navigation className="h-3.5 w-3.5" />
+                Voir sur la carte
+              </a>
             </div>
           ))}
         </div>
       )}
 
-      {/* footer info */}
-      <div className="mt-12 text-center text-sm text-muted-foreground">
+      {/* Footer info */}
+      <div className="mt-8 text-center text-xs text-muted-foreground space-y-1">
         {lastUpdate && (
           <p>
-            Dernière mise à jour&nbsp;: <span className="font-medium">{lastUpdate}</span>
+            Dernière mise à jour : <span className="font-medium">{lastUpdate}</span>
           </p>
         )}
-        {source && <p>Source&nbsp;: {source}</p>}
+        {source && <p>Source : {source}</p>}
       </div>
     </main>
   );

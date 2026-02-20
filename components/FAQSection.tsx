@@ -69,23 +69,22 @@ const faqSchema = {
 
 const FAQSection: React.FC = () => {
   return (
-    <section id="faq" className="container max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+    <section id="faq" className="container max-w-2xl mx-auto px-4 py-12 md:py-16">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
         FAQ : Le métier de Pharmacien au Maroc
       </h2>
 
       <Accordion
         type="single"
         collapsible
-        className="w-full divide-y divide-border rounded-md border border-border bg-card"
+        className="w-full divide-y divide-border rounded-xl border border-border bg-background"
       >
         {faqItems.map((item, idx) => (
           <AccordionItem value={`item-${idx}`} key={idx}>
-            <AccordionTrigger className="px-4 text-primary text-left w-full">{item.question}</AccordionTrigger>
-            <AccordionContent className="px-4">
-              {/* Render HTML answer */}
+            <AccordionTrigger className="px-5 py-4 text-foreground text-left text-sm font-medium hover:no-underline">{item.question}</AccordionTrigger>
+            <AccordionContent className="px-5 pb-4">
               <div
-                className="prose prose-sm md:prose-base max-w-none"
+                className="prose prose-sm max-w-none text-muted-foreground"
                 dangerouslySetInnerHTML={{ __html: item.answerHtml }}
               />
             </AccordionContent>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import SiteHeader from '@/components/SiteHeader'
+import BottomNav from '@/components/BottomNav'
 import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -64,11 +65,12 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="AfKCpIjaAz-ge5pqNfG-yq0sgZ2KkDtHsxxRy31fDt0" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} pb-safe md:pb-0`}>
         <SiteHeader />
         <Providers>
           {children}
         </Providers>
+        <BottomNav />
       </body>
     </html>
   )

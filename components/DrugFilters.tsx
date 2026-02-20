@@ -1,8 +1,19 @@
+'use client';
+
+import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { Search, X } from 'lucide-react';
+import { Search, X, SlidersHorizontal } from 'lucide-react';
 import { DrugFilters as DrugFiltersType } from '@/types/medication';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
 
 interface DrugFiltersProps {
   filters: DrugFiltersType;
@@ -11,12 +22,14 @@ interface DrugFiltersProps {
   therapeuticClasses: string[];
 }
 
-export function DrugFilters({ 
-  filters, 
-  onFiltersChange, 
-  manufacturers, 
-  therapeuticClasses 
+export function DrugFilters({
+  filters,
+  onFiltersChange,
+  manufacturers,
+  therapeuticClasses
 }: DrugFiltersProps) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const clearFilters = () => {
     onFiltersChange({
       search: '',
@@ -26,23 +39,97 @@ export function DrugFilters({
     });
   };
 
-  const hasActiveFilters = filters.search || filters.manufacturer || filters.therapeuticClass;
+  const hasActiveFilters = filters.manufacturer || filters.therapeuticClass;
+  const activeCount = [filters.manufacturer, filters.therapeuticClass].filter(Boolean).length;
+
+  const filterSelects = (
+    <div className="space-y-4">
+      <Select
+        value={filters.manufacturer || 'all'}
+        onValueChange={(value) => onFiltersChange({ ...filters, manufacturer: value === 'all' ? '' : value })}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder="Laboratoire" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Tous les laboratoires</SelectItem>
+          {manufacturers.map((manufacturer) => (
+            <SelectItem key={manufacturer} value={manufacturer}>
+              {manufacturer}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      <Select
+        value={filters.therapeuticClass || 'all'}
+        onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value === 'all' ? '' : value })}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder="Classe thérapeutique" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Toutes les classes</SelectItem>
+          {therapeuticClasses.map((therapeuticClass) => (
+            <SelectItem key={therapeuticClass} value={therapeuticClass}>
+              {therapeuticClass}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      {hasActiveFilters && (
+        <Button
+          variant="outline"
+          onClick={clearFilters}
+          className="w-full flex items-center gap-2"
+        >
+          <X className="h-4 w-4" />
+          Effacer les filtres
+        </Button>
+      )}
+    </div>
+  );
 
   return (
-    <div className="space-y-4 p-4 bg-card rounded-lg border">
-      {/* Search */}
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-        <Input
-          placeholder="Rechercher un médicament ou principe actif..."
-          value={filters.search}
-          onChange={(e) => onFiltersChange({ ...filters, search: e.target.value })}
-          className="pl-10 pr-4 py-3 text-sm sm:text-base placeholder:text-transparent sm:placeholder:text-gray-500 dark:sm:placeholder:text-gray-400"
-        />
+    <div className="space-y-3">
+      {/* Search — always visible */}
+      <div className="flex gap-2">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            placeholder="Rechercher un médicament..."
+            value={filters.search}
+            onChange={(e) => onFiltersChange({ ...filters, search: e.target.value })}
+            className="pl-10 h-11 rounded-lg"
+          />
+        </div>
+
+        {/* Mobile: drawer trigger */}
+        <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
+          <DrawerTrigger asChild>
+            <Button variant="outline" size="icon" className="h-11 w-11 shrink-0 md:hidden relative">
+              <SlidersHorizontal className="h-4 w-4" />
+              {activeCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-[10px] rounded-full flex items-center justify-center">
+                  {activeCount}
+                </span>
+              )}
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Filtres</DrawerTitle>
+            </DrawerHeader>
+            <div className="px-4 pb-8">
+              {filterSelects}
+            </div>
+          </DrawerContent>
+        </Drawer>
       </div>
 
-      {/* Filter dropdowns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Desktop: inline filters */}
+      <div className="hidden md:grid md:grid-cols-2 gap-3">
         <Select
           value={filters.manufacturer || 'all'}
           onValueChange={(value) => onFiltersChange({ ...filters, manufacturer: value === 'all' ? '' : value })}
@@ -76,18 +163,21 @@ export function DrugFilters({
             ))}
           </SelectContent>
         </Select>
+      </div>
 
-        {hasActiveFilters && (
+      {hasActiveFilters && (
+        <div className="hidden md:block">
           <Button
-            variant="outline"
+            variant="ghost"
+            size="sm"
             onClick={clearFilters}
-            className="flex items-center gap-2"
+            className="text-xs text-muted-foreground"
           >
-            <X className="h-4 w-4" />
+            <X className="h-3 w-3 mr-1" />
             Effacer les filtres
           </Button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

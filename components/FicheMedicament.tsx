@@ -2,153 +2,154 @@
 
 import React from "react";
 import { MedDrug } from "@/types/medication";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { MousePointerClick } from "lucide-react";
-import { CreditCard } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
 
 interface FicheMedicamentProps {
   drug: MedDrug;
 }
 
-/*
-  Simple drug detail card.
-  Displays name, strength, dosage form, manufacturer and active ingredients.
-*/
+const SectionLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-medium mb-1.5">
+    {children}
+  </h3>
+);
+
 const FicheMedicament: React.FC<FicheMedicamentProps> = ({ drug }) => {
   if (!drug) return null;
   return (
-    <Card className="max-w-3xl mx-auto">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold">
+    <div className="max-w-2xl mx-auto space-y-6">
+      {/* Header */}
+      <div>
+        <h1 className="text-2xl font-semibold text-foreground">
           {drug.name}
-          {drug.strength && ` ${drug.strength}`} {drug.dosageForm && `(${drug.dosageForm})`}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        {drug.activeIngredient?.length && (
-          <div>
-            <h3 className="font-semibold">Principes actifs</h3>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {drug.activeIngredient.map((ai, idx) => (
-                <Link
-                  key={idx}
-                  href={`/medicaments?search=${encodeURIComponent(ai)}`}
-                  prefetch={false}
+        </h1>
+        {(drug.strength || drug.dosageForm) && (
+          <p className="text-sm text-muted-foreground mt-1">
+            {[drug.strength, drug.dosageForm].filter(Boolean).join(' — ')}
+          </p>
+        )}
+      </div>
+
+      {/* Active ingredients */}
+      {drug.activeIngredient?.length > 0 && (
+        <div>
+          <SectionLabel>Principes actifs</SectionLabel>
+          <div className="flex flex-wrap gap-2">
+            {drug.activeIngredient.map((ai, idx) => (
+              <Link
+                key={idx}
+                href={`/medicaments?search=${encodeURIComponent(ai)}`}
+                prefetch={false}
+              >
+                <Badge
+                  variant="secondary"
+                  className="cursor-pointer bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-3 py-1 text-sm"
                 >
-                  <div className="relative inline-block">
-                    <Badge
-                      variant="secondary"
-                      className="cursor-pointer px-3 py-1 text-sm"
-                    >
-                      {ai}
-                    </Badge>
-                    <MousePointerClick className="absolute -bottom-1 -right-2 h-5 w-5 text-primary" />
-                  </div>
-                </Link>
-              ))}
+                  {ai}
+                </Badge>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Manufacturer */}
+      {drug.manufacturer && (
+        <div>
+          <SectionLabel>Fabricant</SectionLabel>
+          <p className="text-sm">{drug.manufacturer}</p>
+        </div>
+      )}
+
+      {/* Therapeutic class */}
+      {drug.therapeuticClass?.length > 0 && (
+        <div>
+          <SectionLabel>Classe thérapeutique</SectionLabel>
+          <p className="text-sm">{drug.therapeuticClass.join(", ")}</p>
+        </div>
+      )}
+
+      {/* Description - HIDDEN */}
+      {drug.description && (
+        <div className="hidden">
+          <SectionLabel>Description</SectionLabel>
+          <div className="prose dark:prose-invert max-w-none">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{drug.description}</ReactMarkdown>
+          </div>
+        </div>
+      )}
+
+      {/* Forme / Dosage & Présentation */}
+      {(drug.dosageForm || drug.strength) && (
+        <div className="grid grid-cols-2 gap-4">
+          {drug.strength && (
+            <div>
+              <SectionLabel>Dosage</SectionLabel>
+              <p className="text-sm">{drug.strength}</p>
             </div>
-          </div>
-        )}
-        {drug.manufacturer && (
-          <div>
-            <h3 className="font-semibold">Fabricant</h3>
-            <p>{drug.manufacturer}</p>
-          </div>
-        )}
-        {drug.therapeuticClass?.length && (
-          <div>
-            <h3 className="font-semibold">Classe thérapeutique</h3>
-            <p>{drug.therapeuticClass.join(", ")}</p>
-          </div>
-        )}
-
-        {/* Description - HIDDEN */}
-        {drug.description && (
-          <div className="hidden">
-            <h3 className="font-semibold">Description</h3>
-            <div className="prose dark:prose-invert max-w-none">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{drug.description}</ReactMarkdown>
+          )}
+          {drug.dosageForm && (
+            <div>
+              <SectionLabel>Forme pharmaceutique</SectionLabel>
+              <p className="text-sm">{drug.dosageForm}</p>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+      )}
+      {drug.presentation && (
+        <div>
+          <SectionLabel>Présentation</SectionLabel>
+          <p className="text-sm">{drug.presentation}</p>
+        </div>
+      )}
 
-        {/* Forme / Dosage & Présentation */}
-        {(drug.dosageForm || drug.strength) && (
-          <div className="grid sm:grid-cols-2 gap-4">
-            {drug.strength && (
-              <div>
-                <h3 className="font-semibold">Dosage</h3>
-                <p>{drug.strength}</p>
-              </div>
-            )}
-            {drug.dosageForm && (
-              <div>
-                <h3 className="font-semibold">Forme pharmaceutique</h3>
-                <p>{drug.dosageForm}</p>
-              </div>
-            )}
-          </div>
-        )}
-        {drug.presentation && (
-          <div>
-            <h3 className="font-semibold">Présentation</h3>
-            <p>{drug.presentation}</p>
-          </div>
-        )}
-
-        {/* Codes */}
-        {(drug.atcCode || drug.table) && (
-          <div className="grid sm:grid-cols-3 gap-4">
-            {drug.atcCode && (
-              <div>
-                <h3 className="font-semibold">Code ATC</h3>
-                <p>{drug.atcCode}</p>
-              </div>
-            )}
-
-            {drug.table && (
-              <div>
-                <h3 className="font-semibold">Tableau</h3>
-                <p>{drug.table}</p>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Price */}
-        {drug.price && (
-          <div>
-            <h3 className="font-semibold">Prix</h3>
-            <div className="space-y-1">
-              {drug.price.public && (
-                <div className="flex items-center gap-1">
-                  <CreditCard className="h-4 w-4" />
-                  <span>Public: {drug.price.public} {drug.price.currency}</span>
-                </div>
-              )}
-              {drug.price.hospital && (
-                <div className="flex items-center gap-1">
-                  <CreditCard className="h-4 w-4" />
-                  <span>Hôpital: {drug.price.hospital} {drug.price.currency}</span>
-                </div>
-              )}
+      {/* Codes */}
+      {(drug.atcCode || drug.table) && (
+        <div className="grid grid-cols-2 gap-4">
+          {drug.atcCode && (
+            <div>
+              <SectionLabel>Code ATC</SectionLabel>
+              <p className="text-sm font-mono">{drug.atcCode}</p>
             </div>
-          </div>
-        )}
+          )}
+          {drug.table && (
+            <div>
+              <SectionLabel>Tableau</SectionLabel>
+              <p className="text-sm">{drug.table}</p>
+            </div>
+          )}
+        </div>
+      )}
 
-        {/* UpdatedAt */}
-        {drug.updatedAt && (
-          <div className="text-sm text-muted-foreground">
-            Mise à jour: {new Date(drug.updatedAt).toLocaleDateString()}
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      {/* Price */}
+      {drug.price && (
+        <div className="bg-surface rounded-lg p-4 space-y-2">
+          <SectionLabel>Prix</SectionLabel>
+          {drug.price.public && (
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground">Prix public</span>
+              <span className="text-base font-semibold">{drug.price.public} {drug.price.currency}</span>
+            </div>
+          )}
+          {drug.price.hospital && (
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground">Prix hôpital</span>
+              <span className="text-base font-semibold">{drug.price.hospital} {drug.price.currency}</span>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* UpdatedAt */}
+      {drug.updatedAt && (
+        <p className="text-xs text-muted-foreground">
+          Mise à jour : {new Date(drug.updatedAt).toLocaleDateString('fr-FR')}
+        </p>
+      )}
+    </div>
   );
 };
 

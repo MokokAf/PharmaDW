@@ -6,7 +6,6 @@ import { VirtualizedDrugList } from "@/components/VirtualizedDrugList";
 import { AlphabetFilter } from "@/components/AlphabetFilter";
 import { DrugFilters as DrugFiltersComponent } from "@/components/DrugFilters";
 import { MedDrug, DrugFilters } from "@/types/medication";
-import { Separator } from "@/components/ui/separator";
 
 
 export default function MedicamentsContent() {
@@ -38,7 +37,6 @@ export default function MedicamentsContent() {
     })();
   }, []);
 
-  // Apply filters
   const filteredDrugs = drugs.filter((d) => {
     if (
       filters.search &&
@@ -59,26 +57,34 @@ export default function MedicamentsContent() {
     return true;
   });
 
-  // Sort the filtered drugs alphabetically by name (A → Z)
   const sortedDrugs = [...filteredDrugs].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <Suspense fallback={<div>Chargement...</div>}>
-      <div className="container mx-auto max-w-3xl py-6 px-2 relative">
-        <h1 className="text-2xl font-bold mb-2">Liste des médicaments</h1>
-        <DrugFiltersComponent
-          filters={filters}
-          onFiltersChange={setFilters}
-          manufacturers={manufacturers}
-          therapeuticClasses={therapeuticClasses}
-        />
-        <Separator className="my-4" />
-        <AlphabetFilter
-          selectedLetter={filters.letter}
-          onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
-        />
-        <Separator className="my-4" />
-        <VirtualizedDrugList drugs={sortedDrugs} height={600} />
+      <div className="max-w-2xl mx-auto py-6 px-4 space-y-4">
+        <h1 className="text-2xl font-semibold">Médicaments</h1>
+
+        {/* Search + filters (sticky on mobile) */}
+        <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm -mx-4 px-4 py-3 space-y-3">
+          <DrugFiltersComponent
+            filters={filters}
+            onFiltersChange={setFilters}
+            manufacturers={manufacturers}
+            therapeuticClasses={therapeuticClasses}
+          />
+          <AlphabetFilter
+            selectedLetter={filters.letter}
+            onLetterSelect={letter => setFilters(f => ({ ...f, letter }))}
+          />
+        </div>
+
+        {/* Result count */}
+        <p className="text-sm text-muted-foreground">
+          {sortedDrugs.length} résultat{sortedDrugs.length !== 1 ? 's' : ''}
+        </p>
+
+        {/* Virtualized list */}
+        <VirtualizedDrugList drugs={sortedDrugs} />
       </div>
     </Suspense>
   );

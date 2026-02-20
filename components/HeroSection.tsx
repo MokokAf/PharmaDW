@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Search, MapPin, Pill } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -14,54 +15,73 @@ const HeroSection = () => {
     if (!query.trim()) return;
     router.push(`/medicaments?search=${encodeURIComponent(query.trim())}`);
   };
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-cover bg-center opacity-20 z-0" style={{ backgroundImage: "url('/imagepharma.jpg')" }} />
-      
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Hero Title */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-medium text-foreground mb-4 leading-tight">
-              <span className="block text-left">Votre référence</span>
-              <span className="block text-right text-primary">pharmaceutique au Maroc</span>
+    <section className="bg-surface">
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          {/* Title */}
+          <div className="space-y-3">
+            <h1 className="text-3xl md:text-5xl font-semibold text-foreground leading-tight">
+              Trouvez votre médicament
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              La base de données de médicaments la plus complète au Maroc
+            <p className="text-base md:text-lg text-muted-foreground">
+              Base de données pharmaceutique du Maroc
             </p>
           </div>
 
           {/* Search Bar */}
-          <div className="mb-12">
-            <div className="relative max-w-2xl mx-auto">
-              <div className="relative">
-                <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-6 w-6" />
-                <Input
-                  type="text"
-                  placeholder="Médicament, Principe actif, Laboratoire..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault();
-                      handleSearch();
-                    }
-                  }}
-                  className="pl-10 pr-24 sm:pl-14 sm:pr-40 py-4 sm:py-6 text-base sm:text-lg rounded-full border-2 border-border focus:border-primary shadow-medium h-12 sm:h-16 placeholder:text-transparent sm:placeholder:text-gray-500 dark:sm:placeholder:text-gray-400"
-                />
-                <Button
-                  variant="medical"
-                  size="lg"
-                  onClick={handleSearch}
-                  className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 rounded-full px-6 sm:px-8 h-10 sm:h-12 text-sm sm:text-base"
-                >
-                  Rechercher
-                </Button>
-              </div>
-            </div>
+          <div className="relative max-w-xl mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Médicament, principe actif, laboratoire..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  handleSearch();
+                }
+              }}
+              className="pl-12 pr-28 h-14 text-base rounded-full border-2 border-border focus:border-primary shadow-sm"
+            />
+            <Button
+              onClick={handleSearch}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-6 h-10"
+            >
+              Rechercher
+            </Button>
           </div>
 
+          {/* Quick Access Cards */}
+          <div className="grid grid-cols-2 gap-3 pt-4 max-w-lg mx-auto">
+            <Link
+              href="/pharmacies-de-garde"
+              className="flex items-center gap-3 p-4 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <MapPin className="h-5 w-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-foreground leading-tight">Pharmacies de Garde</p>
+                <p className="text-xs text-muted-foreground mt-0.5 hidden xs:block">Ouverte maintenant</p>
+              </div>
+            </Link>
+
+            <Link
+              href="/medicaments"
+              className="flex items-center gap-3 p-4 rounded-xl border border-border bg-background hover:shadow-md hover:border-primary/30 transition-all group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <Pill className="h-5 w-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-foreground leading-tight">Médicaments</p>
+                <p className="text-xs text-muted-foreground mt-0.5 hidden xs:block">Base de données</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
