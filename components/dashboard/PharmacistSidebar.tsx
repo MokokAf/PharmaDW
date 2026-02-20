@@ -1,8 +1,16 @@
 'use client'
 
 import React, { useState } from 'react';
-import { LayoutGrid, Pill, History, BookOpen, ClipboardCheck, User, LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import {
+  LayoutGrid,
+  Pill,
+  History,
+  BookOpen,
+  ClipboardCheck,
+  User,
+  LogOut,
+  Bot,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 import {
@@ -14,6 +22,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarHeader,
+  SidebarFooter,
   useSidebar,
 } from '@/components/ui/sidebar';
 
@@ -25,21 +34,36 @@ type Props = {
   onLogout?: () => void;
 };
 
-const navItems = [
-  { id: 'dashboard' as const, icon: LayoutGrid, label: 'Tableau de bord', group: 'nav' },
-  { id: 'interactions' as const, icon: Pill, label: 'Interactions', group: 'nav' },
-  { id: 'historique' as const, icon: History, label: 'Historique', group: 'nav' },
-  { id: 'references' as const, icon: BookOpen, label: 'Références', group: 'resources' },
-  { id: 'protocoles' as const, icon: ClipboardCheck, label: 'Protocoles', group: 'resources' },
-  { id: 'compte' as const, icon: User, label: 'Mon compte', group: 'account' },
+const navGroups = [
+  {
+    label: 'Navigation',
+    items: [
+      { id: 'dashboard', icon: LayoutGrid, label: 'Tableau de bord' },
+      { id: 'interactions', icon: Pill, label: 'Interactions' },
+      { id: 'historique', icon: History, label: 'Historique' },
+    ],
+  },
+  {
+    label: 'Ressources',
+    items: [
+      { id: 'references', icon: BookOpen, label: 'Références' },
+      { id: 'protocoles', icon: ClipboardCheck, label: 'Protocoles' },
+    ],
+  },
 ];
 
-type NavId = typeof navItems[number]['id'];
+type NavId = 'dashboard' | 'interactions' | 'historique' | 'references' | 'protocoles' | 'compte';
 
-export function PharmacistSidebar({ onGoDashboard, onGoInteractions, onGoHistory, onOpenAccount, onLogout }: Props) {
+export function PharmacistSidebar({
+  onGoDashboard,
+  onGoInteractions,
+  onGoHistory,
+  onOpenAccount,
+  onLogout,
+}: Props) {
   const { state } = useSidebar();
-  const isCollapsed = state === "collapsed";
-  const [active, setActive] = useState<NavId>('dashboard');
+  const isCollapsed = state === 'collapsed';
+  const [active, setActive] = useState<NavId>('interactions');
 
   const handlers: Record<NavId, (() => void) | undefined> = {
     dashboard: onGoDashboard,
@@ -50,100 +74,118 @@ export function PharmacistSidebar({ onGoDashboard, onGoInteractions, onGoHistory
     compte: onOpenAccount,
   };
 
-  const renderItem = (item: typeof navItems[number]) => (
-    <SidebarMenuItem key={item.id}>
-      <Button
-        variant="ghost"
-        className={cn(
-          "w-full justify-start gap-3 rounded-lg transition-colors",
-          isCollapsed ? "px-2" : "px-3 py-2.5",
-          active === item.id
-            ? "bg-primary/10 text-primary font-medium"
-            : "text-muted-foreground hover:text-foreground hover:bg-muted"
-        )}
-        size={isCollapsed ? 'icon' : 'default'}
-        onClick={() => { setActive(item.id); handlers[item.id]?.(); }}
-        aria-current={active === item.id ? 'page' : undefined}
-      >
-        <item.icon className="h-4 w-4 shrink-0" />
-        {!isCollapsed && <span className="text-sm">{item.label}</span>}
-      </Button>
-    </SidebarMenuItem>
-  );
+  const handleClick = (id: NavId) => {
+    setActive(id);
+    handlers[id]?.();
+  };
 
   return (
     <Sidebar
       collapsible="icon"
-      className="fixed inset-y-0 left-0 z-40 h-svh border-r border-border bg-background"
+      className="fixed inset-y-0 left-0 z-40 h-svh"
     >
-      <SidebarHeader className="p-4">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg pharma-gradient flex items-center justify-center shrink-0">
-            <Pill className="h-4 w-4 text-white" />
+      {/* ── Logo header ──────────────────────────────────────── */}
+      <SidebarHeader className="p-4 border-b border-sidebar-border">
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-xl pharma-gradient flex items-center justify-center shrink-0 shadow-sm shadow-primary/20">
+            <Bot className="h-4.5 w-4.5 text-white" />
           </div>
           {!isCollapsed && (
-            <span className="font-semibold text-sm">Dwaia<span className="text-primary">.ma</span></span>
+            <div className="flex flex-col">
+              <span className="font-bold text-sm leading-tight">
+                DwaIA<span className="text-primary">.ma</span>
+              </span>
+              <span className="text-[10px] text-sidebar-foreground/50 leading-tight">
+                Espace pharmacien
+              </span>
+            </div>
           )}
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="flex flex-col h-full px-2">
-        {/* Navigation */}
-        <SidebarGroup>
-          {!isCollapsed && (
-            <SidebarGroupLabel className="text-[11px] uppercase tracking-wider text-muted-foreground/70 font-medium px-3 mb-1">
-              Navigation
-            </SidebarGroupLabel>
-          )}
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-0.5">
-              {navItems.filter(i => i.group === 'nav').map(renderItem)}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        {/* Ressources */}
-        <SidebarGroup className="mt-4">
-          {!isCollapsed && (
-            <SidebarGroupLabel className="text-[11px] uppercase tracking-wider text-muted-foreground/70 font-medium px-3 mb-1">
-              Ressources
-            </SidebarGroupLabel>
-          )}
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-0.5">
-              {navItems.filter(i => i.group === 'resources').map(renderItem)}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        {/* Compte — bottom */}
-        <SidebarGroup className="mt-auto pb-4">
-          {!isCollapsed && (
-            <SidebarGroupLabel className="text-[11px] uppercase tracking-wider text-muted-foreground/70 font-medium px-3 mb-1">
-              Compte
-            </SidebarGroupLabel>
-          )}
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-0.5">
-              {navItems.filter(i => i.group === 'account').map(renderItem)}
-              <SidebarMenuItem>
-                <Button
-                  variant="ghost"
-                  className={cn(
-                    "w-full justify-start gap-3 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10",
-                    isCollapsed ? "px-2" : "px-3 py-2.5"
-                  )}
-                  size={isCollapsed ? 'icon' : 'default'}
-                  onClick={() => onLogout?.()}
-                >
-                  <LogOut className="h-4 w-4 shrink-0" />
-                  {!isCollapsed && <span className="text-sm">Déconnexion</span>}
-                </Button>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+      {/* ── Nav groups ───────────────────────────────────────── */}
+      <SidebarContent className="flex flex-col flex-1 px-2 py-3 custom-scrollbar overflow-y-auto">
+        {navGroups.map((group) => (
+          <SidebarGroup key={group.label} className="mb-2">
+            {!isCollapsed && (
+              <SidebarGroupLabel className="text-[10px] uppercase tracking-widest text-sidebar-foreground/40 font-semibold px-3 mb-1.5">
+                {group.label}
+              </SidebarGroupLabel>
+            )}
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-0.5">
+                {group.items.map((item) => (
+                  <SidebarMenuItem key={item.id}>
+                    <button
+                      className={cn(
+                        'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
+                        isCollapsed
+                          ? 'justify-center p-2.5'
+                          : 'px-3 py-2.5',
+                        active === item.id
+                          ? 'bg-sidebar-primary/10 text-sidebar-primary font-medium shadow-sm'
+                          : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent'
+                      )}
+                      onClick={() => handleClick(item.id as NavId)}
+                      aria-current={active === item.id ? 'page' : undefined}
+                    >
+                      <item.icon
+                        className={cn(
+                          'h-[18px] w-[18px] shrink-0 transition-colors',
+                          active === item.id
+                            ? 'text-sidebar-primary'
+                            : 'text-sidebar-foreground/60'
+                        )}
+                      />
+                      {!isCollapsed && (
+                        <span className="text-[13px]">{item.label}</span>
+                      )}
+                    </button>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        ))}
       </SidebarContent>
+
+      {/* ── Footer: account & logout ─────────────────────────── */}
+      <SidebarFooter className="border-t border-sidebar-border p-2">
+        <SidebarMenu className="space-y-0.5">
+          <SidebarMenuItem>
+            <button
+              className={cn(
+                'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
+                isCollapsed ? 'justify-center p-2.5' : 'px-3 py-2.5',
+                active === 'compte'
+                  ? 'bg-sidebar-primary/10 text-sidebar-primary font-medium'
+                  : 'text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent'
+              )}
+              onClick={() => handleClick('compte')}
+            >
+              <User className="h-[18px] w-[18px] shrink-0" />
+              {!isCollapsed && (
+                <span className="text-[13px]">Mon compte</span>
+              )}
+            </button>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <button
+              className={cn(
+                'w-full flex items-center gap-3 rounded-xl transition-all duration-150',
+                isCollapsed ? 'justify-center p-2.5' : 'px-3 py-2.5',
+                'text-sidebar-foreground/60 hover:text-destructive hover:bg-destructive/10'
+              )}
+              onClick={() => onLogout?.()}
+            >
+              <LogOut className="h-[18px] w-[18px] shrink-0" />
+              {!isCollapsed && (
+                <span className="text-[13px]">Déconnexion</span>
+              )}
+            </button>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }
