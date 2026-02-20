@@ -62,6 +62,11 @@ type DrugSearchItem = {
   searchKey: string
 }
 
+type DrugInputPayload = {
+  name: string
+  active_ingredient_hint?: string[]
+}
+
 type RecentCheck = {
   drug1: string
   drug2: string
@@ -253,6 +258,7 @@ type AutocompleteInputProps = {
   label: string
   value: string
   onChange: (nextValue: string) => void
+  onSelectSuggestion?: (selected: DrugSearchItem) => void
   placeholder: string
   autoFocus?: boolean
   loadingIndex: boolean
@@ -266,6 +272,7 @@ function AutocompleteInput({
   label,
   value,
   onChange,
+  onSelectSuggestion,
   placeholder,
   autoFocus,
   loadingIndex,
@@ -276,6 +283,7 @@ function AutocompleteInput({
   const containerRef = useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(-1)
+  const [didKeyboardNavigate, setDidKeyboardNavigate] = useState(false)
 
   const debouncedValue = useDebouncedValue(value, 200)
   const normalizedQuery = normalizeForSearch(debouncedValue)
@@ -288,7 +296,8 @@ function AutocompleteInput({
   }, [normalizedQuery, search])
 
   useEffect(() => {
-    setActiveIndex(suggestions.length > 0 ? 0 : -1)
+    setActiveIndex(-1)
+    setDidKeyboardNavigate(false)
   }, [suggestions.length])
 
   useEffect(() => {
@@ -306,22 +315,29 @@ function AutocompleteInput({
 
   const handleSelect = (selected: DrugSearchItem) => {
     onChange(selected.name)
+    onSelectSuggestion?.(selected)
     setIsOpen(false)
     setActiveIndex(-1)
+    setDidKeyboardNavigate(false)
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'ArrowDown' && suggestions.length > 0) {
       event.preventDefault()
       setIsOpen(true)
-      setActiveIndex((current) => Math.min(current + 1, suggestions.length - 1))
+      setDidKeyboardNavigate(true)
+      setActiveIndex((current) => (current < 0 ? 0 : Math.min(current + 1, suggestions.length - 1)))
       return
     }
 
     if (event.key === 'ArrowUp' && suggestions.length > 0) {
       event.preventDefault()
       setIsOpen(true)
-      setActiveIndex((current) => Math.max(current - 1, 0))
+      setDidKeyboardNavigate(true)
+      setActiveIndex((current) => {
+        if (current < 0) return suggestions.length - 1
+        return Math.max(current - 1, 0)
+      })
       return
     }
 
@@ -332,12 +348,13 @@ function AutocompleteInput({
     }
 
     if (event.key === 'Enter') {
-      if (isOpen && activeIndex >= 0 && suggestions[activeIndex]) {
+      if (isOpen && didKeyboardNavigate && activeIndex >= 0 && suggestions[activeIndex]) {
         event.preventDefault()
         handleSelect(suggestions[activeIndex])
         return
       }
 
+      setIsOpen(false)
       onEnterWithoutSelection()
     }
   }
@@ -355,8 +372,12 @@ function AutocompleteInput({
         onChange={(event) => {
           onChange(event.target.value)
           setIsOpen(true)
+          setDidKeyboardNavigate(false)
         }}
-        onFocus={() => setIsOpen(true)}
+        onFocus={() => {
+          setIsOpen(true)
+          setDidKeyboardNavigate(false)
+        }}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         autoComplete="off"
@@ -407,6 +428,8 @@ function AutocompleteInput({
 export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
   const [drug1, setDrug1] = useState('')
   const [drug2, setDrug2] = useState('')
+  const [selectedDrug1, setSelectedDrug1] = useState<DrugSearchItem | null>(null)
+  const [selectedDrug2, setSelectedDrug2] = useState<DrugSearchItem | null>(null)
 
   const [checkLoading, setCheckLoading] = useState(false)
   const [checkError, setCheckError] = useState<string | null>(null)
@@ -571,6 +594,37 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
     [fuse]
   )
 
+  const findHintByExactName = useCallback(
+    (drugName: string): string[] | undefined => {
+      const normalized = normalizeForSearch(drugName)
+      if (!normalized) {
+        return undefined
+      }
+
+      const match = drugIndex.find((item) => normalizeForSearch(item.name) === normalized)
+      if (!match || match.activeIngredient.length === 0) {
+        return undefined
+      }
+      return match.activeIngredient
+    },
+    [drugIndex]
+  )
+
+  const buildDrugPayload = useCallback(
+    (drugName: string, selected: DrugSearchItem | null): DrugInputPayload => {
+      const hint =
+        selected?.activeIngredient && selected.activeIngredient.length > 0
+          ? selected.activeIngredient
+          : findHintByExactName(drugName)
+
+      return {
+        name: drugName,
+        active_ingredient_hint: hint && hint.length > 0 ? hint : undefined,
+      }
+    },
+    [findHintByExactName]
+  )
+
   const resetResultState = () => {
     setCheckError(null)
     setNormResult(null)
@@ -600,6 +654,8 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
       if (pairOverride) {
         setDrug1(pairOverride.drug1)
         setDrug2(pairOverride.drug2)
+        setSelectedDrug1(null)
+        setSelectedDrug2(null)
       }
 
       if (!nextDrug1 || !nextDrug2) {
@@ -655,8 +711,8 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({
-            drug1: { name: nextDrug1 },
-            drug2: { name: nextDrug2 },
+            drug1: buildDrugPayload(nextDrug1, selectedDrug1),
+            drug2: buildDrugPayload(nextDrug2, selectedDrug2),
             patient,
             locale: 'fr-MA',
           }),
@@ -724,7 +780,10 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
       pregnancy,
       riskFall,
       riskQT,
+      selectedDrug1,
+      selectedDrug2,
       weight,
+      buildDrugPayload,
     ]
   )
 
@@ -738,14 +797,20 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
   const handleSwapDrugs = () => {
     const currentDrug1 = drug1
     const currentDrug2 = drug2
+    const currentSelectedDrug1 = selectedDrug1
+    const currentSelectedDrug2 = selectedDrug2
     setDrug1(currentDrug2)
     setDrug2(currentDrug1)
+    setSelectedDrug1(currentSelectedDrug2)
+    setSelectedDrug2(currentSelectedDrug1)
     resetResultState()
   }
 
   const handleClearDrugs = () => {
     setDrug1('')
     setDrug2('')
+    setSelectedDrug1(null)
+    setSelectedDrug2(null)
     resetResultState()
     setCheckError(null)
     drug1Ref.current?.focus()
@@ -754,6 +819,8 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
   const handleSuggestion = (d1: string, d2: string) => {
     setDrug1(d1)
     setDrug2(d2)
+    setSelectedDrug1(null)
+    setSelectedDrug2(null)
     resetResultState()
   }
 
@@ -832,7 +899,11 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
               autoFocus
               label="Medicament 1"
               value={drug1}
-              onChange={setDrug1}
+              onChange={(nextValue) => {
+                setDrug1(nextValue)
+                setSelectedDrug1(null)
+              }}
+              onSelectSuggestion={setSelectedDrug1}
               placeholder="Nom commercial ou DCI"
               loadingIndex={indexLoading}
               search={searchDrugs}
@@ -842,7 +913,11 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
               id="drug-two"
               label="Medicament 2"
               value={drug2}
-              onChange={setDrug2}
+              onChange={(nextValue) => {
+                setDrug2(nextValue)
+                setSelectedDrug2(null)
+              }}
+              onSelectSuggestion={setSelectedDrug2}
               placeholder="Nom commercial ou DCI"
               loadingIndex={indexLoading}
               search={searchDrugs}
