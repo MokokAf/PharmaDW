@@ -3,7 +3,7 @@ export interface MedDrug {
   '@type': 'Drug' | 'MedicalDevice';
   id: string;
   name: string;
-  description: string; // Markdown
+  description?: string; // Markdown
   activeIngredient: string[];
   dosageForm?: string;
   strength?: string;
@@ -19,7 +19,19 @@ export interface MedDrug {
     hospital?: number;
   };
   table?: string;
-  updatedAt: string;
+  updatedAt?: string;
+}
+
+export interface MedDrugListItem {
+  id: string;
+  name: string;
+  activeIngredient: string[];
+  dosageForm?: string;
+  strength?: string;
+  therapeuticClass?: string[];
+  manufacturer?: string;
+  '@type'?: 'Drug' | 'MedicalDevice';
+  productType?: 'Drug' | 'MedicalDevice';
 }
 
 export interface DrugFilters {

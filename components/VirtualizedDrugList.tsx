@@ -2,12 +2,12 @@
 
 import { FixedSizeList as List } from 'react-window';
 import { DrugListItem } from './DrugListItem';
-import { MedDrug } from '@/types/medication';
+import { MedDrugListItem } from '@/types/medication';
 import { useEffect, useRef, useState } from 'react';
 import { PackageSearch } from 'lucide-react';
 
 interface VirtualizedDrugListProps {
-  drugs: MedDrug[];
+  drugs: MedDrugListItem[];
 }
 
 const ITEM_HEIGHT = 64;

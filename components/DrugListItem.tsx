@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { MedDrug } from '@/types/medication';
+import { MedDrugListItem } from '@/types/medication';
 import { ChevronRight } from 'lucide-react';
 
 interface DrugListItemProps {
-  drug: MedDrug;
+  drug: MedDrugListItem;
   style?: React.CSSProperties;
 }
 
@@ -21,7 +21,7 @@ export const DrugListItem = memo(({ drug, style }: DrugListItemProps) => {
             <span className="font-medium text-sm text-foreground truncate">
               {drug.name}
             </span>
-            {drug['@type'] === 'MedicalDevice' && (
+            {(drug['@type'] === 'MedicalDevice' || drug.productType === 'MedicalDevice') && (
               <Badge variant="secondary" className="text-[10px] px-1.5 py-0">
                 DM
               </Badge>
