@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
+import time
 import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime
@@ -10,6 +12,15 @@ from typing import List, Dict, Callable, Tuple
 import requests
 from bs4 import BeautifulSoup
 
+# --------------------------------------------------------------------
+# logging
+# --------------------------------------------------------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("pharmacies_scraper")
 
 # --------------------------------------------------------------------
 # small helpers
@@ -35,7 +46,7 @@ def _normalize_phone(raw: str) -> str:
     if raw.endswith("..."):
         return ""  # masked – unusable
     digits = re.sub(r"[^\d]", "", raw)
-    if len(digits) < 9:                       # too short ⇒ drop
+    if len(digits) < 9:                       # too short => drop
         return ""
     if digits.startswith("212") and len(digits) >= 11:
         return f"+{digits}"
@@ -46,6 +57,37 @@ def _normalize_phone(raw: str) -> str:
 
 def _dedup_key(area: str, name: str, phone: str) -> Tuple[str, str, str]:
     return (_clean(area).lower(), _clean(name).lower(), _normalize_phone(phone))
+
+
+# --------------------------------------------------------------------
+# HTTP helper with retry + backoff
+# --------------------------------------------------------------------
+HEADERS = {
+    "User-Agent": "PharmaDW-Scraper/1.0 (+https://github.com/MokokAf/PharmaDW)",
+    "Accept-Language": "fr,ar;q=0.8,en;q=0.7",
+}
+
+REQUEST_DELAY = 0.5   # seconds between page fetches
+DETAIL_DELAY = 0.3    # seconds between detail-page fetches
+
+
+def get_with_retry(url: str, max_retries: int = 3, timeout: int = 30) -> requests.Response:
+    """GET with exponential backoff retry."""
+    for attempt in range(max_retries):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=timeout)
+            resp.raise_for_status()
+            return resp
+        except requests.RequestException as exc:
+            if attempt == max_retries - 1:
+                raise
+            wait = 2 ** attempt
+            logger.warning("Attempt %d failed for %s: %s. Retrying in %ds...", attempt + 1, url, exc, wait)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
+
+
+Parser = Callable[[str], List["PharmacyRecord"]]
 
 
 # --------------------------------------------------------------------
@@ -77,18 +119,6 @@ class PharmacyRecord:
         }
 
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/125.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "fr,ar;q=0.8,en;q=0.7",
-}
-
-Parser = Callable[[str], List[PharmacyRecord]]
-
-
 # --------------------------------------------------------------------
 # generic table parser (GuidePharmacies)
 # --------------------------------------------------------------------
@@ -98,7 +128,7 @@ _HOURS_RE = re.compile(r"\d{1,2}h")
 def _split_area_duty(text: str) -> tuple[str, str]:
     """Return (area, duty) with duty canonicalised, never empty."""
     text = _clean(text)
-    # Case 1 : “Area (9h à 00h00)”
+    # Case 1 : "Area (9h à 00h00)"
     m = re.match(r"(.+?)\s*\((.+?)\)", text)
     if m and _HOURS_RE.search(m.group(2)):
         return _clean(m.group(1)), _canonical_duty(m.group(2))
@@ -114,7 +144,7 @@ def _parse_generic_table(url: str, city: str) -> List[PharmacyRecord]:
     records: List[PharmacyRecord] = []
     seen: set[Tuple[str, str, str]] = set()
 
-    soup = BeautifulSoup(requests.get(url, headers=HEADERS, timeout=30).text, "html.parser")
+    soup = BeautifulSoup(get_with_retry(url).text, "html.parser")
     for td in soup.select("td.tableb"):
         loc = td.find("p", class_="location-name")
         if not loc:
@@ -163,7 +193,7 @@ def parse_temara(url: str) -> List[PharmacyRecord]:
 def parse_rabat(url: str) -> List[PharmacyRecord]:
     records, seen = [], set()
 
-    soup = BeautifulSoup(requests.get(url, headers=HEADERS, timeout=30).text, "html.parser")
+    soup = BeautifulSoup(get_with_retry(url).text, "html.parser")
     soup.select_one("nav.sp-megamenu-wrapper") and soup.select_one(
         "nav.sp-megamenu-wrapper"
     ).decompose()
@@ -185,12 +215,13 @@ def parse_rabat(url: str) -> List[PharmacyRecord]:
         address = ""
         href = urllib.parse.urljoin(url, a["href"])
         try:
-            s2 = BeautifulSoup(requests.get(href, headers=HEADERS, timeout=20).text, "html.parser")
+            time.sleep(DETAIL_DELAY)
+            s2 = BeautifulSoup(get_with_retry(href, timeout=20).text, "html.parser")
             tag = s2.find(string=re.compile(r"\d+\s+(Rue|Av|Avenue|Bd)", re.I))
             if tag:
                 address = _clean(tag)
         except Exception:
-            pass
+            logger.debug("Could not fetch detail page %s", href)
 
         key = _dedup_key(area, name, phone)
         if key in seen:
@@ -223,7 +254,7 @@ def parse_sale(url: str) -> List[PharmacyRecord]:
 # --------------------------------------------------------------------
 def _parse_infopoint(url: str, city: str) -> List[PharmacyRecord]:
     records, seen = [], set()
-    html = requests.get(url, headers=HEADERS, timeout=30).text
+    html = get_with_retry(url).text
     soup = BeautifulSoup(html, "html.parser")
 
     for card in soup.select("div.item-grid.arabe_pharm"):
@@ -275,8 +306,10 @@ def parse_marrakech(url: str) -> List[PharmacyRecord]:
 
     for i in range(5):  # first five pages more than cover the week
         page = f"{base}/{i}"
-        resp = requests.get(page, headers=HEADERS, timeout=30)
-        if resp.status_code != 200:
+        try:
+            resp = get_with_retry(page)
+        except requests.RequestException:
+            logger.warning("Stopping Marrakech pagination at page %d", i)
             break
         soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -311,6 +344,7 @@ def parse_marrakech(url: str) -> List[PharmacyRecord]:
                     date=today_iso(),
                 )
             )
+        time.sleep(REQUEST_DELAY)
     return records
 
 
@@ -319,7 +353,7 @@ def parse_marrakech(url: str) -> List[PharmacyRecord]:
 # --------------------------------------------------------------------
 def parse_fes(url: str) -> List[PharmacyRecord]:
     records, seen = [], set()
-    soup = BeautifulSoup(requests.get(url, headers=HEADERS, timeout=30).text, "html.parser")
+    soup = BeautifulSoup(get_with_retry(url).text, "html.parser")
 
     for li in soup.select("ul#agItemList li.ag_listing_item"):
         name_tag = li.select_one("h3[itemprop=name]")
@@ -400,14 +434,25 @@ def main() -> None:
     }
 
     all_records: List[PharmacyRecord] = []
+    errors: List[str] = []
+
     for city, (parser, url) in sources.items():
+        logger.info("Scraping %s ...", city)
         try:
-            all_records.extend(parser(url))
+            records = parser(url)
+            all_records.extend(records)
+            logger.info("  -> %d pharmacies found", len(records))
         except Exception as exc:
-            print(f"Error parsing {city}: {exc}")
+            logger.error("Failed to scrape %s: %s", city, exc)
+            errors.append(city)
+        time.sleep(REQUEST_DELAY)
 
     with open("pharmacies.json", "w", encoding="utf-8") as fh:
         json.dump([rec.to_dict() for rec in all_records], fh, ensure_ascii=False, indent=2)
+
+    logger.info("Done: %d pharmacies total, %d errors", len(all_records), len(errors))
+    if errors:
+        logger.warning("Failed cities: %s", ", ".join(errors))
 
 
 if __name__ == "__main__":

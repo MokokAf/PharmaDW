@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import logging
 import re
 import datetime
 import time
@@ -18,15 +19,27 @@ The scraper is intentionally kept small and dependency-light so that it can
 run quickly inside a GitHub Action on a nightly schedule.
 """
 
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("pharmacies_scraper")
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
 BASE_URL = "https://www.annuaire-gratuit.ma"
 MAIN_URL = f"{BASE_URL}/pharmacie-garde-maroc.html"
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/125.0.0.0 Safari/537.36"
-    )
+    "User-Agent": "PharmaDW-Scraper/1.0 (+https://github.com/MokokAf/PharmaDW)",
 }
+
+REQUEST_DELAY = 1.0   # seconds between city pages
+DETAIL_DELAY = 0.3    # seconds between detail-page fetches
 
 # ---------------------------------------------------------------------------
 # City normalisation helpers
@@ -51,15 +64,34 @@ OUTPUT_JSON = Path(__file__).resolve().parents[1] / "public" / "data" / "pharmac
 TODAY = datetime.date.today().isoformat()
 
 # ---------------------------------------------------------------------------
-# Utility functions
+# HTTP helper with retry + backoff
 # ---------------------------------------------------------------------------
+
+def get_with_retry(url: str, max_retries: int = 3, timeout: int = 30) -> requests.Response:
+    """GET with exponential backoff retry."""
+    for attempt in range(max_retries):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=timeout)
+            resp.raise_for_status()
+            return resp
+        except requests.RequestException as exc:
+            if attempt == max_retries - 1:
+                raise
+            wait = 2 ** attempt
+            logger.warning("Attempt %d failed for %s: %s. Retrying in %ds...", attempt + 1, url, exc, wait)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
+
 
 def get_soup(url: str) -> BeautifulSoup:
     """Fetch a URL and parse it into BeautifulSoup."""
-    r = requests.get(url, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    return BeautifulSoup(r.content, "html.parser")
+    resp = get_with_retry(url)
+    return BeautifulSoup(resp.content, "html.parser")
 
+
+# ---------------------------------------------------------------------------
+# Utility functions
+# ---------------------------------------------------------------------------
 
 def fetch_city_links() -> list[str]:
     """Return absolute URLs for all city pages listed on the main page."""
@@ -71,7 +103,7 @@ def fetch_city_links() -> list[str]:
 
 
 def _fix_039_apostrophe(text: str) -> str:
-    """Convert patterns like "D 039 Agdal" → "d'Agdal"   "L 039 Ocean" → "l'Ocean"""
+    """Convert patterns like "D 039 Agdal" -> "d'Agdal"   "L 039 Ocean" -> "l'Ocean"""
     return re.sub(r"\b([DdLl])\s*0?39\s+", lambda m: f"{m.group(1).lower()}\'", text)
 
 
@@ -101,10 +133,10 @@ def parse_city(city_url: str) -> list[dict]:
     # Derive city slug from URL and normalise it
     city_slug = city_url.rsplit("-", 1)[1].split(".")[0].lower()
     city = CITY_NORMALIZATION.get(city_slug, city_slug.capitalize())
-    
+
     records: list[dict] = []
 
-    # Each neighbourhood is in an <h2> (title starts with "Quartier …")
+    # Each neighbourhood is in an <h2> (title starts with "Quartier ...")
     for heading in soup.select('h2[title^="Quartier"]'):
         area = safe_text(heading)
         if not area:
@@ -133,10 +165,11 @@ def parse_city(city_url: str) -> list[dict]:
             else:
                 detail_url = detail_path
 
-            # Fetch detail page – make best effort; fall back to card text on failure
+            # Fetch detail page -- make best effort; fall back to card text on failure
             try:
                 d_name, d_address, d_phone = parse_pharmacy_detail(detail_url)
-            except Exception:
+            except Exception as exc:
+                logger.debug("Detail page failed for %s: %s", detail_url, exc)
                 d_name = _fix_039_apostrophe(safe_text(link.select_one("h3")) or safe_text(link))
                 d_address, d_phone = "", ""
 
@@ -154,9 +187,9 @@ def parse_city(city_url: str) -> list[dict]:
             records.append(record)
 
             # Respect polite delay between requests
-            time.sleep(0.2)
+            time.sleep(DETAIL_DELAY)
 
-        # Fallback: pages without "Quartier" headings – iterate over main list
+        # Fallback: pages without "Quartier" headings -- iterate over main list
     if not records:
         for li in soup.select("ul#agItemList li.ag_listing_item"):
             name = _fix_039_apostrophe(safe_text(li.select_one("h3[itemprop=name]")) or safe_text(li.select_one("h3")))
@@ -185,16 +218,21 @@ def parse_city(city_url: str) -> list[dict]:
 
 def main() -> None:
     all_records: list[dict] = []
+    errors: list[str] = []
 
     city_links = fetch_city_links()
-    print(f"Found {len(city_links)} city pages to scrape …")
+    logger.info("Found %d city pages to scrape", len(city_links))
 
     for link in city_links:
-        print(f"Scraping {link}")
+        logger.info("Scraping %s", link)
         try:
-            all_records.extend(parse_city(link))
+            records = parse_city(link)
+            all_records.extend(records)
+            logger.info("  -> %d pharmacies found", len(records))
         except Exception as exc:
-            print(f"⚠️  Failed to scrape {link}: {exc}")
+            logger.error("Failed to scrape %s: %s", link, exc)
+            errors.append(link)
+        time.sleep(REQUEST_DELAY)
 
     # Write JSON (ensure directory exists)
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -202,7 +240,9 @@ def main() -> None:
     with OUTPUT_JSON.open("w", encoding="utf-8") as fp:
         json.dump(all_records, fp, ensure_ascii=False, indent=2)
 
-    print(f"✅ Scraped {len(all_records)} pharmacies → {OUTPUT_JSON.relative_to(Path.cwd())}")
+    logger.info("Done: %d pharmacies scraped -> %s", len(all_records), OUTPUT_JSON.relative_to(Path.cwd()))
+    if errors:
+        logger.warning("%d failed sources: %s", len(errors), ", ".join(errors))
 
 
 if __name__ == "__main__":

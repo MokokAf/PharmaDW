@@ -15,14 +15,19 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if user is stored in localStorage on app load
     const storedUser = localStorage.getItem('pharmacist_user');
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch {
+        localStorage.removeItem('pharmacist_user');
+      }
     }
+    setIsInitialized(true);
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -30,7 +35,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Mock user data
       const userData: User = {
         id: '1',
@@ -38,10 +43,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         name: email.split('@')[0],
         provider: 'email'
       };
-      
+
       setUser(userData);
       localStorage.setItem('pharmacist_user', JSON.stringify(userData));
-      
+
       toast({
         title: "Connexion réussie",
         description: "Vous êtes maintenant connecté à votre espace pharmacien.",
@@ -72,17 +77,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       const userData: User = {
         id: '1',
         email,
         name: email.split('@')[0],
         provider: 'email'
       };
-      
+
       setUser(userData);
       localStorage.setItem('pharmacist_user', JSON.stringify(userData));
-      
+
       toast({
         title: "Inscription réussie",
         description: "Votre compte pharmacien a été créé avec succès.",
@@ -104,17 +109,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       // Simulate Google OAuth
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       const userData: User = {
         id: '2',
         email: 'pharmacien@example.com',
         name: 'Dr. Pharmacien',
         provider: 'google'
       };
-      
+
       setUser(userData);
       localStorage.setItem('pharmacist_user', JSON.stringify(userData));
-      
+
       toast({
         title: "Connexion Google réussie",
         description: "Vous êtes connecté via votre compte Google.",
@@ -149,6 +154,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loginWithGoogle,
         logout,
         isLoading,
+        isInitialized,
       }}
     >
       {children}

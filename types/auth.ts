@@ -12,6 +12,7 @@ export interface AuthContextType {
   loginWithGoogle: () => Promise<void>;
   logout: () => void;
   isLoading: boolean;
+  isInitialized: boolean;
 }
 
 export interface ChatMessage {
