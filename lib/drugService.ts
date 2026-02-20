@@ -28,7 +28,6 @@ export async function getAllDrugs(): Promise<MedDrug[]> {
     
     return drugs;
   } catch (error) {
-    console.error('Error loading drugs data:', error);
     return [];
   }
 }
