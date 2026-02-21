@@ -45,7 +45,7 @@ Ce fichier centralise toutes les modifications du projet. **Tout agent (Claude, 
 ### Mobile UX
 - Touch targets min-h-11 sur tous les boutons interactifs
 - Focus-visible:ring sur les elements du dashboard
-- Barre de recherche accueil : icone seule sur mobile (placeholder non coupe)
+- Barre de recherche accueil : icone seule sur mobile, placeholder responsive ("Rechercher un medicament..." sur mobile, texte complet sur desktop)
 - Suppression espaces blancs excessifs en bas de page (footer margin, min-h-screen)
 
 ### Systeme d'interactions medicamenteuses (DwaIA)

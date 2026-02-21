@@ -4,12 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, MapPin, Pill } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const HeroSection = () => {
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const handleSearch = () => {
     if (!query.trim()) return;
@@ -35,7 +43,7 @@ const HeroSection = () => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
             <Input
               type="text"
-              placeholder="Médicament, principe actif, laboratoire..."
+              placeholder={isMobile ? "Rechercher un médicament..." : "Médicament, principe actif, laboratoire..."}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
