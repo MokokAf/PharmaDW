@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:indexes": "node scripts/generate-drug-search-index.mjs"
+    "generate:indexes": "node scripts/generate-drug-search-index.mjs",
+    "generate:drug-indexes": "node scripts/generate-drug-search-index.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
