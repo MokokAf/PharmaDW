@@ -2,23 +2,26 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Input } from '@/components/ui/input'
-import { MapPin, PhoneCall, AlertTriangle, Navigation, Search } from 'lucide-react'
+import { MapPin, PhoneCall, AlertTriangle, Navigation, Search, Clock, CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const POP_RANK: Record<string, number> = {
   Casablanca: 1,
   Rabat: 2,
-  Fes: 3,
+  'Fès': 3,
   Marrakech: 4,
   Tanger: 5,
   Agadir: 6,
-  Meknes: 7,
+  'Meknès': 7,
   Oujda: 8,
-  Tetouan: 9,
-  Safi: 10,
-  'El Jadida': 11,
-  Mohammedia: 12,
-  Khouribga: 13,
+  'Tétouan': 9,
+  'Kénitra': 10,
+  'Salé': 11,
+  'Témara': 12,
+  Safi: 13,
+  'El Jadida': 14,
+  Mohammedia: 15,
+  Khouribga: 16,
 }
 
 interface Pharmacy {
@@ -30,11 +33,48 @@ interface Pharmacy {
   district: string
   duty: string
   source: string
+  sources_count?: number
   date: string
+  scraped_at?: string
+}
+
+interface PharmacyMeta {
+  scraped_at: string
+  total_pharmacies: number
+  cities_count: number
+  cities: string[]
+  sources_used: string[]
+  sources_status: Record<string, { ok: boolean; count: number; error?: string }>
+  previous_total: number
+  delta: number | null
+}
+
+function formatFrenchDate(isoDate: string): string {
+  try {
+    const d = new Date(isoDate)
+    return d.toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+  } catch {
+    return isoDate
+  }
+}
+
+function hoursAgo(isoDate: string): number {
+  try {
+    return (Date.now() - new Date(isoDate).getTime()) / (1000 * 60 * 60)
+  } catch {
+    return 0
+  }
 }
 
 export default function PharmaciesDeGardeContent() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([])
+  const [meta, setMeta] = useState<PharmacyMeta | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -56,12 +96,20 @@ export default function PharmaciesDeGardeContent() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('/data/pharmacies.json')
-        if (!res.ok) {
+        const [phRes, metaRes] = await Promise.all([
+          fetch('/data/pharmacies.json'),
+          fetch('/data/pharmacies_meta.json').catch(() => null),
+        ])
+        if (!phRes.ok) {
           throw new Error('Erreur de chargement des donnees.')
         }
-        const json = (await res.json()) as Pharmacy[]
+        const json = (await phRes.json()) as Pharmacy[]
         setPharmacies(json)
+
+        if (metaRes && metaRes.ok) {
+          const metaJson = (await metaRes.json()) as PharmacyMeta
+          setMeta(metaJson)
+        }
       } catch (fetchError) {
         const message =
           fetchError instanceof Error
@@ -98,12 +146,39 @@ export default function PharmaciesDeGardeContent() {
     return result
   }, [city, filter, pharmacies])
 
-  const lastUpdate = filtered[0]?.date ?? ''
-  const source = filtered[0]?.source ?? ''
+  const isStale = meta ? hoursAgo(meta.scraped_at) > 48 : false
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-6 md:py-10">
-      <h1 className="text-2xl md:text-3xl font-semibold mb-6 text-center">Pharmacies de garde au Maroc</h1>
+      <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-center">Pharmacies de garde au Maroc</h1>
+
+      {/* Freshness banner */}
+      {meta && (
+        <div className={cn(
+          'flex items-center gap-2 rounded-xl px-4 py-2.5 mb-4 text-xs',
+          isStale
+            ? 'border border-amber-200/60 bg-amber-50/50 text-amber-700 dark:border-amber-800/40 dark:bg-amber-950/30 dark:text-amber-400'
+            : 'border border-border bg-muted/50 text-muted-foreground'
+        )}>
+          {isStale ? (
+            <>
+              <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+              <span>
+                Les donnees peuvent ne pas etre a jour.
+                Derniere mise a jour : <strong>{formatFrenchDate(meta.scraped_at)}</strong>
+              </span>
+            </>
+          ) : (
+            <>
+              <Clock className="h-3.5 w-3.5 shrink-0" />
+              <span>
+                Mis a jour le <strong>{formatFrenchDate(meta.scraped_at)}</strong>
+                {' '}&middot;{' '}{meta.total_pharmacies} pharmacies dans {meta.cities_count} villes
+              </span>
+            </>
+          )}
+        </div>
+      )}
 
       {!loading && cities.length > 0 && (
         <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-sm -mx-4 px-4 py-3 border-b border-border/50">
@@ -168,7 +243,7 @@ export default function PharmaciesDeGardeContent() {
             <MapPin className="h-5 w-5 text-muted-foreground" />
           </div>
           <h2 className="text-base font-semibold text-foreground">Aucune pharmacie disponible</h2>
-          <p className="text-sm text-muted-foreground">Aucune pharmacie de garde n'a ete trouvee pour {city}. Essayez un autre quartier ou une autre ville.</p>
+          <p className="text-sm text-muted-foreground">Aucune pharmacie de garde n&apos;a ete trouvee pour {city}. Essayez un autre quartier ou une autre ville.</p>
         </div>
       )}
 
@@ -181,7 +256,15 @@ export default function PharmaciesDeGardeContent() {
           {filtered.map((pharmacy, index) => (
             <div key={`${pharmacy.name}-${index}`} className="rounded-xl border border-border bg-background p-5 space-y-3">
               <div>
-                <h2 className="text-base font-semibold text-foreground">{pharmacy.name}</h2>
+                <div className="flex items-start justify-between gap-2">
+                  <h2 className="text-base font-semibold text-foreground">{pharmacy.name}</h2>
+                  {(pharmacy.sources_count ?? 0) >= 2 && (
+                    <span className="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
+                      <CheckCircle2 className="h-3 w-3" />
+                      Verifie
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-muted-foreground mt-1 flex items-start gap-1.5">
                   <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
                   {pharmacy.address || 'Adresse non disponible'}
@@ -189,13 +272,15 @@ export default function PharmaciesDeGardeContent() {
                 {pharmacy.district && <p className="text-xs text-muted-foreground mt-1 ml-[1.4rem]">{pharmacy.district}</p>}
               </div>
 
-              <a
-                href={`tel:${pharmacy.phone}`}
-                className="flex items-center justify-center gap-2 w-full h-12 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Appeler
-              </a>
+              {pharmacy.phone && (
+                <a
+                  href={`tel:${pharmacy.phone}`}
+                  className="flex items-center justify-center gap-2 w-full h-12 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
+                >
+                  <PhoneCall className="h-4 w-4" />
+                  Appeler
+                </a>
+              )}
 
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name} ${pharmacy.city}`)}`}
@@ -212,12 +297,16 @@ export default function PharmaciesDeGardeContent() {
       )}
 
       <div className="mt-8 text-center text-xs text-muted-foreground space-y-1">
-        {lastUpdate && (
+        {meta && (
           <p>
-            Derniere mise a jour : <span className="font-medium">{lastUpdate}</span>
+            {meta.sources_used.length} sources consultees &middot; Derniere mise a jour : <span className="font-medium">{formatFrenchDate(meta.scraped_at)}</span>
           </p>
         )}
-        {source && <p>Source : {source}</p>}
+        {!meta && filtered[0]?.date && (
+          <p>
+            Derniere mise a jour : <span className="font-medium">{filtered[0].date}</span>
+          </p>
+        )}
       </div>
     </main>
   )
