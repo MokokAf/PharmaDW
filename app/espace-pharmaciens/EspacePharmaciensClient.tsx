@@ -91,7 +91,7 @@ const EspacePharmacienContent = () => {
   const onTripleTap = useTripleTap(handleDemoAccess)
 
   return (
-    <div className="min-h-[calc(100vh-3.5rem)] flex flex-col">
+    <div className="flex flex-col">
       <section className="bg-surface">
         <div className="container mx-auto px-4 py-14 md:py-24">
           <div className="max-w-2xl mx-auto text-center space-y-8">
