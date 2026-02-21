@@ -10,7 +10,7 @@ interface VirtualizedDrugListProps {
   drugs: MedDrugListItem[];
 }
 
-const ITEM_HEIGHT = 64;
+const ITEM_HEIGHT = 76;
 
 export function VirtualizedDrugList({ drugs }: VirtualizedDrugListProps) {
   const containerRef = useRef<HTMLDivElement>(null);
