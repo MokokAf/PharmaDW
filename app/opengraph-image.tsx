@@ -7,7 +7,7 @@ export const size = {
   height: 630,
 }
 export const contentType = 'image/png'
-export const alt = 'PharmaDW - Plateforme pharmaceutique au Maroc'
+export const alt = "DwaIA - L'intelligence pharmaceutique du Maroc"
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -21,9 +21,9 @@ export default function OpenGraphImage() {
           justifyContent: 'space-between',
           padding: '64px',
           background:
-            'linear-gradient(135deg, rgba(22,163,74,1) 0%, rgba(16,185,129,1) 50%, rgba(6,95,70,1) 100%)',
+            'linear-gradient(135deg, #0F3D3E 0%, #1A5556 50%, #0A2C2D 100%)',
           color: '#ffffff',
-          fontFamily: 'Inter, Arial, sans-serif',
+          fontFamily: 'Manrope, Arial, sans-serif',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
               width: '56px',
               height: '56px',
               borderRadius: '16px',
-              background: 'rgba(255,255,255,0.2)',
+              background: 'rgba(94,211,198,0.25)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -46,12 +46,14 @@ export default function OpenGraphImage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '920px' }}>
           <div style={{ fontSize: '64px', lineHeight: 1.05, fontWeight: 700 }}>
-            Medicaments, pharmacies de garde et assistant IA
+            L&apos;intelligence pharmaceutique du Maroc
           </div>
-          <div style={{ fontSize: '30px', lineHeight: 1.3, opacity: 0.95 }}>{SITE_DESCRIPTION}</div>
+          <div style={{ fontSize: '30px', lineHeight: 1.3, opacity: 0.95 }}>
+            Analysez. Vérifiez. Décidez avec précision.
+          </div>
         </div>
 
-        <div style={{ fontSize: '24px', opacity: 0.9 }}>pharmadw.ma</div>
+        <div style={{ fontSize: '24px', opacity: 0.9 }}>dwa-ia-maroc.com</div>
       </div>
     ),
     size

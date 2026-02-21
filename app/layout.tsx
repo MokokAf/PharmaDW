@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import './globals.css'
 import SiteHeader from '@/components/SiteHeader'
 import BottomNav from '@/components/BottomNav'
@@ -16,13 +16,13 @@ import {
   pageAlternates,
 } from '@/lib/seo'
 
-const inter = Inter({ subsets: ['latin'] })
+const manrope = Manrope({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
     default: SITE_TITLE,
-    template: '%s | PharmaDW',
+    template: '%s | DwaIA',
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         url: absoluteUrl('/opengraph-image'),
         width: 1200,
         height: 630,
-        alt: 'PharmaDW',
+        alt: 'DwaIA',
       },
     ],
   },
@@ -109,7 +109,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.perplexity.ai" />
         <link rel="alternate" hrefLang={SITE_LANGUAGE} href={absoluteUrl('/')} />
       </head>
-      <body className={`${inter.className} pb-safe md:pb-0`}>
+      <body className={`${manrope.className} pb-safe md:pb-0`}>
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>

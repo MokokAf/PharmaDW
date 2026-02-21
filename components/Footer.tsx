@@ -12,7 +12,7 @@ const Footer = () => {
               <Pill className="h-3.5 w-3.5 text-white" />
             </div>
             <span className="text-sm text-muted-foreground">
-              Dwaia.ma © {currentYear}
+              Dwa<span className="text-accent font-semibold">IA</span> © {currentYear}
             </span>
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">

@@ -31,10 +31,10 @@ const HeroSection = () => {
           {/* Title */}
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl font-semibold text-foreground leading-tight">
-              Trouvez votre médicament
+              L&apos;intelligence pharmaceutique du Maroc
             </h1>
             <p className="text-base md:text-lg text-muted-foreground">
-              Base de données pharmaceutique du Maroc
+              Analysez. V&eacute;rifiez. D&eacute;cidez avec pr&eacute;cision.
             </p>
           </div>
 
@@ -56,6 +56,7 @@ const HeroSection = () => {
             />
             <Button
               onClick={handleSearch}
+              variant="accent"
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full h-11 w-11 sm:w-auto sm:px-6"
             >
               <Search className="h-5 w-5 sm:hidden" />

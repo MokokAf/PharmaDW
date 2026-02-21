@@ -1,13 +1,13 @@
 {
-  "name": "PharmaDW",
-  "short_name": "PharmaDW",
-  "description": "Plateforme pharmaceutique intelligente au Maroc.",
+  "name": "DwaIA",
+  "short_name": "DwaIA",
+  "description": "L'intelligence pharmaceutique du Maroc.",
   "lang": "fr-MA",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#20c997",
+  "background_color": "#F7FAFA",
+  "theme_color": "#0F3D3E",
   "icons": [
     {
       "src": "/icons/icon-192.svg",

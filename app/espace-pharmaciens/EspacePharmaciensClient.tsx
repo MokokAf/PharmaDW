@@ -35,37 +35,37 @@ const features = [
     icon: Bot,
     title: 'Assistant IA',
     desc: 'Verification instantanee des interactions medicamenteuses via intelligence artificielle.',
-    color: 'bg-emerald-500/10 text-emerald-600',
+    color: 'bg-primary/10 text-primary',
   },
   {
     icon: Shield,
     title: 'Donnees validees',
     desc: 'Sources Micromedex, Cerner Multum et ASHP. Mises a jour regulieres.',
-    color: 'bg-blue-500/10 text-blue-600',
+    color: 'bg-secondary/20 text-secondary-foreground',
   },
   {
     icon: Activity,
     title: 'Contexte patient',
     desc: 'Prise en compte de l age, grossesse, fonction renale et comorbidites.',
-    color: 'bg-violet-500/10 text-violet-600',
+    color: 'bg-accent/10 text-accent',
   },
   {
     icon: Zap,
     title: 'Triage colore',
     desc: 'Resultats clairs: vert, ambre ou rouge avec niveaux de severite.',
-    color: 'bg-amber-500/10 text-amber-600',
+    color: 'bg-primary/10 text-primary',
   },
   {
     icon: BookOpen,
     title: 'Protocoles',
     desc: 'Acces aux protocoles et references pharmacologiques essentielles.',
-    color: 'bg-rose-500/10 text-rose-600',
+    color: 'bg-secondary/20 text-secondary-foreground',
   },
   {
     icon: Clock,
     title: 'Historique',
     desc: 'Retrouvez toutes vos verifications precedentes en un clic.',
-    color: 'bg-cyan-500/10 text-cyan-600',
+    color: 'bg-accent/10 text-accent',
   },
 ]
 

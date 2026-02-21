@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
-export const SITE_NAME = 'PharmaDW'
-export const SITE_TITLE = 'PharmaDW - Plateforme pharmaceutique intelligente au Maroc'
+export const SITE_NAME = 'DwaIA'
+export const SITE_TITLE = "DwaIA - L'intelligence pharmaceutique du Maroc"
 export const SITE_DESCRIPTION =
-  'PharmaDW facilite la recherche de medicaments au Maroc, les pharmacies de garde par ville et la verification des interactions medicamenteuses pour pharmaciens.'
+  "DwaIA est la plateforme d'intelligence pharmaceutique du Maroc : recherche de medicaments, pharmacies de garde par ville et verification des interactions medicamenteuses."
 export const SITE_LOCALE = 'fr_MA'
 export const SITE_LANGUAGE = 'fr-MA'
-export const SITE_PRIMARY_COLOR = '#20c997'
+export const SITE_PRIMARY_COLOR = '#0F3D3E'
 
 const DEFAULT_SITE_URL = 'https://dwa-ia-maroc.com'
 

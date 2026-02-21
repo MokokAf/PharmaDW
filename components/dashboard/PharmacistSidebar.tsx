@@ -93,7 +93,7 @@ export function PharmacistSidebar({
           {!isCollapsed && (
             <div className="flex flex-col">
               <span className="font-bold text-sm leading-tight">
-                DwaIA<span className="text-primary">.ma</span>
+                Dwa<span className="text-accent font-bold">IA</span>
               </span>
               <span className="text-[10px] text-sidebar-foreground/50 leading-tight">
                 Espace pharmacien

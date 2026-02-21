@@ -24,7 +24,7 @@ const DwaIASection = () => {
                 <Bot className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-semibold text-foreground">Dwa IA 2.0</h2>
+                <h2 className="text-xl font-semibold text-foreground">Dwa<span className="text-accent font-bold">IA</span></h2>
                 <p className="text-sm text-muted-foreground">Assistant IA pour pharmaciens</p>
               </div>
             </div>
@@ -42,6 +42,7 @@ const DwaIASection = () => {
             {/* CTA */}
             <Button
               onClick={() => router.push('/espace-pharmaciens')}
+              variant="accent"
               className="w-full md:w-auto rounded-lg h-11"
             >
               <Bot className="h-4 w-4 mr-2" />

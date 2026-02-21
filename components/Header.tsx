@@ -33,7 +33,7 @@ const Header = () => {
               <Pill className="h-4 w-4 text-white" />
             </div>
             <span className="text-xl font-semibold text-foreground">
-              Dwaia<span className="text-primary">.ma</span>
+              Dwa<span className="text-accent font-bold">IA</span>
             </span>
           </Link>
 
