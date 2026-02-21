@@ -1,0 +1,113 @@
+name: Update Medicaments JSON
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 03:15 UTC (~04:15 Maroc, depending DST)
+    - cron: '15 3 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update-medicaments-json
+  cancel-in-progress: false
+
+jobs:
+  update-medicaments:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      MEDICAMENT_REQUEST_DELAY: "0.35"
+      MEDICAMENT_REQUEST_JITTER: "0.08"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run medicaments updater
+        id: updater
+        continue-on-error: true
+        run: |
+          set +e
+          python scripts/medicaments_updater.py
+          exit_code=$?
+          echo "exit_code=${exit_code}" >> "$GITHUB_OUTPUT"
+          if [ "$exit_code" -eq 2 ]; then
+            echo "drop_guard=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "drop_guard=false" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+
+      - name: Regenerate medicament indexes
+        if: steps.updater.outputs.exit_code == '0'
+        run: node scripts/generate-drug-search-index.mjs
+
+      - name: Commit & push
+        if: steps.updater.outputs.exit_code == '0'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): update medicaments dataset from medicament.ma'
+          branch: main
+          file_pattern: |
+            public/data/medicament_ma_optimized.json
+            public/data/medicament_ma_state.json
+            public/data/medicament_list_index.json
+            public/data/medicament_search_index.json
+
+      - name: Create alert issue on failure
+        if: steps.updater.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        env:
+          EXIT_CODE: ${{ steps.updater.outputs.exit_code }}
+          DROP_GUARD: ${{ steps.updater.outputs.drop_guard }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const exitCode = process.env.EXIT_CODE || "unknown";
+            const dropGuard = process.env.DROP_GUARD === "true";
+            const dateLabel = new Date().toISOString().slice(0, 10);
+            const title = dropGuard
+              ? `[Data] Update médicaments bloquée (>30%) - ${dateLabel}`
+              : `[Data] Échec update médicaments - ${dateLabel}`;
+
+            const body = [
+              "Le workflow quotidien de mise à jour des médicaments a échoué.",
+              "",
+              `- Exit code: \`${exitCode}\``,
+              `- Drop guard: \`${dropGuard}\``,
+              `- Run: ${process.env.RUN_URL}`,
+              "",
+              dropGuard
+                ? "Le garde-fou a détecté une chute >30% du volume. Aucun JSON n'a été écrasé."
+                : "Vérifier les logs du workflow (source medicament.ma, parsing ou réseau).",
+            ].join("\n");
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ["data", "automation", "medicaments"],
+            });
+
+      - name: Fail workflow if updater failed
+        if: steps.updater.outputs.exit_code != '0'
+        run: |
+          echo "Updater failed with exit code ${{ steps.updater.outputs.exit_code }}"
+          exit 1

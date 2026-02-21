@@ -150,6 +150,21 @@ textarea {
   }
 }
 
+/* Keep form controls visible when keyboard opens on mobile */
+input,
+select,
+textarea {
+  scroll-margin-bottom: 8rem;
+}
+
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 .pharma-gradient {
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(162 72% 35%) 100%);
 }

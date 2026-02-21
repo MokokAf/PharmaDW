@@ -4,6 +4,37 @@ Ce fichier centralise toutes les modifications du projet. **Tout agent (Claude, 
 
 ---
 
+## 2026-02-21 — Automatisation quotidienne base médicaments (medicament.ma)
+
+### Data pipeline médicaments
+- Ajout de `scripts/medicaments_updater.py` pour une mise à jour incrémentale quotidienne depuis les sitemaps WordPress de medicament.ma
+- Respect du schéma frontend existant de `medicament_ma_optimized.json` (clés conservées)
+- Mode bootstrap + gestion des disparitions temporaires (grace periods)
+- Garde-fou anti-régression volume: arrêt si chute >30% (exit code 2), sans écraser les données
+- Rate limit configurable pour éviter le blocage source: `MEDICAMENT_REQUEST_DELAY` + jitter `MEDICAMENT_REQUEST_JITTER`
+
+### Index de recherche médicaments
+- Ajout de `scripts/generate-drug-search-index.mjs`
+- Génération de:
+  - `public/data/medicament_list_index.json`
+  - `public/data/medicament_search_index.json`
+- Normalisation accent-insensitive + enrichissement des termes (nom + principes actifs)
+
+### GitHub Actions
+- Ajout du workflow `.github/workflows/update_medicaments.yml` (daily + manuel)
+- Exécution séquentielle: update JSON principal -> régénération des index -> commit auto
+- Alerte automatique via GitHub Issue si échec (dont cas chute >30%)
+- Permissions `issues: write` pour la remontée d’alerte
+
+### Scripts npm
+- Ajout de `npm run generate:drug-indexes`
+
+### Fichiers principaux
+- `.github/workflows/update_medicaments.yml`
+- `scripts/medicaments_updater.py`
+- `scripts/generate-drug-search-index.mjs`
+- `package.json`
+
 ## 2026-02-21 — Audit deep + Refonte scraper pharmacies
 
 ### SEO & PWA
