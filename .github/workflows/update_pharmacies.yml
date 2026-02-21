@@ -3,10 +3,14 @@ name: Update Pharmacies JSON
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 10 * * *'  # 11:30 Casablanca time, every day
+    # 08h30 Maroc (UTC+1) — morning update
+    - cron: '30 7 * * *'
+    # 20h30 Maroc (UTC+1) — evening update (night duty pharmacies)
+    - cron: '30 19 * * *'
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   scrape:
@@ -23,10 +27,52 @@ jobs:
         run: python -m pip install -r requirements.txt
 
       - name: Run scraper
-        run: python scripts/pharmacies_scraper.py
+        id: scraper
+        run: |
+          set +e
+          python scripts/pharmacies_scraper.py
+          EXIT_CODE=$?
+          echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Retry on significant drop
+        if: steps.scraper.outputs.exit_code == '2'
+        run: |
+          echo "Pharmacy count dropped >30%, retrying..."
+          sleep 30
+          python scripts/pharmacies_scraper.py || true
 
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(data): update duty pharmacies JSON'
           branch: main
+          file_pattern: 'public/data/pharmacies.json public/data/pharmacies_meta.json'
+
+      - name: Alert on failure
+        if: steps.scraper.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let metaInfo = 'No metadata available';
+            try {
+              const meta = JSON.parse(fs.readFileSync('public/data/pharmacies_meta.json', 'utf8'));
+              const statuses = Object.entries(meta.sources_status || {})
+                .map(([k, v]) => `- ${k}: ${v.ok ? '✅' : '❌'} (${v.count} pharmacies${v.error ? ', error: ' + v.error : ''})`)
+                .join('\n');
+              metaInfo = `Total: ${meta.total_pharmacies} | Previous: ${meta.previous_total} | Delta: ${meta.delta}\n\nSources:\n${statuses}`;
+            } catch (e) {}
+
+            const exitCode = '${{ steps.scraper.outputs.exit_code }}';
+            const title = exitCode === '1'
+              ? '🚨 Pharmacy scraper: ZERO results'
+              : '⚠️ Pharmacy scraper: significant count drop (>30%)';
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: `The pharmacy scraper encountered an issue.\n\n**Exit code:** ${exitCode}\n**Date:** ${new Date().toISOString()}\n\n${metaInfo}\n\nPlease investigate the scraper sources.`,
+              labels: ['bug', 'data']
+            });
