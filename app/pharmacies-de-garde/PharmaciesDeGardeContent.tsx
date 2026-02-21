@@ -265,32 +265,40 @@ export default function PharmaciesDeGardeContent() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-1 flex items-start gap-1.5">
-                  <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
-                  {pharmacy.address || 'Adresse non disponible'}
-                </p>
-                {pharmacy.district && <p className="text-xs text-muted-foreground mt-1 ml-[1.4rem]">{pharmacy.district}</p>}
+                {(pharmacy.district || pharmacy.area) && (
+                  <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                    {pharmacy.district || pharmacy.area}
+                  </p>
+                )}
               </div>
 
-              {pharmacy.phone && (
-                <a
-                  href={`tel:${pharmacy.phone}`}
-                  className="flex items-center justify-center gap-2 w-full h-12 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
-                >
-                  <PhoneCall className="h-4 w-4" />
-                  Appeler
-                </a>
-              )}
+              <div className="flex gap-2">
+                {pharmacy.phone && (
+                  <a
+                    href={`tel:${pharmacy.phone}`}
+                    className="flex items-center justify-center gap-2 flex-1 h-12 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
+                  >
+                    <PhoneCall className="h-4 w-4" />
+                    Appeler
+                  </a>
+                )}
 
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name} ${pharmacy.city}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 min-h-11 text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Navigation className="h-3.5 w-3.5" />
-                Voir sur la carte
-              </a>
+                <a
+                  href={`geo:0,0?q=${encodeURIComponent(`${pharmacy.name} ${pharmacy.district || pharmacy.area} ${pharmacy.city}`)}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.open(
+                      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name} ${pharmacy.district || pharmacy.area} ${pharmacy.city}`)}`,
+                      '_blank'
+                    )
+                  }}
+                  className="flex items-center justify-center gap-2 flex-1 h-12 border-2 border-primary text-primary rounded-lg text-sm font-medium hover:bg-primary/10 active:scale-[0.98] transition"
+                >
+                  <Navigation className="h-4 w-4" />
+                  Carte
+                </a>
+              </div>
             </div>
           ))}
         </div>
