@@ -11,6 +11,17 @@ const dataPath = path.join(process.cwd(), 'public/data/medicament_ma_optimized.j
 export const revalidate = 60 * 60 * 24
 export const dynamicParams = true
 
+// Pre-build all medication pages at build time for instant TTFB + Google indexing
+export async function generateStaticParams() {
+  try {
+    const raw = await fs.readFile(dataPath, 'utf8')
+    const drugs = JSON.parse(raw) as MedDrug[]
+    return drugs.map((drug) => ({ slug: drug.id.toString() }))
+  } catch {
+    return []
+  }
+}
+
 type RouteParams = {
   params: {
     slug: string
@@ -54,7 +65,7 @@ function buildDescription(drug: MedDrug): string {
     `${drug.name}${dci ? ` (${dci})` : ''}.`,
     details,
     priceText,
-    'Fiche medicament Maroc sur PharmaDW.',
+    'Fiche medicament Maroc sur DwaIA.',
   ]
     .filter(Boolean)
     .join(' ')
@@ -109,6 +120,32 @@ export default async function DrugDetailPage({ params }: RouteParams) {
   }
 
   const routePath = `/medicaments/${drug.id}`
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Medicaments',
+        item: absoluteUrl('/medicaments'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: drug.name,
+        item: absoluteUrl(routePath),
+      },
+    ],
+  }
+
   const drugSchema = {
     '@context': 'https://schema.org',
     '@type': drug['@type'] === 'MedicalDevice' ? 'MedicalDevice' : 'Drug',
@@ -139,6 +176,10 @@ export default async function DrugDetailPage({ params }: RouteParams) {
 
   return (
     <main className="container mx-auto px-4 py-6 md:py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(drugSchema) }}

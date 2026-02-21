@@ -108,6 +108,43 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.perplexity.ai" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://api.perplexity.ai" />
         <link rel="alternate" hrefLang={SITE_LANGUAGE} href={absoluteUrl('/')} />
+        {/* Organization + WebSite structured data for Knowledge Graph & Sitelinks Searchbox */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': `${getSiteUrl()}/#organization`,
+                  name: SITE_NAME,
+                  url: getSiteUrl(),
+                  logo: absoluteUrl('/icons/icon-512.svg'),
+                  description: SITE_DESCRIPTION,
+                  sameAs: [],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': `${getSiteUrl()}/#website`,
+                  url: getSiteUrl(),
+                  name: SITE_NAME,
+                  description: SITE_DESCRIPTION,
+                  publisher: { '@id': `${getSiteUrl()}/#organization` },
+                  inLanguage: SITE_LANGUAGE,
+                  potentialAction: {
+                    '@type': 'SearchAction',
+                    target: {
+                      '@type': 'EntryPoint',
+                      urlTemplate: `${getSiteUrl()}/medicaments?search={search_term_string}`,
+                    },
+                    'query-input': 'required name=search_term_string',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className={`${manrope.className} pb-safe md:pb-0`}>
         <a href="#main-content" className="skip-link">
