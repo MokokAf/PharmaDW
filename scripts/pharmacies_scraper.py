@@ -453,23 +453,36 @@ def scrape_infopoint() -> Tuple[List[Pharmacy], dict]:
     try:
         soup = safe_soup(INFOPOINT_URL)
         for card in soup.select("div.item-grid.arabe_pharm"):
-            addr_tag = card.select_one("p.adress-item")
+            addr_tag = card.select_one("p.adress-item:not(.adress_arabe)")
+            # Use title attr for clean address, full text for city detection
             address = _clean(addr_tag["title"]) if addr_tag and addr_tag.get("title") else ""
+            full_text = _clean(addr_tag.get_text(" ", strip=True)) if addr_tag else ""
 
-            # Determine city from address
-            addr_upper = address.upper()
-            if "TANGER" in addr_upper:
+            # Determine city from full <p> text (contains "90000 TANGER - Maroc")
+            full_upper = full_text.upper()
+            if "TANGER" in full_upper:
                 city = "Tanger"
-            elif "CASABLANCA" in addr_upper or "CASA" in addr_upper:
+            elif "CASABLANCA" in full_upper or "CASA" in full_upper:
                 city = "Casablanca"
             else:
-                city = "Casablanca"  # default for this source
+                city = "Tanger"  # default — infopoint is Tanger-based
 
             h3 = card.select_one("h3")
             name = _clean(h3.text) if h3 else ""
             phone_tag = card.select_one("p.phone-item")
             phone = _normalize_phone(phone_tag.get_text(strip=True)) if phone_tag else ""
-            area = address.split(",")[0] if "," in address else (address.split()[0] if address else city)
+
+            # Extract quartier from LAST segment of address (after last comma)
+            # "73, Avenue Haroun Errachid, Colonia" -> "Colonia"
+            # "Avenue Moulay Rachid, Résidence Golden Beach" -> "Résidence Golden Beach"
+            if "," in address:
+                area = _clean(address.rsplit(",", 1)[-1])
+                # If last segment is just a number or too short, try second-to-last
+                if len(area) <= 3 or area.isdigit():
+                    parts = [_clean(p) for p in address.split(",")]
+                    area = next((p for p in reversed(parts) if len(p) > 3 and not p.isdigit()), city)
+            else:
+                area = city
 
             if name:
                 results.append(Pharmacy(

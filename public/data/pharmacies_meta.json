@@ -1,13 +1,16 @@
 {
-  "scraped_at": "2026-02-21T11:07:05.041806+00:00",
-  "total_pharmacies": 247,
-  "cities_count": 51,
+  "scraped_at": "2026-02-21T13:33:58.114825+00:00",
+  "total_pharmacies": 292,
+  "cities_count": 56,
   "cities": [
+    "Agadir",
+    "Ait Melloul",
     "Al Arrui",
     "Al Hoceima",
     "Azrou",
     "Benslimane",
     "Berkane",
+    "Berrechid",
     "Biougra",
     "Boujad",
     "Béni Mellal",
@@ -21,6 +24,7 @@
     "Fès",
     "Guelmim",
     "Guercif",
+    "Inezgane",
     "Khouribga",
     "Khémisset",
     "Khénifra",
@@ -47,6 +51,7 @@
     "Taourirt",
     "Taza",
     "Tiflet",
+    "Tikiouine",
     "Tinghir",
     "Tiznit",
     "Témara",
@@ -79,10 +84,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 224,
+      "count": 287,
       "error": null
     }
   },
-  "previous_total": 242,
-  "delta": 5
+  "previous_total": 247,
+  "delta": 45
 }
