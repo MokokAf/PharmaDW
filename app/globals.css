@@ -132,7 +132,7 @@
 
 /* Safe bottom padding for mobile bottom nav */
 .pb-safe {
-  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 4.5rem);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 4rem);
 }
 
 /* Keep form controls visible when keyboard opens on mobile */
