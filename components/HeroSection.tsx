@@ -44,13 +44,14 @@ const HeroSection = () => {
                   handleSearch();
                 }
               }}
-              className="pl-12 pr-28 h-14 text-base rounded-full border-2 border-border focus:border-primary shadow-sm"
+              className="pl-12 pr-14 sm:pr-32 h-14 text-base rounded-full border-2 border-border focus:border-primary shadow-sm"
             />
             <Button
               onClick={handleSearch}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-6 h-11"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full h-11 w-11 sm:w-auto sm:px-6"
             >
-              Rechercher
+              <Search className="h-5 w-5 sm:hidden" />
+              <span className="hidden sm:inline">Rechercher</span>
             </Button>
           </div>
 
