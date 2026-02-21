@@ -1,13 +1,14 @@
 {
-  "scraped_at": "2026-02-21T13:33:58.114825+00:00",
-  "total_pharmacies": 292,
-  "cities_count": 56,
+  "scraped_at": "2026-02-21T19:47:13.765887+00:00",
+  "total_pharmacies": 307,
+  "cities_count": 58,
   "cities": [
     "Agadir",
     "Ait Melloul",
     "Al Arrui",
     "Al Hoceima",
     "Azrou",
+    "Ben Guerir",
     "Benslimane",
     "Berkane",
     "Berrechid",
@@ -32,6 +33,7 @@
     "Larache",
     "Marrakech",
     "Mechraa Bel Ksiri",
+    "Meknès",
     "Mrirt",
     "Nador",
     "Ouarzazate",
@@ -84,10 +86,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 287,
+      "count": 302,
       "error": null
     }
   },
-  "previous_total": 247,
-  "delta": 45
+  "previous_total": 292,
+  "delta": 15
 }
