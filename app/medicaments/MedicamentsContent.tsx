@@ -62,10 +62,17 @@ export default function MedicamentsContent() {
         throw new Error('Reponse JSON vide')
       }
 
-      const data = JSON.parse(text) as MedDrugListItem[]
+      const raw = JSON.parse(text) as MedDrugListItem[]
+      // Deduplicate by name — keep first occurrence
+      const seen = new Set<string>()
+      const data = raw.filter((d) => {
+        if (seen.has(d.name)) return false
+        seen.add(d.name)
+        return true
+      })
       setDrugs(data)
 
-      const nextManufacturers = Array.from(new Set(data.map((item) => item.manufacturer).filter(Boolean))) as string[]
+      const nextManufacturers = Array.from(new Set(data.map((item) => item.manufacturer).filter((m) => m && m !== 'NON RENSEIGNÉ'))) as string[]
       const nextTherapeutic = Array.from(new Set(data.flatMap((item) => item.therapeuticClass ?? [])))
 
       setManufacturers(nextManufacturers.sort((a, b) => a.localeCompare(b)))

@@ -27,9 +27,11 @@ export const DrugListItem = memo(({ drug, style }: DrugListItemProps) => {
               </Badge>
             )}
           </div>
-          <p className="text-xs text-muted-foreground mt-0.5 truncate">
-            {[drug.strength, drug.dosageForm, drug.manufacturer].filter(Boolean).join(' · ')}
-          </p>
+          {drug.manufacturer && drug.manufacturer !== 'NON RENSEIGNÉ' && (
+            <p className="text-xs text-muted-foreground mt-0.5 truncate">
+              {drug.manufacturer}
+            </p>
+          )}
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0" />
       </Link>
