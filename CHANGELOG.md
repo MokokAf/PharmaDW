@@ -1,6 +1,79 @@
-# PharmaDW — Changelog
+# DwaIA — Changelog
 
 Ce fichier centralise toutes les modifications du projet. **Tout agent (Claude, Replit, Codex, humain) doit mettre a jour ce fichier apres chaque session de travail.**
+
+---
+
+## 2026-02-21 — Brand Identity Reskin + Audit SEO/Perf + Fixes
+
+### Brand Identity Reskin (PharmaDW → DwaIA)
+- Palette : Deep Intelligence Teal `#0F3D3E`, Surgical Mint `#5ED3C6`, Signal Orange `#FF6B3D`
+- Font : Inter → Manrope (next/font/google)
+- Logo : `Dwa<IA>` avec accent orange sur "IA" (Header, Footer, Sidebar)
+- Hero copy : "L'intelligence pharmaceutique du Maroc" / "Analysez. Verifiez. Decidez avec precision."
+- Bouton CTA : nouveau variant `accent` (orange) dans button.tsx (cva)
+- Couleurs decoratives : remplacement emerald/blue/violet hardcodes → tokens primary/secondary/accent
+  - EspacePharmaciensClient.tsx : 6 feature cards
+  - PharmacistDashboard.tsx : 3 quick action cards
+- PWA : manifest.json + site.webmanifest (name → DwaIA, theme_color → #0F3D3E)
+- Icons SVG : gradient vert → deep teal (apple-touch-icon, icon-192, icon-512)
+- OG image : gradient teal, copy DwaIA, domaine dwa-ia-maroc.com
+- SEO : lib/seo.ts SITE_NAME → DwaIA, SITE_PRIMARY_COLOR → #0F3D3E
+
+### Fix affichage liste medicaments
+- react-window ITEM_HEIGHT : 64 → 76px (overflow Manrope)
+- overflow-hidden + h-full sur DrugListItem container
+- min-w-0 sur flex wrapper nom+badge pour truncation fiable
+- Suppression metadata redondante (strength/dosageForm deja dans drug.name)
+  → Affichage uniquement du fabricant en sous-titre
+- Filtrage "NON RENSIGNE" (masque dans l'affichage et les filtres)
+- Deduplication par nom (745 doublons dans 5436 entrees)
+
+### Audit SEO/Perf "Blitz" — Score 68 → 82/100
+
+#### P0 Performance (implementes)
+- `generateStaticParams` : 4430+ pages medicaments pre-rendues en HTML statique (SSG)
+  - Avant : ISR on-demand, lecture 5.1 MB JSON a chaque requete
+  - Apres : HTML statique au build, TTFB instantane
+- `optimizePackageImports` : Radix UI (10 packages), recharts, date-fns
+  - Avant : seul lucide-react optimise (chunk 172 KB non tree-shake)
+  - Apres : tree-shaking complet des 12 libs
+- SSR 30 premiers medicaments sur `/medicaments`
+  - Avant : 100% CSR, Googlebot voyait un skeleton vide
+  - Apres : 30 liens reels dans le HTML source (sr-only)
+
+#### P1 SEO Structured Data (implementes)
+- BreadcrumbList JSON-LD sur chaque `/medicaments/[slug]`
+  (Accueil > Medicaments > Nom du medicament)
+- Organization + WebSite JSON-LD dans root layout
+  - Knowledge Graph eligibility
+  - Sitelinks Searchbox (`?search={query}`)
+- Fix branding : "PharmaDW" → "DwaIA" dans buildDescription()
+
+#### Diagnostique (non implemente, a faire)
+- P1 : Pages pharmacies individuelles `/pharmacies/[id]` + LocalBusiness schema (+292 pages)
+- P2 : Schema Pharmacy sur pharmacies de garde (rich snippets maps)
+- P3 : Architecture remboursement CNSS/CNOPS (Featured Snippets prix)
+- P3 : Extension navigateur Chrome (retention pharmaciens)
+
+### Fichiers principaux modifies
+- `app/globals.css` — palette couleurs HSL
+- `app/layout.tsx` — Manrope, Organization+WebSite JSON-LD
+- `app/medicaments/page.tsx` — SSR 30 premiers drugs
+- `app/medicaments/[slug]/page.tsx` — generateStaticParams, BreadcrumbList
+- `app/opengraph-image.tsx` — gradient teal, copy DwaIA
+- `components/ui/button.tsx` — variant accent
+- `components/Header.tsx`, `Footer.tsx`, `PharmacistSidebar.tsx` — logo Dwa<IA>
+- `components/HeroSection.tsx`, `DwaIASection.tsx` — copy + CTA accent
+- `components/DrugListItem.tsx` — metadata simplifiee
+- `components/VirtualizedDrugList.tsx` — ITEM_HEIGHT 76
+- `app/medicaments/MedicamentsContent.tsx` — dedup + filtre NON RENSIGNE
+- `app/espace-pharmaciens/EspacePharmaciensClient.tsx` — feature card tokens
+- `components/dashboard/PharmacistDashboard.tsx` — quick action tokens
+- `next.config.js` — optimizePackageImports etendu
+- `lib/seo.ts` — DwaIA branding
+- `public/manifest.json`, `public/site.webmanifest` — DwaIA, #0F3D3E
+- `public/icons/*.svg` — gradient teal
 
 ---
 
