@@ -17,10 +17,10 @@ concurrency:
 jobs:
   update-medicaments:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 150
     env:
-      MEDICAMENT_REQUEST_DELAY: "0.35"
-      MEDICAMENT_REQUEST_JITTER: "0.08"
+      MEDICAMENT_REQUEST_DELAY: "0.25"
+      MEDICAMENT_REQUEST_JITTER: "0.05"
 
     steps:
       - name: Checkout
