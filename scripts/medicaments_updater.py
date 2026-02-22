@@ -19,12 +19,14 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import json
 import logging
 import os
 import random
 import re
+import threading
 import time
 import unicodedata
 import xml.etree.ElementTree as ET
@@ -53,6 +55,7 @@ MISSING_GRACE_RUNS = 3
 ABSENT_GRACE_RUNS = 7
 DEFAULT_REQUEST_DELAY = 0.35
 DEFAULT_REQUEST_JITTER = 0.08
+DEFAULT_CONCURRENCY = 1
 
 logger = logging.getLogger("medicaments_updater")
 
@@ -361,11 +364,38 @@ def request_sleep_delay(base_delay: float, jitter: float) -> float:
     return max(0.0, base_delay + random.uniform(-jitter, jitter))
 
 
+class RateLimiter:
+    """Thread-safe rate limiter ensuring minimum spacing between request starts."""
+
+    def __init__(self, min_interval: float, jitter: float = 0.0):
+        self._min_interval = min_interval
+        self._jitter = jitter
+        self._lock = threading.Lock()
+        self._next_allowed = 0.0
+
+    def wait(self) -> None:
+        with self._lock:
+            now = time.monotonic()
+            wait_until = self._next_allowed
+            interval = request_sleep_delay(self._min_interval, self._jitter)
+            self._next_allowed = max(now, wait_until) + interval
+
+        delay = wait_until - time.monotonic()
+        if delay > 0:
+            time.sleep(delay)
+
+
 def fetch_and_parse_medicament(
-    entry: SitemapEntry, request_delay: float, request_jitter: float
+    entry: SitemapEntry,
+    rate_limiter: Optional[RateLimiter] = None,
+    request_delay: float = 0.0,
+    request_jitter: float = 0.0,
 ) -> Tuple[str, str, Optional[Dict[str, Any]], str]:
     """Returns (slug, status, record, message). status in {ok,missing,error}"""
-    time.sleep(request_sleep_delay(request_delay, request_jitter))
+    if rate_limiter is not None:
+        rate_limiter.wait()
+    else:
+        time.sleep(request_sleep_delay(request_delay, request_jitter))
     try:
         resp = get_with_retry(entry.url)
     except Exception as exc:  # noqa: BLE001
@@ -423,6 +453,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
         default=env_float("MEDICAMENT_REQUEST_JITTER", DEFAULT_REQUEST_JITTER),
         help="Random jitter in seconds (+/-) for request delay (default from MEDICAMENT_REQUEST_JITTER or 0.08)",
     )
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=int(os.getenv("MEDICAMENT_CONCURRENCY", str(DEFAULT_CONCURRENCY))),
+        help="Number of parallel fetch workers (default from MEDICAMENT_CONCURRENCY or 1)",
+    )
     parser.add_argument("--verbose", action="store_true", help="Verbose logs")
     return parser
 
@@ -436,9 +472,10 @@ def main() -> int:
         return 1
 
     logger.info(
-        "Rate limit configured: delay=%.3fs jitter=%.3fs",
+        "Rate limit configured: delay=%.3fs jitter=%.3fs concurrency=%d",
         args.request_delay,
         args.request_jitter,
+        max(1, args.concurrency),
     )
 
     if args.limit and args.limit > 0 and not args.dry_run:
@@ -557,12 +594,11 @@ def main() -> int:
     fetched_missing = 0
     fetched_error = 0
 
-    for idx, entry in enumerate(to_fetch, start=1):
-        slug, status, record, message = fetch_and_parse_medicament(
-            entry,
-            request_delay=args.request_delay,
-            request_jitter=args.request_jitter,
-        )
+    def _process_fetch_result(
+        entry: SitemapEntry, slug: str, status: str,
+        record: Optional[Dict[str, Any]], message: str,
+    ) -> None:
+        nonlocal fetched_ok, fetched_missing, fetched_error
         prev_state = state_records.get(slug, {})
         existing = existing_first(slug)
 
@@ -615,8 +651,38 @@ def main() -> int:
                 lastMessage=message,
             )
 
-        if idx % 100 == 0:
-            logger.info("Progress: fetched %d/%d", idx, len(to_fetch))
+    concurrency = max(1, args.concurrency)
+    rate_limiter = RateLimiter(args.request_delay, args.request_jitter)
+
+    if concurrency <= 1:
+        # Sequential mode (backward compatible)
+        for idx, entry in enumerate(to_fetch, start=1):
+            slug, status, record, message = fetch_and_parse_medicament(
+                entry, rate_limiter=rate_limiter,
+            )
+            _process_fetch_result(entry, slug, status, record, message)
+            if idx % 100 == 0:
+                logger.info("Progress: fetched %d/%d", idx, len(to_fetch))
+    else:
+        # Parallel mode — overlaps network I/O across threads while
+        # the RateLimiter guarantees min spacing between request starts.
+        logger.info("Parallel fetching enabled: %d workers", concurrency)
+        done_count = 0
+        with concurrent.futures.ThreadPoolExecutor(max_workers=concurrency) as pool:
+            future_to_entry = {
+                pool.submit(fetch_and_parse_medicament, entry, rate_limiter=rate_limiter): entry
+                for entry in to_fetch
+            }
+            for future in concurrent.futures.as_completed(future_to_entry):
+                entry = future_to_entry[future]
+                try:
+                    slug, status, record, message = future.result()
+                except Exception as exc:  # noqa: BLE001
+                    slug, status, record, message = entry.slug, "error", None, f"thread error: {exc}"
+                _process_fetch_result(entry, slug, status, record, message)
+                done_count += 1
+                if done_count % 100 == 0:
+                    logger.info("Progress: fetched %d/%d", done_count, len(to_fetch))
 
     # Handle records no longer present in sitemap (temporary sitemap/API issues)
     retained_absent = 0

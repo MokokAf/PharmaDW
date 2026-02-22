@@ -21,6 +21,7 @@ jobs:
     env:
       MEDICAMENT_REQUEST_DELAY: "0.25"
       MEDICAMENT_REQUEST_JITTER: "0.05"
+      MEDICAMENT_CONCURRENCY: "4"
 
     steps:
       - name: Checkout
