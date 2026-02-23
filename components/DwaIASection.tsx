@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Bot, MessageCircle, Lightbulb, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
+import DwaIALogo from "@/components/DwaIALogo";
 
 const features = [
   { icon: MessageCircle, text: "Détection des interactions médicamenteuses" },
@@ -20,11 +21,8 @@ const DwaIASection = () => {
           <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 space-y-5">
             {/* Header */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Bot className="h-6 w-6 text-primary" />
-              </div>
+              <DwaIALogo size="sm" />
               <div>
-                <h2 className="text-xl font-semibold text-foreground">Dwa<span className="text-accent font-bold">IA</span></h2>
                 <p className="text-sm text-muted-foreground">Assistant IA pour pharmaciens</p>
               </div>
             </div>

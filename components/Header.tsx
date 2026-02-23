@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import DwaIALogo from "@/components/DwaIALogo";
 
 const navItems = [
   { label: "Accueil", href: "/", icon: Home },
@@ -29,12 +30,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2 min-h-11 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            <div className="w-8 h-8 rounded-lg pharma-gradient flex items-center justify-center">
-              <Pill className="h-4 w-4 text-white" />
-            </div>
-            <span className="text-xl font-semibold text-foreground">
-              Dwa<span className="text-accent font-bold">IA</span>
-            </span>
+            <DwaIALogo size="md" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">

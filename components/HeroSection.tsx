@@ -6,6 +6,7 @@ import { Search, MapPin, Pill } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import DwaIALogo from "@/components/DwaIALogo";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -28,14 +29,9 @@ const HeroSection = () => {
     <section className="bg-surface">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-2xl mx-auto text-center space-y-6">
-          {/* Title */}
-          <div className="space-y-3">
-            <h1 className="text-3xl md:text-5xl font-semibold text-foreground leading-tight">
-              L&apos;intelligence pharmaceutique du Maroc
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground">
-              Analysez. V&eacute;rifiez. D&eacute;cidez avec pr&eacute;cision.
-            </p>
+          {/* Logo */}
+          <div className="flex justify-center mb-0">
+            <DwaIALogo size="lg" />
           </div>
 
           {/* Search Bar */}

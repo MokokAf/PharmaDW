@@ -9,9 +9,9 @@ import {
   ClipboardCheck,
   User,
   LogOut,
-  Bot,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import DwaIALogo from '@/components/DwaIALogo';
 
 import {
   Sidebar,
@@ -87,19 +87,7 @@ export function PharmacistSidebar({
       {/* ── Logo header ──────────────────────────────────────── */}
       <SidebarHeader className="p-4 border-b border-sidebar-border">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl pharma-gradient flex items-center justify-center shrink-0 shadow-sm shadow-primary/20">
-            <Bot className="h-4.5 w-4.5 text-white" />
-          </div>
-          {!isCollapsed && (
-            <div className="flex flex-col">
-              <span className="font-bold text-sm leading-tight">
-                Dwa<span className="text-accent font-bold">IA</span>
-              </span>
-              <span className="text-[10px] text-sidebar-foreground/50 leading-tight">
-                Espace pharmacien
-              </span>
-            </div>
-          )}
+          <DwaIALogo size="sm" showText={!isCollapsed} />
         </div>
       </SidebarHeader>
 

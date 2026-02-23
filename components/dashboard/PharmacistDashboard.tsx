@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
+import DwaIALogo from '@/components/DwaIALogo';
 
 /* ------------------------------------------------------------------ */
 /*  Quick-action cards for the dashboard home                          */
@@ -80,12 +81,7 @@ export const PharmacistDashboard: React.FC = () => {
           <div className="sticky top-0 z-10 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 px-4 py-3 md:hidden">
             <div className="flex items-center gap-3">
               <SidebarTrigger />
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg pharma-gradient flex items-center justify-center">
-                  <Pill className="h-3.5 w-3.5 text-white" />
-                </div>
-                <span className="text-sm font-semibold">DwaIA</span>
-              </div>
+              <DwaIALogo size="xs" />
             </div>
             {/* Tab toggle on mobile */}
             <div className="flex items-center bg-muted rounded-lg p-0.5">

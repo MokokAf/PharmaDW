@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, MapPin, Pill, Stethoscope } from "lucide-react";
+import { MapPin, Pill, Stethoscope } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const tabs = [
-  { label: "Accueil", href: "/", icon: Home },
+  { label: "Accueil", href: "/", icon: null },
   { label: "Pharmacies", href: "/pharmacies-de-garde", icon: MapPin },
   { label: "Médicaments", href: "/medicaments", icon: Pill },
   { label: "Espace Pro", href: "/espace-pharmaciens", icon: Stethoscope },
@@ -15,7 +16,6 @@ const tabs = [
 export default function BottomNav() {
   const pathname = usePathname();
 
-  // Hide on dashboard pages
   if (pathname.includes("/dashboard")) return null;
 
   return (
@@ -34,7 +34,11 @@ export default function BottomNav() {
                 isActive ? "text-primary" : "text-muted-foreground"
               )}
             >
-              <tab.icon className={cn("h-5 w-5", isActive && "stroke-[2.5]")} />
+              {tab.icon ? (
+                <tab.icon className={cn("h-5 w-5", isActive && "stroke-[2.5]")} />
+              ) : (
+                <Image src="/logo-icon.png" alt="Accueil" width={24} height={24} className={cn("w-6 h-6 object-contain transition-opacity", isActive ? "opacity-100" : "opacity-40")} />
+              )}
               <span className={cn(
                 "text-[11px] leading-tight",
                 isActive ? "font-semibold" : "font-medium"

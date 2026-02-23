@@ -29,6 +29,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
+import DwaIALogo from '@/components/DwaIALogo'
 
 export type ChatBotHandle = {
   focusInteractions: () => void
@@ -879,7 +880,7 @@ export const ChatBot = forwardRef<ChatBotHandle>((_, ref) => {
           <Bot className="h-6 w-6 text-white" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-foreground">Assistant DwaIA</h1>
+          <h1 className="text-xl font-bold text-foreground flex items-center gap-2">Assistant <DwaIALogo size="xs" showText={true} className="inline-flex" /></h1>
           <p className="text-xs text-muted-foreground">Interactions medicamenteuses en temps reel</p>
         </div>
         <div className="ml-auto">
