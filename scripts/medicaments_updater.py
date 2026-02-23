@@ -158,6 +158,355 @@ def split_values(value: str) -> List[str]:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Therapeutic-class normalisation
+# ---------------------------------------------------------------------------
+
+def _tc_strip_accents(s: str) -> str:
+    """Remove combining diacritics for fuzzy matching."""
+    nfkd = unicodedata.normalize("NFD", s)
+    return "".join(ch for ch in nfkd if unicodedata.category(ch) != "Mn")
+
+
+# Accent-stripped word → properly accented word (for French pharma terms)
+_ACCENT_FIX: Dict[str, str] = {
+    "antidepresseur": "antidépresseur",
+    "antidepresseurs": "antidépresseurs",
+    "antiemetique": "antiémétique",
+    "antiemetiques": "antiémétiques",
+    "antianemique": "antianémique",
+    "antiasthenique": "antiasthénique",
+    "antibacterien": "antibactérien",
+    "antibacteriens": "antibactériens",
+    "antiagregant": "antiagrégant",
+    "antiacneique": "antiacnéique",
+    "periphérique": "périphérique",
+    "peripherique": "périphérique",
+    "opioide": "opioïde",
+    "opioides": "opioïdes",
+    "steroidien": "stéroïdien",
+    "steroidiens": "stéroïdiens",
+    "steroide": "stéroïde",
+    "steroides": "stéroïdes",
+    "steroidienne": "stéroïdienne",
+    "corticosteroide": "corticostéroïde",
+    "corticosteroides": "corticostéroïdes",
+    "antipyretique": "antipyrétique",
+    "antipyretiques": "antipyrétiques",
+    "analgesique": "analgésique",
+    "analgesiques": "analgésiques",
+    "antiulcereux": "antiulcéreux",
+    "antispasmodique": "antispasmodique",
+    "antihypertenseur": "antihypertenseur",
+    "antiparasitaire": "antiparasitaire",
+    "antineoplasique": "antinéoplasique",
+    "antineoplasiques": "antinéoplasiques",
+    "antiepileptique": "antiépileptique",
+    "antiepileptiques": "antiépileptiques",
+    "hypoglycemiant": "hypoglycémiant",
+    "hypolipidemiant": "hypolipidémiant",
+    "hypolipemiant": "hypolipémiant",
+    "hypolipemiants": "hypolipémiants",
+    "diuretique": "diurétique",
+    "diuretiques": "diurétiques",
+    "antitetanique": "antitétanique",
+    "cephalosporine": "céphalosporine",
+    "cephalosporines": "céphalosporines",
+    "generation": "génération",
+    "adrenergiques": "adrénergiques",
+    "dopaminergiques": "dopaminergiques",
+    "homeopathique": "homéopathique",
+    "homeopathiques": "homéopathiques",
+    "betabloquant": "bêtabloquant",
+    "betabloquants": "bêtabloquants",
+    "beta-bloquant": "bêta-bloquant",
+    "beta-bloquants": "bêta-bloquants",
+    "complement": "complément",
+    "corticoide": "corticoïde",
+    "corticoides": "corticoïdes",
+    "thyroidienne": "thyroïdienne",
+    "thyroidiennes": "thyroïdiennes",
+    "phosphodiesterase": "phosphodiestérase",
+    "mineraux": "minéraux",
+    "mineral": "minéral",
+    "oligoelements": "oligoéléments",
+    "oligoelement": "oligoélément",
+    "penicilline": "pénicilline",
+    "penicillines": "pénicillines",
+    "erectile": "érectile",
+    "antineoplasique": "antinéoplasique",
+    "antineoplasiques": "antinéoplasiques",
+}
+
+
+def _fix_accents(text: str) -> str:
+    """Fix missing/wrong accents in French pharmaceutical terms."""
+    words = text.split()
+    fixed = []
+    for w in words:
+        # Separate trailing punctuation
+        trail = ""
+        core = w
+        while core and core[-1] in ".,;:)":
+            trail = core[-1] + trail
+            core = core[:-1]
+        if not core:
+            fixed.append(w)
+            continue
+        stripped = _tc_strip_accents(core.lower())
+        if stripped in _ACCENT_FIX:
+            target = _ACCENT_FIX[stripped]
+            if core[0].isupper():
+                target = target[0].upper() + target[1:]
+            if core == core.upper() and len(core) > 3:
+                target = target.upper()
+            fixed.append(target + trail)
+        else:
+            fixed.append(w)
+    return " ".join(fixed)
+
+
+def _normalize_case(text: str) -> str:
+    """Normalize case: sentence case, preserving acronyms."""
+    if not text:
+        return text
+    # Known acronyms to preserve
+    acronyms = {"AINS", "IPP", "IEC", "ISRS", "IRSNa", "IRDN", "GnRH",
+                "DPP-4", "ECA", "IRSN", "ISRSN", "PDE5", "ADN", "HMG",
+                "CoA", "MAO", "ARA", "II", "III", "IV", "XA", "Xa",
+                "H1", "H2", "B1", "B2", "B6", "B9", "B12", "D3", "K",
+                "SGLT2", "DHA", "EPA", "RGO"}
+
+    words = text.split()
+    result = []
+    for i, w in enumerate(words):
+        # Keep acronyms as-is
+        if w in acronyms or w.rstrip(".,;:)") in acronyms:
+            result.append(w)
+        # Keep words with intentional mid-caps (e.g. "CoA")
+        elif any(c.isupper() for c in w[1:]) and not w.isupper():
+            result.append(w)
+        # First word: capitalize
+        elif i == 0:
+            result.append(w[0].upper() + w[1:].lower() if len(w) > 1 else w.upper())
+        # ALL-CAPS word (not acronym): lowercase
+        elif w == w.upper() and len(w) > 4:
+            result.append(w.lower())
+        # Short all-caps that aren't known acronyms: lowercase unless ≤2 chars
+        elif w == w.upper() and len(w) <= 4 and len(w) > 2:
+            result.append(w.lower())
+        else:
+            result.append(w.lower() if w[0].isupper() and i > 0 and len(w) > 1 else w)
+
+    return " ".join(result)
+
+
+# Explicit typo → correction map (lowercased keys, preferred-case values)
+_TYPO_MAP: Dict[str, str] = {
+    "abtibactérien": "Antibactérien",
+    "ais": "AINS",
+    "ant-inflammatoire non stéroïdien": "Anti-inflammatoire non stéroïdien",
+    "ant-inflammatoire stéroïdien": "Anti-inflammatoire stéroïdien",
+    "antagioniste": "Antagoniste",
+    "anti-inflammatoire non stroïdien": "Anti-inflammatoire non stéroïdien",
+    "anti-inflammatoire non stéroidien": "Anti-inflammatoire non stéroïdien",
+    "anti-inflammatoire stéroidien": "Anti-inflammatoire stéroïdien",
+    "anti-inflammatoires non stéroïdes": "Anti-inflammatoires non stéroïdiens",
+    "antimycosique a usage systemiqu": "Antimycosique à usage systémique",
+    "antaengoreux": "Antiangoreux",
+    "anytipyrétique": "antipyrétique",
+    "antbiotique": "Antibiotique",
+    "macropodes": "macrolides",
+    "fluoquinolone": "fluoroquinolone",
+    "fluoquinolones": "fluoroquinolones",
+    "plaguettaire": "plaquettaire",
+    "antihistamique": "Antihistaminique",
+    "musculoptrope": "musculotrope",
+    "musculotrpe": "musculotrope",
+    "anasthésique": "Anesthésique",
+    "anxolytique": "Anxiolytique",
+    "hynotique": "Hypnotique",
+    "hypolémiant": "Hypolipémiant",
+    "neuroleptiaue": "Neuroleptique",
+    "neuroléptique": "Neuroleptique",
+    "corticostroïde": "Corticostéroïde",
+    "glucostéroïdes": "Glucocorticoïdes",
+    "biphosphonate": "Bisphosphonate",
+    "immunosuppreseur": "Immunosuppresseur",
+    "immunosuppreseurs": "Immunosuppresseurs",
+    "antidiabètique": "Antidiabétique",
+    "mycolytique": "Mucolytique",
+    "votamines": "Vitamines",
+    "chelateur": "Chélateur",
+    "hypolipidemiant": "Hypolipémiant",
+    "cytologique": "cytotoxique",
+    "occulaire": "oculaire",
+    "veinotoniqueique": "veinotonique",
+    "duirétique": "diurétique",
+    "complémént": "Complément",
+    "allimentaire": "alimentaire",
+    "hypolémiants": "hypolipémiants",
+    "probiotics": "Probiotiques",
+    "emoliant": "Émollient",
+    "emolients": "Émollients",
+    "analoque": "analogue",
+    "antidiarrheique": "Antidiarrhéique",
+    "acétylchlinestérase": "acétylcholinestérase",
+    "sooscié": "associé",
+    "systèmique": "systémique",
+    "phosphodiésterase": "phosphodiestérase",
+    "eréctile": "érectile",
+    "hypertenseurs": "antihypertenseurs",
+    "facteur xa": "facteur Xa",
+}
+
+# Regex patterns that mark a value as junk (not a real therapeutic class)
+_JUNK_PATTERNS: List[re.Pattern] = [  # type: ignore[type-arg]
+    re.compile(r"^\d{5,}$"),                          # barcodes
+    re.compile(r"^[A-Z]\d{2}[A-Z]{0,2}\d{0,2}$"),    # ATC codes (e.g. A02BC05)
+    re.compile(r"Statut\s*:", re.IGNORECASE),          # "Statut :" appended
+    re.compile(r"\b(?:cpr|caps|pell)\s+\d", re.IGNORECASE),  # dosage forms
+    re.compile(r"\bDIOVAN\b|\bREVATIO\b|\bDEMETRIN\b|\bHYCAMTIN\b"),  # brand names
+    re.compile(r"\bUROMI\b"),                          # product name
+    re.compile(r"^(?:CalmTu|ReConnect|Vitadigest)\b"),  # product descriptions
+    re.compile(r"^Ce complément alimentaire", re.IGNORECASE),
+    re.compile(r"^Agalsidase bêta \(produite", re.IGNORECASE),
+    re.compile(r"est un cytostatique", re.IGNORECASE),
+    re.compile(r"^Traitement des infections suivantes", re.IGNORECASE),
+    re.compile(r"\bATC\s+[A-Z]\d{2}", re.IGNORECASE),  # inline ATC refs
+    re.compile(r"\bliste\s+\d", re.IGNORECASE),        # "liste 2" appended
+    re.compile(r"\bDCI\s*:", re.IGNORECASE),            # DCI refs
+    re.compile(r"^flacon compte goutte", re.IGNORECASE),
+    re.compile(r"^20 ML$", re.IGNORECASE),
+    re.compile(r"^ÉDICAMENTS?\b"),                      # truncated MÉDICAMENTS
+]
+
+# Fragment patterns: values from incorrect splitting that aren't real classes
+_FRAGMENT_PATTERNS: List[re.Pattern] = [  # type: ignore[type-arg]
+    re.compile(r"^(?:cystite|pyélonéphrite|otite moyenne aiguë|pneumonie aiguë communautaire)$", re.IGNORECASE),
+    re.compile(r"^(?:infections de la peau|infections des os|morsures animales)$", re.IGNORECASE),
+    re.compile(r"^(?:abcès dentaire|exacerbations aiguës|sinusite bactérienne)", re.IGNORECASE),
+    re.compile(r"^en particulier (?:ostéomyélite|cellulite)", re.IGNORECASE),
+    re.compile(r"^les enfants", re.IGNORECASE),
+    re.compile(r"ayant un effet bénéfique", re.IGNORECASE),
+    re.compile(r"^(?:CD3\)|CDK6|D3\)|EPA\)|III|dose réduite\))$"),
+    re.compile(r"^(?:alpha|puissant|monovalent|recombinant|sélectif|non fractionnée|non ionique|prolongée\.?)$", re.IGNORECASE),
+    re.compile(r"^(?:apparentés|associations\.?\s*(?:IEC)?|autres combinaisons|incluant les associations)$", re.IGNORECASE),
+    re.compile(r"^(?:de basse osmolarité|des propriétés vasoconstrictrices|à élimination rénale)$", re.IGNORECASE),
+    re.compile(r"^(?:la coqueluche|la diphtérie|la poliomyélite|la vitamine|le sommeil|le reflux)$", re.IGNORECASE),
+    re.compile(r"^de (?:la noradrénaline|l'hypothalamus|Antagoniste|bronchodilatateur)$", re.IGNORECASE),
+    re.compile(r"^(?:des articulations|des tissus mous|des fissures anales|scabicides inclus)$", re.IGNORECASE),
+    re.compile(r"^(?:non stéroïdiens|immunomodulateurs\)|anti-IL-23\)|diurétique \))$", re.IGNORECASE),
+    re.compile(r"^(?:LE REFLUX GASTRO|DES FISSURES ANALES|SCABICIDES INCLUS)", re.IGNORECASE),
+    re.compile(r"^(?:rhCG|rhFSH|rhLH|époétine alfa|époétine bêta|insuline glargine|lixisénatide|somatropine)$", re.IGNORECASE),
+]
+
+# Active ingredients misclassified as therapeutic classes
+_NOT_A_CLASS = {
+    "fer", "iode", "zinc", "sélénium", "lévodopa", "métformine",
+    "repaglinide", "prégabaline", "cyclophosphamide", "follitropine alfa",
+}
+
+
+def _apply_typo_fixes(text: str) -> str:
+    """Apply word-level typo corrections."""
+    lower = text.lower()
+    # Try full-string match first
+    if lower in _TYPO_MAP:
+        return _TYPO_MAP[lower]
+    # Try word-level replacements
+    result = text
+    for typo, fix in _TYPO_MAP.items():
+        pattern = re.compile(re.escape(typo), re.IGNORECASE)
+        if pattern.search(result):
+            result = pattern.sub(fix, result)
+    return result
+
+
+def _is_junk(value: str) -> bool:
+    """Check if a value should be discarded entirely."""
+    stripped = value.strip()
+    if not stripped or len(stripped) < 2:
+        return True
+    if len(stripped) > 120:
+        return True
+    if stripped.lower() in _NOT_A_CLASS:
+        return True
+    for pat in _JUNK_PATTERNS:
+        if pat.search(stripped):
+            return True
+    for pat in _FRAGMENT_PATTERNS:
+        if pat.search(stripped):
+            return True
+    return False
+
+
+def normalize_therapeutic_classes(values: List[str]) -> List[str]:
+    """Normalize a list of therapeutic class strings.
+
+    Applies: junk removal, typo fixes, punctuation cleanup,
+    whitespace normalization, case normalization, deduplication.
+    """
+    result: List[str] = []
+    seen: set = set()
+
+    for raw in values:
+        v = raw.strip()
+        if not v:
+            continue
+
+        # 1. Discard junk
+        if _is_junk(v):
+            continue
+
+        # 2. Fix concatenation errors (missing spaces)
+        v = re.sub(r"([a-zé])([A-Z])", r"\1, \2", v)  # "AntiacideAntiulcéreux"
+        v = re.sub(r"Anti-inAnti-", "Anti-", v)  # stuttered prefix
+
+        # 3. Strip trailing punctuation
+        v = re.sub(r"[.,;:]+\s*$", "", v)
+
+        # 4. Fix double spaces
+        v = re.sub(r"\s{2,}", " ", v).strip()
+
+        # 5. Fix unbalanced parentheses (missing closing)
+        open_count = v.count("(")
+        close_count = v.count(")")
+        if open_count > close_count:
+            v += ")" * (open_count - close_count)
+
+        # 6. Apply typo corrections
+        v = _apply_typo_fixes(v)
+
+        # 7. Fix accents (missing/wrong diacritics)
+        v = _fix_accents(v)
+
+        # 8. Case normalization
+        v = _normalize_case(v)
+
+        # 9. Ensure first letter is uppercase
+        if v and v[0].islower():
+            v = v[0].upper() + v[1:]
+
+        # 10. Second junk check after transformations (e.g. concatenation fixes)
+        if _is_junk(v):
+            continue
+
+        # 11. Deduplicate (case-insensitive, accent-insensitive)
+        key = _tc_strip_accents(v.lower().strip())
+        # Also strip trailing 's' for dedup
+        dedup_key = key.rstrip("s") if len(key) > 3 else key
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+        seen.add(key)
+
+        if v.strip():
+            result.append(v.strip())
+
+    return result
+
+
 def parse_fr_date(raw: str) -> Optional[str]:
     # examples: "5 novembre 2024"
     raw_norm = raw.strip().lower()
@@ -306,7 +655,9 @@ def map_details_to_record(slug: str, url: str, name: str, details: Dict[str, str
     if not active_ingredients:
         active_ingredients = [name.split(",", 1)[0].strip()]
 
-    therapeutic = split_values(details.get("classe therapeutique", ""))
+    therapeutic = normalize_therapeutic_classes(
+        split_values(details.get("classe therapeutique", ""))
+    )
     status = details.get("statut")
     atc_code = details.get("code atc")
     table = details.get("tableau")
