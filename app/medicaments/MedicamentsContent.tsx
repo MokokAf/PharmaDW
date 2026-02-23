@@ -7,6 +7,58 @@ import { AlertTriangle, PackageSearch } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { MedDrugListItem, DrugFilters } from '@/types/medication'
 
+/**
+ * Clean up therapeutic class list for dropdown display:
+ * - Remove barcode numbers (all-digit strings)
+ * - Remove overly long entries (descriptions, not real class names)
+ * - Case-insensitive dedup (keep most frequent variant)
+ * - Merge singular/plural near-duplicates (trailing 's')
+ */
+function deduplicateClasses(allClasses: string[]): string[] {
+  const clean = allClasses.filter(
+    (c) => c && !/^\d{5,}$/.test(c.trim()) && c.trim().length <= 80
+  )
+
+  // Group by lowercase → count each exact variant
+  const groups = new Map<string, Map<string, number>>()
+  for (const c of clean) {
+    const key = c.toLowerCase().trim()
+    if (!groups.has(key)) groups.set(key, new Map())
+    const m = groups.get(key)!
+    m.set(c, (m.get(c) ?? 0) + 1)
+  }
+
+  // For each group pick the most frequent casing
+  const best = new Map<string, { label: string; total: number }>()
+  groups.forEach((variants, key) => {
+    let topLabel = ''
+    let topCount = 0
+    let total = 0
+    variants.forEach((count, v) => {
+      total += count
+      if (count > topCount) { topLabel = v; topCount = count }
+    })
+    best.set(key, { label: topLabel, total })
+  })
+
+  // Merge singular/plural: "vaccins" + "vaccin" → keep the one with more mentions
+  const dropped = new Set<string>()
+  Array.from(best.keys()).forEach((key) => {
+    if (dropped.has(key)) return
+    const singular = key.endsWith('s') ? key.slice(0, -1) : null
+    if (singular && best.has(singular) && !dropped.has(singular)) {
+      const pTotal = best.get(key)!.total
+      const sTotal = best.get(singular)!.total
+      dropped.add(pTotal >= sTotal ? singular : key)
+    }
+  })
+
+  return Array.from(best.entries())
+    .filter(([key]) => !dropped.has(key))
+    .map(([, { label }]) => label)
+    .sort((a, b) => a.localeCompare(b, 'fr'))
+}
+
 const VirtualizedDrugList = dynamic(
   () => import('@/components/VirtualizedDrugList').then((module) => module.VirtualizedDrugList),
   { ssr: false }
@@ -73,10 +125,10 @@ export default function MedicamentsContent() {
       setDrugs(data)
 
       const nextManufacturers = Array.from(new Set(data.map((item) => item.manufacturer).filter((m) => m && m !== 'NON RENSEIGNÉ'))) as string[]
-      const nextTherapeutic = Array.from(new Set(data.flatMap((item) => item.therapeuticClass ?? [])))
+      const rawClasses = data.flatMap((item) => item.therapeuticClass ?? [])
 
       setManufacturers(nextManufacturers.sort((a, b) => a.localeCompare(b)))
-      setTherapeuticClasses(nextTherapeutic.sort((a, b) => a.localeCompare(b)))
+      setTherapeuticClasses(deduplicateClasses(rawClasses))
     } catch (loadError) {
       const message =
         loadError instanceof Error
@@ -120,8 +172,13 @@ export default function MedicamentsContent() {
         return false
       }
 
-      if (filters.therapeuticClass && !(item.therapeuticClass ?? []).includes(filters.therapeuticClass)) {
-        return false
+      if (filters.therapeuticClass) {
+        const filterKey = filters.therapeuticClass.toLowerCase().replace(/s$/, '')
+        const match = (item.therapeuticClass ?? []).some((tc) => {
+          const tcKey = tc.toLowerCase().replace(/s$/, '')
+          return tcKey === filterKey
+        })
+        if (!match) return false
       }
 
       return true
