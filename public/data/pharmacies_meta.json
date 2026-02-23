@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-23T19:16:09.604476+00:00",
-  "total_pharmacies": 265,
+  "scraped_at": "2026-02-23T19:28:02.480260+00:00",
+  "total_pharmacies": 266,
   "cities_count": 53,
   "cities": [
     "Agadir",
@@ -71,7 +71,7 @@
     },
     "guidepharmacies.ma": {
       "ok": true,
-      "count": 34,
+      "count": 35,
       "error": null
     },
     "med.ma": {
@@ -85,6 +85,6 @@
       "error": null
     }
   },
-  "previous_total": 322,
-  "delta": -57
+  "previous_total": 265,
+  "delta": 1
 }
