@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-02-23T08:05:48.685177+00:00",
-  "total_pharmacies": 322,
-  "cities_count": 58,
+  "scraped_at": "2026-02-23T19:16:09.604476+00:00",
+  "total_pharmacies": 265,
+  "cities_count": 53,
   "cities": [
     "Agadir",
     "Ait Melloul",
@@ -13,15 +13,12 @@
     "Berkane",
     "Berrechid",
     "Biougra",
-    "Boujad",
     "Béni Mellal",
     "Casablanca",
     "Chefchaouen",
     "El Harhoura",
-    "El Jadida",
     "El Kelaa Des Sraghna",
     "Errachidia",
-    "Essaouira",
     "Fès",
     "Guelmim",
     "Guercif",
@@ -33,8 +30,6 @@
     "Larache",
     "Marrakech",
     "Mechraa Bel Ksiri",
-    "Meknès",
-    "Mrirt",
     "Nador",
     "Ouarzazate",
     "Ouazzane",
@@ -43,6 +38,7 @@
     "Rabat",
     "Safi",
     "Salé",
+    "Sefrou",
     "Selouane",
     "Sidi Bennour",
     "Sidi Kacem",
@@ -58,14 +54,13 @@
     "Tiznit",
     "Témara",
     "Tétouan",
-    "Youssoufia",
     "Zagora",
     "Zghanghan"
   ],
   "sources_used": [
     "infopoint.ma",
-    "med.ma",
     "guidepharmacies.ma",
+    "med.ma",
     "annuaire-gratuit.ma"
   ],
   "sources_status": {
@@ -74,22 +69,22 @@
       "count": 8,
       "error": null
     },
+    "guidepharmacies.ma": {
+      "ok": true,
+      "count": 34,
+      "error": null
+    },
     "med.ma": {
       "ok": true,
       "count": 0,
       "error": null
     },
-    "guidepharmacies.ma": {
-      "ok": true,
-      "count": 18,
-      "error": null
-    },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 315,
+      "count": 266,
       "error": null
     }
   },
-  "previous_total": 318,
-  "delta": 4
+  "previous_total": 322,
+  "delta": -57
 }
