@@ -94,11 +94,24 @@ export default function PharmaciesDeGardeContent() {
   }, [pharmacies])
 
   useEffect(() => {
+    const GITHUB_DATA =
+      'https://raw.githubusercontent.com/MokokAf/PharmaDW/main/public/data'
+
+    async function fetchWithFallback(file: string): Promise<Response> {
+      try {
+        const resp = await fetch(`${GITHUB_DATA}/${file}`)
+        if (resp.ok) return resp
+      } catch {
+        /* GitHub unavailable — fall back to local static copy */
+      }
+      return fetch(`/data/${file}`)
+    }
+
     async function fetchData() {
       try {
         const [phRes, metaRes] = await Promise.all([
-          fetch('/data/pharmacies.json'),
-          fetch('/data/pharmacies_meta.json').catch(() => null),
+          fetchWithFallback('pharmacies.json'),
+          fetchWithFallback('pharmacies_meta.json').catch(() => null),
         ])
         if (!phRes.ok) {
           throw new Error('Erreur de chargement des donnees.')
