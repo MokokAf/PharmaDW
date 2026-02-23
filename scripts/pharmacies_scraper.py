@@ -1,10 +1,13 @@
 """Multi-source pharmacy scraper with cross-validation.
 
 Combines data from several Moroccan pharmacy directories:
-  1. annuaire-gratuit.ma  — national coverage
-  2. guidepharmacies.ma   — Rabat, Salé, Kénitra, Témara
-  3. infopoint.ma         — Tanger, Casablanca
-  4. med.ma               — Marrakech
+  1. lematin.ma            — Casablanca, Marrakech, Fès, Agadir, Oujda (primary)
+  2. guidepharmacies.ma    — Rabat, Salé, Kénitra, Témara (primary)
+  3. infopoint.ma          — Tanger (primary)
+  4. annuaire-gratuit.ma   — secondary fallback for remaining cities
+
+Source priority: lematin / guidepharmacies / infopoint override annuaire-gratuit.
+Cities served only by annuaire-gratuit are kept if they have >= 3 pharmacies.
 
 Outputs:
   public/data/pharmacies.json      — pharmacy records
@@ -521,89 +524,161 @@ def scrape_infopoint() -> Tuple[List[Pharmacy], dict]:
 
 
 # ---------------------------------------------------------------------------
-# Source 4: med.ma (Marrakech)
+# Source 4: lematin.ma (Casablanca, Marrakech, Fès, Agadir, Oujda)
 # ---------------------------------------------------------------------------
-MEDMA_BASE = "https://www.med.ma/pharmacie/garde-nuit/marrakech"
+LEMATIN_BASE = "https://lematin.ma"
+LEMATIN_CITIES = {
+    "Casablanca": "casablanca",
+    "Marrakech": "marrakech",
+    "Fès": "fes",
+    "Agadir": "agadir",
+    "Oujda": "oujda",
+}
 
 
-def scrape_medma() -> Tuple[List[Pharmacy], dict]:
-    source_name = "med.ma"
+def scrape_lematin() -> Tuple[List[Pharmacy], dict]:
+    """Scrape Le Matin pharmacy duty pages (jour + nuit shifts)."""
+    source_name = "lematin.ma"
     results: List[Pharmacy] = []
-    seen: set = set()
     status = {"ok": True, "count": 0, "error": None}
 
     try:
-        for i in range(5):
-            page_url = f"{MEDMA_BASE}/{i}"
+        for city, slug in LEMATIN_CITIES.items():
             try:
-                soup = safe_soup(page_url)
-            except requests.RequestException:
-                logger.warning("[med.ma] Stopping at page %d", i)
-                break
-
-            for block in soup.select("div.card-doctor-block"):
-                name_tag = block.select_one(".list__label–name")
-                if not name_tag:
-                    continue
-                name = _clean(name_tag.text)
-
-                adr_all = block.select(".list__label–adr")
-                address = _clean(adr_all[0].text) if adr_all else ""
-                duty = _canonical_duty(_clean(adr_all[-1].text).replace("Garde de", "")) if adr_all else "24h/24"
-
-                phone_tag = block.select_one("a.calltel")
-                phone = _normalize_phone(phone_tag.text) if phone_tag else ""
-
-                key = ("marrakech", re.sub(r"[^a-z0-9]", "", _strip_accents(name.lower())))
-                if key in seen:
-                    continue
-                seen.add(key)
-
-                results.append(Pharmacy(
-                    city="Marrakech", area="Marrakech", name=name.title(),
-                    address=address, phone=phone, district="Marrakech",
-                    duty=duty, source=page_url, source_site=source_name, date=TODAY,
-                ))
+                city_records = _scrape_lematin_city(city, slug, source_name)
+                results.extend(city_records)
+                logger.info("[lematin] %s -> %d pharmacies", city, len(city_records))
+            except Exception as exc:
+                logger.warning("[lematin] Failed %s: %s", city, exc)
             time.sleep(REQUEST_DELAY)
 
-        logger.info("[med.ma] %d pharmacies found", len(results))
-
     except Exception as exc:
-        logger.error("[med.ma] Fatal: %s", exc)
+        logger.error("[lematin] Fatal: %s", exc)
         status["ok"] = False
         status["error"] = str(exc)
+
+    if not results:
+        status["ok"] = False
+        status["error"] = status.get("error") or "No records from any city"
 
     status["count"] = len(results)
     return results, status
 
 
+def _scrape_lematin_city(city: str, slug: str, source_name: str) -> List[Pharmacy]:
+    """Scrape one city from lematin.ma, both jour and nuit shifts.
+
+    URL pattern: /pharmacie-garde/{city}/{shift}/{neighborhood}
+    HTML: div.ph-record > div.ph-name a[title], div.ph-address
+    """
+    city_url = f"{LEMATIN_BASE}/pharmacie-garde/{slug}"
+    soup = safe_soup(city_url)
+
+    # Extract unique neighborhood slugs from links
+    nhood_info: List[Tuple[str, str]] = []  # (slug, label)
+    seen_slugs: set = set()
+    for a in soup.select("div.record a[href]"):
+        href = a.get("href", "")
+        parts = [p for p in href.strip("/").split("/") if p]
+        # Expected: pharmacie-garde / {city} / {shift} / {neighborhood}
+        if len(parts) >= 4:
+            ns = parts[-1]
+            if ns not in seen_slugs:
+                seen_slugs.add(ns)
+                label = _clean(a.get_text(strip=True))
+                nhood_info.append((ns, label))
+
+    if not nhood_info:
+        logger.warning("[lematin] No neighborhoods found for %s", city)
+        return []
+
+    records: List[Pharmacy] = []
+    # Map norm_key → Pharmacy for marking 24h when seen in both shifts
+    key_map: Dict[Tuple[str, str], Pharmacy] = {}
+
+    for ns, label in nhood_info:
+        area = label or ns.replace("-", " ").title()
+        for shift in ("jour", "nuit"):
+            shift_url = f"{LEMATIN_BASE}/pharmacie-garde/{slug}/{shift}/{ns}"
+            try:
+                page = safe_soup(shift_url)
+                for rec in page.select("div.ph-record"):
+                    name_a = rec.select_one("div.ph-name a")
+                    if not name_a:
+                        continue
+                    raw_name = name_a.get("title", "") or _clean(name_a.get_text(strip=True))
+                    name = _clean(raw_name)
+                    if not name:
+                        continue
+
+                    addr_el = rec.select_one("div.ph-address")
+                    address = _clean(addr_el.get_text(strip=True)) if addr_el else ""
+
+                    key = (city.lower(), re.sub(r"[^a-z0-9]", "", _strip_accents(name.lower())))
+
+                    if key in key_map:
+                        # Seen in jour, now in nuit (or vice-versa) → 24h
+                        existing = key_map[key]
+                        if existing.duty != "24h/24":
+                            existing.duty = "24h/24"
+                        continue
+
+                    duty = "Garde de jour" if shift == "jour" else "Garde de nuit"
+
+                    ph = Pharmacy(
+                        city=normalize_city(city),
+                        area=area,
+                        name=name.title(),
+                        address=address,
+                        phone="",
+                        district=area,
+                        duty=duty,
+                        source=shift_url,
+                        source_site=source_name,
+                        date=TODAY,
+                    )
+                    key_map[key] = ph
+                    records.append(ph)
+            except Exception as exc:
+                logger.debug("[lematin] %s/%s/%s: %s", city, shift, ns, exc)
+            time.sleep(DETAIL_DELAY)
+
+    return records
+
+
 # ---------------------------------------------------------------------------
 # Merge & cross-validate
 # ---------------------------------------------------------------------------
-def merge_and_validate(source_lists: List[Tuple[str, List[Pharmacy]]]) -> List[Pharmacy]:
-    """Merge pharmacies from multiple sources, deduplicate, and mark confidence.
+_PRIORITY_SOURCES = {"guidepharmacies.ma", "lematin.ma", "infopoint.ma"}
+_MIN_ANNUAIRE_ONLY = 3  # cities with fewer pharmacies from annuaire-only are dropped
 
-    Source priority: for cities where guidepharmacies.ma has data, its entries
-    replace other sources (guidepharmacies tracks the real daily duty rotation).
+
+def merge_and_validate(source_lists: List[Tuple[str, List[Pharmacy]]]) -> List[Pharmacy]:
+    """Merge pharmacies from multiple sources, deduplicate, and filter.
+
+    Source priority: for cities where a *primary* source (guidepharmacies,
+    lematin, infopoint) has data, annuaire-gratuit entries for that city
+    are skipped.  Cities served only by annuaire-gratuit are kept if
+    they have at least _MIN_ANNUAIRE_ONLY pharmacies.
     """
 
-    # Detect which cities guidepharmacies.ma actually returned data for
-    guide_cities: set = set()
+    # Detect which cities each priority source covers
+    priority_cities: set = set()
     for source_name, pharmacies in source_lists:
-        if source_name == "guidepharmacies.ma":
+        if source_name in _PRIORITY_SOURCES:
             for ph in pharmacies:
-                guide_cities.add(_strip_accents(ph.city.lower().strip()))
-    if guide_cities:
-        logger.info("guidepharmacies.ma covers cities: %s — using as primary source",
-                     ", ".join(sorted(guide_cities)))
+                priority_cities.add(_strip_accents(ph.city.lower().strip()))
+    if priority_cities:
+        logger.info("Primary sources cover %d cities: %s",
+                     len(priority_cities), ", ".join(sorted(priority_cities)))
 
     # Index all pharmacies by normalized key
     by_key: Dict[Tuple[str, str], List[Pharmacy]] = {}
     for source_name, pharmacies in source_lists:
         for ph in pharmacies:
             city_norm = _strip_accents(ph.city.lower().strip())
-            # For cities guidepharmacies covers, skip other sources
-            if city_norm in guide_cities and source_name != "guidepharmacies.ma":
+            # For priority-covered cities, skip annuaire-gratuit
+            if city_norm in priority_cities and source_name == "annuaire-gratuit.ma":
                 continue
             key = ph.norm_key()
             by_key.setdefault(key, []).append(ph)
@@ -626,6 +701,31 @@ def merge_and_validate(source_lists: List[Tuple[str, List[Pharmacy]]]) -> List[P
                 best.duty = other.duty
 
         merged.append(best)
+
+    # ── City-level filtering ──────────────────────────────────────────
+    # Count per-city and track source sites
+    city_counts: Dict[str, int] = {}
+    city_sources: Dict[str, set] = {}
+    for ph in merged:
+        cn = _strip_accents(ph.city.lower().strip())
+        city_counts[cn] = city_counts.get(cn, 0) + 1
+        city_sources.setdefault(cn, set()).add(ph.source_site)
+
+    def _keep(ph: Pharmacy) -> bool:
+        cn = _strip_accents(ph.city.lower().strip())
+        # Always keep cities with a primary source
+        if city_sources.get(cn, set()) & _PRIORITY_SOURCES:
+            return True
+        # For annuaire-only cities, require minimum pharmacy count
+        return city_counts.get(cn, 0) >= _MIN_ANNUAIRE_ONLY
+
+    before = len(merged)
+    merged = [ph for ph in merged if _keep(ph)]
+    dropped = before - len(merged)
+    if dropped:
+        kept_cities = len(set(_strip_accents(ph.city.lower().strip()) for ph in merged))
+        logger.info("Filtered: removed %d pharmacies from low-confidence cities "
+                     "(%d cities kept)", dropped, kept_cities)
 
     # Sort by city then name
     merged.sort(key=lambda p: (p.city, p.name))
@@ -715,7 +815,7 @@ def main() -> None:
         "annuaire-gratuit.ma": scrape_annuaire_gratuit,
         "guidepharmacies.ma": scrape_guidepharmacies,
         "infopoint.ma": scrape_infopoint,
-        "med.ma": scrape_medma,
+        "lematin.ma": scrape_lematin,
     }
 
     source_lists: List[Tuple[str, List[Pharmacy]]] = []
