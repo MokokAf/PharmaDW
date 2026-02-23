@@ -146,7 +146,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${manrope.className} pb-safe md:pb-0`}>
+      <body className={`${manrope.className} pb-safe`}>
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>

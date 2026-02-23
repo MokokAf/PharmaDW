@@ -28,7 +28,7 @@ Preferred communication style: Simple, everyday language.
 - Dark mode supported via `next-themes` with class strategy.
 
 ### Routing & Pages
-- `/` — Landing page with hero search, DwaIA promo section, FAQ with structured data (schema.org)
+- `/` — Landing page with hero search (autocomplete dropdown with priority scoring), DwaIA promo section, FAQ with structured data (schema.org)
 - `/medicaments` — Drug catalog with virtualized list (`react-window`), alphabet filter, search, manufacturer/class filters
 - `/medicaments/[slug]` — Individual drug detail page (FicheMedicament component)
 - `/pharmacies-de-garde` — Duty pharmacy listing by city, loaded from static JSON

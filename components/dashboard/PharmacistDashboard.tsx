@@ -17,9 +17,6 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import DwaIALogo from '@/components/DwaIALogo';
 
-/* ------------------------------------------------------------------ */
-/*  Quick-action cards for the dashboard home                          */
-/* ------------------------------------------------------------------ */
 const quickActions = [
   {
     icon: Pill,
@@ -62,7 +59,7 @@ export const PharmacistDashboard: React.FC = () => {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen bg-background w-full">
+      <div className="fixed inset-0 bg-background flex w-full">
         <PharmacistSidebar
           onGoDashboard={() => setView('home')}
           onGoInteractions={() => {
@@ -76,14 +73,13 @@ export const PharmacistDashboard: React.FC = () => {
           onLogout={logout}
         />
 
-        <main className="transition-[margin-left] duration-200 ease-linear ml-0 md:ml-[var(--sidebar-width)]">
+        <main className="flex-1 min-w-0 flex flex-col h-full">
           {/* ── Mobile top bar ─────────────────────────────────── */}
-          <div className="sticky top-0 z-10 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 px-4 py-3 md:hidden">
+          <div className="sticky top-0 z-10 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 px-4 py-3 md:hidden shrink-0">
             <div className="flex items-center gap-3">
               <SidebarTrigger />
               <DwaIALogo size="xs" />
             </div>
-            {/* Tab toggle on mobile */}
             <div className="flex items-center bg-muted rounded-lg p-0.5">
               <button
                 onClick={() => setView('home')}
@@ -109,7 +105,7 @@ export const PharmacistDashboard: React.FC = () => {
           </div>
 
           {/* ── Demo banner ────────────────────────────────────── */}
-          <div className="mx-4 mt-3 md:mx-6 md:mt-4 mb-4">
+          <div className="mx-4 mt-3 md:mx-6 md:mt-4 mb-4 shrink-0">
             <div className="flex items-center gap-2 rounded-xl border border-amber-200/60 bg-amber-50/50 px-4 py-2 text-xs text-amber-700 dark:border-amber-800/40 dark:bg-amber-950/30 dark:text-amber-400">
               <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
               <span>
@@ -120,11 +116,9 @@ export const PharmacistDashboard: React.FC = () => {
           </div>
 
           {/* ── Content ────────────────────────────────────────── */}
-          <div className="px-4 md:px-6 pb-10">
+          <div className="flex-1 overflow-y-auto px-4 md:px-6 pb-10">
             {view === 'home' ? (
-              /* ── Dashboard home ─────────────────────────────── */
               <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
-                {/* Welcome */}
                 <div className="space-y-1">
                   <h1 className="text-2xl md:text-3xl font-bold text-foreground">
                     Bonjour, Dr.{' '}
@@ -140,7 +134,6 @@ export const PharmacistDashboard: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Quick actions */}
                 <div className="grid gap-4 sm:grid-cols-3">
                   {quickActions.map((qa) => (
                     <button
@@ -163,7 +156,6 @@ export const PharmacistDashboard: React.FC = () => {
                   ))}
                 </div>
 
-                {/* CTA to assistant */}
                 <div className="rounded-2xl border border-border bg-surface p-6 md:p-8 text-center space-y-4">
                   <div className="w-14 h-14 rounded-2xl pharma-gradient flex items-center justify-center mx-auto shadow-md shadow-primary/20">
                     <Activity className="h-7 w-7 text-white" />
@@ -192,7 +184,6 @@ export const PharmacistDashboard: React.FC = () => {
                 </div>
               </div>
             ) : (
-              /* ── Assistant view ─────────────────────────────── */
               <div className="max-w-3xl mx-auto animate-fade-in">
                 <ChatBot ref={chatRef} />
               </div>

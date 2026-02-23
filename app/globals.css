@@ -139,8 +139,10 @@
 .scroll-strip { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Safe bottom padding for mobile bottom nav */
-.pb-safe {
-  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 4rem);
+@media (max-width: 767px) {
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 4.5rem);
+  }
 }
 
 /* Keep form controls visible when keyboard opens on mobile */
