@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Input } from '@/components/ui/input'
-import { MapPin, PhoneCall, AlertTriangle, Navigation, Search, Clock, CheckCircle2 } from 'lucide-react'
+import { MapPin, PhoneCall, AlertTriangle, Navigation, Search, Clock } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const POP_RANK: Record<string, number> = {
@@ -271,12 +271,6 @@ export default function PharmaciesDeGardeContent() {
               <div>
                 <div className="flex items-start justify-between gap-2">
                   <h2 className="text-base font-semibold text-foreground">{pharmacy.name}</h2>
-                  {(pharmacy.sources_count ?? 0) >= 2 && (
-                    <span className="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
-                      <CheckCircle2 className="h-3 w-3" />
-                      Verifie
-                    </span>
-                  )}
                 </div>
                 {(pharmacy.district || pharmacy.area) && (
                   <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
@@ -309,7 +303,7 @@ export default function PharmaciesDeGardeContent() {
                   className="flex items-center justify-center gap-2 flex-1 h-12 border-2 border-primary text-primary rounded-lg text-sm font-medium hover:bg-primary/10 active:scale-[0.98] transition"
                 >
                   <Navigation className="h-4 w-4" />
-                  Carte
+                  Localiser
                 </a>
               </div>
             </div>

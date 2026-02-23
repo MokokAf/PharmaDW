@@ -129,8 +129,32 @@ export default function MedicamentsContent() {
   }, [drugs, filters])
 
   const sortedDrugs = useMemo(() => {
-    return [...filteredDrugs].sort((a, b) => a.name.localeCompare(b.name))
-  }, [filteredDrugs])
+    const q = filters.search.trim()
+    if (!q) {
+      return [...filteredDrugs].sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+    const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    const nq = normalize(q)
+
+    const scored = filteredDrugs.map((drug) => {
+      const name = normalize(drug.name)
+      let score = 6
+      if (name === nq) score = 0
+      else if (name.startsWith(nq)) score = 1
+      else if (name.split(/[\s,/()]+/).some(w => w.startsWith(nq))) score = 2
+      else {
+        const ings = drug.activeIngredient.map(normalize)
+        if (ings.some(i => i.startsWith(nq))) score = 3
+        else if (ings.some(i => i.includes(nq))) score = 4
+        else if (name.includes(nq)) score = 5
+      }
+      return { drug, score }
+    })
+
+    scored.sort((a, b) => a.score - b.score || a.drug.name.localeCompare(b.drug.name))
+    return scored.map(s => s.drug)
+  }, [filteredDrugs, filters.search])
 
   const hasActiveFilters = Boolean(filters.search || filters.letter || filters.manufacturer || filters.therapeuticClass)
 
