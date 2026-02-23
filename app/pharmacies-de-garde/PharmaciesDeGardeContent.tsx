@@ -278,6 +278,12 @@ export default function PharmaciesDeGardeContent() {
                     {pharmacy.district || pharmacy.area}
                   </p>
                 )}
+                {pharmacy.duty && (
+                  <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
+                    <Clock className="h-4 w-4 shrink-0 text-amber-500" />
+                    {pharmacy.duty}
+                  </p>
+                )}
               </div>
 
               <div className="flex gap-2">

@@ -436,6 +436,12 @@ def _parse_guide_table(url: str, city: str, source_name: str) -> List[Pharmacy]:
         name, phone_raw = (raw.split(" - ", 1) + [""])[:2]
         phone = _normalize_phone(phone_raw)
 
+        # Some cities (Kénitra, Mehdia) only have "Pharmacie" in h4 a
+        # with no actual name.  Fall back to the area/quartier.
+        name_stripped = re.sub(r"(?i)^pharmacie\s*(de\s*)?", "", name).strip()
+        if not name_stripped and area:
+            name = f"Pharmacie {area}"
+
         key = (city.lower(), re.sub(r"[^a-z0-9]", "", _strip_accents(name.lower())))
         if key in seen:
             continue
