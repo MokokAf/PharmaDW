@@ -149,7 +149,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-surface">
+    <section className="bg-surface border-b border-border/60">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           <div className="flex justify-center mb-0">
