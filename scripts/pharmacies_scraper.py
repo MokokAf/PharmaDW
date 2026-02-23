@@ -25,7 +25,7 @@ import unicodedata
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import List, Dict, Tuple
 
@@ -57,7 +57,9 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_JSON = BASE_DIR / "public" / "data" / "pharmacies.json"
 OUTPUT_META = BASE_DIR / "public" / "data" / "pharmacies_meta.json"
 
-TODAY = datetime.now().strftime("%Y-%m-%d")
+MOROCCO_TZ = timezone(timedelta(hours=1))
+_NOW_MOROCCO = datetime.now(MOROCCO_TZ)
+TODAY = _NOW_MOROCCO.strftime("%Y-%m-%d")
 NOW_ISO = datetime.now(timezone.utc).isoformat()
 
 # ---------------------------------------------------------------------------
@@ -390,6 +392,7 @@ def scrape_guidepharmacies() -> Tuple[List[Pharmacy], dict]:
 
 
 def _parse_guide_table(url: str, city: str, source_name: str) -> List[Pharmacy]:
+    """Parse guidepharmacies.ma weekly table, extracting only TODAY's entries."""
     records: List[Pharmacy] = []
     seen: set = set()
     soup = safe_soup(url)
@@ -399,7 +402,28 @@ def _parse_guide_table(url: str, city: str, source_name: str) -> List[Pharmacy]:
     if nav:
         nav.decompose()
 
-    for td in soup.select("td.tableb"):
+    # The page shows a weekly schedule.  Day headers live in td.tableh2
+    # (e.g. "lundi  23 février  2026") and pharmacy entries in td.tableb.
+    # We walk through both in document order and only keep today's section.
+    day_num = str(_NOW_MOROCCO.day)          # "23" (no leading zero)
+    year_str = str(_NOW_MOROCCO.year)         # "2026"
+    in_today = False
+
+    for td in soup.select("td.tableh2, td.tableb"):
+        classes = td.get("class", [])
+
+        if "tableh2" in classes:
+            header = td.get_text(" ", strip=True)
+            # Match e.g. "lundi  23 février  2026"
+            in_today = (
+                re.search(rf"\b{day_num}\b", header) is not None
+                and year_str in header
+            )
+            continue
+
+        if not in_today or "tableb" not in classes:
+            continue
+
         loc = td.find("p", class_="location-name")
         if not loc:
             continue
@@ -412,19 +436,6 @@ def _parse_guide_table(url: str, city: str, source_name: str) -> List[Pharmacy]:
         name, phone_raw = (raw.split(" - ", 1) + [""])[:2]
         phone = _normalize_phone(phone_raw)
 
-        # Try detail page for address (Rabat only — others don't have it)
-        address = ""
-        if city == "Rabat":
-            href = urllib.parse.urljoin(url, a["href"])
-            try:
-                time.sleep(DETAIL_DELAY)
-                s2 = safe_soup(href)
-                tag = s2.find(string=re.compile(r"\d+\s+(Rue|Av|Avenue|Bd)", re.I))
-                if tag:
-                    address = _clean(tag)
-            except Exception:
-                pass
-
         key = (city.lower(), re.sub(r"[^a-z0-9]", "", _strip_accents(name.lower())))
         if key in seen:
             continue
@@ -432,7 +443,7 @@ def _parse_guide_table(url: str, city: str, source_name: str) -> List[Pharmacy]:
 
         records.append(Pharmacy(
             city=normalize_city(city), area=area, name=name.title(),
-            address=address, phone=phone, district=area, duty=duty or "24h/24",
+            address="", phone=phone, district=area, duty=duty or "24h/24",
             source=url, source_site=source_name, date=TODAY,
         ))
 
@@ -564,12 +575,30 @@ def scrape_medma() -> Tuple[List[Pharmacy], dict]:
 # Merge & cross-validate
 # ---------------------------------------------------------------------------
 def merge_and_validate(source_lists: List[Tuple[str, List[Pharmacy]]]) -> List[Pharmacy]:
-    """Merge pharmacies from multiple sources, deduplicate, and mark confidence."""
+    """Merge pharmacies from multiple sources, deduplicate, and mark confidence.
+
+    Source priority: for cities where guidepharmacies.ma has data, its entries
+    replace other sources (guidepharmacies tracks the real daily duty rotation).
+    """
+
+    # Detect which cities guidepharmacies.ma actually returned data for
+    guide_cities: set = set()
+    for source_name, pharmacies in source_lists:
+        if source_name == "guidepharmacies.ma":
+            for ph in pharmacies:
+                guide_cities.add(_strip_accents(ph.city.lower().strip()))
+    if guide_cities:
+        logger.info("guidepharmacies.ma covers cities: %s — using as primary source",
+                     ", ".join(sorted(guide_cities)))
 
     # Index all pharmacies by normalized key
     by_key: Dict[Tuple[str, str], List[Pharmacy]] = {}
     for source_name, pharmacies in source_lists:
         for ph in pharmacies:
+            city_norm = _strip_accents(ph.city.lower().strip())
+            # For cities guidepharmacies covers, skip other sources
+            if city_norm in guide_cities and source_name != "guidepharmacies.ma":
+                continue
             key = ph.norm_key()
             by_key.setdefault(key, []).append(ph)
 
