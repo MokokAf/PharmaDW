@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-02-23T19:28:02.480260+00:00",
+  "scraped_at": "2026-02-23T20:06:59.030925+00:00",
   "total_pharmacies": 266,
   "cities_count": 53,
   "cities": [
@@ -85,6 +85,6 @@
       "error": null
     }
   },
-  "previous_total": 265,
-  "delta": 1
+  "previous_total": 266,
+  "delta": 0
 }
