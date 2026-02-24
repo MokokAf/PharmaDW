@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { AlertTriangle, PackageSearch } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { MedDrugListItem, DrugFilters } from '@/types/medication'
+import type { MedDrugListItem, DrugFilters, TherapeuticClassOption } from '@/types/medication'
 
 /**
  * Clean up therapeutic class list for dropdown display:
@@ -13,8 +13,9 @@ import type { MedDrugListItem, DrugFilters } from '@/types/medication'
  * - Remove overly long entries (descriptions, not real class names)
  * - Case-insensitive dedup (keep most frequent variant)
  * - Merge singular/plural near-duplicates (trailing 's')
+ * - Return with drug counts for each class
  */
-function deduplicateClasses(allClasses: string[]): string[] {
+function deduplicateClasses(allClasses: string[]): TherapeuticClassOption[] {
   const clean = allClasses.filter(
     (c) => c && !/^\d{5,}$/.test(c.trim()) && c.trim().length <= 80
   )
@@ -47,16 +48,22 @@ function deduplicateClasses(allClasses: string[]): string[] {
     if (dropped.has(key)) return
     const singular = key.endsWith('s') ? key.slice(0, -1) : null
     if (singular && best.has(singular) && !dropped.has(singular)) {
-      const pTotal = best.get(key)!.total
-      const sTotal = best.get(singular)!.total
-      dropped.add(pTotal >= sTotal ? singular : key)
+      const pEntry = best.get(key)!
+      const sEntry = best.get(singular)!
+      if (pEntry.total >= sEntry.total) {
+        pEntry.total += sEntry.total
+        dropped.add(singular)
+      } else {
+        sEntry.total += pEntry.total
+        dropped.add(key)
+      }
     }
   })
 
   return Array.from(best.entries())
     .filter(([key]) => !dropped.has(key))
-    .map(([, { label }]) => label)
-    .sort((a, b) => a.localeCompare(b, 'fr'))
+    .map(([, { label, total }]) => ({ label, count: total }))
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 }
 
 const VirtualizedDrugList = dynamic(
@@ -89,7 +96,7 @@ export default function MedicamentsContent() {
   })
 
   const [manufacturers, setManufacturers] = useState<string[]>([])
-  const [therapeuticClasses, setTherapeuticClasses] = useState<string[]>([])
+  const [therapeuticClasses, setTherapeuticClasses] = useState<TherapeuticClassOption[]>([])
 
   const loadDrugs = useCallback(async () => {
     setError(null)

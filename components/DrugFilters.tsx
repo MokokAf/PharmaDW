@@ -5,10 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Search, X, SlidersHorizontal } from 'lucide-react';
-import { DrugFilters as DrugFiltersType } from '@/types/medication';
+import { DrugFilters as DrugFiltersType, TherapeuticClassOption } from '@/types/medication';
+import { TherapeuticClassCombobox } from '@/components/TherapeuticClassCombobox';
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
@@ -19,7 +19,7 @@ interface DrugFiltersProps {
   filters: DrugFiltersType;
   onFiltersChange: (filters: DrugFiltersType) => void;
   manufacturers: string[];
-  therapeuticClasses: string[];
+  therapeuticClasses: TherapeuticClassOption[];
 }
 
 export function DrugFilters({
@@ -61,22 +61,11 @@ export function DrugFilters({
         </SelectContent>
       </Select>
 
-      <Select
-        value={filters.therapeuticClass || 'all'}
-        onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value === 'all' ? '' : value })}
-      >
-        <SelectTrigger>
-          <SelectValue placeholder="Classe thérapeutique" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">Toutes les classes</SelectItem>
-          {therapeuticClasses.map((therapeuticClass) => (
-            <SelectItem key={therapeuticClass} value={therapeuticClass}>
-              {therapeuticClass}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <TherapeuticClassCombobox
+        options={therapeuticClasses}
+        value={filters.therapeuticClass}
+        onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value })}
+      />
 
       {hasActiveFilters && (
         <Button
@@ -156,22 +145,11 @@ export function DrugFilters({
           </SelectContent>
         </Select>
 
-        <Select
-          value={filters.therapeuticClass || 'all'}
-          onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value === 'all' ? '' : value })}
-        >
-          <SelectTrigger>
-            <SelectValue placeholder="Classe thérapeutique" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Toutes les classes</SelectItem>
-            {therapeuticClasses.map((therapeuticClass) => (
-              <SelectItem key={therapeuticClass} value={therapeuticClass}>
-                {therapeuticClass}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <TherapeuticClassCombobox
+          options={therapeuticClasses}
+          value={filters.therapeuticClass}
+          onValueChange={(value) => onFiltersChange({ ...filters, therapeuticClass: value })}
+        />
       </div>
 
       {hasActiveFilters && (

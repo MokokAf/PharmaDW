@@ -40,3 +40,8 @@ export interface DrugFilters {
   manufacturer: string;
   therapeuticClass: string;
 }
+
+export interface TherapeuticClassOption {
+  label: string;
+  count: number;
+}
