@@ -9,8 +9,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -22,8 +22,34 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Al Mansour Eddahbi",
+    "address": "61 , avenue al mansour eddahbi en face de pullman du sud , près du mosquée ABOU BAKER cité dakhla",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Bensergaou",
+    "name": "Al Michwar",
+    "address": "Lot. Wifaq N° 297 Ben Sergao[+]",
+    "phone": "",
+    "district": "Bensergaou",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/bensergaou",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -35,8 +61,21 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/salam-houda",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Borj Taddart",
+    "address": "Av. Des Forces Armee[+]",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -48,8 +87,60 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Salam Houda",
+    "name": "Dahabia",
+    "address": "535 sect K ElHouda[+]",
+    "phone": "",
+    "district": "Salam Houda",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/salam-houda",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Erraji",
+    "address": "Bd Abou Jihad , près de la Bibiothèque Municipale Al Massira Q. Al Massira",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Founty",
+    "address": "Av, Hassan II, à côté patisserieTafarnoute Agadir[+]",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Hay Монамmadi",
+    "address": "187, Hay mohamadi prés amana et Souika[+]",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -61,8 +152,21 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Agadir",
+    "name": "Laazib",
+    "address": "LAAZIB Bloc 304 N° 22 face Au Dispensaire[+]",
+    "phone": "",
+    "district": "Agadir",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -74,8 +178,21 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Agadir",
+    "area": "Salam Houda",
+    "name": "Raja",
+    "address": "N° 12 AV ABDERRAHMANE BEN ZIDANE près Hammam Salam",
+    "phone": "",
+    "district": "Salam Houda",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/agadir/jour/salam-houda",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -87,8 +204,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/salam-houda",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Agadir",
@@ -100,8 +217,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/agadir/jour/agadir",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ait Melloul",
@@ -110,11 +227,11 @@
     "address": "lot a11, quartier argana",
     "phone": "",
     "district": "Argana",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ait Melloul",
@@ -123,11 +240,11 @@
     "address": "35, route biougra",
     "phone": "",
     "district": "Ait Melloul",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ait Melloul",
@@ -136,11 +253,11 @@
     "address": "n°13 bloc c rue 04",
     "phone": "",
     "district": "Ait Melloul",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ben Guerir",
@@ -149,11 +266,11 @@
     "address": "2200 lotiss. jnane el kheir, près de café noisettet le petit marché",
     "phone": "",
     "district": "Ben Guerir",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ben Guerir",
@@ -162,11 +279,11 @@
     "address": "14 rue ghazouani hay zaouia azouzia",
     "phone": "",
     "district": "Ben Guerir",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ben Guerir",
@@ -175,11 +292,11 @@
     "address": "240, lotiss. nasr, entre ofppt et université mohamed 6",
     "phone": "",
     "district": "Ben Guerir",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Benslimane",
@@ -191,8 +308,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-benslimane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Benslimane",
@@ -204,8 +321,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-benslimane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Benslimane",
@@ -217,8 +334,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-benslimane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -227,11 +344,11 @@
     "address": "lotiss. errabie. pres du mosquée arabie, route hedd soualem BERRECHID",
     "phone": "0522336162",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ajiad-s101298.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -240,11 +357,11 @@
     "address": "209, bd rachidi , tissir2. 200m de l'arrondissement et commissariat hay hassani, direction du jardin hay hassani Berrechid",
     "phone": "0522337464",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-falah-s242270.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -253,11 +370,11 @@
     "address": "lot. essafi n° 26 , lot. n° 26 rue 3. boulevard hassan ii BERRECHID",
     "phone": "0522336214",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-farabi-s18305.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -266,11 +383,11 @@
     "address": "lotis. elyousr , lot.35 n°41. pres du café etoile d'agadir, mosquée azzahraa, derrière cnss Berrechid",
     "phone": "0522533121",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-hikma-s243243.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -279,11 +396,11 @@
     "address": "hay el izdihar, n° 141. 200m du café firma Berrechid",
     "phone": "0522325461",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-izdihar-s242277.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -292,11 +409,11 @@
     "address": "45, bd moulay ismail. derb jjdid, prés du pont BERRECHID",
     "phone": "0522337600",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-manar-s108062.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -305,11 +422,11 @@
     "address": "rue yacoub almansour , imm. habous n° 16/17 Berrechid",
     "phone": "05223286160636111212",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-masjid-s253390.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -318,11 +435,11 @@
     "address": "71, rue ibn roumi , hay al wahda. a coté du café bbaydi et sté ouled bouazza BERRECHID",
     "phone": "0522326263",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-al-mouna-s33677.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -331,11 +448,11 @@
     "address": "93, bd. mohammed v , cité el kadiri. entre café al khozama et gare routière. face du boulangerie semlali Berrechid",
     "phone": "0522314068",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-berrechid-s253392.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -344,11 +461,11 @@
     "address": "bd bir anzarane , complexe riad benchaib, imm.3 n°21. route pour souk hebdomadaire Berrechid",
     "phone": "0522533353",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-bir-anzarane-s242276.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -357,11 +474,11 @@
     "address": "554, bd driss lahrizi , hay hassani. face du café ayoub BERRECHID",
     "phone": "0522336921",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-driss-lahrizi-s136983.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -370,11 +487,11 @@
     "address": "35, ali ibn talib, en face des taxis hedd soualem Berrechid",
     "phone": "0522533684",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-el-kissaria-s247707.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -383,11 +500,11 @@
     "address": "lotiss. elfaraj. entre saâd et villas chama, derrière mosquée abou bakr esseddiq Berrechid",
     "phone": "0522534909",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-hay-elfaraj-s242275.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -396,11 +513,11 @@
     "address": "239, bd hassan 2. route el gara, prés de l'agence orange BERRECHID",
     "phone": "0522336161",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-hay-hassani-s126857.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -409,11 +526,11 @@
     "address": "63, bd charif radi , lotiss. massira al khadra ii BERRECHID",
     "phone": "0522534314",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-ilham-s162062.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -422,11 +539,11 @@
     "address": "99, lotiss. layali2 , bd abderrahmane sahraoui. prés du café les amis, derrière la nouvelle gare routière Berrechid",
     "phone": "0522324230",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-layali-s242271.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -435,11 +552,11 @@
     "address": "325 lotissement manazilona -tel 2: 0690081931 Berrechid",
     "phone": "0520937465",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-manazilona-s254660.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -448,11 +565,11 @@
     "address": "lotiss ben massaoud 2 , hay raha. prés du mosquée arraha BERRECHID",
     "phone": "0522326363",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-marocaine-s51064.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -464,8 +581,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-nadia-s242274.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -474,11 +591,11 @@
     "address": "lot nasrallah , n°327 Berrechid",
     "phone": "0522516719",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-nasrallah-s242199.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -487,11 +604,11 @@
     "address": "43, lot jawharat al abrar, rès de carrefour et clinique chifae Berrechid",
     "phone": "0522324420",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-perle-al-abrar-s251089.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -500,11 +617,11 @@
     "address": "68, av lalla yacout , hay tissir lot. n°27. en face du hammam oued eddahabe et la nouvelle école, tél2: 0653962586 BERRECHID",
     "phone": "0522328584",
     "district": "Hay Hassani",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-salima-s51026.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -513,11 +630,11 @@
     "address": "226 bd abdellah ganoune hay yasmine. prés du lycée zerktouni Berrechid",
     "phone": "0522328517",
     "district": "Castos",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-sham-s251238.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Berrechid",
@@ -526,11 +643,11 @@
     "address": "coopérative al rajaa 1, route had soualem, près de lotissement zouheir et ofppt Berrechid",
     "phone": "0606381905",
     "district": "Nouvelle Medina",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-zouheir-s254661.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -539,11 +656,11 @@
     "address": "30, bd. El Farabi , q. Al Adarissa",
     "phone": "",
     "district": "Beni Mellal",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -552,11 +669,11 @@
     "address": "6, hay El Hassani, El Amria",
     "phone": "",
     "district": "Beni Mellal",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -568,8 +685,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -581,8 +698,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -594,8 +711,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -607,8 +724,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -617,11 +734,11 @@
     "address": "bd Vingt Août, Fadila 9 n°13 cplxe Oumnia",
     "phone": "",
     "district": "Beni Mellal",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Béni Mellal",
@@ -630,11 +747,11 @@
     "address": "17, av. AlQods , q. ElFadel II",
     "phone": "",
     "district": "Beni Mellal",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-beni-mellal.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -646,8 +763,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/al-fida",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -659,8 +776,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/derb-ghallef",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -672,8 +789,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -685,8 +802,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -698,21 +815,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/oulfa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Hay Moulay Rachid",
-    "name": "Al Andalous",
-    "address": "411, BD. DRISS HARTI - HAY AL BARAKA - (FORET VERTE)[+]",
-    "phone": "",
-    "district": "Hay Moulay Rachid",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-moulay-rachid",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -724,8 +828,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-bernoussi",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -737,8 +841,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ain-chock",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -750,8 +854,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -763,8 +867,21 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/maarif",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Hay Moulay Rachid",
+    "name": "Anouari",
+    "address": "MASSIRA III - RUE 58 N° 5 - (PROJET) SIDI OHTMANE MOULAY RACHID[+]",
+    "phone": "",
+    "district": "Hay Moulay Rachid",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-moulay-rachid",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -776,21 +893,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/maarif",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Casablanca",
-    "area": "Hay Moulay Rachid",
-    "name": "Bennour",
-    "address": "BLOC 25 BOUTIQUE \"E\" - SIDI OTHMANE[+]",
-    "phone": "",
-    "district": "Hay Moulay Rachid",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-moulay-rachid",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -802,8 +906,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -815,8 +919,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/annasi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -828,8 +932,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/centre-ville",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -841,8 +945,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -854,8 +958,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -867,8 +971,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/maarif",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -880,8 +984,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/lissasfa",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -893,8 +997,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ain-sebaa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -906,8 +1010,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-hassani",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -919,8 +1023,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/oulfa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -932,8 +1036,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-moumen",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -945,8 +1049,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-hassani",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -958,8 +1062,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-maarouf",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -971,8 +1075,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/belvedere",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -984,8 +1088,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ain-chock",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -997,8 +1101,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1010,8 +1114,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ain-sebaa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1023,8 +1127,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ben-msick",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1036,8 +1140,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-bernoussi",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1049,8 +1153,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/maarif",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1062,8 +1166,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-bernoussi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1075,8 +1179,21 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/ain-chock",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Hay Moulay Rachid",
+    "name": "Madiha",
+    "address": "LOT ABRAR LOT 103 N°2 CITE NOUVELLE MOULAY RACHID[+]",
+    "phone": "",
+    "district": "Hay Moulay Rachid",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-moulay-rachid",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1088,8 +1205,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/bourgogne",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1101,8 +1218,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/al-fida",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1114,8 +1231,21 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/al-azhar-panorama",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Casablanca",
+    "area": "Hay Moulay Rachid",
+    "name": "Otmani",
+    "address": "114, RUE 20 - MASSIRA II - EX. HMARA[+]",
+    "phone": "",
+    "district": "Hay Moulay Rachid",
+    "duty": "24h/24",
+    "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-moulay-rachid",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1127,8 +1257,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/lissasfa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1140,8 +1270,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/al-fida",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1153,8 +1283,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/hay-mohammadi",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1166,8 +1296,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/benmsik",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1179,8 +1309,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/oulfa",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1192,8 +1322,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-moumen",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1205,8 +1335,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/bourgogne",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1218,8 +1348,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/al-fida",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1231,8 +1361,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/sidi-maarouf",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Casablanca",
@@ -1244,8 +1374,8 @@
     "duty": "Garde de jour",
     "source": "https://lematin.ma/pharmacie-garde/casablanca/jour/derb-ghallef",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1254,11 +1384,11 @@
     "address": "bd Al Alaouyine lotiss. Asmae 2 imm. Abir II lot. 24",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1267,11 +1397,11 @@
     "address": "1, rue Principale",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1280,11 +1410,11 @@
     "address": "76, bd Moulay Abdelhafid",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1293,11 +1423,11 @@
     "address": "135, bd de la Université, lot Al Kawtar",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1306,11 +1436,11 @@
     "address": "124, bd Mohammed VI",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1319,11 +1449,11 @@
     "address": "8, bd Khalil Jabrane, lotiss. Annakhil, rue 34",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1332,11 +1462,11 @@
     "address": "85 hay Essalam 1",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Garde Nuit (Ouvert de 21h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1345,11 +1475,11 @@
     "address": "292, bd Bir Anzarane, Nahj Rif El Qods",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1358,11 +1488,11 @@
     "address": "18, rue Ahmed Tounsi",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1371,11 +1501,11 @@
     "address": "1 bd Abdelhamid Bnou Badis",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1384,11 +1514,11 @@
     "address": "138, bd Abi Chouaib Doukkali",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Garde Nuit (Ouvert de 21h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1397,11 +1527,11 @@
     "address": "140, derb El Hajjar",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1410,11 +1540,11 @@
     "address": "131 bd Attahrir",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "El Jadida",
@@ -1423,11 +1553,11 @@
     "address": "1, lotiss. Annasr, mouilha",
     "phone": "",
     "district": "El Jadida",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 21h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Errachidia",
@@ -1436,11 +1566,11 @@
     "address": "10, av Dakhla",
     "phone": "",
     "district": "Errachidia",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Errachidia",
@@ -1449,11 +1579,11 @@
     "address": "1819 Lotissement Riyad rue 59",
     "phone": "",
     "district": "Errachidia",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Errachidia",
@@ -1462,11 +1592,11 @@
     "address": "22, lotiss. Al Oukhouwa",
     "phone": "",
     "district": "Errachidia",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Errachidia",
@@ -1475,11 +1605,11 @@
     "address": "72, oueld Lhaj , rue 34",
     "phone": "",
     "district": "Errachidia",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Errachidia",
@@ -1488,11 +1618,11 @@
     "address": "Ain Al Ati 1 bloc 18 n°1282",
     "phone": "",
     "district": "Errachidia",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-errachidia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Essaouira",
@@ -1501,11 +1631,11 @@
     "address": "7 complexe commercial Lalla Amina",
     "phone": "",
     "district": "Essaouira",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Essaouira",
@@ -1514,11 +1644,11 @@
     "address": "5 bd ElAkaba Dar Taleb",
     "phone": "",
     "district": "Essaouira",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Essaouira",
@@ -1527,37 +1657,11 @@
     "address": "1 av Lalla Amina imm. Bounar",
     "phone": "",
     "district": "Essaouira",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-essaouira.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Fès",
-    "area": "Les merinides",
-    "name": "Al Hilal Green",
-    "address": "lotiss. Oued Fès, rue 27 n°63 FES[+]",
-    "phone": "",
-    "district": "Les merinides",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/fes/jour/les-merinides",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Fès",
-    "area": "Medina Jnanat",
-    "name": "Bab Guissa",
-    "address": "N 25, Bab Guissa à côté du palais jamaai",
-    "phone": "",
-    "district": "Medina Jnanat",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/fes/jour/medina-jnanat",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Fès",
@@ -1569,47 +1673,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/fes/jour/agdal",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Fès",
-    "area": "Saïss",
-    "name": "El Mostafa",
-    "address": "N° 80 boulvard attaour aouinat hajjaj fes",
-    "phone": "",
-    "district": "Saïss",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/fes/jour/saiss",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Fès",
-    "area": "Zouagha",
-    "name": "Makro",
-    "address": "3, lotiss. NADA, Bensouda FES",
-    "phone": "",
-    "district": "Zouagha",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/fes/jour/zouagha",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Fès",
-    "area": "Agdal",
-    "name": "Mly Slimane",
-    "address": "en face du lycée moulay slimane, route hay saada[+]",
-    "phone": "",
-    "district": "Agdal",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/fes/jour/agdal",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Guelmim",
@@ -1618,11 +1683,11 @@
     "address": "av 3 Mars , rte de Tan Tan",
     "phone": "",
     "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Guelmim",
@@ -1631,11 +1696,11 @@
     "address": "av Ibnou Toumert (jdid) hay Miri",
     "phone": "",
     "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Guelmim",
@@ -1644,11 +1709,11 @@
     "address": "30 av. Mouqaouama",
     "phone": "",
     "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Guelmim",
@@ -1657,11 +1722,11 @@
     "address": "162, av. Mehdi Ben Toumert",
     "phone": "",
     "district": "Guelmim",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Guelmim",
@@ -1670,11 +1735,11 @@
     "address": "157, av. Abainou",
     "phone": "",
     "district": "Guelmim",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-guelmim.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Inezgane",
@@ -1683,11 +1748,11 @@
     "address": "bouzgar , rue 640 n°4",
     "phone": "",
     "district": "Jorf",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Inezgane",
@@ -1696,11 +1761,11 @@
     "address": "1 av mokhtar essoussi imm. hagounia",
     "phone": "",
     "district": "Inezgane",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Inezgane",
@@ -1709,11 +1774,11 @@
     "address": "1046 hay nour tarrast (tel2: 0608070915)",
     "phone": "",
     "district": "Tarrast",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Inezgane",
@@ -1722,11 +1787,11 @@
     "address": "place de la grande mosquée , q. tarraste",
     "phone": "",
     "district": "Tarraste",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1735,11 +1800,11 @@
     "address": "45, rue Bouabidi Bouaza , lotiss. Zaitoune",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1748,11 +1813,11 @@
     "address": "bd Mohammed VI , c.com. Marjane n°8",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1761,11 +1826,11 @@
     "address": "50 lot. Amal souk",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1774,11 +1839,11 @@
     "address": "474, bd Al Moukaouama , Qods II",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1787,11 +1852,11 @@
     "address": "1354, bd. Abderrahim Bouabid , Hay ElFath",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khouribga",
@@ -1800,11 +1865,11 @@
     "address": "lotiss. Zaitoune, sect.9 n° 159",
     "phone": "",
     "district": "Khouribga",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khémisset",
@@ -1813,11 +1878,11 @@
     "address": "Hay Mouloud akka",
     "phone": "",
     "district": "Khemisset",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khémisset",
@@ -1829,8 +1894,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khémisset",
@@ -1842,8 +1907,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Khémisset",
@@ -1852,11 +1917,11 @@
     "address": "421 lotiss. AlMouna",
     "phone": "",
     "district": "Khemisset",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-khemisset.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Kénitra",
@@ -1868,21 +1933,21 @@
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Kénitra",
     "area": "Kasba Mehdia",
-    "name": "Pharmacie Florida",
+    "name": "Pharmacie Mehdia",
     "address": "",
-    "phone": "0537338709",
+    "phone": "0537338274",
     "district": "Kasba Mehdia",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Larache",
@@ -1894,8 +1959,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-larache.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Larache",
@@ -1907,8 +1972,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-larache.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Larache",
@@ -1920,8 +1985,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-larache.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Larache",
@@ -1933,502 +1998,528 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-larache.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
     "area": "Medina",
-    "name": "7Eme Art",
-    "address": "entre Al Mazar et Hôtel Adam Park et devant l'Hôtel Palm Plaza[+]",
-    "phone": "",
+    "name": "Pharmacie 7ème Art",
+    "address": "bd du 7ème Art - Autre ville Marrakech",
+    "phone": "0524377885",
     "district": "Medina",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/medina",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Abihafs",
-    "address": "Les Portes de Marrakech Addoha, sur la route d'Essaouira tournez à droite à 40m, avant Marjane Massira de 300m",
-    "phone": "",
-    "district": "Hay Hassani",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Ain itti",
-    "name": "Al Amana",
-    "address": "78, Douar Ouled El Garne Rte Ait Ourir Marrakech[+]",
-    "phone": "",
-    "district": "Ain itti",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/ain-itti",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "Al Marifa",
-    "address": "Im. Sana Bd. Prince My Abdellah (Ex. Bd. Safi) en face Association Alaouite de Protection des Aveugles[+]",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/gueliz",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "M'Hamid",
-    "name": "Al Ousra",
-    "address": "661, M'hamid II entre l'Arrondissement M'hamid et centre de Santé",
-    "phone": "",
-    "district": "M'Hamid",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/mhamid",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Amaddah",
-    "address": "364, Bd. Laâyoune à côté de Barid Douar Iziki en direction du Souika (Douar Iziki)",
-    "phone": "",
-    "district": "Hay Hassani",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Sidi Ghanem",
-    "name": "Badir",
-    "address": "8, Op. Bab ftouh, autoroute Agadir, près Souk Laouad, avant Hamam Al Aaz et Bayti Sakane , SIDI GHANEM AZZOUZIA[+]",
-    "phone": "",
-    "district": "Sidi Ghanem",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/sidi-ghanem",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Daoudiate",
-    "name": "Bennouna",
-    "address": "283, Belbekkar 2 près du Marché Municipal Daoudiate et Jet sakane derrière la Mosquée Belbekkar",
-    "phone": "",
-    "district": "Daoudiate",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/daoudiate",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "M'Hamid",
-    "name": "Berradi Centrale",
-    "address": "34, Lot. Berradi 2 Lamhamid 7 (derrière Lot. Nassim) à côté de l'école El maali et Lycée Lamhamid 7",
-    "phone": "",
-    "district": "M'Hamid",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/mhamid",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "M'Hamid",
-    "name": "Complexe Askajour",
-    "address": "E2 77 Lot. Askajour Mhamid7 à 200m de Salle Couverte (près Hamam Lbatoul) près du Terminus N° 11 Douar Haha",
-    "phone": "",
-    "district": "M'Hamid",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/mhamid",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Dar Esaada",
-    "name": "Dar Saada",
-    "address": "Résidence Dar Saada, Imm. 93 n°6 à 900m de Marjane et près de la Mosquée Dar Saada",
-    "phone": "",
-    "district": "Dar Esaada",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/dar-esaada",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Ain itti",
-    "name": "Dar Tounsi",
-    "address": "66, Biout El Boun Rte de Meknès après Aïn Itti et en face de Villas Borj Ennakhil et près de METRO[+]",
-    "phone": "",
-    "district": "Ain itti",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/ain-itti",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "Derb Dabachi",
-    "address": "54, Derb Dabachi Souika Médina",
-    "phone": "",
-    "district": "Medina",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/medina",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-7eme-art-s252975.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Daoudiate",
-    "name": "Dubai",
-    "address": "6, Mosquée Al Irfane, Hay Al Andalous Amerchich extension Badii, derrière Café malizia[+]",
-    "phone": "",
-    "district": "Daoudiate",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/daoudiate",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "El Hara",
-    "address": "20, rue Laârab El Hara Bab Doukkala entre pneus Goodyear et Ex. Bureau d'Hygiène[+]",
-    "phone": "",
-    "district": "Medina",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/medina",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "El Moukef",
-    "address": "79 Bis, Toualat El Moukef",
-    "phone": "",
-    "district": "Medina",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/medina",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
     "area": "Hay Hassani",
-    "name": "Fadila",
-    "address": "138, Lot. Safsaf entre Douar Sidi M'barek et Hay Inara, à côté de la piscine du Haouz",
-    "phone": "",
+    "name": "Pharmacie Abihafs",
+    "address": "Les Portes de Marrakech Addoha, sur la route d'Essaouira tournez à droite à 40m, à côté du Groupe Sc",
+    "phone": "0524017896",
     "district": "Hay Hassani",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Sidi Ghanem",
-    "name": "Haj Boubker",
-    "address": "534, zone industrielle Sidi Ghanem secteur n°17, venant de Route de Safi 1èr feu rouge après le Pont tournez à gauche après Les Maitres du Pain 1ère à gauche à côté d'EuroPVC[+]",
-    "phone": "",
-    "district": "Sidi Ghanem",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/sidi-ghanem",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-abihafs-s236504.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Ibn Bitar",
-    "address": "634, Douar Laskar en face de Dispensaire Castor 2 près de l'E.N.E.S.[+]",
-    "phone": "",
-    "district": "Hay Hassani",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Sidi Youssef Ben Ali",
-    "name": "Ibn Tachfine",
-    "address": "Lamcella Souika Lamcella SYBA[+]",
-    "phone": "",
-    "district": "Sidi Youssef Ben Ali",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/sidi-youssef-ben-ali",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "Illy",
-    "address": "Complexe Badii II Amerchich en face Résidence Dalia II",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/gueliz",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Hay Hassani",
-    "name": "Iziki",
-    "address": "Route principale d’Agadir Douar Iziki",
-    "phone": "",
-    "district": "Hay Hassani",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Azzouzia",
-    "name": "Jebli",
-    "address": "Résidence Baiti Sakan n° 02 MT 38 Près de Souk El Ouad autoroute d’Agadir En face de Hamma El Aaz -Azzouzia",
-    "phone": "",
-    "district": "Azzouzia",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/azzouzia",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Sidi Youssef Ben Ali",
-    "name": "Jnane",
-    "address": "318 Bis, Lot S.Y.B.A 3 prés de la préfecture S.Y.B.A et Lot. Jnane ERAC en face de la CNSS",
-    "phone": "",
-    "district": "Sidi Youssef Ben Ali",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/sidi-youssef-ben-ali",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "Jnane El Afia",
-    "address": "4, Rue Jnane El Afia Toualate El Miara Hay Essalam, face du cimetière juif Mellah, MEDINA",
-    "phone": "",
-    "district": "Medina",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/medina",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "L'Hivernage",
-    "address": "1, Imm. Adar 2, Rue El Qadi Ayad,[+]",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/gueliz",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "L'Institut Français",
-    "address": "Qt. El Ghoul devant le Médina Loft and SPA Hôtel et derrière l'Institut Français de Marrakech et à 500m de la Clinique Les Narcisses[+]",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/gueliz",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Medina",
-    "name": "Lalla Aouda Saadia",
-    "address": "58, Sidi Soussane Trik sabtiyne en face du Lycée Lalla Ouda Saâdia[+]",
-    "phone": "",
-    "district": "Medina",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/medina",
+    "area": "Nakhil Sud",
+    "name": "Pharmacie Al Amana",
+    "address": "rte Ait Ourir douar ouled El Garne n°78 Marrakech",
+    "phone": "0524328328",
+    "district": "Nakhil Sud",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-al-amana-s243673.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "M'Hamid",
-    "name": "Lamhamid",
-    "address": "241, Saâda IV Lamhamid Laqwas, près du Docteur Haraki",
-    "phone": "",
-    "district": "M'Hamid",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/mhamid",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "area": "Grand Gueliz",
+    "name": "Pharmacie Al Marifa",
+    "address": "bd Prince Moulay Abdallah MARRAKECH",
+    "phone": "0524447697",
+    "district": "Grand Gueliz",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-al-marifa-s64263.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Lamhamid",
+    "name": "Pharmacie Alousra",
+    "address": "661 Hay M'hamid 2 MARRAKECH",
+    "phone": "0524370846",
+    "district": "Lamhamid",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-alousra-s55468.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Amaddah",
+    "address": "364 bd Belouardi douar iziki MARRAKECH",
+    "phone": "0524342323",
+    "district": "Hay Hassani",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-amaddah-s43826.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Sidi Ghanem Azzouzia",
+    "name": "Pharmacie Badir",
+    "address": "Quartier Al Azzouzia opération Bab Fteuh n°8 MARRAKECH",
+    "phone": "0524336707",
+    "district": "Sidi Ghanem Azzouzia",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-badir-s66745.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie Bennouna",
+    "address": "283 lotiss. Belbekar II hay Mohammadi MARRAKECH",
+    "phone": "0524302582",
+    "district": "Daoudiat",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-bennouna-s55450.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Lamhamid",
+    "name": "Pharmacie Berradi Centrale",
+    "address": "34 lotiss. Berradi II M'hamid 7 MARRAKECH",
+    "phone": "0524373413",
+    "district": "Lamhamid",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-berradi-centrale-s96362.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Lamhamid",
+    "name": "Pharmacie Complexe Askajour",
+    "address": "lotiss. Socoma I Askajour E2 M'hamid MARRAKECH",
+    "phone": "0524371800",
+    "district": "Lamhamid",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-complexe-askajour-s96773.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Dar Esaada",
+    "name": "Pharmacie Dar Saada",
+    "address": "hay Saada Dar Saada imm. 93 n°6 MARRAKECH",
+    "phone": "0524290949",
+    "district": "Hay Dar Esaada",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-dar-saada-s73564.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "AÏn Itti",
+    "name": "Pharmacie Dar Tounsi",
+    "address": "6 Dar Tounsi rte de Meknès MARRAKECH",
+    "phone": "0524329652",
+    "district": "AÏn Itti",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-dar-tounsi-s55516.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie Derb Dabachi",
+    "address": "54 Derb Dabachi MARRAKECH",
+    "phone": "0524426834",
+    "district": "Medina",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-derb-dabachi-s14218.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie Dubai",
+    "address": "6 bd Errazi - Autre ville Mosquée Al irfane Amerchich Marrakech",
+    "phone": "0524292113",
+    "district": "Daoudiat",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-dubai-s250130.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "AÏn Itti",
+    "name": "Pharmacie El Hamidi",
+    "address": "26, Aïn Itti devant le cimetière de Bab lakhmis Marrakech",
+    "phone": "0524307350",
+    "district": "AÏn Itti",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-el-hamidi-s236549.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie ElMoukef",
+    "address": "79 X rue El Moukef MARRAKECH",
+    "phone": "0524377566",
+    "district": "Medina",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-elmoukef-s15223.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Grand Gueliz",
+    "name": "Pharmacie Elhara",
+    "address": "Derb Laârab El Hara Bab Doukkala MARRAKECH",
+    "phone": "0524431113",
+    "district": "Grand Gueliz",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-elhara-s164200.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Fadila",
+    "address": "138, Lot. Safsaf entre Douar Sidi M'barek et Hay Inara, à côté de la piscine du Haouz Marrakech",
+    "phone": "0524348534",
+    "district": "Hay Hassani",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-fadila-s236633.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Sidi Ghanem Azzouzia",
+    "name": "Pharmacie Hadj Boubker",
+    "address": "534 z.i Sidi Ghanem sect. 17 Marrakech",
+    "phone": "0525555579",
+    "district": "Sidi Ghanem Azzouzia",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-hadj-boubker-s251541.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Ibn Bitar",
+    "address": "634 Douar Laâskar MARRAKECH",
+    "phone": "0524392591",
+    "district": "Hay Hassani",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-bitar-s4351.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Sidi Youssef",
+    "name": "Pharmacie Ibn Tachfine",
+    "address": "Av. Lamcella Souika Lamcella SYBA Marrakech",
+    "phone": "0524402840",
+    "district": "Sidi Youssef",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-ibn-tachfine-s237859.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie Illy",
+    "address": "rue Jamiaat Ben Youssef Badii II Amerchich MARRAKECH",
+    "phone": "0524301497",
+    "district": "Daoudiat",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-illy-s14915.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Hay Hassani",
+    "name": "Pharmacie Iziki",
+    "address": "Route principale d’Agadir Douar Iziki Marrakech",
+    "phone": "0524392981",
+    "district": "Hay Hassani",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-iziki-s237856.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Sidi Ghanem Azzouzia",
+    "name": "Pharmacie Jebli",
+    "address": "Résidence Baiti Sakan n° 02 MT 38 Près de Souk El Ouad autoroute d’Agadir En face de Hamma El Aaz -A Marrakech",
+    "phone": "0524356696",
+    "district": "Sidi Ghanem Azzouzia",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-jebli-s236938.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Sidi Youssef",
+    "name": "Pharmacie Jnane",
+    "address": "318 Bis, Lot S.Y.B.A 3 prés de la préfecture S.Y.B.A et Lot. Jnane ERAC en face de la CNSS Marrakech",
+    "phone": "0524404995",
+    "district": "Sidi Youssef",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-jnane-s238243.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie Jnane ElAfia",
+    "address": "rue Jnane Lafia Toualate MARRAKECH",
+    "phone": "0524376476",
+    "district": "Medina",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-jnane-elafia-s55583.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Nakhil Sud",
+    "name": "Pharmacie Lakhili",
+    "address": "Rte de la Forêt n°103 Marrakech",
+    "phone": "0540125702",
+    "district": "Nakhil Sud",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-lakhili-s243728.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Medina",
+    "name": "Pharmacie Lalla Aouda Essadia",
+    "address": "58 hay Sidi Soussane Tarik Essabtyenne MARRAKECH",
+    "phone": "0524378680",
+    "district": "Medina",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-lalla-aouda-essadia-s55572.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Lamhamid",
+    "name": "Pharmacie Lamhamid",
+    "address": "241, Saâda IV Lamhamid Laqwas, près du Docteur Haraki Marrakech",
+    "phone": "0524360159",
+    "district": "Lamhamid",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-lamhamid-s236648.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
     "area": "Targa",
-    "name": "Les Orangers",
-    "address": "143, Lot. Lalla Hiya Targa, près de la Clinique Errahma et Délice Targa (Boucherie Ferkous)[+]",
-    "phone": "",
+    "name": "Pharmacie Les Orangers",
+    "address": "143 lotiss. Lalla Hayya Targa Marrakech",
+    "phone": "0524343888",
     "district": "Targa",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/targa",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-les-orangers-s244145.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "Les Portes De Gueliz",
-    "address": "Résidence les Portes de Guéliz tranche II Im. M3 Mabrouka/Akioud, en face de la voie ferrée à côté du Croissant Rouge",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/gueliz",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "area": "Grand Gueliz",
+    "name": "Pharmacie Les Portes De Gueliz",
+    "address": "Résidence les Portes de Guéliz tranche II Im. M3 Mabrouka/Akioud, en face de la voie ferrée à côté d Marrakech",
+    "phone": "0524438861",
+    "district": "Grand Gueliz",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-les-portes-de-gueliz-s236748.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "M'Hamid",
-    "name": "Maâtallah",
-    "address": "495, Lot. Maâtallah, Grande Avenue (Av. Al Ourouba), à côté d'IAM M’hamid",
-    "phone": "",
-    "district": "M'Hamid",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/mhamid",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "area": "Lamhamid",
+    "name": "Pharmacie Maâtallah",
+    "address": "495 lotiss. Maatallah M'hamid MARRAKECH",
+    "phone": "0524360668",
+    "district": "Lamhamid",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-maatallah-s15145.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "Daoudiate",
-    "name": "Rouidate",
-    "address": "Av. Allal Fassi entrée face hôtel Redouane, entre Fac de Langue Arabe et école Mimosa (21, Lot. Iguider Rouidate)[+]",
-    "phone": "",
-    "district": "Daoudiate",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/daoudiate",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "area": "Hay Al Izdihar",
+    "name": "Pharmacie Nakhil Saada",
+    "address": "7 hay Annakhil - Autre ville resid. Dyar Annakhil bloc B imm 3 Marrakech",
+    "phone": "0524292937",
+    "district": "Hay Al Izdihar",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-nakhil-saada-s244347.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
-    "area": "Daoudiate",
-    "name": "Sidi Ouaggag",
-    "address": "Sidi Abbad1, rue à côté Café Taxi, continuez tout droit jusqu'a mosquée Rahali Farouk sur la droite",
-    "phone": "",
-    "district": "Daoudiate",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/daoudiate",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "area": "Daoudiat",
+    "name": "Pharmacie Rouidate",
+    "address": "Av. Allal Fassi entrée face hôtel Redouane, entre Fac de Langue Arabe et école Mimosa (21, Lot. Ig Marrakech",
+    "phone": "0524312870",
+    "district": "Daoudiat",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-rouidate-s236568.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Daoudiat",
+    "name": "Pharmacie Sidi Ouaggag",
+    "address": "Sidi Abbad1, rue à côté Café Taxi, continuez tout droit jusqu'a mosquée Rahali Farouk sur la droite Marrakech",
+    "phone": "0524313560",
+    "district": "Daoudiat",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-sidi-ouaggag-s236569.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
     "area": "Hay Hassani",
-    "name": "Soudri",
-    "address": "391 lotiss. Soudri Socoma II[+]",
-    "phone": "",
+    "name": "Pharmacie Soudri",
+    "address": "391 lotiss. Soudri Socoma II Marrakech",
+    "phone": "0524344173",
     "district": "Hay Hassani",
-    "duty": "Garde de jour",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/jour/hay-hassani",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-soudri-s243747.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Marrakech",
     "area": "Targa",
-    "name": "Tilila",
-    "address": "Route Sid Daou près du Super Marché les Roses de Targa,",
-    "phone": "",
+    "name": "Pharmacie Tilila",
+    "address": "Centre Targa résid. les Roses de la Targa n°4 MARRAKECH",
+    "phone": "0524345161",
     "district": "Targa",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/targa",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Ain itti",
-    "name": "Zohour",
-    "address": "Zohour 2 Aïn Itti derrière cimetière Bab Khmiss près de la nouvelle Station Total Rte Méknès",
-    "phone": "",
-    "district": "Ain itti",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/ain-itti",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Marrakech",
-    "area": "Guéliz",
-    "name": "Zouan",
-    "address": "Résidence Al Youssr. Quartier Militaire près de l'Ecole de Police et en face de résidence Leonardo da vinci[+]",
-    "phone": "",
-    "district": "Guéliz",
-    "duty": "Garde de nuit",
-    "source": "https://lematin.ma/pharmacie-garde/marrakech/nuit/gueliz",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-tilila-s46684.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "AÏn Itti",
+    "name": "Pharmacie Zohour",
+    "address": "Quartier Ain Itti résid. Zohour imm. 173 n°62 MARRAKECH",
+    "phone": "0524328342",
+    "district": "AÏn Itti",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-zohour-s55562.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Grand Gueliz",
+    "name": "Pharmacie l'Hivernage",
+    "address": "1 rue Cadi Ayad Guéliz Marrakech",
+    "phone": "0524449662",
+    "district": "Grand Gueliz",
+    "duty": "Ouvert en ce moment",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-l-039-hivernage-s253812.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Marrakech",
+    "area": "Grand Gueliz",
+    "name": "Pharmacie l'Institut Francais",
+    "address": "5 Campus El Ghoul Marrakech",
+    "phone": "0524430032",
+    "district": "Grand Gueliz",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
+    "source": "https://www.annuaire-gratuit.ma/pharmacie-l-039-institut-francais-s253811.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Nador",
@@ -2440,8 +2531,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Nador",
@@ -2453,8 +2544,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Nador",
@@ -2466,8 +2557,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Nador",
@@ -2479,8 +2570,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Nador",
@@ -2492,8 +2583,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ouarzazate",
@@ -2502,11 +2593,11 @@
     "address": "bd Mohammed V",
     "phone": "",
     "district": "Ouarzazate",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ouarzazate",
@@ -2515,11 +2606,11 @@
     "address": "bd Al Maghrib Al Arabi",
     "phone": "",
     "district": "Ouarzazate",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Ouarzazate",
@@ -2528,50 +2619,11 @@
     "address": "Bd Mohammed V ang. place du 3 Mars",
     "phone": "",
     "district": "Ouarzazate",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-ouarzazate.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Al Kawtar Hay Agdal 2",
-    "address": "route sidi Yahya Agdal n°D18[+]",
-    "phone": "",
-    "district": "Oujda",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Atacadao",
-    "address": "Bd Principal El Jorf Lakhdar rue 21 N°11[+]",
-    "phone": "",
-    "district": "Oujda",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Ayoub",
-    "address": "N°5 Mosquée Koudane zat Koudane Hay Mostakbal",
-    "phone": "",
-    "district": "Oujda",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Oujda",
@@ -2583,8 +2635,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Oujda",
@@ -2596,8 +2648,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Oujda",
@@ -2609,21 +2661,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Medina",
-    "address": "Ang Moulay Hassan- Pacha Benkaroum[+]",
-    "phone": "",
-    "district": "Oujda",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Oujda",
@@ -2635,21 +2674,8 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Oujda",
-    "area": "Oujda",
-    "name": "Ridouane",
-    "address": "Bd Mouad Bnou Jabal Mosquée Ridouane N°1",
-    "phone": "",
-    "district": "Oujda",
-    "duty": "24h/24",
-    "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Oujda",
@@ -2661,164 +2687,138 @@
     "duty": "24h/24",
     "source": "https://lematin.ma/pharmacie-garde/oujda/jour/oujda",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Takadoum & Souissi",
-    "name": "Pharmacie Al Minbat",
-    "address": "",
-    "phone": "0537751607",
-    "district": "Takadoum & Souissi",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Rabat",
     "area": "Yacoub El Mansour",
-    "name": "Pharmacie Al Mountazah",
+    "name": "Pharmacie Al Masbah Al Kabir",
     "address": "",
-    "phone": "0537790016",
+    "phone": "0537290673",
     "district": "Yacoub El Mansour",
-    "duty": "9h-00h00",
+    "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Yacoub El Mansour",
-    "name": "Pharmacie Bouchra Al Oum",
-    "address": "",
-    "phone": "0537291245",
-    "district": "Yacoub El Mansour",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Rabat",
     "area": "Centre Ville",
-    "name": "Pharmacie Centre Cheques Postaux",
+    "name": "Pharmacie Avenue D’Alger Hassan",
     "address": "",
-    "phone": "0537726216",
+    "phone": "0537726323",
     "district": "Centre Ville",
-    "duty": "9h-22h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Yacoub El Mansour",
-    "name": "Pharmacie Centre De Transfusion Sanguine",
-    "address": "",
-    "phone": "0537692469",
-    "district": "Yacoub El Mansour",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Takadoum & Souissi",
-    "name": "Pharmacie Du Parc",
-    "address": "",
-    "phone": "0537751497",
-    "district": "Takadoum & Souissi",
     "duty": "9h-00h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Rabat",
-    "area": "Agdal",
-    "name": "Pharmacie El Irfane",
+    "area": "Medina",
+    "name": "Pharmacie Cherqi",
     "address": "",
-    "phone": "0537686317",
-    "district": "Agdal",
-    "duty": "24h/24",
+    "phone": "0537207474",
+    "district": "Medina",
+    "duty": "9h-23h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Takadoum & Souissi",
-    "name": "Pharmacie El Oumnia",
-    "address": "",
-    "phone": "0645715550",
-    "district": "Takadoum & Souissi",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Ocean-Orangers",
-    "name": "Pharmacie La Muraille",
-    "address": "",
-    "phone": "0537708877",
-    "district": "Ocean-Orangers",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Takadoum & Souissi",
-    "name": "Pharmacie Loubaris",
-    "address": "",
-    "phone": "0537754713",
-    "district": "Takadoum & Souissi",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Rabat",
-    "area": "Akkari-Ocean",
-    "name": "Pharmacie Napoli",
-    "address": "",
-    "phone": "0530474131",
-    "district": "Akkari-Ocean",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-    "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Rabat",
     "area": "Hay Riad",
-    "name": "Pharmacie Safiya",
+    "name": "Pharmacie City Center",
     "address": "",
-    "phone": "0537713443",
+    "phone": "0537564244",
     "district": "Hay Riad",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Takadoum & Souissi",
+    "name": "Pharmacie Du Cedre",
+    "address": "",
+    "phone": "0537655541",
+    "district": "Takadoum & Souissi",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Ocean-Orangers",
+    "name": "Pharmacie Du Minaret",
+    "address": "",
+    "phone": "0537726495",
+    "district": "Ocean-Orangers",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Yacoub El Mansour",
+    "name": "Pharmacie Hay Chabab",
+    "address": "",
+    "phone": "0537692902",
+    "district": "Yacoub El Mansour",
+    "duty": "9h-00h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Yacoub El Mansour",
+    "name": "Pharmacie Hay El Fath",
+    "address": "",
+    "phone": "0703010203",
+    "district": "Yacoub El Mansour",
+    "duty": "9h-00h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Akkari-Ocean",
+    "name": "Pharmacie Ibn Haytham",
+    "address": "",
+    "phone": "0537734603",
+    "district": "Akkari-Ocean",
+    "duty": "9h-00h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Rabat",
+    "area": "Takadoum & Souissi",
+    "name": "Pharmacie Les Lilas",
+    "address": "",
+    "phone": "0537756273",
+    "district": "Takadoum & Souissi",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2827,11 +2827,11 @@
     "address": "q. Kaouki",
     "phone": "",
     "district": "Safi",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2840,11 +2840,11 @@
     "address": "Quartier Aviation , Bloc 13 n°38",
     "phone": "",
     "district": "Safi",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2853,11 +2853,11 @@
     "address": "246, rue Boukrae , lotiss. ElMassira rte Caid Sidi Aissa",
     "phone": "",
     "district": "Safi",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2866,11 +2866,11 @@
     "address": "233 lotiss. Nour quartier El Qods",
     "phone": "",
     "district": "Safi",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2879,11 +2879,11 @@
     "address": "7, rue ElKendi , v.n.",
     "phone": "",
     "district": "Safi",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Safi",
@@ -2892,76 +2892,50 @@
     "address": "958 lotiss. Borj Nador",
     "phone": "",
     "district": "Safi",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
-    "area": "Sala El Jadida",
-    "name": "Pharmacie Al Maârid",
+    "area": "Hay Chmaou",
+    "name": "Pharmacie Al Firdaous",
     "address": "",
-    "phone": "0537534950",
-    "district": "Sala El Jadida",
+    "phone": "0537878819",
+    "district": "Hay Chmaou",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Salé",
+    "area": "Hay Arrahma",
+    "name": "Pharmacie Alhamd",
+    "address": "",
+    "phone": "0537871067",
+    "district": "Hay Arrahma",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
     "area": "Tabriquet",
-    "name": "Pharmacie Al Mouahad",
+    "name": "Pharmacie Amri",
     "address": "",
-    "phone": "0537860968",
+    "phone": "0530912099",
     "district": "Tabriquet",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "My Ismail",
-    "name": "Pharmacie Amina",
-    "address": "",
-    "phone": "0537805559",
-    "district": "My Ismail",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Al Mohit Abouab Sala",
-    "name": "Pharmacie Amzar",
-    "address": "",
-    "phone": "0537822542",
-    "district": "Al Mohit Abouab Sala",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Essalam",
-    "name": "Pharmacie Atlas Al Kabir",
-    "address": "",
-    "phone": "0537806666",
-    "district": "Hay Essalam",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
@@ -2973,138 +2947,112 @@
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Sala El Jadida",
-    "name": "Pharmacie Bayti",
-    "address": "",
-    "phone": "0537533359",
-    "district": "Sala El Jadida",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Arrahma",
-    "name": "Pharmacie Carrefour",
-    "address": "",
-    "phone": "0530167960",
-    "district": "Hay Arrahma",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
     "area": "Salé Médina",
-    "name": "Pharmacie Essaf",
+    "name": "Pharmacie Bab Chaafa",
     "address": "",
-    "phone": "0537844870",
+    "phone": "0537782646",
     "district": "Salé Médina",
     "duty": "9h-00h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Arrahma",
-    "name": "Pharmacie Hay Karima",
-    "address": "",
-    "phone": "0537855058",
-    "district": "Hay Arrahma",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Hay Arrahma",
-    "name": "Pharmacie L'Hopital De Sale",
-    "address": "",
-    "phone": "0537871146",
-    "district": "Hay Arrahma",
-    "duty": "9h-00h00",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Salé",
-    "area": "Salé Médina",
-    "name": "Pharmacie Mrissa",
-    "address": "",
-    "phone": "0537845299",
-    "district": "Salé Médina",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
     "area": "Sidi Moussa",
-    "name": "Pharmacie Safaa",
+    "name": "Pharmacie Centrale De Sale",
     "address": "",
-    "phone": "0537784692",
+    "phone": "0537781589",
     "district": "Sidi Moussa",
     "duty": "9h-00h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
-    "area": "Hay Arrahma",
-    "name": "Pharmacie Super Arrahma",
+    "area": "Al Mohit Abouab Sala",
+    "name": "Pharmacie Dar Al Bahr",
     "address": "",
-    "phone": "0537874895",
-    "district": "Hay Arrahma",
-    "duty": "9h-00h00",
+    "phone": "0537888782",
+    "district": "Al Mohit Abouab Sala",
+    "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
     "area": "Bettana",
-    "name": "Pharmacie Touti",
+    "name": "Pharmacie Ghriss",
     "address": "",
-    "phone": "0537843798",
+    "phone": "0537813182",
     "district": "Bettana",
     "duty": "9h-00h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Salé",
+    "area": "Sala El Jadida",
+    "name": "Pharmacie Kamil",
+    "address": "",
+    "phone": "0537828056",
+    "district": "Sala El Jadida",
+    "duty": "9h-00h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Salé",
+    "area": "Sala El Jadida",
+    "name": "Pharmacie La Nouvelle Cité Ex: Cite Royale",
+    "address": "",
+    "phone": "0537532696",
+    "district": "Sala El Jadida",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Salé",
+    "area": "My Ismail",
+    "name": "Pharmacie Lyazid",
+    "address": "",
+    "phone": "0537808201",
+    "district": "My Ismail",
+    "duty": "9h-00h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Salé",
     "area": "El Mazza Sidi Abdellah",
-    "name": "Pharmacie Yahia Ex: Bismillah",
+    "name": "Pharmacie Ramadan",
     "address": "",
-    "phone": "0537821833",
+    "phone": "0646464109",
     "district": "El Mazza Sidi Abdellah",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3113,11 +3061,11 @@
     "address": "4 rue Ibn Tachfine",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3129,8 +3077,8 @@
     "duty": "Ouvert toute la journée (24 heures)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3139,11 +3087,11 @@
     "address": "648, rue Aghaliba",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3152,11 +3100,11 @@
     "address": "rte El Menzel , n°82/1, lotiss. El Hachmia, bloc 6",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3165,11 +3113,11 @@
     "address": "lot Massay , n°118",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3178,11 +3126,11 @@
     "address": "route de Fès",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3191,11 +3139,11 @@
     "address": "281 derb El Miter",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3204,11 +3152,11 @@
     "address": "387, av AlFalah , Ben Seffar",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3217,11 +3165,11 @@
     "address": "lotiss. Atlas Ben Seffar",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Sefrou",
@@ -3230,11 +3178,11 @@
     "address": "lotissement Bir Anzarane Ben Seffar n°19",
     "phone": "",
     "district": "Sefrou",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3246,8 +3194,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3259,8 +3207,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3272,8 +3220,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3285,8 +3233,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3298,8 +3246,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3311,8 +3259,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3324,8 +3272,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tanger",
@@ -3337,8 +3285,8 @@
     "duty": "20h00-09h00",
     "source": "https://infopoint.ma/pharmacies-de-garde",
     "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tiznit",
@@ -3347,11 +3295,11 @@
     "address": "Amicale des fonctionnaires Bloc C n°142",
     "phone": "",
     "district": "Tiznit",
-    "duty": "Garde Nuit (Ouvert de 20h à 9h)",
+    "duty": "Ouvert en ce moment",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tiznit",
@@ -3360,11 +3308,11 @@
     "address": "507 rue El Mers Edalha",
     "phone": "",
     "district": "Tiznit",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Tiznit",
@@ -3373,114 +3321,101 @@
     "address": "62 rue Laâyoune II lotiss. Hama",
     "phone": "",
     "district": "Tiznit",
-    "duty": "Ouvert en ce moment",
+    "duty": "Garde Jour (Ouvert entre 9h et 23h)",
     "source": "https://www.annuaire-gratuit.ma/pharmacie-garde-tiznit.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Témara",
-    "area": "El Massira",
-    "name": "Pharmacie Al Fajr",
-    "address": "",
-    "phone": "0537601592",
-    "district": "El Massira",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Témara",
     "area": "Centre",
-    "name": "Pharmacie Al Kasbah",
+    "name": "Pharmacie Du Conseil",
     "address": "",
-    "phone": "0537644046",
-    "district": "Centre",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Témara",
-    "area": "El Massira",
-    "name": "Pharmacie Assalam",
-    "address": "",
-    "phone": "0537606740",
-    "district": "El Massira",
-    "duty": "24h/24",
-    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
-  },
-  {
-    "city": "Témara",
-    "area": "Centre",
-    "name": "Pharmacie Echoumoue",
-    "address": "",
-    "phone": "0537611138",
+    "phone": "0537741163",
     "district": "Centre",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
     "sources_count": 1,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Témara",
     "area": "Oulad Mtaâ",
-    "name": "Pharmacie L`Olivier",
+    "name": "Pharmacie Granada",
     "address": "",
-    "phone": "0537608801",
+    "phone": "0537601353",
     "district": "Oulad Mtaâ",
     "duty": "9h00-00h00",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Témara",
+    "area": "Centre (Al Wifak)",
+    "name": "Pharmacie Kenzy",
+    "address": "",
+    "phone": "0537645036",
+    "district": "Centre (Al Wifak)",
+    "duty": "24h/24",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Témara",
     "area": "Centre",
-    "name": "Pharmacie La Ceinture Verte",
+    "name": "Pharmacie La Reference",
     "address": "",
-    "phone": "0537643584",
+    "phone": "0537616641",
     "district": "Centre",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Témara",
-    "area": "Harhoura",
-    "name": "Pharmacie Miramar",
+    "area": "El Massira",
+    "name": "Pharmacie La Source",
     "address": "",
-    "phone": "0537744445",
-    "district": "Harhoura",
+    "phone": "0537604778",
+    "district": "El Massira",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
+  },
+  {
+    "city": "Témara",
+    "area": "El Guich Oudaya",
+    "name": "Pharmacie Rim",
+    "address": "",
+    "phone": "0537561813",
+    "district": "El Guich Oudaya",
+    "duty": "9h-23h00",
+    "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   },
   {
     "city": "Témara",
     "area": "Centre",
-    "name": "Pharmacie Wardat Lyassmine",
+    "name": "Pharmacie Tarik Ibn Ziad",
     "address": "",
-    "phone": "0701312269",
+    "phone": "0537642040",
     "district": "Centre",
     "duty": "24h/24",
     "source": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-    "sources_count": 2,
-    "date": "2026-02-27",
-    "scraped_at": "2026-02-27T19:55:15.096198+00:00"
+    "sources_count": 1,
+    "date": "2026-02-28",
+    "scraped_at": "2026-02-28T07:46:03.743172+00:00"
   }
 ]
