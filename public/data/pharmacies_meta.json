@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-02-28T19:43:36.654204+00:00",
-  "total_pharmacies": 234,
-  "cities_count": 25,
+  "scraped_at": "2026-03-01T07:51:03.297860+00:00",
+  "total_pharmacies": 244,
+  "cities_count": 26,
   "cities": [
     "Agadir",
     "Ait Melloul",
@@ -25,6 +25,7 @@
     "Rabat",
     "Safi",
     "Salé",
+    "Settat",
     "Tanger",
     "Tiznit",
     "Témara"
@@ -38,25 +39,25 @@
   "sources_status": {
     "infopoint.ma": {
       "ok": true,
-      "count": 12,
+      "count": 8,
       "error": null
     },
     "guidepharmacies.ma": {
-      "ok": true,
-      "count": 31,
-      "error": null
+      "ok": false,
+      "count": 0,
+      "error": "No records from any city"
     },
     "lematin.ma": {
       "ok": true,
-      "count": 98,
+      "count": 104,
       "error": null
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 242,
+      "count": 247,
       "error": null
     }
   },
-  "previous_total": 263,
-  "delta": -29
+  "previous_total": 234,
+  "delta": 10
 }
