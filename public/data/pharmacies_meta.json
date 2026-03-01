@@ -1,16 +1,16 @@
 {
-  "scraped_at": "2026-03-01T07:51:03.297860+00:00",
-  "total_pharmacies": 244,
-  "cities_count": 26,
+  "scraped_at": "2026-03-01T19:44:38.007067+00:00",
+  "total_pharmacies": 271,
+  "cities_count": 28,
   "cities": [
     "Agadir",
     "Ait Melloul",
     "Ben Guerir",
-    "Benslimane",
     "Berrechid",
     "Béni Mellal",
     "Casablanca",
     "El Jadida",
+    "Errachidia",
     "Essaouira",
     "Fès",
     "Guelmim",
@@ -18,17 +18,19 @@
     "Khouribga",
     "Khémisset",
     "Kénitra",
-    "Larache",
     "Marrakech",
-    "Ouarzazate",
+    "Nador",
     "Oujda",
     "Rabat",
     "Safi",
     "Salé",
+    "Sefrou",
     "Settat",
+    "Sidi Slimane",
     "Tanger",
     "Tiznit",
-    "Témara"
+    "Témara",
+    "Tétouan"
   ],
   "sources_used": [
     "infopoint.ma",
@@ -39,7 +41,7 @@
   "sources_status": {
     "infopoint.ma": {
       "ok": true,
-      "count": 8,
+      "count": 12,
       "error": null
     },
     "guidepharmacies.ma": {
@@ -54,10 +56,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 247,
+      "count": 280,
       "error": null
     }
   },
-  "previous_total": 234,
-  "delta": 10
+  "previous_total": 244,
+  "delta": 27
 }
