@@ -1,15 +1,17 @@
 {
-  "scraped_at": "2026-03-03T07:59:50.322392+00:00",
-  "total_pharmacies": 238,
-  "cities_count": 25,
+  "scraped_at": "2026-03-03T19:58:37.318317+00:00",
+  "total_pharmacies": 259,
+  "cities_count": 27,
   "cities": [
     "Agadir",
     "Ait Melloul",
     "Ben Guerir",
+    "Benslimane",
     "Berkane",
     "Berrechid",
     "Béni Mellal",
     "Casablanca",
+    "El Jadida",
     "Errachidia",
     "Fès",
     "Guelmim",
@@ -53,10 +55,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 235,
+      "count": 255,
       "error": null
     }
   },
-  "previous_total": 240,
-  "delta": -2
+  "previous_total": 238,
+  "delta": 21
 }
