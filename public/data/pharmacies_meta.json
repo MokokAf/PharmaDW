@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-02T19:58:54.599759+00:00",
-  "total_pharmacies": 240,
+  "scraped_at": "2026-03-03T07:59:50.322392+00:00",
+  "total_pharmacies": 238,
   "cities_count": 25,
   "cities": [
     "Agadir",
@@ -48,15 +48,15 @@
     },
     "lematin.ma": {
       "ok": true,
-      "count": 109,
+      "count": 106,
       "error": null
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 234,
+      "count": 235,
       "error": null
     }
   },
-  "previous_total": 268,
-  "delta": -28
+  "previous_total": 240,
+  "delta": -2
 }
