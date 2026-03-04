@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-03-04T07:57:01.302762+00:00",
-  "total_pharmacies": 258,
-  "cities_count": 27,
+  "scraped_at": "2026-03-04T19:58:59.211047+00:00",
+  "total_pharmacies": 256,
+  "cities_count": 28,
   "cities": [
     "Agadir",
     "Ait Melloul",
@@ -13,6 +13,7 @@
     "Casablanca",
     "El Jadida",
     "Errachidia",
+    "Essaouira",
     "Fès",
     "Guelmim",
     "Inezgane",
@@ -55,10 +56,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 256,
+      "count": 295,
       "error": null
     }
   },
-  "previous_total": 259,
-  "delta": -1
+  "previous_total": 258,
+  "delta": -2
 }
