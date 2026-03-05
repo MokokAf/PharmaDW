@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-03-05T07:59:38.071683+00:00",
-  "total_pharmacies": 235,
-  "cities_count": 27,
+  "scraped_at": "2026-03-05T20:05:04.965966+00:00",
+  "total_pharmacies": 245,
+  "cities_count": 28,
   "cities": [
     "Agadir",
     "Ait Melloul",
@@ -17,6 +17,7 @@
     "Guelmim",
     "Inezgane",
     "Khouribga",
+    "Khémisset",
     "Laayoune",
     "Larache",
     "Marrakech",
@@ -55,10 +56,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 272,
+      "count": 282,
       "error": null
     }
   },
-  "previous_total": 256,
-  "delta": -21
+  "previous_total": 235,
+  "delta": 10
 }
