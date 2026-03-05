@@ -6,63 +6,28 @@ import dynamic from 'next/dynamic'
 import { AlertTriangle, PackageSearch } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { MedDrugListItem, DrugFilters, TherapeuticClassOption } from '@/types/medication'
+import { mapToCategory, matchesCategory } from '@/lib/therapeutic-class-categories'
 
 /**
- * Clean up therapeutic class list for dropdown display:
- * - Remove barcode numbers (all-digit strings)
- * - Remove overly long entries (descriptions, not real class names)
- * - Case-insensitive dedup (keep most frequent variant)
- * - Merge singular/plural near-duplicates (trailing 's')
- * - Return with drug counts for each class
+ * Aggregate drugs into broad therapeutic categories (~50-70 categories
+ * matching medicament.ma's taxonomy) instead of showing 1,300+ granular classes.
  */
-function deduplicateClasses(allClasses: string[]): TherapeuticClassOption[] {
-  const clean = allClasses.filter(
-    (c) => c && !/^\d{5,}$/.test(c.trim()) && c.trim().length <= 80
-  )
-
-  // Group by lowercase → count each exact variant
-  const groups = new Map<string, Map<string, number>>()
-  for (const c of clean) {
-    const key = c.toLowerCase().trim()
-    if (!groups.has(key)) groups.set(key, new Map())
-    const m = groups.get(key)!
-    m.set(c, (m.get(c) ?? 0) + 1)
-  }
-
-  // For each group pick the most frequent casing
-  const best = new Map<string, { label: string; total: number }>()
-  groups.forEach((variants, key) => {
-    let topLabel = ''
-    let topCount = 0
-    let total = 0
-    variants.forEach((count, v) => {
-      total += count
-      if (count > topCount) { topLabel = v; topCount = count }
-    })
-    best.set(key, { label: topLabel, total })
-  })
-
-  // Merge singular/plural: "vaccins" + "vaccin" → keep the one with more mentions
-  const dropped = new Set<string>()
-  Array.from(best.keys()).forEach((key) => {
-    if (dropped.has(key)) return
-    const singular = key.endsWith('s') ? key.slice(0, -1) : null
-    if (singular && best.has(singular) && !dropped.has(singular)) {
-      const pEntry = best.get(key)!
-      const sEntry = best.get(singular)!
-      if (pEntry.total >= sEntry.total) {
-        pEntry.total += sEntry.total
-        dropped.add(singular)
-      } else {
-        sEntry.total += pEntry.total
-        dropped.add(key)
+function buildCategoryOptions(data: MedDrugListItem[]): TherapeuticClassOption[] {
+  const counts = new Map<string, number>()
+  for (const drug of data) {
+    // Map each drug to its broad categories (dedup per drug)
+    const seen = new Set<string>()
+    for (const tc of drug.therapeuticClass ?? []) {
+      const cat = mapToCategory(tc)
+      if (!seen.has(cat)) {
+        seen.add(cat)
+        counts.set(cat, (counts.get(cat) ?? 0) + 1)
       }
     }
-  })
+  }
 
-  return Array.from(best.entries())
-    .filter(([key]) => !dropped.has(key))
-    .map(([, { label, total }]) => ({ label, count: total }))
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
     .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 }
 
@@ -132,10 +97,9 @@ export default function MedicamentsContent() {
       setDrugs(data)
 
       const nextManufacturers = Array.from(new Set(data.map((item) => item.manufacturer).filter((m) => m && m !== 'NON RENSEIGNÉ'))) as string[]
-      const rawClasses = data.flatMap((item) => item.therapeuticClass ?? [])
 
       setManufacturers(nextManufacturers.sort((a, b) => a.localeCompare(b)))
-      setTherapeuticClasses(deduplicateClasses(rawClasses))
+      setTherapeuticClasses(buildCategoryOptions(data))
     } catch (loadError) {
       const message =
         loadError instanceof Error
@@ -180,12 +144,7 @@ export default function MedicamentsContent() {
       }
 
       if (filters.therapeuticClass) {
-        const filterKey = filters.therapeuticClass.toLowerCase().replace(/s$/, '')
-        const match = (item.therapeuticClass ?? []).some((tc) => {
-          const tcKey = tc.toLowerCase().replace(/s$/, '')
-          return tcKey === filterKey
-        })
-        if (!match) return false
+        if (!matchesCategory(item.therapeuticClass, filters.therapeuticClass)) return false
       }
 
       return true
