@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-05T20:05:04.965966+00:00",
+  "scraped_at": "2026-03-06T07:57:29.084784+00:00",
   "total_pharmacies": 245,
   "cities_count": 28,
   "cities": [
@@ -51,15 +51,15 @@
     },
     "lematin.ma": {
       "ok": true,
-      "count": 106,
+      "count": 105,
       "error": null
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 282,
+      "count": 283,
       "error": null
     }
   },
-  "previous_total": 235,
-  "delta": 10
+  "previous_total": 245,
+  "delta": 0
 }
