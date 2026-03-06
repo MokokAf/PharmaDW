@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-03-06T07:57:29.084784+00:00",
-  "total_pharmacies": 245,
-  "cities_count": 28,
+  "scraped_at": "2026-03-06T19:55:44.044560+00:00",
+  "total_pharmacies": 234,
+  "cities_count": 27,
   "cities": [
     "Agadir",
     "Ait Melloul",
@@ -19,7 +19,6 @@
     "Khouribga",
     "Khémisset",
     "Laayoune",
-    "Larache",
     "Marrakech",
     "Nador",
     "Oujda",
@@ -51,15 +50,15 @@
     },
     "lematin.ma": {
       "ok": true,
-      "count": 105,
+      "count": 109,
       "error": null
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 283,
+      "count": 270,
       "error": null
     }
   },
   "previous_total": 245,
-  "delta": 0
+  "delta": -11
 }
