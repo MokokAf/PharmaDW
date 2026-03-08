@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-03-08T07:49:51.350592+00:00",
-  "total_pharmacies": 286,
-  "cities_count": 31,
+  "scraped_at": "2026-03-08T19:45:31.753172+00:00",
+  "total_pharmacies": 306,
+  "cities_count": 33,
   "cities": [
     "Agadir",
     "Ben Guerir",
@@ -29,11 +29,13 @@
     "Safi",
     "Salé",
     "Sefrou",
+    "Selouane",
     "Settat",
     "Sidi Slimane",
     "Tanger",
     "Tiznit",
-    "Témara"
+    "Témara",
+    "Tétouan"
   ],
   "sources_used": [
     "infopoint.ma",
@@ -44,7 +46,7 @@
   "sources_status": {
     "infopoint.ma": {
       "ok": true,
-      "count": 8,
+      "count": 12,
       "error": null
     },
     "guidepharmacies.ma": {
@@ -59,10 +61,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 335,
+      "count": 364,
       "error": null
     }
   },
-  "previous_total": 301,
-  "delta": -15
+  "previous_total": 286,
+  "delta": 20
 }
