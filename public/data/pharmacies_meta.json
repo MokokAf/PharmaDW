@@ -1,35 +1,46 @@
 {
-  "scraped_at": "2026-03-10T08:01:31.136222+00:00",
-  "total_pharmacies": 146,
-  "cities_count": 10,
+  "scraped_at": "2026-03-10T19:59:29.376329+00:00",
+  "total_pharmacies": 249,
+  "cities_count": 26,
   "cities": [
     "Agadir",
+    "Ben Guerir",
+    "Berrechid",
+    "Béni Mellal",
     "Casablanca",
+    "El Jadida",
+    "Errachidia",
+    "Essaouira",
     "Fès",
+    "Guelmim",
+    "Inezgane",
+    "Khouribga",
+    "Khémisset",
     "Kénitra",
     "Marrakech",
+    "Nador",
+    "Ouarzazate",
     "Oujda",
     "Rabat",
+    "Safi",
     "Salé",
+    "Sefrou",
+    "Settat",
     "Tanger",
+    "Tiznit",
     "Témara"
   ],
   "sources_used": [
     "infopoint.ma",
-    "annuaire-gratuit.ma",
     "guidepharmacies.ma",
-    "lematin.ma"
+    "lematin.ma",
+    "annuaire-gratuit.ma"
   ],
   "sources_status": {
     "infopoint.ma": {
       "ok": true,
       "count": 8,
       "error": null
-    },
-    "annuaire-gratuit.ma": {
-      "ok": false,
-      "count": 0,
-      "error": "526 Server Error: <none> for url: https://www.annuaire-gratuit.ma/pharmacie-garde-maroc.html"
     },
     "guidepharmacies.ma": {
       "ok": true,
@@ -40,8 +51,13 @@
       "ok": true,
       "count": 106,
       "error": null
+    },
+    "annuaire-gratuit.ma": {
+      "ok": true,
+      "count": 287,
+      "error": null
     }
   },
   "previous_total": 146,
-  "delta": 0
+  "delta": 103
 }
