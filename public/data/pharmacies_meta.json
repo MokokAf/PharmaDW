@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-11T08:00:20.309272+00:00",
-  "total_pharmacies": 254,
+  "scraped_at": "2026-03-11T19:59:06.017718+00:00",
+  "total_pharmacies": 252,
   "cities_count": 26,
   "cities": [
     "Agadir",
@@ -54,10 +54,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 288,
+      "count": 292,
       "error": null
     }
   },
-  "previous_total": 249,
-  "delta": 5
+  "previous_total": 254,
+  "delta": -2
 }
