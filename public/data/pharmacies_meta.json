@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-03-12T08:00:52.743211+00:00",
+  "scraped_at": "2026-03-12T19:59:38.112600+00:00",
   "total_pharmacies": 229,
-  "cities_count": 25,
+  "cities_count": 24,
   "cities": [
     "Agadir",
     "Ben Guerir",
@@ -15,7 +15,6 @@
     "Inezgane",
     "Khouribga",
     "Khémisset",
-    "Kénitra",
     "Marrakech",
     "Nador",
     "Ouarzazate",
@@ -42,9 +41,9 @@
       "error": null
     },
     "guidepharmacies.ma": {
-      "ok": true,
-      "count": 37,
-      "error": null
+      "ok": false,
+      "count": 0,
+      "error": "No records from any city"
     },
     "lematin.ma": {
       "ok": true,
@@ -53,10 +52,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 268,
+      "count": 271,
       "error": null
     }
   },
-  "previous_total": 252,
-  "delta": -23
+  "previous_total": 229,
+  "delta": 0
 }
