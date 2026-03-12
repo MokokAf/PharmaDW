@@ -1,11 +1,10 @@
 {
-  "scraped_at": "2026-03-11T19:59:06.017718+00:00",
-  "total_pharmacies": 252,
-  "cities_count": 26,
+  "scraped_at": "2026-03-12T08:00:52.743211+00:00",
+  "total_pharmacies": 229,
+  "cities_count": 25,
   "cities": [
     "Agadir",
     "Ben Guerir",
-    "Berrechid",
     "Béni Mellal",
     "Casablanca",
     "El Jadida",
@@ -44,7 +43,7 @@
     },
     "guidepharmacies.ma": {
       "ok": true,
-      "count": 36,
+      "count": 37,
       "error": null
     },
     "lematin.ma": {
@@ -54,10 +53,10 @@
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 292,
+      "count": 268,
       "error": null
     }
   },
-  "previous_total": 254,
-  "delta": -2
+  "previous_total": 252,
+  "delta": -23
 }
