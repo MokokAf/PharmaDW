@@ -1,10 +1,11 @@
 {
-  "scraped_at": "2026-03-13T08:01:11.999251+00:00",
-  "total_pharmacies": 230,
-  "cities_count": 25,
+  "scraped_at": "2026-03-13T19:56:00.337969+00:00",
+  "total_pharmacies": 259,
+  "cities_count": 27,
   "cities": [
     "Agadir",
     "Ben Guerir",
+    "Berrechid",
     "Béni Mellal",
     "Casablanca",
     "El Jadida",
@@ -17,6 +18,7 @@
     "Khémisset",
     "Kénitra",
     "Marrakech",
+    "Mohammedia",
     "Nador",
     "Ouarzazate",
     "Oujda",
@@ -48,15 +50,15 @@
     },
     "lematin.ma": {
       "ok": true,
-      "count": 106,
+      "count": 108,
       "error": null
     },
     "annuaire-gratuit.ma": {
       "ok": true,
-      "count": 272,
+      "count": 298,
       "error": null
     }
   },
-  "previous_total": 229,
-  "delta": 1
+  "previous_total": 230,
+  "delta": 29
 }
